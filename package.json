@@ -1,0 +1,20 @@
+{
+  "name": "www.graphane.dev",
+  "version": "0.0.1",
+  "description": "public web of Graphane",
+  "scripts": {
+    "docs:dev": "vitepress dev src",
+    "docs:build": "vitepress build src",
+    "docs:preview": "vitepress preview src",
+    "docs:min-dev": "vitepress dev minimal",
+    "docs:min-build": "vitepress build minimal",
+    "docs:min-preview": "vitepress preview minimal"
+  },
+  "keywords": [],
+  "author": "",
+  "devDependencies": {
+    "vitepress": "^1.0.0-rc.14",
+    "shiki": "^0.14.4"
+  },
+  "type": "module"
+}
