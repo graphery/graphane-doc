@@ -15,7 +15,7 @@ const fullReloadAlways = {
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title       : ' ',
+  title       : 'graphane',
   description : "version 0.0.1 (alpha)",
   vite        : {
     plugins : [fullReloadAlways],
@@ -38,6 +38,12 @@ export default defineConfig({
   // https://vitepress.dev/reference/default-theme-config
   themeConfig : {
     logo        : '/img/logo/graphane.svg',
+    siteTitle : false,
+    footer: {
+      message: 'Released under the MIT License.',
+      copyright: 'Copyright © 2023 <a href="https://www.graphery.com/"> ' +
+                 '<img src="img/logo/graphery.svg" alt="graphery" width="120"></a>'
+    },
     search      : {
       provider : 'local'
     },

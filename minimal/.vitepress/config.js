@@ -15,7 +15,7 @@ const fullReloadAlways = {
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title       : ' ',
+  title       : 'graphane',
   description : "version 0.0.1 (alpha)",
   vite        : {
     plugins : [fullReloadAlways],
@@ -28,17 +28,18 @@ export default defineConfig({
     }
   },
   head        : [
-    ['link', {rel : 'icon', href : '/img/logo/g.svg'}],
-    ['script', {
-      src  : 'http://localhost:63342/Graphane/src/svg/component/src/gsvg.js',
-      type : 'module'
-    }],
-    // ['script', {src : 'https://cdn.Graphane.online/svg/2.0.0.beta.4/component/gsvg.js'}],
+    ['link', {rel : 'icon', href : '/img/logo/g.svg'}]
   ],
   // https://vitepress.dev/reference/default-theme-config
   themeConfig : {
-    logo        : '/img/logo/graphane.svg',
-    search      : {
+    logo      : '/img/logo/graphane.svg',
+    siteTitle : false,
+    footer: {
+      message: 'Released under the MIT License.',
+      copyright: 'Copyright © 2023 <a href="https://www.graphery.com/"> ' +
+                 '<img src="img/logo/graphery.svg" alt="graphery" width="120"></a>'
+    },
+    search    : {
       provider : 'local'
     }
   }

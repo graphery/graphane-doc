@@ -81,3 +81,13 @@ aside {
   --vp-home-hero-image-background-image : none;
   --vp-home-hero-image-filter           : none;
 }
+
+/*
+ * Footer
+ */
+
+footer img {
+  display: inline-block;
+  vertical-align: top;
+  width: 120px;
+}
