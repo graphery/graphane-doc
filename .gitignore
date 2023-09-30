@@ -220,3 +220,7 @@ __diff_output__
 
 ### private files
 private.json
+
+### vitepress
+/minimal/.vitepress/cache/
+/src/.vitepress/cache/
