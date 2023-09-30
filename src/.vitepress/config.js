@@ -37,7 +37,10 @@ export default defineConfig({
   ],
   // https://vitepress.dev/reference/default-theme-config
   themeConfig : {
-    logo        : '/img/logo/graphane.svg',
+    logo      : {
+      light: '/img/logo/graphane.svg',
+      dark: '/img/logo/graphane.light.svg'
+    },
     siteTitle : false,
     footer: {
       message: 'Released under the MIT License.',
