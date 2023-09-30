@@ -44,6 +44,13 @@ html, body {
 }
 
 /*
+ * Logo
+ */
+.logo {
+  background-image: url(/img/logo/graphane.svg);
+}
+
+/*
  * Code
  */
 :root {
