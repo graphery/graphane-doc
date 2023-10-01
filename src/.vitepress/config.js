@@ -29,11 +29,11 @@ export default defineConfig({
   },
   head        : [
     ['link', {rel : 'icon', href : '/img/logo/g.svg'}],
-    // ['script', {
-    //   src  : 'http://localhost:63342/graphane/src/component/template.js',
-    //   type : 'module'
-    // }],
-    ['script', {src : 'https://cdn.graphery.online/graphane/0.1.0-alpha.1/component/template.js'}],
+    ['script', {
+      src  : 'http://localhost:63342/graphery/src/component/template.js',
+      type : 'module'
+    }],
+    // ['script', {src : 'https://cdn.graphery.online/graphane/0.1.0-alpha.1/component/template.js'}],
   ],
   // https://vitepress.dev/reference/default-theme-config
   themeConfig : {
@@ -44,8 +44,8 @@ export default defineConfig({
     siteTitle : false,
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2023 <a href="https://www.graphery.com/"> ' +
-                 '<img src="img/logo/graphery.svg" alt="graphery" width="120"></a>'
+      copyright: 'Copyright © 2023 <a href="https://www.graphane.dev/"> ' +
+                 '<img src="/img/logo/graphane.svg" alt="graphane" width="120"></a>'
     },
     search      : {
       provider : 'local'
@@ -68,7 +68,6 @@ export default defineConfig({
         items : [
           {link : '/guide/', text : 'Introduction'},
           {link : '/guide/quick-start', text : 'Quick Start'},
-          {link : '/guide/components', text : 'Components'},
           {
             text      : 'Templating',
             link      : '/guide/templating/',

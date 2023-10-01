@@ -10,7 +10,6 @@ To get started, you'll need to include the Graphane component in your HTML file.
 done by adding a script tag with the source pointing to the component file into the CDN:
 
 ```html
-
 <script src="https://cdn.graphery.online/graphane/0.1.0-alpha.1/component/template.js"></script>
 ```
 
@@ -37,7 +36,6 @@ Once the Graphane is loaded, you can utilize the `g-template` component in your 
 component is responsible for rendering the SVG and managing the associated data.
 
 ```html
-
 <g-template>
   <!-- add the content here -->
 </g-template>

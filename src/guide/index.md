@@ -38,7 +38,6 @@ Graphane is **based on**:
 </g-template>
 
 ```html
-
 <g-template>
   <svg viewBox="0 0 100 100">
     <defs g-for="x of 3">
@@ -78,7 +77,6 @@ they will be available for use in the template directly. To load the data, we ne
 </g-template>
 
 ```html
-
 <g-template>
   <svg viewBox="0 0 100 100">
     <defs g-for="x of data.circles">
@@ -94,7 +92,6 @@ In some case it is easier to include the data directly into the `script` with ty
 insert CSV o JSON data into the tag:
 
 ```html
-
 <script type="data">
   {
     "circles": 3
@@ -121,7 +118,6 @@ oninput="document.querySelector('#reactive').data.circles = Number(this.value)">
 </label>
 
 ```html
-
 <g-template id="reactive">
   <svg viewBox="0 0 100 100">
     <defs g-for="x of data.circles">
