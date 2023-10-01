@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# Quick Started
+º# Quick Start
 
 ## Step 1: Load
 
@@ -11,7 +11,7 @@ done by adding a script tag with the source pointing to the component file into 
 
 ```html
 
-<script src="https://cdn.Graphane.online/svg/2.0.0.beta.3/component/gsvg.js"></script>
+<script src="https://cdn.graphery.online/graphane/0.1.0-alpha.1/component/template.js"></script>
 ```
 
 ::: details Understanding the CDN path
@@ -19,37 +19,37 @@ done by adding a script tag with the source pointing to the component file into 
 This is the detailed description of each URL part:
 
 ```
-https://cdn.Graphane.online/svg/2.0.0.beta.3/component/gsvg.js
-|-----|--------------------|---|------------|---------|-------|
-   |            |            |       |           |        |---> filename
-   |            |            |       |           |------------> kind
-   |            |            |       |------------------------> version
-   |            |            |--------------------------------> library
-   |            |---------------------------------------------> domain
-   |----------------------------------------------------------> protocol (use 'https')
+https://cdn.graphery.online/graphane/0.1.0-alpha.1/component/template.js
+|-----|--------------------|--------|-------------|---------|-----------|
+   |            |               |          |           |          |-----> filename
+   |            |               |          |           |----------------> kind
+   |            |               |          |----------------------------> version
+   |            |               |---------------------------------------> package
+   |            |-------------------------------------------------------> domain
+   |--------------------------------------------------------------------> protocol
 ```
 
 :::
 
-## Step 2: `g-svg` component
+## Step 2: `g-template` component
 
-Once the Graphane library is loaded, you can utilize the `g-svg` component in your HTML code. This
+Once the Graphane is loaded, you can utilize the `g-template` component in your HTML code. This
 component is responsible for rendering the SVG and managing the associated data.
 
 ```html
 
-<g-svg>
+<g-template>
   <!-- add the content here -->
-</g-svg>
+</g-template>
 ```
 
-## Step 3: SVG template
+## Step 3: SVG
 
-After including the library and the `g-svg` component, you can define the SVG template within
-the `g-svg` tag. This template will be used to render the SVG. Here's an example:
+After including the library and the `g-template` component, you can define the SVG template within
+the `svg` tag. This template will be used to render the SVG. Here's an example:
 
 ```html
-<g-svg>
+<g-template>
   <svg viewBox="0 0 100 100">
     <defs g-for="value of data">
       <circle g-bind:cx="value.x"
@@ -58,7 +58,7 @@ the `g-svg` tag. This template will be used to render the SVG. Here's an example
               g-bind:fill="value.color"/>
     </defs>
   </svg>
-</g-svg>
+</g-template>
 ```
 
 As you can see, the template includes directives such as `g-for` and `g-bind`. These directives are
@@ -66,12 +66,12 @@ part of the SVG template language specifically created to build SVG from data in
 
 ## Step 4: Data
 
-To associate data with the SVG, you can use the `g-data` component. This component allows you to
-specify the type of data (e.g., CSV, JSON) and provide the data source or include directly the data
-inside. Here's an example of how to include the `g-data` component:
+To associate data with the SVG, you can use the `script type="data"` tag. This tag allows you to
+specify the type of data (e.g., CSV, JSON) and provide the data source or directly include the data
+inside. Here's an example of how to include the `script type="data"`:
 
 ```html
-<g-svg>
+<g-template>
   <svg viewBox="0 0 100 100">
     <defs g-for="value of data">
       <circle g-bind:cx="value.x"
@@ -80,16 +80,16 @@ inside. Here's an example of how to include the `g-data` component:
               g-bind:fill="value.color"/>
     </defs>
   </svg>
-  <g-data type="csv">
+  <script type="data">
     "x";"y";"radix";"color"
     20;20;20;"red"
     45;45;30;"blue"
     80;80;10;"green"
-  </g-data>
-</g-svg>
+  </script>
+</g-template>
 ```
 
-<g-svg>
+<g-template>
   <svg viewBox="0 0 100 100">
     <defs g-for="value of data">
       <circle g-bind:cx="value.x"
@@ -98,23 +98,24 @@ inside. Here's an example of how to include the `g-data` component:
               g-bind:fill="value.color"/>
     </defs>
   </svg>
-  <g-data type="csv" src="/circles.csv">  </g-data>
-</g-svg>
+  <g-script type="data" src="/circles.csv"></g-script>
+</g-template>
 
 ## Optional: use external resources
 
-To link the SVG and CSV as resources, you can use the `src` and `data-src` attributes of `g-svg`
-component. 
+To link the SVG and CSV as resources, you can use the `svg-src` and `data-src` attributes of
+`g-template` component. 
 
-- The `src` attribute specifies the path to the SVG file.
+- The `svg-src` attribute specifies the path to the SVG file.
 - The `data-src` attribute indicates the location of the data source.
-- The `data-type` specifies the type of data being used (e.g., CSV, JSON). 
 
 Here's a basic example:
 
 ```svg
-<g-svg src="/circles.svg" data-src="/circles.csv" data-type="csv"></g-svg>
+<g-template svg-src="/circles.svg" data-src="/circles.csv"></g-template>
 ```
+
+<g-template src="/circles.svg" data-src="/circles.csv"></g-template>
 
 That's it! You've completed the quick start guide for using Graphane to render a simple SVG and
 associate them with data.
