@@ -29,11 +29,11 @@ export default defineConfig({
   },
   head        : [
     ['link', {rel : 'icon', href : '/img/logo/g.svg'}],
-    ['script', {
-      src  : 'http://localhost:63342/Graphane/src/svg/component/src/gsvg.js',
-      type : 'module'
-    }],
-    // ['script', {src : 'https://cdn.Graphane.online/svg/2.0.0.beta.4/component/gsvg.js'}],
+    // ['script', {
+    //   src  : 'http://localhost:63342/graphane/src/component/template.js',
+    //   type : 'module'
+    // }],
+    ['script', {src : 'https://cdn.graphery.online/graphane/0.1.0-alpha.1/component/template.js'}],
   ],
   // https://vitepress.dev/reference/default-theme-config
   themeConfig : {
@@ -60,6 +60,7 @@ export default defineConfig({
         ]
       },
       {link : '/examples/', text : 'Examples'},
+      {link: '#', text: '0.1.0-alpha.1'},
     ],
     sidebar     : {
       '/guide/'                : [{
@@ -106,7 +107,7 @@ export default defineConfig({
             collapsed : true,
             items     : [
               {link : '/guide/library/gsvg', text : 'Why a JS Library for SVG'},
-              {link : '/guide/library/component', text : 'Use with g-svg'},
+              {link : '/guide/library/component', text : 'Use with g-template'},
               {link : '/guide/library/load', text : 'Load the library'},
               {link : '/guide/library/create', text : 'Create an SVG'},
               {link : '/guide/library/update', text : 'Update an SVG'},
@@ -173,8 +174,8 @@ export default defineConfig({
         items : [
           {link : '/reference/components/', text : 'Introduction'},
           {
-            text  : 'g-svg',
-            link  : '/reference/components/g-svg',
+            text  : 'g-template',
+            link  : '/reference/components/g-template',
             items : [
               {
                 text      : 'SVG Template',
@@ -191,15 +192,15 @@ export default defineConfig({
               {
                 text      : 'Attributes',
                 collapsed : true,
-                link      : '/reference/components/g-svg.attributes',
+                link      : '/reference/components/g-template.attributes',
                 items     : [
-                  {link : '/reference/components/g-svg.attribute.src', text : 'src'},
-                  {link : '/reference/components/g-svg.attribute.data', text : 'data'},
+                  {link : '/reference/components/g-template.attribute.src', text : 'src'},
+                  {link : '/reference/components/g-template.attribute.data', text : 'data'},
                   {
-                    link : '/reference/components/g-svg.attribute.data-src',
+                    link : '/reference/components/g-template.attribute.data-src',
                     text : 'data-src & data-type'
                   },
-                  {link : '/reference/components/g-svg.property.methods', text : 'methods'},
+                  {link : '/reference/components/g-template.property.methods', text : 'methods'},
                 ]
               },
             ]
