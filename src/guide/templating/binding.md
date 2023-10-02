@@ -21,31 +21,17 @@ a dynamic value:
 
 In this case, `size` refers to a data property that holds the radius value. The `g-bind` directive
 binds the `r` attribute of the circle element to that value. When `size` changes in the Graphane
-component, the `r` attribute will be automatically updated.
-
-### Example
-
-<g-svg data="size: 25;" id="circle">
-  <svg viewBox="0 0 100 100">
-    <circle g-bind:r="size" cx="50" cy="50" fill="red"></circle>
-  </svg>
-</g-svg>
-<p>
-
-<label>Change the size: 
-<input type="range" max="50" value="25" 
-       oninput="document.querySelector('#circle').data.size = this.value">
-</label>
-</p>
+component, the radius attribute will be automatically updated.
 
 
 ```html
-<g-svg data="size: 25;" id="circle">
+<g-template data="size: 25;" id="circle">
   <svg viewBox="0 0 100 100">
     <circle g-bind:r="size" cx="50" cy="50" fill="red"/>
   </svg>
-</g-svg>
-
+</g-template>
+```
+```html
 <p>
   <label>Change the size:
     <input type="range" max="50" value="25"
@@ -54,18 +40,28 @@ component, the `r` attribute will be automatically updated.
 </p>
 ```
 
+<g-template data="size: 25;" id="circle">
+  <svg viewBox="0 0 100 100">
+    <circle g-bind:r="size" cx="50" cy="50" fill="red"></circle>
+  </svg>
+</g-template>
+<p>
+
+<label>Change the size:
+<input type="range" max="50" value="25"
+oninput="document.querySelector('#circle').data.size = this.value">
+</label>
+</p>
+
 
 ## Style
 
-When using `g-bind` with the `style` attribute, you can dynamically bind an object containing CSS
-styles to an element. This object can be defined in the `g-svg` component data. The keys of the
-object represent the CSS properties, and the values represent the corresponding values for those
-properties.
-
-### Example
+When using `g-bind`, or the shorthand `:`, with the `style` attribute, you can dynamically bind an
+object containing CSS styles to an element. The keys of the object represent the CSS properties, and
+the values represent the corresponding values for those properties.
 
 ```html
-<g-svg>
+<g-template>
   <svg viewBox="0 0 100 100">
     <defs g-for="value of data">
       <circle :cx="value.x"
@@ -74,16 +70,16 @@ properties.
               :style="{fill: value.color}"/>
     </defs>
   </svg>
-  <g-data type="csv">
+  <script type="data">
     "x";"y";"radix";"color"
     20;20;20;"red"
     45;45;30;"blue"
     80;80;10;"green"
-  </g-data>
-</g-svg>
+  </script>
+</g-template>
 ```
 
-<g-svg>
+<g-template>
   <svg viewBox="0 0 100 100">
     <defs g-for="value of data">
       <circle g-bind:cx="value.x"
@@ -92,25 +88,18 @@ properties.
               g-bind:style="{fill: value.color}"/>
     </defs>
   </svg>
-  <g-data type="csv"><!--
-    "x";"y";"radix";"color"
-    20;20;20;"red"
-    45;45;30;"blue"
-    80;80;10;"green"
-  --></g-data>
-</g-svg>
+  <g-script type="data" src="/data/style.csv"></g-script>
+</g-template>
 
 
 ## Class
 
 Similarly, `g-bind`, or the shorthand `:`, can be used with the class attribute to dynamically bind
-CSS classes to an element based on the values in the `<g-svg>` component data. You can bind a single
+CSS classes to an element based on the values in the `<g-template>` component data. You can bind a single
 class or an array of classes.
 
-### Example
-
 ```html
-<g-svg src="circles.class.svg" data-src="data.class.csv" data-type="csv">
+<g-template>
   <svg viewBox="0 0 100 100">
     <style>
       .regular {
@@ -130,13 +119,13 @@ class or an array of classes.
               :class="value.class"/>
     </defs>
   </svg>
-  <g-data type="csv">
+  <script type="data">
     "x";"y";"radix";"class"
     20;20;20;"regular"
     45;45;30;"warning"
     80;80;10;"error"
-  </g-data>
-</g-svg>
+  </script>
+</g-template>
 ```
 
-<g-svg src="/circles.class.svg" data-src="/data.class.csv" data-type="csv"></g-svg>
+<g-template svg-src="/circles.class.svg" data-src="/data/class.csv"></g-template>`

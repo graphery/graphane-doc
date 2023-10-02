@@ -9,15 +9,19 @@ various functionalities. Here are the commonly used JavaScript expressions in di
 
 ## Simple Data Binding
 
-With simple data binding, you can use some value of a `data` property in the SVG template.
+With simple data binding, you can use some value of a `data` property in the SVG template. You 
+can use the data object and property name (as `data.color`) or directly the property name: 
+`color`.
 
 With simple data binding, you can use the value of a data property in the SVG template. For example,
 with `g-bind` or using the shorthand colon notation (`:`), you can bind the property value to SVG
 elements.
 
 ```html
-
-<circle :fill="value.color" cx="50" cy="50" r="25"></circle>
+<circle cx="50" 
+        cy="50" 
+        r="25"
+        :fill="color"/>
 ```
 
 ## Conditional expression
@@ -27,8 +31,10 @@ conditions. In Graphane, you can use the ternary operator condition `? ok : ko` 
 operators `&&` and `||` to define conditional expressions. For example:
 
 ```html
-
-<circle :fill="value.regular ? 'green' : 'red'" cx="50" cy="50" r="25"></circle>
+<circle cx="50" 
+        cy="50" 
+        r="25"
+        :fill="data.regular ? 'green' : 'red'" />
 ```
 
 ## Destructuring in `g-for`
@@ -38,10 +44,11 @@ dynamically. With JavaScript destructuring, you can extract specific values from
 and use them within the SVG elements.
 
 ```html
-
-<g g-for="({ x, y }) of points">
-  <circle :cx="x" :cy="y" r="5"/>
-</g>
+<defs g-for="({ x, y }) of data.points">
+  <circle r="5"
+          :cx="x" 
+          :cy="y"/>
+</defs>
 ```
 
 ## Calling Functions
@@ -49,15 +56,28 @@ and use them within the SVG elements.
 You can use functions into the expressions. The function return must be used as value for directives
 
 ```html
-
-<g g-for="point of data.points()">
-  <circle :cx="point.x" :cy="point.y" r="5"/>
-</g>
+<defs g-for="point of data.points()">
+  <circle :cx="point.x" 
+          :cy="point.y" 
+          r="5"/>
+</defs>
 ```
 
-## Restricted  Access
+## Function reference
+
+In `g-on` directive you need a function reference. Commonly, you only use the function name, but 
+also you can call a function than return another function.
+
+```html
+<circle cx="10" 
+        cy="10" 
+        r="5"
+        g-on:click="showMessage"/>
+```
+
+## Restricted access
 
 In Graphane, template expressions are *sandboxed* and have limited access. They can only access
-the `data` object and some commonly used built-in global objects such as `Math` and `Date`. This
-restricted access ensures a secure and predictable environment for evaluating expressions within the
-SVG document.
+the `data`, `config`, `methods` and some commonly used built-in global objects such as `Math`
+and `Date`. This restricted access ensures a secure and predictable environment for evaluating
+expressions within the SVG document.
