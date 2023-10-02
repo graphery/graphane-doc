@@ -26,32 +26,33 @@ framework dependencies.
 
 Graphane is **based on**:
 
-- [`<g-template></g-template>`](./components) the main component than include the graph template.
-
-<g-template>
-  <svg viewBox="0 0 100 100">
-    <defs g-for="x of 3">
-       <circle cx="50" cy="50" g-bind:r="(x + 1) * 10" 
-               fill="none" stroke="black" stroke-width="1"/>
-    </defs>
-  </svg>
-</g-template>
+- [`<g-template></g-template>`](./components) the main component than include the SVG template.
 
 ```html
 <g-template>
   <svg viewBox="0 0 100 100">
     <defs g-for="x of 3">
-      <circle cx="50" cy="50" g-bind:r="(x + 1) * 10"
+      <circle cx="50" cy="50" g-bind:r="(x + 1) * (48 / 3)"
               fill="none" stroke="black" stroke-width="1"/>
     </defs>
   </svg>
 </g-template>
 ```
 
+<g-template>
+  <svg viewBox="0 0 100 100">
+    <defs g-for="x of 3">
+       <circle cx="50" cy="50" g-bind:r="(x + 1) * (48 / 3)" 
+               fill="none" stroke="black" stroke-width="1"/>
+    </defs>
+  </svg>
+</g-template>
+
+
 The standard SVG format is enhanced with **attribute-based directives** that allows to generate
 visualizations in an intuitive way, focusing efforts on design and data, avoiding the need for
-complex development. Any designer with a little programming knowledge can make great programming can
-make great data-driven designs.
+complex development. Any designer with a little programming knowledge can make great data-driven 
+designs.
 
 - [`g-bind`](./templating/binding) (or the shorthand `:`): dynamically bind values to attributes and
   styles.
@@ -64,23 +65,13 @@ make great data-driven designs.
 
 We can create visualizations using SVG-based templates uploading data in CSV or JSON formats, and
 they will be available for use in the template directly. To load the data, we need to use the
-`script` tag indicating that it is of type `data` and a source with `src`.
-
-<g-template>
-  <svg viewBox="0 0 100 100">
-    <defs g-for="x of data.circles">
-       <circle cx="50" cy="50" g-bind:r="(x + 1) * 10" 
-               fill="none" stroke="black" stroke-width="1"/>
-    </defs>
-  </svg>
-  <g-script type="data" src="/data/guide.json"></g-script>
-</g-template>
+`script` tag indicating that it is `type="data"` and a source with `src`.
 
 ```html
 <g-template>
   <svg viewBox="0 0 100 100">
     <defs g-for="x of data.circles">
-      <circle cx="50" cy="50" g-bind:r="(x + 1) * 10"
+      <circle cx="50" cy="50" g-bind:r="(x + 1) * (48 / data.circles)"
               fill="none" stroke="black" stroke-width="1"/>
     </defs>
   </svg>
@@ -88,8 +79,18 @@ they will be available for use in the template directly. To load the data, we ne
 </g-template>
 ```
 
-In some case it is easier to include the data directly into the `script` with type `data`. We can
-insert CSV o JSON data into the tag:
+<g-template>
+  <svg viewBox="0 0 100 100">
+    <defs g-for="x of data.circles">
+       <circle cx="50" cy="50" g-bind:r="(x + 1) * (48 / data.circles)" 
+               fill="none" stroke="black" stroke-width="1"/>
+    </defs>
+  </svg>
+  <g-script type="data" src="/data/guide.json"></g-script>
+</g-template>
+
+In some case it is easier to include the data directly into the `script` with `type="data"`. We can
+insert CSV o JSON formats into the tag:
 
 ```html
 <script type="data">
@@ -101,21 +102,6 @@ insert CSV o JSON data into the tag:
 
 If we dynamically update the data, the template automatically is processed and the new graph is
 created again. The reactivity is completed, we can update all data in deeps without problems.
-
-<g-template id="reactive">
-  <svg viewBox="0 0 100 100">
-    <defs g-for="x of data.circles">
-      <circle cx="50" cy="50" g-bind:r="(x + 1) * (48 / data.circles)"
-               fill="none" stroke="black" stroke-width="1"/>
-    </defs>
-  </svg>
-  <g-script type="data" src="/data/guide.json"></g-script>
-</g-template>
-
-<label>Update the data.circles:
-<input type="range" value="3" min="0" max="25"
-oninput="document.querySelector('#reactive').data.circles = Number(this.value)">
-</label>
 
 ```html
 <g-template id="reactive">
@@ -130,11 +116,27 @@ oninput="document.querySelector('#reactive').data.circles = Number(this.value)">
 ```
 
 ```html
-<label>Update the data.circles:
+<label>Update data.circles:
   <input type="range" value="3" min="0" max="25"
          oninput="document.querySelector('#reactive').data.circles = Number(this.value)">
 </label>
 ```
+
+<g-template id="reactive">
+  <svg viewBox="0 0 100 100">
+    <defs g-for="x of data.circles">
+      <circle cx="50" cy="50" g-bind:r="(x + 1) * (48 / data.circles)"
+               fill="none" stroke="black" stroke-width="1"/>
+    </defs>
+  </svg>
+  <g-script type="data" src="/data/guide.json"></g-script>
+</g-template>
+
+<label>Update data.circles:
+<input type="range" value="3" min="0" max="25"
+oninput="document.querySelector('#reactive').data.circles = Number(this.value)">
+</label>
+
 
 ### Imperative
 

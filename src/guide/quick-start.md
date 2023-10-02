@@ -2,12 +2,12 @@
 outline: deep
 ---
 
-º# Quick Start
+# Quick Start
 
 ## Step 1: Load
 
-To get started, you'll need to include the Graphane component in your HTML file. This can be
-done by adding a script tag with the source pointing to the component file into the CDN:
+To get started, you'll need to include the Graphane component in your HTML file. This can be done by
+adding a script tag with the source pointing to the component file into the CDN:
 
 ```html
 <script src="https://cdn.graphery.online/graphane/0.1.0-alpha.1/component/template.js"></script>
@@ -43,8 +43,8 @@ component is responsible for rendering the SVG and managing the associated data.
 
 ## Step 3: SVG
 
-After including the library and the `g-template` component, you can define the SVG template within
-the `svg` tag. This template will be used to render the SVG. Here's an example:
+You can define the SVG template within the `svg` tag. This template will be used to render the SVG.
+Here's an example:
 
 ```html
 <g-template>
@@ -66,7 +66,7 @@ part of the SVG template language specifically created to build SVG from data in
 
 To associate data with the SVG, you can use the `script type="data"` tag. This tag allows you to
 specify the type of data (e.g., CSV, JSON) and provide the data source or directly include the data
-inside. Here's an example of how to include the `script type="data"`:
+inside.
 
 ```html
 <g-template>
@@ -102,7 +102,7 @@ inside. Here's an example of how to include the `script type="data"`:
 ## Optional: use external resources
 
 To link the SVG and CSV as resources, you can use the `svg-src` and `data-src` attributes of
-`g-template` component. 
+`g-template` component.
 
 - The `svg-src` attribute specifies the path to the SVG file.
 - The `data-src` attribute indicates the location of the data source.
