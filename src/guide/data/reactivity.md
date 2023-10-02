@@ -4,18 +4,34 @@ outline: deep
 
 # Reactivity: data update
 
-The reactivity is a key feature of the Graphane framework that enables automatic and efficient
+The reactivity is a key feature of the Graphane microframework that enables automatic and efficient
 data binding between the application's data and the visualization. It ensures that when the data
 changes, the corresponding parts of the UI are automatically updated to reflect those changes.
 
-The core concept behind Graphane reactivity is the dependency tracking system. When a `g-svg`
-component is created, Graphane automatically analyzes its render function (or template) and
-identifies all the data properties accessed during the rendering process. It then establishes a
-dependency relationship between the component and those data properties.
+When a `g-template` component is created, Graphane automatically identifies all the data properties
+accessed. It then establishes a dependency relationship between the component and those data
+properties.
 
 Graphane achieves this by leveraging JavaScript's object property by Proxies. When a data property
-changes, Graphane's reactive system is notified. It then triggers a process called "update"
+changes, the reactive system is notified. It then triggers a process called "update"
 where it re-evaluates the components that depend on the changed data property. It compares the new
 and old values and updates the affected visualization accordingly.
 
-<iframe src="/reactivity.html" style="border: 0; width: 100%; height: 1200px"/>
+```html
+<g-template>
+  <svg viewBox="0 0 100 100" style="border: 1px solid grey; width: 250px; height: 250px">
+    <defs g-for="{x,y, color} of data">
+      <circle :cx="x" :cy="y" r="5" :fill="color" style="stroke:grey; stroke-width: 0.5"/>
+    </defs>
+  </svg>
+  <script type="data">
+    [
+      {x: 10, y: 10, color: "#D80000"},
+      {x: 15, y: 20, color: "#00D800"},
+      {x: 30, y: 90, color: "#0000D8"}
+    ]
+  </script>
+</g-template>
+```
+
+<iframe src="/html/reactivity.html" style="border: 0; width: 100%; height: 740px"/>

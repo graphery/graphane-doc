@@ -83,12 +83,13 @@ export default defineConfig({
           },
           {
             text      : 'Data',
+            link      : '/guide/data/',
             collapsed : true,
             items     : [
-              {link : '/guide/data/data-property', text : 'data property'},
-              {link : '/guide/data/g-data', text : 'g-data Component'},
-              {link : '/guide/data/embebed', text : 'Embebed Data'},
-              {link : '/guide/data/external', text : 'External Data'},
+              {link : '/guide/data/property', text : '.data property'},
+              {link : '/guide/data/attribute', text : 'data attribute'},
+              {link : '/guide/data/embebed', text : 'Embedded data'},
+              {link : '/guide/data/external', text : 'Load resource'},
               {link : '/guide/data/reactivity', text : 'Reactivity'},
             ]
           },

@@ -4,54 +4,55 @@ outline: deep
 
 # Embebed data
 
-The `g-data` component supports three types of data that can be included directly within its HTML
-tag: CSV, JSON, and JS. The type of data should be described in the `type` attribute.
+The `script type="data"` component supports three types of data that can be included directly within its HTML
+tag: CSV, JSON, and JS. The type of format is directly deduced from the content.
 
 - Example using CSV:
 
     ```html
-    <g-data type="csv">
+    <script type="data">
       "x";"y";"radix";"color"
       20;20;20;"red"
       45;45;30;"blue"
       80;80;10;"green"
-    </g-data>
+    </script>
     ```
 
 - Example using JSON:
 
     ```html
-    <g-data type="json">
+    <script type="data">
     [
       {"x": 20, "y": 20, "radix": 20, "color": "red"},
       {"x": 45, "y": 45, "radix": 30, "color": "blue"},
       {"x": 80, "y": 80, "radix": 10, "color": "green"}
     ]
-    </g-data>
+    </script type="data">
     ```
 
 - Example using JS (JavaScript object):
 
     ```html
-    
-    <g-data type="js">
+    <script type="data">
     [
       {x: 20, y: 20, radix: 20, color: "red"},
       {x: 45, y: 45, radix: 30, color: "blue"},
       {x: 80, y: 80, radix: 10, color: "green"},
     ]
-    </g-data>
+    </script type="data">
     ```
 
-To avoid the FOUC effect (Flash of Unstyled Content), which briefly displays the embedded data, you
-can enclose the content within a <!-- --> comment tag to prevent it from being displayed
-momentarily.
+::: warning
+In some environments the `<script type="data"></script>` has conflicts. In these cases, you can 
+use alternatively `<g-script type="data"></g-script>`.
 
 ```html
-<g-data type="csv">
+<g-script type="data">
   "x";"y";"radix";"color"
   20;20;20;"red"
   45;45;30;"blue"
   80;80;10;"green"
-</g-data>
+</g-script type="data">
 ```
+:::
+
