@@ -70,8 +70,8 @@ they will be available for use in the template directly. To load the data, we ne
 ```html
 <g-template>
   <svg viewBox="0 0 100 100">
-    <defs g-for="x of data.circles">
-      <circle cx="50" cy="50" g-bind:r="(x + 1) * (48 / data.circles)"
+    <defs g-for="x of circles">
+      <circle cx="50" cy="50" g-bind:r="(x + 1) * (48 / circles)"
               fill="none" stroke="black" stroke-width="1"/>
     </defs>
   </svg>
@@ -81,8 +81,8 @@ they will be available for use in the template directly. To load the data, we ne
 
 <g-template>
   <svg viewBox="0 0 100 100">
-    <defs g-for="x of data.circles">
-       <circle cx="50" cy="50" g-bind:r="(x + 1) * (48 / data.circles)" 
+    <defs g-for="x of circles">
+       <circle cx="50" cy="50" g-bind:r="(x + 1) * (48 / circles)" 
                fill="none" stroke="black" stroke-width="1"/>
     </defs>
   </svg>
@@ -106,8 +106,8 @@ created again. The reactivity is completed, we can update all data in deeps with
 ```html
 <g-template id="reactive">
   <svg viewBox="0 0 100 100">
-    <defs g-for="x of data.circles">
-      <circle cx="50" cy="50" g-bind:r="(x + 1) * (50 / data.circles)"
+    <defs g-for="x of circles">
+      <circle cx="50" cy="50" g-bind:r="(x + 1) * (50 / circles)"
               fill="none" stroke="black" stroke-width="1"/>
     </defs>
   </svg>
@@ -124,8 +124,8 @@ created again. The reactivity is completed, we can update all data in deeps with
 
 <g-template id="reactive">
   <svg viewBox="0 0 100 100">
-    <defs g-for="x of data.circles">
-      <circle cx="50" cy="50" g-bind:r="(x + 1) * (48 / data.circles)"
+    <defs g-for="x of circles">
+      <circle cx="50" cy="50" g-bind:r="(x + 1) * (48 / circles)"
                fill="none" stroke="black" stroke-width="1"/>
     </defs>
   </svg>
