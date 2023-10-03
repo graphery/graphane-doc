@@ -96,7 +96,7 @@ inside.
               g-bind:fill="value.color"/>
     </defs>
   </svg>
-  <g-script type="data" src="/circles.csv"></g-script>
+  <g-script type="data" src="/data/circles.csv"></g-script>
 </g-template>
 
 ## Optional: use external resources
@@ -107,13 +107,13 @@ To link the SVG and CSV as resources, you can use the `svg-src` and `data-src` a
 - The `svg-src` attribute specifies the path to the SVG file.
 - The `data-src` attribute indicates the location of the data source.
 
-Here's a basic example:
+Here is the previous example with external resources:
 
 ```svg
-<g-template svg-src="/circles.svg" data-src="/circles.csv"></g-template>
+<g-template svg-src="/svg/circles.svg" data-src="/data/circles.csv"></g-template>
 ```
 
-<g-template src="/circles.svg" data-src="/circles.csv"></g-template>
+<g-template svg-src="/svg/circles.svg" data-src="/data/circles.csv"></g-template>
 
 That's it! You've completed the quick start guide for using Graphane to render a simple SVG and
 associate them with data.
