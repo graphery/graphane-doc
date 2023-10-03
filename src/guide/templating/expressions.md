@@ -53,7 +53,8 @@ and use them within the SVG elements.
 
 ## Calling Functions
 
-You can use functions into the expressions. The function return must be used as value for directives
+You can use functions into the expressions. The function return must be used as value for 
+directives.
 
 ```html
 <defs g-for="point of data.points()">
@@ -65,8 +66,8 @@ You can use functions into the expressions. The function return must be used as 
 
 ## Function reference
 
-In `g-on` directive you need a function reference. Commonly, you only use the function name, but 
-also you can call a function than return another function.
+In `g-on` directive it is recommended to use a function reference. As a result, commonly, you only
+use the function name, but also you can use other expressions.
 
 ```html
 <circle cx="10" 
@@ -79,5 +80,5 @@ also you can call a function than return another function.
 
 In Graphane, template expressions are *sandboxed* and have limited access. They can only access
 the `data`, `config`, `methods` and some commonly used built-in global objects such as `Math`
-and `Date`. This restricted access ensures a secure and predictable environment for evaluating
-expressions within the SVG document.
+and `Date` and other global functions. This restricted access ensures a secure and predictable
+environment for evaluating expressions within the SVG document.
