@@ -13,8 +13,8 @@
   "keywords": [],
   "author": "",
   "devDependencies": {
-    "vitepress": "^1.0.0-rc.20",
-    "shiki": "^0.14.4"
+    "vitepress": "^1.0.0-rc.21",
+    "shiki": "^0.14.5"
   },
   "type": "module"
 }
