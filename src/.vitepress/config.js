@@ -1,9 +1,13 @@
 import { defineConfig }      from 'vitepress';
-import { BUNDLED_LANGUAGES } from 'shiki'
+import { BUNDLED_LANGUAGES } from 'shiki';
+import { readFileSync }      from "fs"
 
-// Include `cs` as alias for csharp
-const html   = BUNDLED_LANGUAGES.find(lang => lang.id === 'html')
-html.aliases = html.aliases || [];
+const graphaneLanguageGrammar = JSON.parse(readFileSync("./src/.vitepress/shiki/graphane.tmLanguage.json"))
+
+const html     = BUNDLED_LANGUAGES.find(lang => lang.id === 'html')
+html.scopeName = 'source.graphane';
+html.grammar   = graphaneLanguageGrammar;
+html.aliases   = html.aliases || [];
 html.aliases.push('svg');
 
 const fullReloadAlways = {
@@ -37,15 +41,15 @@ export default defineConfig({
   ],
   // https://vitepress.dev/reference/default-theme-config
   themeConfig : {
-    logo      : {
-      light: '/img/logo/graphane.svg',
-      dark: '/img/logo/graphane.light.svg'
+    logo        : {
+      light : '/img/logo/graphane.svg',
+      dark  : '/img/logo/graphane.light.svg'
     },
-    siteTitle : false,
-    footer: {
-      message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2023 <a href="https://www.graphane.dev/"> ' +
-                 '<img src="/img/logo/graphane.svg" alt="graphane" width="120"></a>'
+    siteTitle   : false,
+    footer      : {
+      message   : 'Released under the MIT License.',
+      copyright : 'Copyright © 2023 <a href="https://www.graphane.dev/"> ' +
+                  '<img src="/img/logo/graphane.svg" alt="graphane" width="120"></a>'
     },
     search      : {
       provider : 'local'
@@ -60,7 +64,7 @@ export default defineConfig({
         ]
       },
       {link : '/examples/', text : 'Examples'},
-      {link: '#', text: '0.1.0-alpha.1'},
+      {link : '#', text : '0.1.0-alpha.1'},
     ],
     sidebar     : {
       '/guide/'                : [{
@@ -89,17 +93,22 @@ export default defineConfig({
               {link : '/guide/data/property', text : '.data property'},
               {link : '/guide/data/attribute', text : 'data attribute'},
               {link : '/guide/data/embebed', text : 'Embedded data'},
-              {link : '/guide/data/external', text : 'Load resource'},
+              {link : '/guide/data/external', text : 'Load data'},
+              {link : '/guide/data/helpers', text : 'Array helpers'},
               {link : '/guide/data/reactivity', text : 'Reactivity'},
             ]
           },
           {
             text      : 'Methods',
+            link      : '/guide/methods/',
             collapsed : true,
             items     : [
-              {link : '/guide/methods/methods-property', text : 'methods'},
-              {link : '/guide/methods/g-methods', text : 'g-methods Component'},
-              {link : '/guide/methods/external', text : 'External Methods'}
+              {link : '/guide/methods/embebed', text : 'Embedded methods'},
+              {link : '/guide/methods/external', text : 'External resource'},
+              {link : '/guide/methods/property', text : 'Property'},
+              {link : '/guide/methods/data-access', text : '<code>$.data</code>'},
+              {link : '/guide/methods/svg-access', text : '<code>$.svg</code>'},
+              {link : '/guide/methods/load', text : 'Load event'},
             ]
           },
           {
@@ -115,9 +124,9 @@ export default defineConfig({
             ]
           },
           {
-            text  : 'Appendix: SVG format',
+            text      : 'Appendix: SVG format',
             collapsed : true,
-            items : [
+            items     : [
               {link : '/guide/svg/', text : 'Introduction'},
               {link : '/guide/svg/02-SVG-structure.md', text : 'SVG structure'},
               {link : '/guide/svg/03-Basic-shapes.md', text : 'Basic Shapes'},
