@@ -70,8 +70,7 @@ export default defineConfig({
       '/guide/'                : [{
         text  : 'Guide',
         items : [
-          {link : '/guide/', text : 'Introduction'},
-          {link : '/guide/quick-start', text : 'Quick Start'},
+          {link : '/guide/', text : 'Quick Start'},
           {
             text      : 'Templating',
             link      : '/guide/templating/',

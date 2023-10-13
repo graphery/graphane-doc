@@ -2,9 +2,9 @@
 outline: deep
 ---
 
-# User Guide
+# Quick Star
 
-Graphane (is a **micro-framework** that provides designers and developers with a simple tool for
+Graphane is a **micro-framework** that provides designers and developers with a simple tool for
 creating interactive and customizable graphics, diagrams, and visualizations. It combines the
 convenience of **web components**, compatible with the most popular frameworks, a complete system of
 **templates** based in directives, and a robust, high-performance library.
@@ -18,17 +18,54 @@ actively engage with the visualizations and explore the data in a meaningful way
 In this guide, we will explain step by step how Graphane aims to simplify the process of creating
 visualizations from data.
 
-### Template
+### Load Graphane
+
+To get started, you need to include the Graphane in your HTML. This can be done by adding a script
+tag with the source pointing to the component file into the CDN:
+
+```html
+<script src="https://cdn.graphery.online/graphane/0.1.0-alpha.1/component/template.js"></script>
+```
+
+::: details Understanding the CDN path
+
+This is the detailed description of each URL part:
+
+```
+https://cdn.graphery.online/graphane/0.1.0-alpha.1/component/template.js
+|-----|--------------------|--------|-------------|---------|-----------|
+   |            |               |          |           |          |-----> filename
+   |            |               |          |           |----------------> kind
+   |            |               |          |----------------------------> version
+   |            |               |---------------------------------------> package
+   |            |-------------------------------------------------------> domain
+   |--------------------------------------------------------------------> protocol
+```
+:::
+
+Graphane runs dynamically in the browser, and does not require compiling or transpiling at
+development time.
+
+### g-template
 
 By leveraging the Graphane template web component, you can enhance your content with visually
 compelling graphics and visualizations without requiring extensive code modifications or specific
 framework dependencies.
 
-Graphane is **based on**:
-
-- [`<g-template></g-template>`](./components) the main component than include the SVG template.
+Graphane is based on `<g-template></g-template>` tag, the main component than include all other
+elements.
 
 ```html
+<g-template>
+  <!-- other elements -->
+</g-template>
+```
+
+### svg
+
+The first child is an SVG used as template.
+
+```html {2-7}
 <g-template>
   <svg viewBox="0 0 100 100">
     <defs g-for="x of 3">
@@ -51,7 +88,7 @@ Graphane is **based on**:
 
 The standard SVG format is enhanced with **attribute-based directives** that allows to generate
 visualizations in an intuitive way, focusing efforts on design and data, avoiding the need for
-complex development. Any designer with a little programming knowledge can make great data-driven 
+complex development. Any designer with a little programming knowledge can make great data-driven
 designs.
 
 - [`g-bind`](./templating/binding) (or the shorthand `:`): dynamically bind values to attributes and
@@ -67,7 +104,7 @@ We can create visualizations using SVG-based templates uploading data in CSV or 
 they will be available for use in the template directly. To load the data, we need to use the
 `script` tag indicating that it is `type="data"` and a source with `src`.
 
-```html
+```html {8}
 <g-template>
   <svg viewBox="0 0 100 100">
     <defs g-for="x of circles">
@@ -75,7 +112,7 @@ they will be available for use in the template directly. To load the data, we ne
               fill="none" stroke="black" stroke-width="1"/>
     </defs>
   </svg>
-  <script type="data" src="/data/guide.json"></script>
+  <script type="data" src="/data/circles.json"></script>
 </g-template>
 ```
 
@@ -86,74 +123,129 @@ they will be available for use in the template directly. To load the data, we ne
                fill="none" stroke="black" stroke-width="1"/>
     </defs>
   </svg>
-  <g-script type="data" src="/data/guide.json"></g-script>
+  <g-script type="data" src="/data/circles.json"></g-script>
 </g-template>
 
 In some case it is easier to include the data directly into the `script` with `type="data"`. We can
 insert CSV o JSON formats into the tag:
 
-```html
-<script type="data">
-  {
-    "circles": 3
-  }
-</script>
-```
-
-If we dynamically update the data, the template automatically is processed and the new graph is
-created again. The reactivity is completed, we can update all data in deeps without problems.
-
-```html
-<g-template id="reactive">
+```html {8-12}
+<g-template>
   <svg viewBox="0 0 100 100">
     <defs g-for="x of circles">
-      <circle cx="50" cy="50" g-bind:r="(x + 1) * (50 / circles)"
+      <circle cx="50" cy="50" g-bind:r="(x + 1) * (48 / circles)"
               fill="none" stroke="black" stroke-width="1"/>
     </defs>
   </svg>
-  <script type="data" src="/data/guide.json"></script>
+  <script type="data">
+    {
+      "circles": 5
+    }
+  </script>
 </g-template>
 ```
 
-```html
-<label>Update data.circles:
-  <input type="range" value="3" min="0" max="25"
-         oninput="document.querySelector('#reactive').data.circles = Number(this.value)">
-</label>
+<g-template>
+  <svg viewBox="0 0 100 100">
+    <defs g-for="x of circles">
+       <circle cx="50" cy="50" g-bind:r="(x + 1) * (48 / circles)" 
+               fill="none" stroke="black" stroke-width="1"/>
+    </defs>
+  </svg>
+  <g-script type="data">{
+    circles: 5
+  }</g-script>
+</g-template>
+
+### Methods
+
+You can add methods for event handling with a simple `<script type="methods"></script>`. It is
+possible to include the code directly in the tag or linked with the scr attribute. All functions
+defined into this tag are available from the template.
+
+```html {13-22}
+<g-template id="reactive">
+  <svg viewBox="0 0 100 100" g-on:click="update" style="cursor: pointer">
+    <defs g-for="x of circles">
+      <circle cx="50" cy="50" g-bind:r="(x + 1) * (48 / circles)"
+              fill="none" stroke="black" stroke-width="1"/>
+    </defs>
+  </svg>
+  <script type="data">
+    {
+      "circles": 5
+    }
+  </script>
+  <script type="methods">
+    function update(evt) {
+      evt.preventDefault();
+      if (evt.ctrlKey) {
+        $.data.circles--;
+      } else {
+        $.data.circles++;
+      }
+    }
+  </script>
+</g-template>
+s
+<p>click add circles, ctrl+click reduces circles</p>
 ```
 
 <g-template id="reactive">
-  <svg viewBox="0 0 100 100">
+  <svg viewBox="0 0 100 100" g-on:click="update" style="cursor: pointer">
     <defs g-for="x of circles">
       <circle cx="50" cy="50" g-bind:r="(x + 1) * (48 / circles)"
                fill="none" stroke="black" stroke-width="1"/>
     </defs>
   </svg>
-  <g-script type="data" src="/data/guide.json"></g-script>
+  <g-script type="data">
+    {
+      "circles": 5
+    }
+  </g-script>
+  <g-script type="methods">
+    function update(evt) {
+      evt.preventDefault();
+      if (evt.ctrlKey) {
+        $.data.circles--;
+      } else {
+        $.data.circles++;
+      }
+    }
+  </g-script>
 </g-template>
-
-<label>Update data.circles:
-<input type="range" value="3" min="0" max="25"
-oninput="document.querySelector('#reactive').data.circles = Number(this.value)">
-</label>
+<p style="font-size: small">click add circles, ctrl+click reduces circles</p>
 
 
-### Imperative
+## Use external resources
 
-When the template system is not enough, you can use **Javascript functions supported by the Graphane
-SVG library**. The API of the library is very similar to the SVG structure and is easy to use. If
-you know the SVG format, you know the Graphane API. If you learn the Graphane API, you learn the SVG
-format.
+To link the external resources you can use attributes of `g-template` component.
+
+- The `svg-src` attribute specifies the path to the SVG file.
+- The `data-src` attribute indicates the location of the data source.
+- The `methods-src` attribute indicates the location of methods.
+
+Here is the previous example with external resources:
+
+```html {2-4}
+<g-template
+  svg-src="/svg/circles.svg"
+  data-src="/data/circles.json"
+  methods-src="/methods/circles.js">
+</g-template>
+<p>click add circles, ctrl+click reduces circles</p>
+```
+
+<g-template svg-src="/svg/circles.svg"
+            data-src="/data/circles.json"
+            methods-src="/methods/circles.js"></g-template>
+<p style="font-size: small">click add circles, ctrl+click reduces circles</p>
+
+That's it! You've completed the quick start guide for using Graphane to render a simple SVG and
+associate them with data.
 
 ### Integration
 
 Graphane is designed as a web component, making **it easy to integrate and reuse within popular web
 frameworks**. Graphane microframework is designed to have a lightweight footprint, enabling you to
 incorporate dynamic SVG functionality without adding significant overhead to your projects.
-
-### Extensibility
-
-Graphane is highly extensible, allowing developers to **customize and extend its functionality to
-suit their specific needs**. The framework provides a rich set of APIs and configuration options,
-enabling you to fine-tune every aspect of your graphs and charts. Graphane empowers you with the
-flexibility to create visually unique and engaging data visualizations.
