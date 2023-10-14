@@ -14,7 +14,7 @@ element.
 
 The basic syntax for `g-for` is as follows:
 
-```html
+```html {1,5}
 <defs g-for="item of items">
   <circle :cx="item.x" 
           :cy="item.y" 
@@ -29,7 +29,7 @@ over (`items` in this example).
 You can also access the index of the current iteration by using an optional second parameter in the
 `g-for` syntax:
 
-```html
+```html {1,5}
 <defs g-for="(item, index) of items">
   <circle :cx="item.x" 
           :cy="item.y"
@@ -39,7 +39,7 @@ You can also access the index of the current iteration by using an optional seco
 
 Additionally, `g-for` supports the iteration over a range of numbers:
 
-```html
+```html {1,3}
 <defs g-for="n of 10">
   <circle cx="10" cy="10" r="5"/>
 </defs>
@@ -47,7 +47,7 @@ Additionally, `g-for` supports the iteration over a range of numbers:
 
 This example will render 10 circle elements:
 
-```html
+```html {3,7}
 <g-template>
   <svg viewBox="0 0 100 100">
     <defs g-for="n of 10">

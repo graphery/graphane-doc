@@ -21,7 +21,7 @@ SVG standard format with new directives. Data binding makes SVG graphics dynamic
 able to bind data from the data sources to the SVG. When the data changes, the SVG is automatically
 updated to reflect the changes in the rendered SVG.
 
-```html
+```html {2-4}
 <g-template>
   <svg>
     <!-- TEMPLATE -->

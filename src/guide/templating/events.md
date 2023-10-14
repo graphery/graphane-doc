@@ -4,7 +4,7 @@ outline: deep
 
 # Events
 
-Graphane Templating would enable the creation of interactive SVG graphics by supporting event
+The Graphane templating would enable the creation of interactive SVG graphics by supporting event
 handling. Developers could attach event listeners to SVG elements and respond to user interactions,
 such as clicks, hovers, or touches.
 
@@ -13,7 +13,7 @@ such as clicks, hovers, or touches.
 The `g-on` expression must be a function reference, a function call or a direct expression. In this
 example displays a message when the rectangle is clicked.
 
-```html
+```html {4,6}
 <g-template>
   <svg viewBox="0 0 100 100" style="cursor: pointer">
     <rect x="10" y="10" width="80" height="80" fill="blue"
@@ -38,7 +38,7 @@ Commonly we use `<script type="method"></script>` for add methods to the templat
 script includes functions than can be used as expressions in `g-on` directive. Please see
 the [methods](../methods/index.md) section for more information.
 
-```html
+```html {4,6,8-12}
 <g-template>
   <svg viewBox="0 0 100 100" style="cursor: pointer">
     <rect x="10" y="10" width="80" height="80" fill="blue"
@@ -46,11 +46,11 @@ the [methods](../methods/index.md) section for more information.
     <text x="18" y="52" fill="white"
           g-on:click="showAlert()">click here</text>
   </svg>
-  <g-script type="methods">
+  <script type="methods">
     function showAlert() {
       alert(`hello`);
     }
-  </g-script>
+  </script>
 </g-template>
 ```
 

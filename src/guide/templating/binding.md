@@ -4,10 +4,11 @@ outline: deep
 
 # Binding
 
-## Attributes
-
 The `g-bind` directive, also known as the shorthand `:` syntax, is a fundamental directive in
-Graphane that enables you to bind values or expressions to SVG attributes in your templates.
+Graphane that enables you to bind values or expressions to SVG attributes, styles and classes in 
+your templates.
+
+## Attributes
 
 The `g-bind` directive allows you to dynamically associate data to the SVG attributes. This enables
 you to update the values and update the attributes automatically.
@@ -24,7 +25,7 @@ binds the `r` attribute of the circle element to that value. When `size` changes
 component, the radius attribute will be automatically updated.
 
 
-```html
+```html {3}
 <g-template data="size: 25;" id="circle">
   <svg viewBox="0 0 100 100">
     <circle g-bind:r="size" cx="50" cy="50" fill="red"/>
@@ -56,11 +57,11 @@ oninput="document.querySelector('#circle').data.size = this.value">
 
 ## Style
 
-When using `g-bind`, or the shorthand `:`, with the `style` attribute, you can dynamically bind an
-object containing CSS styles to an element. The keys of the object represent the CSS properties, and
-the values represent the corresponding values for those properties.
+When using `g-bind` with the `style` attribute, you can dynamically bind an object containing CSS
+styles to an element. The keys of the object represent the CSS properties, and the values represent
+the corresponding values for those properties.
 
-```html
+```html {7}
 <g-template>
   <svg viewBox="0 0 100 100">
     <defs g-for="value of data">
@@ -98,7 +99,7 @@ Similarly, `g-bind`, or the shorthand `:`, can be used with the class attribute 
 CSS classes to an element based on the values in the `<g-template>` component data. You can bind a single
 class or an array of classes.
 
-```html
+```html {18}
 <g-template>
   <svg viewBox="0 0 100 100">
     <style>

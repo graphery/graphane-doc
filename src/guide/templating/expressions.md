@@ -17,7 +17,7 @@ With simple data binding, you can use the value of a data property in the SVG te
 with `g-bind` or using the shorthand colon notation (`:`), you can bind the property value to SVG
 elements.
 
-```html
+```html {4}
 <circle cx="50" 
         cy="50" 
         r="25"
@@ -30,7 +30,7 @@ You can use conditional expressions to conditionally render SVG elements based o
 conditions. In Graphane, you can use the ternary operator condition `? ok : ko` or the boolean
 operators `&&` and `||` to define conditional expressions. For example:
 
-```html
+```html {4}
 <circle cx="50" 
         cy="50" 
         r="25"
@@ -43,7 +43,7 @@ In Graphane, you can use the `g-for` directive to loop over an array and generat
 dynamically. With JavaScript destructuring, you can extract specific values from the array elements
 and use them within the SVG elements.
 
-```html
+```html {1}
 <defs g-for="({ x, y }) of data.points">
   <circle r="5"
           :cx="x" 
@@ -56,7 +56,7 @@ and use them within the SVG elements.
 You can use functions into the expressions. The function return must be used as value for 
 directives.
 
-```html
+```html {1}
 <defs g-for="point of data.points()">
   <circle :cx="point.x" 
           :cy="point.y" 
@@ -69,7 +69,7 @@ directives.
 In `g-on` directive it is recommended to use a function reference. As a result, commonly, you only
 use the function name, but also you can use other expressions.
 
-```html
+```html {4}
 <circle cx="10" 
         cy="10" 
         r="5"
@@ -78,7 +78,7 @@ use the function name, but also you can use other expressions.
 
 ## Restricted access
 
-In Graphane, template expressions are *sandboxed* and have limited access. They can only access
+In Graphane, the template expressions are *sandboxed* and have limited access. They can only access
 the `data`, `config`, `methods` and some commonly used built-in global objects such as `Math`
 and `Date` and other global functions. This restricted access ensures a secure and predictable
 environment for evaluating expressions within the SVG document.
