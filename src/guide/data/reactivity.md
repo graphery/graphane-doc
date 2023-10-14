@@ -20,8 +20,8 @@ and old values and updates the affected visualization accordingly.
 ```html
 <g-template>
   <svg viewBox="0 0 100 100" style="border: 1px solid grey; width: 250px; height: 250px">
-    <defs g-for="{x,y, color} of data">
-      <circle :cx="x" :cy="y" r="5" :fill="color" style="stroke:grey; stroke-width: 0.5"/>
+    <defs g-for="{x, y, color} of data">
+      <circle r="5" :cx="x" :cy="y" :fill="color" style="stroke:grey; stroke-width: 0.5"/>
     </defs>
   </svg>
   <script type="data">

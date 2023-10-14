@@ -9,7 +9,7 @@ tag: CSV, JSON, and JS. The type of format is directly deduced from the content.
 
 - Example using CSV:
 
-    ```html
+    ```html {2-5}
     <script type="data">
       "x";"y";"radix";"color"
       20;20;20;"red"
@@ -20,26 +20,26 @@ tag: CSV, JSON, and JS. The type of format is directly deduced from the content.
 
 - Example using JSON:
 
-    ```html
+    ```html {2-6}
     <script type="data">
     [
       {"x": 20, "y": 20, "radix": 20, "color": "red"},
       {"x": 45, "y": 45, "radix": 30, "color": "blue"},
       {"x": 80, "y": 80, "radix": 10, "color": "green"}
     ]
-    </script type="data">
+    </script>
     ```
 
-- Example using JS (JavaScript object):
+- Example using JavaScript object (it is a simple variation of JSON):
 
-    ```html
+    ```html {2-6}
     <script type="data">
     [
       {x: 20, y: 20, radix: 20, color: "red"},
       {x: 45, y: 45, radix: 30, color: "blue"},
       {x: 80, y: 80, radix: 10, color: "green"},
     ]
-    </script type="data">
+    </script>
     ```
 
 ::: warning
@@ -52,7 +52,7 @@ use alternatively `<g-script type="data"></g-script>`.
   20;20;20;"red"
   45;45;30;"blue"
   80;80;10;"green"
-</g-script type="data">
+</g-script>
 ```
 :::
 

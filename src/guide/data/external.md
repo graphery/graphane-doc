@@ -2,13 +2,13 @@
 outline: deep
 ---
 
-# Load resource
+# Load data
 
 In production environments or when accessing remote servers, the `<script type="data">`
 with the `src` attribute makes it very easy to indicate the source of the data. By utilizing these
 attributes, you can seamlessly incorporate external data into their visualization.
 
-```html
+```html {10}
 <g-template>
   <svg viewBox="0 0 100 100">
     <defs g-for="value of data">
@@ -39,10 +39,11 @@ To streamline the process further, it is even possible to forego the explicit us
 tag. Instead, designer and developers can directly include the `data-src` properties within
 the `g-template` component itself, simplifying the overall structure of the code.
 
-```html
-<g-template svg-src="/svg/circles.svg" data-src="/data/circles.csv"></g-template>
+```html {3}
+<g-template 
+  svg-src="/svg/circles.svg" 
+  data-src="/data/circles.csv">
+</g-template>
 ```
-
-<g-template svg-src="/svg/circles.svg" data-src="/data/circles.csv"></g-template>
 
 

@@ -17,15 +17,15 @@ keeping the view up-to-date at all times.
   </svg>
 </g-template>
 ```
-```html
+```html {4,8}
 <p>
   <label>
     width: <input type="range" min="0" max="100" value="80"
-                  oninput="document.querySelector('#rexample').data.width=this.value">
+                  oninput="document.querySelector('#example').data.width = this.value">
   </label>
   <label>
     height: <input type="range" min="0" max="100" value="80"
-                   oninput="document.querySelector('#example').data.height=this.value">
+                   oninput="document.querySelector('#example').data.height = this.value">
   </label>
 </p>
 ```

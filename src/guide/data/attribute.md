@@ -8,8 +8,7 @@ In the `data` attribute you can directly include data with format `key: value` s
 ` or `;`. It is useful with basic visualizations, like some of the examples we use in this guide,
 but is not sufficient when you want to make more complex situations.
 
-```html
-
+```html {1}
 <g-template data="width: 80, height: 80">
   <svg viewBox="0 0 100 100">
     <rect x="10" y="10" fill="green"
