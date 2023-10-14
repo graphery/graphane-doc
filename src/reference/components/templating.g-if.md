@@ -12,17 +12,17 @@ expression.
 ## Example
 
 ```html
-<g-svg data="one: true, two: false">
+<g-template data="one: true, two: false">
   <svg viewBox="0 0 100 100">
     <circle g-if="one" cx="30" cy="50" r="30" fill="green"/>
     <circle g-if="two" cx="70" cy="50" r="30" fill="red"/>
   </svg>
-</g-svg>
+</g-template>
 ```
 
-<g-svg data="one: true, two: false">
+<g-template data="one: true, two: false">
   <svg viewBox="0 0 100 100">
     <circle g-if="one" cx="30" cy="50" r="30" fill="green"/>
     <circle g-if="two" cx="70" cy="50" r="30" fill="red"/>
   </svg>
-</g-svg>
+</g-template>

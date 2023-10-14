@@ -17,7 +17,7 @@ outline: deep
 ## Example
 
 ```html
-<g-svg>
+<g-template>
   <svg viewBox="0 0 100 100">
     <rect x="1" y="1" width="98" height="98" stroke="black" stroke-width="2" fill="white"
           style="cursor: pointer"
@@ -30,10 +30,10 @@ outline: deep
       alert('hello world');
     }
   }</g-methods>
-</g-svg>
+</g-template>
 ```
 
-<g-svg>
+<g-template>
   <svg viewBox="0 0 100 100">
     <rect x="1" y="1" width="98" height="98" stroke="black" stroke-width="2" fill="white"
           style="cursor: pointer"
@@ -46,4 +46,4 @@ outline: deep
       alert('hello world');
     }
   }</g-methods>
-</g-svg>
+</g-template>

@@ -12,8 +12,8 @@ The first step is to define in `path`:
 ::: tab Javascript
 ```js
 import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
-const svg  = gySVG ().viewBox (0, 0, 650, 500).width (325).height (300);
-const path = svg.add ('path').fill ('none').stroke ('lightgrey').stroke_width (3);
+gySVG ().viewBox (0, 0, 650, 500).width (325).height (300);
+const path = $.svg.add ('path').fill ('none').stroke ('lightgrey').stroke_width (3);
 path.d.M (317.5, 270.5)
       .c (-3.1, -16.6, -24.4, -28.3, -45.5, -18.5)
       .c (-27, 11.5, -29.7, 43.5, -15.5, 66.6)
@@ -23,15 +23,15 @@ path.d.M (317.5, 270.5)
       .C (513.3, 84.7, 269.6, -17.4, 134.2, 109.3)
       .C (32.2, 195.6, 26.9, 361.4, 116.5, 458.6)
       .c (160.6, 185.7, 476, 55.9, 480.5, -183.5);
-svg.attachTo('#example1')
+$.svg.attachTo('#example1')
 ```
 :::
 ::: tab result
 <div id="example1"></div>
 <script type="module">
   import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
-  const svg  = gySVG ().viewBox (0, 0, 650, 500).width (325).height (300);
-  const path = svg.add ('path').fill ('none').stroke ('lightgrey').stroke_width (3);
+  gySVG ().viewBox (0, 0, 650, 500).width (325).height (300);
+  const path = $.svg.add ('path').fill ('none').stroke ('lightgrey').stroke_width (3);
   path.d.M (317.5, 270.5)
         .c (-3.1, -16.6, -24.4, -28.3, -45.5, -18.5)
         .c (-27, 11.5, -29.7, 43.5, -15.5, 66.6)
@@ -41,7 +41,7 @@ svg.attachTo('#example1')
         .C (513.3, 84.7, 269.6, -17.4, 134.2, 109.3)
         .C (32.2, 195.6, 26.9, 361.4, 116.5, 458.6)
         .c (160.6, 185.7, 476, 55.9, 480.5, -183.5);
-  svg.attachTo('#example1')
+  $.svg.attachTo('#example1')
 </script>
 :::
 ::: tab "svg source"
@@ -65,8 +65,8 @@ the 'path' that we have created previously.
 ::: tab Javascript
 ```js
 import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
-const svg = gySVG ().viewBox (0, 0, 650, 500).width (325).height (300)
-const path = svg.add('path').fill('none').stroke('lightgrey').stroke_width(3);
+gySVG ().viewBox (0, 0, 650, 500).width (325).height (300)
+const path = $.svg.add('path').fill('none').stroke('lightgrey').stroke_width(3);
   path.d.M (317.5, 270.5)
         .c (-3.1, -16.6, -24.4, -28.3, -45.5, -18.5)
         .c (-27, 11.5, -29.7, 43.5, -15.5, 66.6)
@@ -76,15 +76,15 @@ const path = svg.add('path').fill('none').stroke('lightgrey').stroke_width(3);
         .C (513.3, 84.7, 269.6, -17.4, 134.2, 109.3)
         .C (32.2, 195.6, 26.9, 361.4, 116.5, 458.6)
         .c (160.6, 185.7, 476, 55.9, 480.5, -183.5);
-svg.attachTo('#example2')
+$.svg.attachTo('#example2')
 ```
 :::
 ::: tab result
 <div id="example2"></div>
 <script type="module">
   import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
-  const svg = gySVG ().viewBox (0, 0, 650, 500).width (325).height (300)
-  const path = svg.add('path').fill('none').stroke('lightgrey').stroke_width(3);
+  gySVG ().viewBox (0, 0, 650, 500).width (325).height (300)
+  const path = $.svg.add('path').fill('none').stroke('lightgrey').stroke_width(3);
   path.d.M (317.5, 270.5)
         .c (-3.1, -16.6, -24.4, -28.3, -45.5, -18.5)
         .c (-27, 11.5, -29.7, 43.5, -15.5, 66.6)
@@ -94,13 +94,13 @@ svg.attachTo('#example2')
         .C (513.3, 84.7, 269.6, -17.4, 134.2, 109.3)
         .C (32.2, 195.6, 26.9, 361.4, 116.5, 458.6)
         .c (160.6, 185.7, 476, 55.9, 480.5, -183.5);
-    svg.add('text').style.font_family('sans-serif').font_size('22px').fill('red').stroke('none')
+    $.svg.add('text').style.font_family('sans-serif').font_size('22px').fill('red').stroke('none')
   .add('textPath').href(path.ref())
   .content(`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit
             pellentesque orci in vehicula. Etiam at nibh quis nunc iaculis accumsan. Morbi
             tristique suscipit ante. Pellentesque tincidunt, lorem sed iaculis faucibus, libero
             enim condimentum enim, sed blandit urna felis vel massa.`);
-  svg.attachTo ('#example2');
+  $.svg.attachTo ('#example2');
 </script>
 :::
 ::: tab "svg source"
@@ -131,8 +131,8 @@ Finally, we can hide the `path`, including it in a `defs` element.
 ::: tab Javascript
 ```js
 import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
-const svg = gySVG ().viewBox (0, 0, 650, 500).width (325).height (300)
-const path = svg.add('defs').add('path');
+gySVG ().viewBox (0, 0, 650, 500).width (325).height (300)
+const path = $.svg.add('defs').add('path');
   path.d.M (317.5, 270.5)
         .c (-3.1, -16.6, -24.4, -28.3, -45.5, -18.5)
         .c (-27, 11.5, -29.7, 43.5, -15.5, 66.6)
@@ -142,21 +142,21 @@ const path = svg.add('defs').add('path');
         .C (513.3, 84.7, 269.6, -17.4, 134.2, 109.3)
         .C (32.2, 195.6, 26.9, 361.4, 116.5, 458.6)
         .c (160.6, 185.7, 476, 55.9, 480.5, -183.5);
-  svg.add('text').style.font_family('sans-serif').font_size('22px').fill('red').stroke('none')
+  $.svg.add('text').style.font_family('sans-serif').font_size('22px').fill('red').stroke('none')
      .add('textPath').href(path.ref())
      .content(`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit
                pellentesque orci in vehicula. Etiam at nibh quis nunc iaculis accumsan. Morbi
               tristique suscipit ante. Pellentesque tincidunt, lorem sed iaculis faucibus, libero
               enim condimentum enim, sed blandit urna felis vel massa.`);
-  svg.attachTo ('#example3');
+  $.svg.attachTo ('#example3');
 ```
 :::
 ::: tab result
 <div id="example3"></div>
 <script type="module">
   import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
-  const svg = gySVG ().viewBox (0, 0, 650, 500).width (325).height (300)
-  const path = svg.add('defs').add ('path');
+  gySVG ().viewBox (0, 0, 650, 500).width (325).height (300)
+  const path = $.svg.add('defs').add ('path');
   path.d.M(317.5,270.5)
       .c(-3.1,-16.6,-24.4,-28.3,-45.5,-18.5)
       .c(-27,11.5,-29.7,43.5,-15.5,66.6)
@@ -166,13 +166,13 @@ const path = svg.add('defs').add('path');
       .C(513.3,84.7,269.6,-17.4,134.2,109.3)
       .C(32.2,195.6,26.9,361.4,116.5,458.6)
       .c(160.6,185.7,476,55.9,480.5,-183.5);
-  svg.add('text').style.font_family('sans-serif').font_size('22px').fill('red').stroke('none')
+  $.svg.add('text').style.font_family('sans-serif').font_size('22px').fill('red').stroke('none')
      .add('textPath').href(path.ref())
      .content(`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam suscipit
                pellentesque orci in vehicula. Etiam at nibh quis nunc iaculis accumsan. Morbi
               tristique suscipit ante. Pellentesque tincidunt, lorem sed iaculis faucibus, libero
               enim condimentum enim, sed blandit urna felis vel massa.`);
-  svg.attachTo ('#example3');
+  $.svg.attachTo ('#example3');
 </script>
 :::
 ::: tab "svg source"
@@ -210,22 +210,22 @@ region in which the element's content will be drawn. Any area outside the bounda
 ::: tab Javascript
 ```js
 import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
-const svg    = gySVG ().viewBox (0, 0, 600, 600).width (300).height (300);
-const clip   = svg.add ('defs').add ('clipPath');
+gySVG ().viewBox (0, 0, 600, 600).width (300).height (300);
+const clip   = $.svg.add ('defs').add ('clipPath');
 const rect   = clip.add ('rect').x (300).y (0).width (300).height (600);
-const circle = svg.add ('circle').cx (300).cy (300).r (300).fill ('red').clip_path (clip.url ());
-svg.attachTo ('#example4');
+const circle = $.svg.add ('circle').cx (300).cy (300).r (300).fill ('red').clip_path (clip.url ());
+$.svg.attachTo ('#example4');
 ```
 :::
 ::: tab result
 <div id="example4"></div>
 <script type="module">
   import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
-  const svg    = gySVG ().viewBox (0, 0, 600, 600).width (300).height (300);
-  const clip   = svg.add ('defs').add ('clipPath');
+  gySVG ().viewBox (0, 0, 600, 600).width (300).height (300);
+  const clip   = $.svg.add ('defs').add ('clipPath');
   const rect   = clip.add ('rect').x (300).y (0).width (300).height (600);
-  const circle = svg.add ('circle').cx (300).cy (300).r (300).fill ('red').clip_path (clip.url ());
-  svg.attachTo ('#example4');
+  const circle = $.svg.add ('circle').cx (300).cy (300).r (300).fill ('red').clip_path (clip.url ());
+  $.svg.attachTo ('#example4');
 </script>
 :::
 ::: tab "svg source"

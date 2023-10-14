@@ -5,7 +5,7 @@ Model (DOM). The DOM not only supports HTML but also endorses the SVG standard n
 result, we can manipulate the SVG inserted in the DOM with the same methods used to manage any
 other element into the DOM. However, the SVG format has some specific features that require some
 particular methods and properties. Next, we will review how the details that make up the SVG can
-be handled and some specific methods and restrictions of the SVG.
+be handled and some specific methods and restrictions of the $.svg.
 
 ## The SVG tree
 
@@ -52,9 +52,9 @@ by each line:
 :::: tabs :options="{ useUrlFragment: false }" 
 ::: tab javascript
 ```js
-const svg        = gySVG ().viewBox (0, 0, 510, 510).width (510).height (510);
-const horizontal = svg.add ('g').stroke_width (5).stroke ('red');
-const vertical   = svg.add ('g').stroke_width (5).stroke ('blue');
+gySVG ().viewBox (0, 0, 510, 510).width (510).height (510);
+const horizontal = $.svg.add ('g').stroke_width (5).stroke ('red');
+const vertical   = $.svg.add ('g').stroke_width (5).stroke ('blue');
 
 for (let n = 2.5, l = 0; n <= 510; n += 50, l++) {
   const line = horizontal.add ('line').x1 (n).y1 (0).x2 (n).y2 (500);
@@ -71,9 +71,9 @@ for (let n = 2.5, l = 0; n <= 510; n += 50, l++) {
 <div id="example1"></div>
 <script type="module">
   import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
-  const svg        = gySVG ().viewBox (0, 0, 510, 510).width (510).height (510);
-  const horizontal = svg.add ('g').stroke_width (5).stroke ('red');
-  const vertical   = svg.add ('g').stroke_width (5).stroke ('blue');
+  gySVG ().viewBox (0, 0, 510, 510).width (510).height (510);
+  const horizontal = $.svg.add ('g').stroke_width (5).stroke ('red');
+  const vertical   = $.svg.add ('g').stroke_width (5).stroke ('blue');
   for (let n = 2.5, l = 0; n <= 510; n += 50, l++) {
     const line = horizontal.add ('line').x1 (n).y1 (0).x2 (n).y2 (500);
     line.add ('title').content ('vertical line nº ' + l);
@@ -82,7 +82,7 @@ for (let n = 2.5, l = 0; n <= 510; n += 50, l++) {
     const line = vertical.add ('line').x1 (0).y1 (n).x2 (505).y2 (n);
     line.add ('title').content ('horizontal line nº ' + l);
   }
-  svg.attachTo ('#example1');
+  $.svg.attachTo ('#example1');
 </script>
 :::
 ::: tab "svg source"
@@ -168,7 +168,7 @@ for (let n = 2.5, l = 0; n <= 510; n += 50, l++) {
 
 To understand how Graphane library hand the SVG DOM, we will cover an existing SVG and manage the 
 elements easily with its specific methods. You can use `document.querySelector()` with an `id` 
-or other CSS selectors for getting the element and pass this to the `gySVG()` constructor.
+or other CSS selectors for getting the element and pass this to the `$.svg` constructor.
 
 This is the example SVG:
 
@@ -191,12 +191,12 @@ This is the example SVG:
 </svg>
  ``` 
 
-We get the element and call to `gySVG()`:
+We get the element and call to `$.svg`:
 
 ```js
 import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
 
-const svg = gySVG(document.querySelector('#example'));
+gySVG(document.querySelector('#example'));
 ```
 
 Now we can manage the SVG tree very easily.
@@ -208,7 +208,7 @@ array of objects. Each object is a gySVG wrapped over the SVG element with all m
 in the library. 
 
 ```js
-for (let elLevel1 of svg.children()) {
+for (let elLevel1 of $.svg.children()) {
   for (let elLevel2 of elLevel1.children()) {
     //...
   }
@@ -222,7 +222,7 @@ synonym of `.parentElement()`). This return an object created by gySVG over the 
 element and has all methods defined in the library.
 
 ```js
-const line = svg.querySelector('#line2');
+const line = $.svg.querySelector('#line2');
 const g    = line.parent();
 //...
 ```
@@ -234,7 +234,7 @@ The next and previous element in the same level can be taking with `.next()` (sy
 other library method, return a wrapped object over the original element.
 
 ```js
-const line1 = svg.first().first().first().first();
+const line1 = $.svg.first().first().first().first();
 const g     = line1.next();
 //...
 ```
@@ -249,13 +249,13 @@ You can use all query selectors available without restrictions for searching dee
 SVG structure.
 
 ```js
-const lines = svg.querySelectorAll('line');
+const lines = $.svg.querySelectorAll('line');
 ```
 
 ## Create and attach elements
 
 It is possible to define a nested element without attaching it directly. For this purpose you need
-to use the `gySVG()` constructor with the tag name as parameter:
+to use the `$.svg` constructor with the tag name as parameter:
 
 ```js
 const newLine = gySVG('line');
@@ -271,8 +271,8 @@ It's possible to move elements between containers, for example, move the `#line1
 than define a `stroke_array()`:
 
 ```js
-const g    = svg.querySelector('g > g > g > g');
-const line = svg.querySelector('#line1');
+const g    = $.svg.querySelector('g > g > g > g');
+const line = $.svg.querySelector('#line1');
 line.attachTo(g);
 ``` 
 
@@ -282,7 +282,7 @@ With the method `.cloneNode()` is possible copy an element and obtain a new un a
 This new element must be attached into any SVG element with `.attachTo()`.  
 
 ```js
-const line1 = svg.add('line');
+const line1 = $.svg.add('line');
 const line2 = line1.clone();
 line.attachTo(svg);
 ```
@@ -295,4 +295,4 @@ If you need to un attach an element, you can use `.remove()` method:
 newLine.remove();
 ```
 
-The element exist after this operation, but it's removed from the SVG.
+The element exist after this operation, but it's removed from the $.svg.

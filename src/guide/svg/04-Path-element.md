@@ -31,18 +31,18 @@ to them.
 </svg>
 ```
 ```js
-const svg  = gySVG().viewBox('0 0 512 512').width(75).height(75);
-const path = svg.add('path')
-                .d.M(462, 62)
-                  .c(-54, -46, -136, -38, -186, 13)
-                  .l(-19, 20, -19, -20)
-                  .c(-50, -51, -131, -60, -186, -13)
-                  .c(-62, 53, -66, 149, -9, 207)
-                  .l(193, 199)
-                  .c(12, 12, 32, 12, 45, 0)
-                  .l(193, -199)
-                  .c(54, -55, 52, -154, -13, -207)
-                  .Z();
+$.svg.viewBox('0 0 512 512').width(75).height(75);
+const path = $.svg.add('path')
+                  .d.M(462, 62)
+                    .c(-54, -46, -136, -38, -186, 13)
+                    .l(-19, 20, -19, -20)
+                    .c(-50, -51, -131, -60, -186, -13)
+                    .c(-62, 53, -66, 149, -9, 207)
+                    .l(193, 199)
+                    .c(12, 12, 32, 12, 45, 0)
+                    .l(193, -199)
+                    .c(54, -55, 52, -154, -13, -207)
+                    .Z();
 path.fill('#00D800');
 ```
 :::
@@ -86,8 +86,8 @@ treated as path points, and a straight line is drawn between these points.
 </svg>
 ```
 ```js
-const svg  = gySVG().viewBox('0 0 100 100').width(75).height(75);
-const path = svg.add('path').fill('none').stroke('#0000D8').stroke_width(5)
+$.svg.viewBox('0 0 100 100').width(75).height(75);
+const path = $.svg.add('path').fill('none').stroke('#0000D8').stroke_width(5)
                 .d.M(10, 10, 90, 10, 10, 50, 90, 50);
 path.fill('none');
 ```
@@ -112,8 +112,8 @@ from that point to the initial point.
 </svg>
 ```
 ```js
-const svg  = gySVG().viewBox('0 0 100 100').width(75).height(75);
-const path = svg.add('path').fill('none').stroke('#0000D8').stroke_width(5)
+$.svg.viewBox('0 0 100 100').width(75).height(75);
+const path = $.svg.add('path').fill('none').stroke('#0000D8').stroke_width(5)
                 .d.M(10, 10, 90, 10, 10, 50, 90, 50).Z();
 path.fill('none');
 ```
@@ -136,8 +136,8 @@ The lineto commands (`L x, y`, `l x, y`), horizontal lineto (`H x`, `h x`), and 
 </svg>
 ```
 ```js
-const svg  = gySVG().viewBox('0 0 100 100').width(75).height(75);
-const path = svg.add('path').fill('#00D800');
+$.svg.viewBox('0 0 100 100').width(75).height(75);
+const path = $.svg.add('path').fill('#00D800');
 path.d
     .M(50, 0)
     .L(100, 30)
@@ -171,8 +171,8 @@ by `x1` and `y1` and the end control point is specified by `x2` and `y2`.
 </svg>
 ```
 ```js
-const svg = gySVG().viewBox('0 0 100 100').width(75).height(75);
-const path = svg.add('path').fill('none').stroke('#0000D8').stroke_width(5)
+$.svg.viewBox('0 0 100 100').width(75).height(75);
+const path = $.svg.add('path').fill('none').stroke('#0000D8').stroke_width(5)
                 .d.M(5,5)
                   .C(5,95, 95,95, 90,5)
                   .Z();
@@ -198,8 +198,8 @@ commands are similar to Cubic Bézier curves except that they only have one cont
 </svg>
 ```
 ```js
-const svg = gySVG().viewBox('0 0 100 100').width(75).height(75);
-const path = svg.add('path').fill('none').stroke('0000D8').stroke_width(5)
+$.svg.viewBox('0 0 100 100').width(75).height(75);
+const path = $.svg.add('path').fill('none').stroke('0000D8').stroke_width(5)
                 .d.M(5,5)
                   .Q(95,95, 90,5)
                   .Z();
@@ -235,8 +235,8 @@ values:
 </svg>
 ```
 ```js
-const svg  = gySVG().viewBox('0 0 100 100').width(75).height(75);
-const path = svg.add('path').fill('none').stroke('#0000D8').stroke_width(5)
+$.svg.viewBox('0 0 100 100').width(75).height(75);
+const path = $.svg.add('path').fill('none').stroke('#0000D8').stroke_width(5)
                 .d.M(10,50)
                   .a(15, 10, 0, 0, 1, 80, 0)
                   .Z();

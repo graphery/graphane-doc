@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# `<g-svg src="file.svg"></g-svg>` 
+# `<g-template src="file.svg"></g-template>` 
 
 - **Attribute**: `src`
 
@@ -15,7 +15,7 @@ outline: deep
 ::: code-group
 
 ```html
-<g-svg data="value: 10" src="/external.svg"></g-svg>
+<g-template data="value: 10" src="/external.svg"></g-template>
 ```
 
 ```svg
@@ -28,4 +28,4 @@ outline: deep
 
 :::
 
-<g-svg data="value: 10" src="/external.svg"></g-svg>
+<g-template data="value: 10" src="/external.svg"></g-template>

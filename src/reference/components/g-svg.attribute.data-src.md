@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# `<g-svg data-src="data.csv" data-type="csv"></g-svg>` 
+# `<g-template data-src="data.csv" data-type="csv"></g-template>` 
 
 - **Attribute**: `data-source`
 
@@ -24,7 +24,7 @@ outline: deep
 ::: code-group
 
 ```html
-<g-svg data-src="/circles.csv" data-type="csv">
+<g-template data-src="/circles.csv" data-type="csv">
   <svg viewBox="0 0 100 100">
     <defs g-for="value of data">
       <circle g-bind:cx="value.x"
@@ -33,10 +33,10 @@ outline: deep
               g-bind:fill="value.color"/>
     </defs>
   </svg>
-</g-svg>
+</g-template>
 ```
 
-```csv
+```text
 "x";"y";"radix";"color"
 20;20;20;"red"
 45;45;30;"blue"
@@ -45,7 +45,7 @@ outline: deep
 
 :::
 
-<g-svg data-src="/circles.csv" data-type="csv">
+<g-template data-src="/circles.csv" data-type="csv">
   <svg viewBox="0 0 100 100">
     <defs g-for="value of data">
       <circle g-bind:cx="value.x"
@@ -54,4 +54,4 @@ outline: deep
               g-bind:fill="value.color"/>
     </defs>
   </svg>
-</g-svg>
+</g-template>

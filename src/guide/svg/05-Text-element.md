@@ -30,10 +30,10 @@ In Javascript library, we can use the method `.content("hello")` to includes the
 </svg>
 ```
 ```js
-const svg  = gySVG().viewBox('0 0 100 100').width(75).height(75);
-const text = svg.add('text')
-                .x(0).y(40).content('Hello, word')
-                .style.fontFamily('sans-serif').style.fontSize(18);
+$.svg.viewBox('0 0 100 100').width(75).height(75);
+const text = $.svg.add('text')
+                  .x(0).y(40).content('Hello, word')
+                  .style.fontFamily('sans-serif').style.fontSize(18);
 ```
 :::
 
@@ -55,11 +55,11 @@ well as some others like `fill`, `stroke` or `stroke-width`.
 </svg>
 ```
 ```js
-const svg  = gySVG().viewBox('0 0 100 100').width(75).height(75);
-const text = svg.add('text')
-                .x(0).y(40).content('A')
-                .style.fontFamily('sans-serif').style.fontSize(50)
-                .fill('none').stroke('#0000D8').stroke_width(1);
+$.svg.viewBox('0 0 100 100').width(75).height(75);
+const text = $.svg.add('text')
+                  .x(0).y(40).content('A')
+                  .style.fontFamily('sans-serif').style.fontSize(50)
+                  .fill('none').stroke('#0000D8').stroke_width(1);
 ```
 :::
 
@@ -90,12 +90,12 @@ and baseline text position, but you can adjust the exact position with these att
 </svg>
 ```
 ```js
-const svg = gySVG().viewBox(0,0,500,100).width(500).height(100);
+$.svg.viewBox(0,0,500,100).width(500).height(100);
 
-svg.add('line').x1(0).x2(250).y1(50).y2(50).stroke('grey').stroke_dasharray(5);
-svg.add('line').x1(400).x2(400).y1(0).y2(100).stroke('grey').stroke_dasharray(5);
+$.svg.add('line').x1(0).x2(250).y1(50).y2(50).stroke('grey').stroke_dasharray(5);
+$.svg.add('line').x1(400).x2(400).y1(0).y2(100).stroke('grey').stroke_dasharray(5);
 
-const g = svg.add('g').font_size(15).font_family('sans-serif');
+const g = $.svg.add('g').font_size(15).font_family('sans-serif');
 
 g.add('text').x(2).y(50).content('baseline');
 g.add('text').x(100).y(50).content('middle').dominant_baseline('middle');
@@ -137,8 +137,8 @@ of the style only in a part of the text content.
 </svg>
 ```
 ```js
-const svg  = gySVG().viewBox('0 0 100 100').width(100).height(100);
-const text = svg.add('text').x(10).y(50);
+$.svg.viewBox('0 0 100 100').width(100).height(100);
+const text = $.svg.add('text').x(10).y(50);
 text.add('tspan').style.fill('red').style.fontSize(20).content('&lt;');
 text.content(text.content() + 'tag');
 text.add('tspan').style.fill('red').style.fontSize(20).content('&gt;');

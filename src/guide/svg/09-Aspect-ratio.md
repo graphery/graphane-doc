@@ -48,13 +48,13 @@ This is the base image:
 ```
 
 ```js
-const svg = gySVG().style.border('1px dashed grey').viewBox(0, 0, 100, 100);
-svg.add('line')
-   .x1(0).y1(0).x2(100).y2(100)
-   .stroke_width(1).stroke_dasharray(18.5, 2).stroke('grey');
-svg.add('line')
-   .x1(100).y1(0).x2(0).y2(100)
-   .stroke_width(1).stroke_dasharray(18.5, 2).stroke('grey');
+$.svg.style.border('1px dashed grey').viewBox(0, 0, 100, 100);
+$.svg.add('line')
+     .x1(0).y1(0).x2(100).y2(100)
+     .stroke_width(1).stroke_dasharray(18.5, 2).stroke('grey');
+$.svg.add('line')
+     .x1(100).y1(0).x2(0).y2(100)
+     .stroke_width(1).stroke_dasharray(18.5, 2).stroke('grey');
 ```
 
 :::

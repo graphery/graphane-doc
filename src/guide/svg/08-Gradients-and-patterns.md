@@ -35,13 +35,13 @@ The `stop` element is defined with an `offset` than receive a percentage, and `.
 </svg>
 ```
 ```js
-const svg      = gySVG ().viewBox (0, 0, 100, 100).width(100).height(100);
-const defs     = svg.add ('defs');
+gySVG ().viewBox (0, 0, 100, 100).width(100).height(100);
+const defs     = $.svg.add ('defs');
 const gradient = defs.add ('linearGradient').gradientTransform ('rotate(45)');
 gradient.add ('stop').offset ('5%').stop_color ('gold');
 gradient.add ('stop').offset ('95%').stop_color ('red');
 
-const circle = svg.add ('circle').cx (50).cy (50).r (50).fill (gradient.url ());
+const circle = $.svg.add ('circle').cx (50).cy (50).r (50).fill (gradient.url ());
 ```
 :::
 
@@ -73,12 +73,12 @@ gradient are different, now is circular, from the center to the edge.
 </svg>
 ```
 ```js
-const svg      = gySVG ().viewBox (0, 0, 100, 100).width (100).height (100);
-const defs     = svg.add ('defs');
-const gradient = defs.add ('radialGradient');
-gradient.add ('stop').offset ('5%').stop_color ('gold');
-gradient.add ('stop').offset ('95%').stop_color ('red');
-const circle = svg.add ('circle').cx (50).cy (50).r (50).fill (gradient.url ());
+gySVG().viewBox(0, 0, 100, 100).width(100).height(100);
+const defs     = $.svg.add('defs');
+const gradient = defs.add('radialGradient');
+gradient.add('stop').offset('5%').stop_color('gold');
+gradient.add('stop').offset('95%').stop_color('red');
+const circle = $.svg.add('circle').cx(50).cy(50).r(50).fill(gradient.url());
 ```
 :::
 
@@ -95,7 +95,7 @@ const circle = svg.add ('circle').cx (50).cy (50).r (50).fill (gradient.url ());
 
 ## Patterns
 
-`pattern`  defines a graphics object which can be redrawn on intervals into the SVG. It has its
+`pattern`  defines a graphics object which can be redrawn on intervals into the $.svg. It has its
 own `viewBox` bound reference, and its size is defined by `width` and `height`. The behaviour of
 width and height depends on `patternUnits` configuration (by default is `'objectBoundingBox'`),
 but we usually need to configure it as `'userSpaceOnUse'`. With this configuration, height and width
@@ -113,13 +113,13 @@ are references to the element's coordinate system that uses the `pattern`.
 </svg>
 ```
 ```js
-const svg     = gySVG ().viewBox (0, 0, 100, 100).width (100).height (100);
-const defs    = svg.add ('defs');
+gySVG ().viewBox (0, 0, 100, 100).width (100).height (100);
+const defs    = $.svg.add ('defs');
 const pattern = defs.add ('pattern').viewBox(0,0,10,10)
-.patternUnits('userSpaceOnUse').width(10).height(10);
+                    .patternUnits('userSpaceOnUse').width(10).height(10);
 pattern.add('circle').cx(5).cy(5).r(4).fill('none').stroke_width(1).stroke('red');
 
-const circle = svg.add ('circle').cx (50).cy (50).r (48)
+const circle = $.svg.add ('circle').cx (50).cy (50).r (48)
   .fill (pattern.url ())
   .stroke('red').stroke_width(1);
 ```

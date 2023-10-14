@@ -13,21 +13,21 @@ outline: deep
 ## Example
 
 ```html
-<g-svg>
+<g-template>
   <svg>
     <defs g-for="value of data">
       <circle g-bind:cx="value.x" g-bind:cy="value.y"
               g-bind:r="value.radix" g-bind:fill="value.color"/> </defs>
   </svg>
   <g-data type="csv" src="/circles.csv"></g-data>
-</g-svg>
+</g-template>
 ```
 
-<g-svg>
+<g-template>
   <svg>
     <defs g-for="value of data">
       <circle g-bind:cx="value.x" g-bind:cy="value.y"
               g-bind:r="value.radix" g-bind:fill="value.color"/> </defs>
   </svg>
   <g-data type="csv" src="/circles.csv"></g-data>
-</g-svg>
+</g-template>

@@ -13,7 +13,7 @@
   <div class="row">
     <div class="col-6">
       <h2>graph</h2>
-      <g-svg>
+      <g-template>
         <svg viewBox="0 0 100 100" style="border: 1px solid grey; width: 250px; height: 250px">
           <defs g-for="{x,y, color} of data">
             <circle :cx="x" :cy="y" r="5" :fill="color" style="stroke:grey; stroke-width: 0.5"/>
@@ -25,7 +25,7 @@
           15;20;"#00D800"
           30;90;"#0000D8"
         </g-data>
-      </g-svg>
+      </g-template>
     </div>
     <div class="col-6">
       <h2>data</h2>
@@ -63,7 +63,7 @@
   </div>
 </main>
 <script>
-  const gsvg  = document.querySelector('g-svg');
+  const gsvg  = document.querySelector('g-template');
   const tbody = document.querySelector('tbody');
   tbody.addEventListener('input', (evt) => {
     const value          = evt.target.value;

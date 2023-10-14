@@ -14,24 +14,24 @@ A simple way to capture the 'click' event is this:
 ::: tab javascript
 ```js
 import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
-const svg = gySVG ().viewBox (0, 0, 200, 200).width (200).height (200);
-const rect = svg.add ('rect').x(10).y(10).width(180).height(180).fill('red').style.cursor('pointer');
+gySVG ().viewBox (0, 0, 200, 200).width (200).height (200);
+const rect = $.svg.add ('rect').x(10).y(10).width(180).height(180).fill('red').style.cursor('pointer');
 rect.addEventListener('click', (evt) => {
   rect.fill(rect.fill() === 'red' ? 'blue' : 'red');
 });
-svg.attachTo('#example1');
+$.svg.attachTo('#example1');
 ```
 :::
 ::: tab result
 <div id="example1"></div>
 <script type="module">
   import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
-const svg = gySVG ().viewBox (0, 0, 200, 200).width (200).height (200);
-const rect = svg.add ('rect').x(10).y(10).width(180).height(180).fill('red').style.cursor('pointer');
+gySVG ().viewBox (0, 0, 200, 200).width (200).height (200);
+const rect = $.svg.add ('rect').x(10).y(10).width(180).height(180).fill('red').style.cursor('pointer');
 rect.addEventListener('click', (evt) => {
   rect.fill(rect.fill() === 'red' ? 'blue' : 'red');
 });
-svg.attachTo('#example1');
+$.svg.attachTo('#example1');
 </script>
 :::
 ::: tab "svg source"

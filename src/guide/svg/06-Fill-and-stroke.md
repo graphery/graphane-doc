@@ -19,8 +19,8 @@ solid color, a gradient, or a pattern.
 </svg>
 ```
 ```js
-const svg = gySVG().viewBox('0 0 100 100').width(75).height(75);
-svg.add('rect').x(0).y(0).width(100).height(100).fill('#00D800');
+$.svg.viewBox('0 0 100 100').width(75).height(75);
+$.svg.add('rect').x(0).y(0).width(100).height(100).fill('#00D800');
 ```
 :::
 
@@ -51,11 +51,11 @@ svg.add('rect').x(0).y(0).width(100).height(100).fill('#00D800');
 </svg>
 ```
 ```js
-const svg = gySVG().viewBox('0 0 200 100').width(150).height(75);
-svg.add('polygon').points(50,0, 21,90, 98,35, 2,35, 79,90)
-  .fill('#00D800').fill_rule('nonzero');
-svg.add('polygon').points(150,0, 121,90, 198,35, 102,35, 179,90)
-  .fill('#00D800').fill_rule('evenodd');
+$.svg.viewBox('0 0 200 100').width(150).height(75);
+$.svg.add('polygon').points(50,0, 21,90, 98,35, 2,35, 79,90)
+     .fill('#00D800').fill_rule('nonzero');
+$.svg.add('polygon').points(150,0, 121,90, 198,35, 102,35, 179,90)
+     .fill('#00D800').fill_rule('evenodd');
 ```
 :::
 
@@ -77,9 +77,9 @@ transparency, the value 1 is no transparency.
 </svg>
 ```
 ```js
-const svg = gySVG().viewBox('0 0 130 100').width(75).height(75);
-svg.add('circle').cx(40).cy(50).r(40).fill('#00D800').fill_opacity(0.5);
-svg.add('circle').cx(90).cy(50).r(40).fill('#0000D8').fill_opacity(0.5);
+$.svg.viewBox('0 0 130 100').width(75).height(75);
+$.svg.add('circle').cx(40).cy(50).r(40).fill('#00D800').fill_opacity(0.5);
+$.svg.add('circle').cx(90).cy(50).r(40).fill('#0000D8').fill_opacity(0.5);
 ```
 :::
 
@@ -101,8 +101,8 @@ values.
 </svg>
 ```
 ```js
-const svg = gySVG().viewBox('0 0 100 100').width(75).height(75);
-svg.add('circle').cx(50).cy(50).r(50).style.fill('#00D800').style.fillOpacity(0.5);
+$.svg.viewBox('0 0 100 100').width(75).height(75);
+$.svg.add('circle').cx(50).cy(50).r(50).style.fill('#00D800').style.fillOpacity(0.5);
 ```
 :::
 
@@ -122,9 +122,9 @@ stroke can be used in combination with `fill`.
 </svg>
 ```
 ```js
-const svg = gySVG().viewBox('0 0 100 100').width(75).height(75);
-svg.add('rect').x(10).y(10).width(80).height(80)
-  .fill('#00D800').stroke('#0000D8').stroke_width(10);
+$.svg.viewBox('0 0 100 100').width(75).height(75);
+$.svg.add('rect').x(10).y(10).width(80).height(80)
+     .fill('#00D800').stroke('#0000D8').stroke_width(10);
 ```
 :::
 
@@ -149,13 +149,13 @@ values: `butt`, `round`, `square`, `inherit`.
 </svg>
 ```
 ```js
-const svg = gySVG().viewBox('0 0 100 100').width(100).height(100);
-svg.add('line').x1(10).x2(80).y1(25).y2(25)
-   .stroke('#0000D8').stroke_width(10).stroke_linecap('butt');
-svg.add('line').x1(10).x2(80).y1(50).y2(50)
-   .stroke('#0000D8').stroke_width(10).stroke_linecap('round');
-svg.add('line').x1(10).x2(80).y1(75).y2(75)
-   .stroke('#0000D8').stroke_width(10).stroke_linecap('square');
+$.svg.viewBox('0 0 100 100').width(100).height(100);
+$.svg.add('line').x1(10).x2(80).y1(25).y2(25)
+     .stroke('#0000D8').stroke_width(10).stroke_linecap('butt');
+$.svg.add('line').x1(10).x2(80).y1(50).y2(50)
+     .stroke('#0000D8').stroke_width(10).stroke_linecap('round');
+$.svg.add('line').x1(10).x2(80).y1(75).y2(75)
+     .stroke('#0000D8').stroke_width(10).stroke_linecap('square');
 ```
 :::
 
@@ -184,13 +184,13 @@ svg.add('line').x1(10).x2(80).y1(75).y2(75)
 </svg>
 ```
 ```js
-const svg = gySVG().viewBox('0 0 230 100').width(170).height(75);
-svg.add('polygon').points(50,10, 90,90, 10,90)
-  .fill('none').stroke('#0000D8').stroke_width(10).stroke_linejoin('miter');
-svg.add('polygon').points(70,10, 160,10, 110,90)
-  .fill('none').stroke('#0000D8').stroke_width(10).stroke_linejoin('round');
-svg.add('polygon').points(180,10, 130,90, 220,90)
-  .fill('none').stroke('#0000D8').stroke_width(10).stroke_linejoin('bevel');
+$.svg.viewBox('0 0 230 100').width(170).height(75);
+$.svg.add('polygon').points(50,10, 90,90, 10,90)
+     .fill('none').stroke('#0000D8').stroke_width(10).stroke_linejoin('miter');
+$.svg.add('polygon').points(70,10, 160,10, 110,90)
+     .fill('none').stroke('#0000D8').stroke_width(10).stroke_linejoin('round');
+$.svg.add('polygon').points(180,10, 130,90, 220,90)
+     .fill('none').stroke('#0000D8').stroke_width(10).stroke_linejoin('bevel');
 ```
 :::
 
@@ -219,13 +219,13 @@ this joint/corner extends. This value is a limit on the ratio of the miter lengt
 </svg>
 ```
 ```js
-const svg = gySVG().viewBox('0 0 300 100').width(225).height(75);
-svg.add('polygon').points(50,10, 90,90, 50,60, 10,90).fill('none')
-  .stroke('#0000D8').stroke_width(10).stroke_linejoin('miter');
-svg.add('polygon').points(150,10, 190,90, 150,60, 110,90).fill('none')
-  .stroke('#0000D8').stroke_width(10).stroke_linejoin('miter').stroke_miterlimit(1);
-svg.add('polygon').points(250,10, 290,90, 250,60, 210,90).fill('none')
-  .stroke('#0000D8').stroke_width(10).stroke_linejoin('miter').stroke_miterlimit(6);
+$.svg.viewBox('0 0 300 100').width(225).height(75);
+$.svg.add('polygon').points(50,10, 90,90, 50,60, 10,90).fill('none')
+     .stroke('#0000D8').stroke_width(10).stroke_linejoin('miter');
+$.svg.add('polygon').points(150,10, 190,90, 150,60, 110,90).fill('none')
+     .stroke('#0000D8').stroke_width(10).stroke_linejoin('miter').stroke_miterlimit(1);
+$.svg.add('polygon').points(250,10, 290,90, 250,60, 210,90).fill('none')
+     .stroke('#0000D8').stroke_width(10).stroke_linejoin('miter').stroke_miterlimit(6);
 ```
 :::
 
@@ -251,9 +251,9 @@ rather than solid lines.
 </svg>
 ```
 ```js
-const svg = gySVG().viewBox('0 0 100 100').width(75).height(75);
-svg.add('line').x1(0).x2(100).y1(50).y2(50).stroke_width(10)
-   .stroke_dash(10, 10, 10, 10, 10, 10, 20, 10, 20, 10, 20);
+$.svg.viewBox('0 0 100 100').width(75).height(75);
+$.svg.add('line').x1(0).x2(100).y1(50).y2(50).stroke_width(10)
+     .stroke_dash(10, 10, 10, 10, 10, 10, 20, 10, 20, 10, 20);
 ```
 :::
 
@@ -275,12 +275,12 @@ Use `stroke-dashoffset` to specify the distance at which the dashes should start
 </svg>
 ```
 ```js
-const svg = gySVG().viewBox('0 0 100 100').width(75).height(75);
-svg.add('circle').cx(50).cy(50).r(40).fill('none')
-   .stroke('#0000D8')
-   .strokeWidth(10)
-   .stroke_dasharray(62.5)
-   .stroke_dashoffset(31);
+$.svg.viewBox('0 0 100 100').width(75).height(75);
+$.svg.add('circle').cx(50).cy(50).r(40).fill('none')
+     .stroke('#0000D8')
+     .strokeWidth(10)
+     .stroke_dasharray(62.5)
+     .stroke_dashoffset(31);
 ```
 :::
 
@@ -303,12 +303,12 @@ values.
 </svg>
 ```
 ```js
-const svg = gySVG().viewBox('0 0 100 100').width(75).height(75);
-svg.add('circle').cx(50).cy(50).r(40).fill('none')
-  .style.stroke('#0000D8')
-  .style.strokeWidth(10)
-  .style.strokeDasharray(31.25)
-  .style.strokeDashoffset(5.5);
+$.svg.viewBox('0 0 100 100').width(75).height(75);
+$.svg.add('circle').cx(50).cy(50).r(40).fill('none')
+     .style.stroke('#0000D8')
+     .style.strokeWidth(10)
+     .style.strokeDasharray(31.25)
+     .style.strokeDashoffset(5.5);
 ```
 :::
 

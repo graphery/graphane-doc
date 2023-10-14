@@ -20,15 +20,15 @@ outline: deep
 ## Example
 
 ```html
-<g-svg data="size: 25, color: red">
+<g-template data="size: 25, color: red">
   <svg viewBox="0 0 100 100">
     <circle g-bind:r="size" cx="50" cy="50" g-bind:fill="color"/>
   </svg>
-</g-svg>
+</g-template>
 ```
 
-<g-svg data="size: 25, color: red">
+<g-template data="size: 25, color: red">
   <svg viewBox="0 0 100 100">
     <circle g-bind:r="size" cx="50" cy="50" g-bind:fill="color"/>
   </svg>
-</g-svg>
+</g-template>

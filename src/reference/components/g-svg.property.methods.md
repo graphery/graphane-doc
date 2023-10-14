@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# `g-svg.methods`
+# `g-template.methods`
 
 
 - **Property**: `.methods`
@@ -15,7 +15,7 @@ the `<g-methods></g-methods>` component.
 **Example**:
 
 ```html
-<g-svg data="message: 'hello world'">
+<g-template data="message: 'hello world'">
   <svg viewBox="0 0 100 100">
     <rect x="1" y="1" width="98" height="98" stroke="black" stroke-width="2" fill="white"
           style="cursor: pointer"
@@ -31,10 +31,10 @@ the `<g-methods></g-methods>` component.
       alert(this.data.message);
     }
   }</g-methods>
-</g-svg>
+</g-template>
 ```
 
-<g-svg data="message: 'hello world'">
+<g-template data="message: 'hello world'">
   <svg viewBox="0 0 100 100">
     <rect x="1" y="1" width="98" height="98" stroke="black" stroke-width="2" fill="white"
           style="cursor: pointer"
@@ -50,4 +50,4 @@ the `<g-methods></g-methods>` component.
       alert(this.data.message);
     }
   }</g-methods>
-</g-svg>
+</g-template>

@@ -22,8 +22,8 @@ Javascript Library with the `.style()` method and the `.style` object.
 </svg>
 ```
 ```js
-const svg = gySVG ().viewBox (0, 0, 200, 200).style('width: 75px; height: 75px');
-svg.add('rect').style('x: 10px; y: 10px; width: 180px; height: 180px; fill: #00D800');
+gySVG ().viewBox (0, 0, 200, 200).style('width: 75px; height: 75px');
+$.svg.add('rect').style('x: 10px; y: 10px; width: 180px; height: 180px; fill: #00D800');
 ```
 :::
 
@@ -39,11 +39,11 @@ the current style value:
 
 ```js
 import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
-const svg = gySVG ().viewBox (0, 0, 200, 200).width (200).height (200);
-svg.add('rect').style.x('10px').style.y('10px')
-               .style.width('180px').style.height('180px')
-               .style.fill('red');
-svg.attachTo ('#example2');
+gySVG ().viewBox (0, 0, 200, 200).width (200).height (200);
+$.svg.add('rect').style.x('10px').style.y('10px')
+                 .style.width('180px').style.height('180px')
+                 .style.fill('red');
+$.svg.attachTo ('#example2');
 ```
 
 ```js
@@ -58,7 +58,7 @@ It's possible to create it a `style` tag into the SVG and put CSS rules into thi
 
 Styles defined in the SVG affect the entire page.
 
-Styles defined in the page affect the SVG.
+Styles defined in the page affect the $.svg.
 
 Consequently, collisions and side effects may occur if the selectors used match other elements.
 :::
@@ -79,8 +79,8 @@ Consequently, collisions and side effects may occur if the selectors used match 
 </svg>
 ```
 ```js
-const svg = gySVG ().viewBox (0, 0, 200, 200).width (200).height (200);
-svg.add ('style').content (`
+gySVG ().viewBox (0, 0, 200, 200).width (200).height (200);
+$.svg.add ('style').content (`
    #rectangle {
       fill   : red;
       x      : 5px;
@@ -88,7 +88,7 @@ svg.add ('style').content (`
       width  : 180px;
       height : 180px;
    }`);
-svg.add ('rect').id ('rectangle');
+$.svg.add ('rect').id ('rectangle');
 ```
 :::
 
@@ -130,8 +130,8 @@ You can use the `class` attribute and the `.classList` object and its methods:
 </svg>
 ```
 ```js
-const svg = gySVG ().viewBox (0, 0, 200, 200).width (200).height (200);
-svg.add ('style').content (`
+gySVG ().viewBox (0, 0, 200, 200).width (200).height (200);
+$.svg.add ('style').content (`
    .rectangle {
       cursor : pointer;
       x      : 5px;
@@ -151,7 +151,7 @@ svg.add ('style').content (`
      fill        : white;
    }
    `);
-const rect = svg.add ('rect').classList.add('rectangle').classList.add('regular');
-svg.add('text').x(10).y(100).content('Alarm').classList.add('message');
+const rect = $.svg.add ('rect').classList.add('rectangle').classList.add('regular');
+$.svg.add('text').x(10).y(100).content('Alarm').classList.add('message');
 ```
 :::

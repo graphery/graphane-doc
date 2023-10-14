@@ -6,12 +6,12 @@ outline: deep
 
 The following is a description of the API of the different Web Components that make up Graphane.
 
-## [g-svg](g-svg.md)
+## [g-template](g-template.md)
 
 This component is the main element for generating graphics using a declarative template.
 
 ```html
-<g-svg data="value: 50">        <!-- g-svg component -->
+<g-template data="value: 50">        <!-- g-template component -->
   <svg viewBox="0 0 400 270">   <!-- SVG Template -->
     <defs g-for="y of 5">       <!-- g-for attribute -->
       <defs g-for="x of 20">    <!-- g-for attribute -->
@@ -23,7 +23,7 @@ This component is the main element for generating graphics using a declarative t
       </defs>
     </defs>
   </svg>
-</g-svg>
+</g-template>
 ```
 
 ### SVG Templating
@@ -40,18 +40,18 @@ SVG template system.
 
 Component attributes.
 
-- [data](g-svg.attribute.data.md)
-- [data-src](g-svg.attribute.data-src.md)
-- [data-type](g-svg.attribute.data-type.md)
-- [methods](g-svg.attribute.methods.md)
-- [src](g-svg.attribute.src.md)
+- [data](g-template.attribute.data.md)
+- [data-src](g-template.attribute.data-src.md)
+- [data-type](g-template.attribute.data-type.md)
+- [methods](g-template.attribute.methods.md)
+- [src](g-template.attribute.src.md)
 
 ## [g-data](g-data.md)
 
 This subcomponent specializes in data management.
 
 ```html
-<g-svg>
+<g-template>
   <g-data type="csv">
     "continent";"population";
     "Asia";4694576167;
@@ -62,7 +62,7 @@ This subcomponent specializes in data management.
     "Oceania";44491724;
     "Antarctica";3000;
   </g-data>
-</g-svg>
+</g-template>
 ```
 
 ### Attributes
@@ -83,13 +83,13 @@ Component content.
 This subcomponent specializes in methods management.
 
 ```html
-<g-svg>
+<g-template>
   <g-methods>{
     method() {
       //...
     }
   }</g-methods>
-</g-svg>
+</g-template>
 ```
 
 ### Attributes

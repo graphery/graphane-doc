@@ -2,14 +2,14 @@
 outline: deep
 ---
 
-# g-svg
+# g-template
 
-The `g-svg` custom tag is the main web component of the SVG Graphane declarative micro framework. It
+The `g-template` custom tag is the main web component of the SVG Graphane declarative micro framework. It
 is used as a data driven SVG template.
 
 ```html
 
-<g-svg data="value: 50">        <!-- g-svg component -->
+<g-template data="value: 50">        <!-- g-template component -->
   <svg viewBox="0 0 400 270">   <!-- SVG Template -->
     <defs g-for="y of 5">       <!-- g-for attribute -->
       <defs g-for="x of 20">    <!-- g-for attribute -->
@@ -21,10 +21,10 @@ is used as a data driven SVG template.
       </defs>
     </defs>
   </svg>
-</g-svg>
+</g-template>
 ```
 
-<g-svg data="value: 50">        <!-- g-svg component -->
+<g-template data="value: 50">        <!-- g-template component -->
   <svg viewBox="0 0 400 270">   <!-- SVG Template -->
     <defs g-for="y of 5">       <!-- g-for attribute -->
       <defs g-for="x of 20">    <!-- g-for attribute -->
@@ -36,7 +36,7 @@ is used as a data driven SVG template.
       </defs>
     </defs>
   </svg>
-</g-svg>
+</g-template>
 
 ### SVG Templating
 
@@ -50,10 +50,10 @@ SVG template is based on these attributes.
 
 ### Attributes
 
-The `g-svg` component accepts these configuration attributes.
+The `g-template` component accepts these configuration attributes.
 
-- [src](g-svg.attribute.src.md) - define the svg template as external resource.
-- [data](g-svg.attribute.data.md) - define a simple key-value.
-- [data-src](g-svg.attribute.data-src.md) - define the data source.
-- [data-type](g-svg.attribute.data-type.md) - define the data source type (csv, json or js).
-- [methods](g-svg.attribute.methods.md) - define the method source (js object with methods).
+- [src](g-template.attribute.src.md) - define the svg template as external resource.
+- [data](g-template.attribute.data.md) - define a simple key-value.
+- [data-src](g-template.attribute.data-src.md) - define the data source.
+- [data-type](g-template.attribute.data-type.md) - define the data source type (csv, json or js).
+- [methods](g-template.attribute.methods.md) - define the method source (js object with methods).

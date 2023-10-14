@@ -81,7 +81,7 @@ export default defineConfig({
               {link : '/guide/templating/conditional', text : 'Conditional'},
               {link : '/guide/templating/content', text : 'Content'},
               {link : '/guide/templating/events', text : 'Events'},
-              {link : '/guide/templating/expressions', text : 'Expression evaluation'},
+              {link : '/guide/templating/expressions', text : 'Expressions'},
             ]
           },
           {
@@ -89,11 +89,11 @@ export default defineConfig({
             link      : '/guide/data/',
             collapsed : true,
             items     : [
-              {link : '/guide/data/property', text : '.data property'},
               {link : '/guide/data/attribute', text : 'data attribute'},
+              {link : '/guide/data/property', text : '.data property'},
               {link : '/guide/data/embebed', text : 'Embedded data'},
               {link : '/guide/data/external', text : 'Load data'},
-              {link : '/guide/data/helpers', text : 'Array helpers'},
+              // {link : '/guide/data/helpers', text : 'Array helpers'},
               {link : '/guide/data/reactivity', text : 'Reactivity'},
             ]
           },
@@ -111,19 +111,7 @@ export default defineConfig({
             ]
           },
           {
-            text      : 'Library',
-            collapsed : true,
-            items     : [
-              {link : '/guide/library/gsvg', text : 'Why a JS Library for SVG'},
-              {link : '/guide/library/component', text : 'Use with g-template'},
-              {link : '/guide/library/load', text : 'Load the library'},
-              {link : '/guide/library/create', text : 'Create an SVG'},
-              {link : '/guide/library/update', text : 'Update an SVG'},
-              {link : '/guide/library/api', text : 'API'},
-            ]
-          },
-          {
-            text      : 'Appendix: SVG format',
+            text      : 'Appendix: SVG',
             collapsed : true,
             items     : [
               {link : '/guide/svg/', text : 'Introduction'},

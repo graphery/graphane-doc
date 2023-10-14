@@ -4,12 +4,12 @@ outline: deep
 
 # `<g-methods></g-methods>`
 
-`g-methods` web component is specifically designed to insert methods into the `g-svg` component. The
+`g-methods` web component is specifically designed to insert methods into the `g-template` component. The
 Javascript Object with the methods may be embedded within the content of the component or linked as
 an external resource.
 
 ```html
-<g-svg>
+<g-template>
   <g-methods>{
     show() {
       alert('hello world');
@@ -18,7 +18,7 @@ an external resource.
       this.methods.show();
     }
   }</g-methods>
-</g-svg>
+</g-template>
 ```
 
 ### Attributes

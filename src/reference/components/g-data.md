@@ -4,11 +4,11 @@ outline: deep
 
 # `<g-data type="type"></g-data>`
 
-`g-data` web component is specifically designed to insert data into the `g-svg` component. The data
+`g-data` web component is specifically designed to insert data into the `g-template` component. The data
 may be embedded within the content of the component or linked as an external resource.
 
 ```html
-<g-svg>
+<g-template>
   <g-data type="csv">
     "continent";"population";
     "Asia";4694576167;
@@ -19,13 +19,13 @@ may be embedded within the content of the component or linked as an external res
     "Oceania";44491724;
     "Antarctica";3000;
   </g-data>
-</g-svg>
+</g-template>
 ```
 
 ```html
-<g-svg>
+<g-template>
   <g-data type="csv" src="/data.csv"></g-data>
-</g-svg>
+</g-template>
 ```
 
 

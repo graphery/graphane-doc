@@ -4,28 +4,14 @@ outline: deep
 
 # SVG structure
 
-The function `gySVG()` creates an SVG root and returns an object with a Graphane wrapper over
-it. You can use this root to nest other elements, define its coordinate system, or establish other
-configuration parameters.
-
-::: code-group
-
-```svg
-<svg></svg>
-```
-
-```js
-const svg = gSVG();
-```
-
-:::
-
-You can use `viewBox` to defines the graphic's internal canvas, `width`, `height` to define the
-size, etc.
+The `$.svg` is a reference to the SVG root and returns an object with a Graphane wrapper over it.
+You can use this root to nest other elements, define its coordinate system, or establish other
+configuration parameters. In all our examples, we will show the SVG code and the equivalent call
+with Graphane.
 
 ## The viewBox
 
-The `viewBox` defines the internal position and dimensions of an SVG. The view box need four
+The `viewBox` defines the internal position and dimensions of an $.svg. The view box need four
 parameters: `min-x`, `min-y`, `width`, `height`. These numbers specify a rectangle that is mapped
 within the internal boundaries associated with the SVG element. All measures of nested elements take
 these dimensions as a reference. Calling this method without parameters returns the current view box
@@ -38,7 +24,7 @@ value.
 ```
 
 ```js
-const svg = gSVG().viewBox(0, 0, 100, 100);
+$.svg.viewBox(0, 0, 100, 100);
 ```
 
 :::
@@ -56,7 +42,7 @@ with `height`.
 ```
 
 ```js
-const svg = gySVG().width(100).height(100);
+$.svg.width(100).height(100);
 ```
 
 :::
@@ -70,36 +56,13 @@ It's also possible to define these values by CSS using `width` and `height`.
 ```
 
 ```js
-const svg = gySVG()
+$.svg
   .style.width('100px')
   .style.height('100px');
 ```
 
 :::
 
-## Include into HTML
-
-Your can include the SVG within the HTML page because the browser known how to render the SVG
-namespace.
-
-With Javascript library we use `.attachTo()` providing as a parameter a selector to locate the
-element or, if we already have a reference, the DOM object directly. As a result, our SVG is
-inserted into the page.
-
-::: code-group
-
-```svg
-<div id="content">
-  <svg viewBox="0 0 100 100" width="50" height="50"></svg>
-</div>
-```
-
-```js
-const svg = gySVG().viewBox(0, 0, 100, 100).width(50).height(50);
-svg.attachTo('#content')
-```
-
-:::
 
 ## Nested elements
 
@@ -118,8 +81,8 @@ characteristics of the element we have created.
 ```
 
 ```js
-const svg    = gySVG().viewBox(0, 0, 100, 100).width(75).height(75);
-const circle = svg.add('circle').cx(50).cy(50).r(50).fill('#f06');
+$.svg.viewBox(0, 0, 100, 100).width(75).height(75);
+const circle = $.svg.add('circle').cx(50).cy(50).r(50).fill('#f06');
 ```
 
 :::
@@ -145,8 +108,8 @@ method. For example, we can create a `g` (group) element and include it inside a
 ```
 
 ```js
-const svg    = gySVG().viewBox(0, 0, 100, 100).width(75).height(75);
-const g      = svg.add('g').fill('#f06');
+$.svg.viewBox(0, 0, 100, 100).width(75).height(75);
+const g      = $.svg.add('g').fill('#f06');
 const circle = g.add('circle').cx(50).cy(50).r(50);
 ```
 

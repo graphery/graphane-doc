@@ -18,7 +18,7 @@ actively engage with the visualizations and explore the data in a meaningful way
 In this guide, we will explain step by step how Graphane aims to simplify the process of creating
 visualizations from data.
 
-### Load Graphane
+### Load
 
 To get started, you need to include the Graphane in your HTML. This can be done by adding a script
 tag with the source pointing to the component file into the CDN:
@@ -46,7 +46,7 @@ https://cdn.graphery.online/graphane/0.1.0-alpha.1/component/template.js
 Graphane runs dynamically in the browser, and does not require compiling or transpiling at
 development time.
 
-### g-template
+## g-template
 
 By leveraging the Graphane template web component, you can enhance your content with visually
 compelling graphics and visualizations without requiring extensive code modifications or specific
@@ -61,7 +61,7 @@ elements.
 </g-template>
 ```
 
-### svg
+## SVG
 
 The first child is an SVG used as template.
 
@@ -98,7 +98,7 @@ designs.
 - [`g-content`](./templating/content): update the element content.
 - [`g-on`](./templating/events) (or the shorthand `@`): attach an event listener to the element.
 
-### Data
+## Data
 
 We can create visualizations using SVG-based templates uploading data in CSV or JSON formats, and
 they will be available for use in the template directly. To load the data, we need to use the
@@ -157,7 +157,7 @@ insert CSV o JSON formats into the tag:
   }</g-script>
 </g-template>
 
-### Methods
+## Methods
 
 You can add methods for event handling with a simple `<script type="methods"></script>`. It is
 possible to include the code directly in the tag or linked with the scr attribute. All functions
@@ -217,9 +217,9 @@ s
 <p style="font-size: small">click add circles, ctrl+click reduces circles</p>
 
 
-## Use external resources
+## External resources
 
-To link the external resources you can use attributes of `g-template` component.
+To link the external resources, you can use attributes of `g-template` component.
 
 - The `svg-src` attribute specifies the path to the SVG file.
 - The `data-src` attribute indicates the location of the data source.
@@ -244,7 +244,7 @@ Here is the previous example with external resources:
 That's it! You've completed the quick start guide for using Graphane to render a simple SVG and
 associate them with data.
 
-### Integration
+## Integration
 
 Graphane is designed as a web component, making **it easy to integrate and reuse within popular web
 frameworks**. Graphane microframework is designed to have a lightweight footprint, enabling you to

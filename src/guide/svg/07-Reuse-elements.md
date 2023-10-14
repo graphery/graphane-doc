@@ -6,7 +6,7 @@ outline: deep
 
 ## use
 
-The `use` element allows reusing elements into the SVG. There are specific configuration with
+The `use` element allows reusing elements into the $.svg. There are specific configuration with
 attributes `x`, `y`, `width`, `height`, etc. The `href` enables the reference on the element to be
 reused.
 
@@ -30,12 +30,12 @@ change because those are linked.
 </svg>
 ```
 ```js
-const svg = gySVG().viewBox(0, 0, 100, 20).width(200).height(40);
-const dot = svg.add('circle').cx(5).cy(10).r(4).fill('#00D800');
+$.svg.viewBox(0, 0, 100, 20).width(200).height(40);
+const dot = $.svg.add('circle').cx(5).cy(10).r(4).fill('#00D800');
 for(let column = 10; column < 100; column += 10) {
-  svg.add('use').href(dot.ref()).x(column);
+  $.svg.add('use').href(dot.ref()).x(column);
 }
-svg.attachTo('#example1');
+$.svg.attachTo('#example1');
 ```
 :::
 
@@ -60,7 +60,7 @@ methods `.id()` (return the id) and `.ref()` (return `#` and the id concatenated
 ## defs
 
 If you want to define an element, but don't need to show it directly, you can use `defs` as a
-group of elements that have not been rende#00D800 in the SVG. It constitutes a group of non-visible 
+group of elements that have not been rende#00D800 in the $.svg. It constitutes a group of non-visible 
 definitions useful for use in other sites.
 
 We can change the previous example and put the initial circle into the `defs` element.
@@ -84,11 +84,11 @@ We can change the previous example and put the initial circle into the `defs` el
 </svg>
 ```
 ```js
-const svg  = gySVG().viewBox(0, 0, 100, 20).width(200).height(40);
-const defs = svg.add('defs');
+$.svg.viewBox(0, 0, 100, 20).width(200).height(40);
+const defs = $.svg.add('defs');
 const dot  = defs.add('circle').cx(5).cy(10).r(4).fill('#00D800');
 for(let column = 0; column < 100; column += 10) {
-  svg.add('use').href(dot.ref()).x(column);
+  $.svg.add('use').href(dot.ref()).x(column);
 }
 ```
 :::
@@ -138,13 +138,13 @@ reference for positioning with `refX` and `refY`.
 </svg>
 ```
 ```js
-const svg    = gySVG().viewBox(0, 0, 100, 20).width(200).height(40);
-const symbol = svg.add('defs').add('symbol').viewBox(0, 0, 10, 10).width(10).height(10);
+$.svg.viewBox(0, 0, 100, 20).width(200).height(40);
+const symbol = $.svg.add('defs').add('symbol').viewBox(0, 0, 10, 10).width(10).height(10);
 const dot    = symbol.add('circle').cx(5).cy(5).r(5).fill('#00D800');
 symbol.add('line').x1(0).y1(5).x2(10).y2(5).stroke('#0000D8').stroke_width(2);
 symbol.add('line').x1(5).y1(0).x2(5).y2(10).stroke('#0000D8').stroke_width(2);
 for(let column = 0; column < 100; column += 20) {
-svg.add('use').href(symbol.ref()).x(column).y(10);
+$.svg.add('use').href(symbol.ref()).x(column).y(10);
 }
 ```
 :::
@@ -207,21 +207,21 @@ defines on the marker.
 </svg>
 ```
 ```js
-const svg  = gySVG().viewBox(0, 0, 110, 110).width(100).height(100);
-const defs = svg.add('defs');
+$.svg.viewBox(0, 0, 110, 110).width(100).height(100);
+const defs = $.svg.add('defs');
 const dot  = defs.add('marker').viewBox(0, 0, 10, 10).refX(5).refY(5)
-  .markerWidth(8).markerHeight(8);
+                 .markerWidth(8).markerHeight(8);
 dot.add('circle').cx(5).cy(5).r(5).fill('#00D800');
 
 const square = defs.add('marker').viewBox(0, 0, 10, 10).refX(5).refY(5)
-  .markerWidth(10).markerHeight(10);
+                   .markerWidth(10).markerHeight(10);
 square.add('rect').x(0).y(0).width(10).height(10).fill('#00D800');
 
 const arrow = defs.add('marker').viewBox(0, 0, 10, 10).refX(5).refY(5)
-  .markerWidth(10).markerHeight(10).orient('auto-start-reverse');
+                  .markerWidth(10).markerHeight(10).orient('auto-start-reverse');
 arrow.add('path').fill('#00D800').d.M(0, 0).L(10, 5).L(0, 10).z();
 
-svg.add('polyline')
+$.svg.add('polyline')
   .points([[5, 30], [25, 60], [45, 25], [65, 90], [85, 50], [105, 80]])
   .stroke('#0000D8').fill('none')
   .marker_mid(dot.url()).marker_start(square.url()).marker_end(arrow.url());

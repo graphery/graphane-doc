@@ -2,12 +2,12 @@
 outline: deep
 ---
 
-# g-svg attributes
+# g-template attributes
 
 ## Attributes and properties
 
-- [src](/reference/components/g-svg.attribute.src.md)
-- [data](/reference/components/g-svg.attribute.data.md)
-- [data-src](/reference/components/g-svg.attribute.data-src.md)
-- [data-type](/reference/components/g-svg.attribute.data-type.md)
-- [methods](/reference/components/g-svg.attribute.methods.md)
+- [src](/reference/components/g-template.attribute.src.md)
+- [data](/reference/components/g-template.attribute.data.md)
+- [data-src](/reference/components/g-template.attribute.data-src.md)
+- [data-type](/reference/components/g-template.attribute.data-type.md)
+- [methods](/reference/components/g-template.attribute.methods.md)

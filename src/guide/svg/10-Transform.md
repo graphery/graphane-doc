@@ -33,11 +33,11 @@ and `2` doubles the original size.
 ```
 
 ```js
-const svg  = gySVG().viewBox(0, 0, 150, 75).width(150).height(75);
-const defs = svg.add('defs');
+$.svg.viewBox(0, 0, 150, 75).width(150).height(75);
+const defs = $.svg.add('defs');
 const dot  = defs.add('circle').cx(5).cy(10).r(4).fill('red');
 for (let n = 1; n <= 5; n++) {
-  svg.add('use').href(dot.ref()).x(n * 4).transform(`scale(${ n })`);
+  $.svg.add('use').href(dot.ref()).x(n * 4).transform(`scale(${ n })`);
 }
 ```
 
@@ -72,9 +72,9 @@ as `r`, `stroke-width` are affected too by the `x` scale factor.
 ```
 
 ```js
-const svg  = gySVG().viewBox(0, 0, 100, 100).width(100).height(100);
-const rect = svg.add('rect').x(10).y(10).width(10).height(10)
-                .stroke_width(1).stroke('blue').fill('none');
+$.svg.viewBox(0, 0, 100, 100).width(100).height(100);
+const rect = $.svg.add('rect').x(10).y(10).width(10).height(10)
+                  .stroke_width(1).stroke('blue').fill('none');
 rect.cloneNode().transform('scale(4)').attachTo(svg);
 ```
 
@@ -104,9 +104,9 @@ If the `y` is omitted, a `0` is assumed as value.
 ```
 
 ```js
-const svg  = gySVG().viewBox(0, 0, 102, 102).width(100).height(100);
-const rect = svg.add('rect').x(1).y(1).width(50).height(50)
-                .stroke_width(1).stroke('blue').fill('none');
+$.svg.viewBox(0, 0, 102, 102).width(100).height(100);
+const rect = $.svg.add('rect').x(1).y(1).width(50).height(50)
+                  .stroke_width(1).stroke('blue').fill('none');
 rect.cloneNode().transform('translate(50, 50)').attachTo(svg);
 ```
 
@@ -144,9 +144,9 @@ a new rotation's center (default values are `0` and `0`).
 ```
 
 ```js
-const svg  = gySVG().viewBox(0, 0, 102, 102).width(100).height(100);
-const rect = svg.add('rect').x(25).y(25).width(50).height(50)
-                .stroke_width(1).stroke('blue').fill('none');
+$.svg.viewBox(0, 0, 102, 102).width(100).height(100);
+const rect = $.svg.add('rect').x(25).y(25).width(50).height(50)
+                  .stroke_width(1).stroke('blue').fill('none');
 rect.cloneNode().transform('rotate(15, 50, 50)').attachTo(svg);
 rect.cloneNode().transform('rotate(30, 50, 50)').attachTo(svg);
 rect.cloneNode().transform('rotate(45, 50, 50)').attachTo(svg);
@@ -196,13 +196,13 @@ degree value than represents a skew transformation.
 ```
 
 ```js
-const svg    = gySVG().viewBox(0, 0, 300, 150).width(300).height(150);
-const group1 = svg.add('g').transform('translate(2,2)');
+$.svg.viewBox(0, 0, 300, 150).width(300).height(150);
+const group1 = $.svg.add('g').transform('translate(2,2)');
 group1.add('rect').x(0).y(0).width(90).height(90).stroke_width(1).fill('grey');
 group1.add('rect').x(0).y(0).width(90).height(90).stroke_width(1).fill('rgba(0,0,255,0.5)')
       .transform('skewX(20)');
 group1.add('text').x(0).y(110).content('skewX(20)').transform('skewX(20)');
-const group2 = svg.add('g').transform('translate(150,2)');
+const group2 = $.svg.add('g').transform('translate(150,2)');
 group2.add('rect').x(0).y(0).width(90).height(90).stroke_width(1).fill('grey');
 group2.add('rect').x(0).y(0).width(90).height(90).stroke_width(1).fill('rgba(0,0,255,0.5)')
       .transform('skewY(20)');
@@ -306,10 +306,10 @@ In practice, all these operations are performed internally, and it is very simpl
 </svg>
 ```
 ```js
-const svg = gySVG().viewBox(0, 0, 200, 200).width(200).height(200);
-svg.add('rect').x(10).y(10).width(30).height(20).fill('grey');
-svg.add('rect').x(10).y(10).width(30).height(20).fill('rgba(0,0,255,0.5)')
-   .transform('matrix(3 1 1 3 -20 -30)');
+$.svg.viewBox(0, 0, 200, 200).width(200).height(200);
+$.svg.add('rect').x(10).y(10).width(30).height(20).fill('grey');
+$.svg.add('rect').x(10).y(10).width(30).height(20).fill('rgba(0,0,255,0.5)')
+     .transform('matrix(3 1 1 3 -20 -30)');
 ```
 :::
 

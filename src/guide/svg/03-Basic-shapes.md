@@ -15,9 +15,9 @@ The `rect` creates an element that shows a rectangle.
 </svg>
 ```
 ```js
-const svg  = gySVG().viewBox(0, 0, 100, 100).width(75).height(75);
-const rect = svg.add('rect')
-                .x(10).y(10).width(90).height(90);
+$.svg.viewBox(0, 0, 100, 100).width(75).height(75);
+const rect = $.svg.add('rect')
+                  .x(10).y(10).width(90).height(90);
 ```
 :::
 
@@ -42,10 +42,10 @@ to the appropriate position. All these values are related to the dimensions defi
 </svg>
 ```
 ```js
-const svg  = gySVG().viewBox(0, 0, 100, 100).width(75).height(75);
-const rect = svg.add('rect')
-                .x(10).y(10).width(80).height(80)
-                .fill('#00D800').stroke('#0000D8').stroke_width(5);
+$.svg.viewBox(0, 0, 100, 100).width(75).height(75);
+const rect = $.svg.add('rect')
+                  .x(10).y(10).width(80).height(80)
+                  .fill('#00D800').stroke('#0000D8').stroke_width(5);
 ```
 :::
 
@@ -65,10 +65,10 @@ It is also possible to create rounded corners by specifying values within `rx` a
 </svg>
 ```
 ```js
-const svg  = gySVG().viewBox(0, 0, 100, 100).width(75).height(75);
-const rect = svg.add('rect')
-                .x(10).y(10).width(80).height(80).rx(20).ry(5)
-                .fill('#00D800').stroke('#0000D8').stroke_width(5);
+$.svg.viewBox(0, 0, 100, 100).width(75).height(75);
+const rect = $.svg.add('rect')
+                  .x(10).y(10).width(80).height(80).rx(20).ry(5)
+                  .fill('#00D800').stroke('#0000D8').stroke_width(5);
 ```
 :::
 
@@ -91,9 +91,9 @@ outer radius (`r`).  All these values are according to the dimensions defined in
 </svg>
 ```
 ```js
-const svg    = gySVG().viewBox(0, 0, 100, 100).width(75).height(75);
-const circle = svg.add('circle')
-                  .cx(50).cy(50).r(50);
+$.svg.viewBox(0, 0, 100, 100).width(75).height(75);
+const circle = $.svg.add('circle')
+                    .cx(50).cy(50).r(50);
 ```
 :::
 
@@ -112,10 +112,10 @@ const circle = svg.add('circle')
 </svg>
 ```
 ```js
-const svg    = gySVG().viewBox(0, 0, 100, 100).width(75).height(75);
-const circle = svg.add('circle')
-                  .cx(50).cy(50).r(45)
-                  .fill('#00D800').stroke('#0000D8').stroke_width(5);
+$.svg.viewBox(0, 0, 100, 100).width(75).height(75);
+const circle = $.svg.add('circle')
+                    .cx(50).cy(50).r(45)
+                    .fill('#00D800').stroke('#0000D8').stroke_width(5);
 ```
 :::
 
@@ -137,9 +137,9 @@ and `ry`). All these values are according to the dimensions defined in the `view
 </svg>
 ```
 ```js
-const svg     = gySVG().viewBox(0, 0, 100, 100).width(75).height(75);
-const ellipse = svg.add('ellipse')
-                   .cx(50).cy(50).rx(50).ry(30);
+$.svg.viewBox(0, 0, 100, 100).width(75).height(75);
+const ellipse = $.svg.add('ellipse')
+                     .cx(50).cy(50).rx(50).ry(30);
 ```
 :::
 
@@ -159,10 +159,10 @@ border width.
 </svg>
 ```
 ```js
-const svg     = gySVG().viewBox(0, 0, 100, 100).width(75).height(75);
-const ellipse = svg.add('ellipse')
-                   .cx(50).cy(50).rx(40).ry(30).fill('#D80000')
-                   .fill('#00D800').stroke('#0000D8').stroke_width(5);
+$.svg.viewBox(0, 0, 100, 100).width(75).height(75);
+const ellipse = $.svg.add('ellipse')
+                     .cx(50).cy(50).rx(40).ry(30).fill('#D80000')
+                     .fill('#00D800').stroke('#0000D8').stroke_width(5);
 ```
 :::
 
@@ -184,9 +184,9 @@ const ellipse = svg.add('ellipse')
 </svg>
 ```
 ```js
-const svg  = gySVG().viewBox(0, 0, 100, 100).width(75).height(75);
-const line = svg.add('line')
-                .x1(10).y1(10).x2(90).y2(90).stroke('#0000D8');
+$.svg.viewBox(0, 0, 100, 100).width(75).height(75);
+const line = $.svg.add('line')
+                  .x1(10).y1(10).x2(90).y2(90).stroke('#0000D8');
 ```
 :::
 
@@ -205,10 +205,10 @@ parents. Of course, it's possible to define the line width using `stroke-width`.
 </svg>
 ```
 ```js
-const svg  = gySVG().viewBox(0, 0, 100, 100).width(75).height(75);
-const line = svg.add('line')
-                .x1(10).y1(10).x2(90).y2(90)
-                .stroke('#0000D8').stroke_width(5);
+$.svg.viewBox(0, 0, 100, 100).width(75).height(75);
+const line = $.svg.add('line')
+                  .x1(10).y1(10).x2(90).y2(90)
+                  .stroke('#0000D8').stroke_width(5);
 ```
 :::
 
@@ -241,15 +241,15 @@ these values:
 </svg>
 ```
 ```js
-const svg = gySVG().viewBox(0, 0, 100, 100).width(75).height(75);
-svg.add('line').x1(10).y1(10).x2(90).y2(10)
-               .stroke('#0000D8').stroke_width(10);
-svg.add('line').x1(10).y1(35).x2(90).y2(35)
-               .stroke('#0000D8').stroke_width(10).stroke_linecap('butt');
-svg.add('line').x1(10).y1(60).x2(90).y2(60)
-               .stroke('#0000D8').stroke_width(10).stroke_linecap('round');
-svg.add('line').x1(10).y1(85).x2(90).y2(85)
-               .stroke('#0000D8').stroke_width(10).stroke_linecap('square');
+$.svg.viewBox(0, 0, 100, 100).width(75).height(75);
+$.svg.add('line').x1(10).y1(10).x2(90).y2(10)
+                 .stroke('#0000D8').stroke_width(10);
+$.svg.add('line').x1(10).y1(35).x2(90).y2(35)
+                 .stroke('#0000D8').stroke_width(10).stroke_linecap('butt');
+$.svg.add('line').x1(10).y1(60).x2(90).y2(60)
+                 .stroke('#0000D8').stroke_width(10).stroke_linecap('round');
+$.svg.add('line').x1(10).y1(85).x2(90).y2(85)
+                 .stroke('#0000D8').stroke_width(10).stroke_linecap('square');
 ```
 :::
 
@@ -280,9 +280,9 @@ which receives a group of pairs `x, y`.
 </svg>
 ```
 ```js
-const svg      = gySVG().viewBox('0 0 100 100').width(75).height(75);
-svg.add('polyline').points([[10,0], [20,80], [40,20], [60,60], [70,40], [80,50]])
-                   .fill('none').stroke('#0000D8').stroke_width(5);
+$.svg.viewBox('0 0 100 100').width(75).height(75);
+$.svg.add('polyline').points([[10,0], [20,80], [40,20], [60,60], [70,40], [80,50]])
+                     .fill('none').stroke('#0000D8').stroke_width(5);
 ```
 :::
 
@@ -307,8 +307,8 @@ shape are defined by `points` through a group of pairs `x, y` values.
 </svg>
 ```
 ```js
-const svg = gySVG().viewBox('0 0 100 100').width(75).height(75);
-svg.add('polygon').points([[50,0], [60,40], [100,50], [60,60], [50,100], [40,60], [0,50], [40,40]]);
+$.svg.viewBox('0 0 100 100').width(75).height(75);
+$.svg.add('polygon').points([[50,0], [60,40], [100,50], [60,60], [50,100], [40,60], [0,50], [40,40]]);
 ```
 :::
 
@@ -327,9 +327,9 @@ and `stroke-width` its border width.
 </svg>
 ```
 ```js
-const svg = gySVG().viewBox('0 0 100 100').width(75).height(75);
-svg.add('polygon').points([[50,0], [60,40], [100,50], [60,60], [50,100], [40,60], [0,50], [40,40]])
-                  .fill('#00D800').stroke('#0000D8').stroke_width(5);
+$.svg.viewBox('0 0 100 100').width(75).height(75);
+$.svg.add('polygon').points([[50,0], [60,40], [100,50], [60,60], [50,100], [40,60], [0,50], [40,40]])
+                    .fill('#00D800').stroke('#0000D8').stroke_width(5);
 ```
 :::
 

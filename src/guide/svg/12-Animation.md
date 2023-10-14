@@ -41,11 +41,11 @@ Graphane Template Engine provide a very simple for of animation in collaboration
 `g-bind` directive. When you use the *modifier* `.animate` after the name property, the value is
 applied with an animation.
 
-<g-svg data="x: 50, y: 50, r: 50">
+<g-template data="x: 50, y: 50, r: 50">
   <svg viewBox="0 0 100 100">
     <circle  g-bind:r.animate="r" g-bind:cx.animate="x" :cy.animate="y" fill="red"/>
   </svg>
-</g-svg>
+</g-template>
 
 ### Animation initial value
 
@@ -101,13 +101,13 @@ This is a complete example:
 <script type="module">
   import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
 
-  const svg       = gySVG().viewBox(0, 0, 200, 100).width('200px').height('100px');
-  const g         = svg.add('g').stroke_width(12).stroke_linecap('round');
+  $.svg.viewBox(0, 0, 200, 100).width('200px').height('100px');
+  const g         = $.svg.add('g').stroke_width(12).stroke_linecap('round');
   const lineRed   = g.add('line').stroke('#C0C0C0').x1(22).y1(30).x2(22).y2(30);
   const lineGreen = g.add('line').stroke('#C0C0C0').x1(22).y1(50).x2(22).y2(50);
   const lineBlue  = g.add('line').stroke('#C0C0C0').x1(22).y1(70).x2(22).y2(70);
 
-  svg.attachTo('#exampleAnimateTo');
+  $.svg.attachTo('#exampleAnimateTo');
 
   document.querySelector('#showAnimateTo').addEventListener('click', () => {
     lineRed.animateTo({stroke : '#D80000', x2 : 130}, 1000);
@@ -141,10 +141,10 @@ want each step to be set.
 <script type="module">
   import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
 
-  const svg  = gySVG().viewBox('0 0 100 100').width(100).height(100);
-  const rect = svg.add('rect').x(0).y(0).width(40).height(40).fill('violet');
+  $.svg.viewBox('0 0 100 100').width(100).height(100);
+  const rect = $.svg.add('rect').x(0).y(0).width(40).height(40).fill('violet');
 
-  svg.attachTo('#example_steps');
+  $.svg.attachTo('#example_steps');
 
   const buttonMove = document.querySelector('#move');
   buttonMove.addEventListener('click', () => {
@@ -180,9 +180,9 @@ second one is called when the animation finishes.
 <script type="module">
   import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
 
-  const svg    = gySVG().viewBox(0, 0, 100, 100).width(100).height(100).id('svg1');
-  const circle = svg.add('circle').cx(50).cy(50).r(10).fill('red');
-  svg.attachTo('#showAnimateToCallback');
+  $.svg.viewBox(0, 0, 100, 100).width(100).height(100).id('svg1');
+  const circle = $.svg.add('circle').cx(50).cy(50).r(10).fill('red');
+  $.svg.attachTo('#showAnimateToCallback');
   document.querySelector('#runAnimateToCallback').addEventListener('click', () => {
     circle.animateTo(
       {r : 40},
@@ -231,9 +231,9 @@ We can add or remove the animation with `.classList` object.
 <script type="module">
   import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
 
-  const svg    = gySVG().viewBox(0, 0, 100, 100).width(100).height(100).id('svg1');
-  const circle = svg.add('circle').cx(50).cy(50).r(10).fill('red');
-  svg.attachTo('#showCSS');
+  $.svg.viewBox(0, 0, 100, 100).width(100).height(100).id('svg1');
+  const circle = $.svg.add('circle').cx(50).cy(50).r(10).fill('red');
+  $.svg.attachTo('#showCSS');
   document.querySelector('#runCSS').addEventListener('click', () => {
     circle.classList.add('cssAnimation');
   });
@@ -279,9 +279,9 @@ CSS animation. Specially straightforward is the `.animate()` method:
 <script type="module">
   import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
 
-  const svg    = gySVG().viewBox(0, 0, 100, 100).width(100).height(100);
-  const circle = svg.add('circle').cx(50).cy(50).r(10).fill('red');
-  svg.attachTo('#showWAP');
+  $.svg.viewBox(0, 0, 100, 100).width(100).height(100);
+  const circle = $.svg.add('circle').cx(50).cy(50).r(10).fill('red');
+  $.svg.attachTo('#showWAP');
   document.querySelector('#runWAP').addEventListener('click', () => {
     circle.animate([{r : 40}], {duration : 1000, fill : 'forwards'});
   });
@@ -338,10 +338,10 @@ element `.begin('indefinite')` and call to `.beginElement()` for execute the ani
 <script type="module">
   import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
 
-  const svg       = gySVG().viewBox(0, 0, 100, 100).width(100).height(100);
-  const circle    = svg.add('circle').cx(50).cy(50).r(10).fill('red');
+  $.svg.viewBox(0, 0, 100, 100).width(100).height(100);
+  const circle    = $.svg.add('circle').cx(50).cy(50).r(10).fill('red');
   const animation = circle.add('animate').attributeName('r').from(10).to(40).dur('1.5s').fill('freeze').begin('indefinite');
-  svg.attachTo('#showSMILAnimate');
+  $.svg.attachTo('#showSMILAnimate');
   document.querySelector('#runSMILAnimate').addEventListener('click', () => {
     animation.beginElement();
   });
@@ -359,12 +359,12 @@ the values that the property has to have in each moment.
 ```js
 import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
 
-const svg    = gySVG().viewBox(0, 0, 200, 200).width('200px').height('200px');
-const circle = svg.add('circle').cx(100).cy(100).r(12).stroke('red').stroke_width(12).fill('none');
+$.svg.viewBox(0, 0, 200, 200).width('200px').height('200px');
+const circle = $.svg.add('circle').cx(100).cy(100).r(12).stroke('red').stroke_width(12).fill('none');
 circle.add('animate').attributeName('r').dur('1.5s').repeatCount('indefinite')
       .values('0 ; 20   ; 50   ; 94   ; 50   ; 20   ; 0')
       .keyTimes('0 ; 0.20 ; 0.40 ; 0.50 ; 0.60 ; 0.80 ; 1');
-svg.attachTo('#example3');
+$.svg.attachTo('#example3');
 ```
 
 :::
@@ -384,8 +384,8 @@ animation is not possible with CSS or Web Animation API:
 <script type="module">
   import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
 
-  const svg    = gySVG().viewBox(0, 0, 50, 100).width('100px').height('200px');
-  const number = svg.add('polyline').fill('none').stroke('black').stroke_width(10)
+  $.svg.viewBox(0, 0, 50, 100).width('100px').height('200px');
+  const number = $.svg.add('polyline').fill('none').stroke('black').stroke_width(10)
                     .points('45,45  5,45  5, 5 45, 5 45,45 45,45 45,95 45,95');
 
   document.querySelector('#example4run').addEventListener('click', () => {
@@ -403,7 +403,7 @@ animation is not possible with CSS or Web Animation API:
     ).beginElement();
   });
 
-  svg.attachTo('#example4');
+  $.svg.attachTo('#example4');
 </script>
 ```
 
@@ -455,15 +455,15 @@ the animation duration, and `.repeatCount()` establishes the number of animation
 ```js
 import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
 
-const svg  = gySVG().viewBox(0, 0, 100, 100).width(200).height(200);
-const rect = svg.add('rect').width(60).height(60).fill('red');
+$.svg.viewBox(0, 0, 100, 100).width(200).height(200);
+const rect = $.svg.add('rect').width(60).height(60).fill('red');
 rect.add('animateTransform').attributeName('transform').type('rotate').dur('2s')
     .from(0, 50, 50).to(360, 50, 50).repeatCount('indefinite').additive('sum');
 rect.add('animateTransform').attributeName('transform').type('translate').dur('1s')
     .values('20,20;35,35;20,20').repeatCount('indefinite').additive('sum');
 rect.add('animateTransform').attributeName('transform').type('scale').dur('1s')
     .values('1;0.5;1').repeatCount('indefinite').additive('sum');
-svg.attachTo('#example5');
+$.svg.attachTo('#example5');
 ```
 
 :::
@@ -495,14 +495,14 @@ a `number`, `'auto'`, or `'auto-reverse'`. As in other animations, you can use `
 ```js
 import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
 
-const svg  = gySVG().viewBox(0, 0, 100, 100).width(200).height(200);
-const defs = svg.add('defs');
+$.svg.viewBox(0, 0, 100, 100).width(200).height(200);
+const defs = $.svg.add('defs');
 const path = defs.add('path')
 path.d.M(15, 50).a(15, 15, 0, 1, 1, 75, 0).a(15, 15, 0, 1, 1, -75, 0);
-const triangle = svg.add('polygon').points([10, 0], [0, -4], [0, 4]);
+const triangle = $.svg.add('polygon').points([10, 0], [0, -4], [0, 4]);
 triangle.add('animateMotion').dur('1500ms').repeatCount('indefinite').rotate('auto')
         .add('mpath').href(path.ref());
-svg.attachTo('#example6');
+$.svg.attachTo('#example6');
 ```
 
 :::
@@ -532,9 +532,9 @@ We can use Javascript and the method `requestAnimationFrame()` for complete cust
 <script type="module">
   import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
 
-  const svg    = gySVG().viewBox(0, 0, 100, 100).width(100).height(100);
-  const circle = svg.add('circle').cx(50).cy(50).r(10).fill('red');
-  svg.attachTo('#showRAF');
+  $.svg.viewBox(0, 0, 100, 100).width(100).height(100);
+  const circle = $.svg.add('circle').cx(50).cy(50).r(10).fill('red');
+  $.svg.attachTo('#showRAF');
   const from   = 10;
   const to     = 40;
   let duration = 1000;

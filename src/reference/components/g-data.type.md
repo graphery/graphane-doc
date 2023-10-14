@@ -22,7 +22,7 @@ outline: deep
 ## Example
 
 ```html
-<g-svg>
+<g-template>
   <svg>
     <defs g-for="value of data">
       <circle g-bind:cx="value.x" g-bind:cy="value.y"
@@ -35,10 +35,10 @@ outline: deep
     {x: 80, y: 80, radix: 10, color: "green"},
     ]
   </g-data>
-</g-svg>
+</g-template>
 ```
 
-<g-svg>
+<g-template>
   <svg>
     <defs g-for="value of data">
       <circle g-bind:cx="value.x" g-bind:cy="value.y" 
@@ -51,4 +51,4 @@ outline: deep
     {x: 80, y: 80, radix: 10, color: "green"},
   ]
   </g-data>
-</g-svg>
+</g-template>
