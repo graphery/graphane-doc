@@ -2,48 +2,50 @@
 
 ## Capture events
 
-The preferred way to capture events in SVG elements is through the `.addEventListener()` method. 
-
-The use of `.onclick()` and other properties that start with `.on` should be avoided because they 
-have significant limitations, such as the impossibility of defining more than one handler for
-the same event.
+The preferred way to capture events in Graphane is through the `g-on:` directive. It is also
+possible to use the `.addEventListener()` method on any SVG element. 
 
 A simple way to capture the 'click' event is this:
 
-:::: tabs :options="{ useUrlFragment: false }" 
-::: tab javascript
-```js
-import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
-gySVG ().viewBox (0, 0, 200, 200).width (200).height (200);
-const rect = $.svg.add ('rect').x(10).y(10).width(180).height(180).fill('red').style.cursor('pointer');
-rect.addEventListener('click', (evt) => {
-  rect.fill(rect.fill() === 'red' ? 'blue' : 'red');
-});
-$.svg.attachTo('#example1');
+::: code-group
+```html [g-on]
+<g-template>
+  <svg viewBox="0 0 200 200">
+    <rect x="10" y="10" width="180" height="180" fill="red" style="cursor:pointer;"
+          g-on:click="change"/>
+  </svg>
+  <g-script type="methods">
+    function change() {
+      this.fill(this.fill() === 'red' ? 'blue' : 'red');
+    }
+  </g-script>
+</g-template>
 ```
-:::
-::: tab result
-<div id="example1"></div>
-<script type="module">
-  import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
-gySVG ().viewBox (0, 0, 200, 200).width (200).height (200);
-const rect = $.svg.add ('rect').x(10).y(10).width(180).height(180).fill('red').style.cursor('pointer');
-rect.addEventListener('click', (evt) => {
-  rect.fill(rect.fill() === 'red' ? 'blue' : 'red');
-});
-$.svg.attachTo('#example1');
-</script>
-:::
-::: tab "svg source"
-```svg
-<svg viewBox="0,0,200,200" width="200" height="200">
-  <rect x="10" y="10" width="180" height="180" fill="blue" style="cursor: pointer;"></rect>
-</svg>
+```html [addEventListener()]
+<g-template>
+  <svg viewBox="0 0 200 200">
+    <rect x="10" y="10" width="180" height="180" fill="red" style="cursor:pointer;"/>
+  </svg>
+  <g-script type="methods">
+    $.svg.querySelector('rect').addEventListener('click', function () {
+      this.setAttribute('fill', this.getAttribute('fill') === 'red' ? 'blue' : 'red');
+    });
+  </g-script>
+</g-template>
 ```
-:::
-::::
 
-If is necessary, you can also use `.removeEventListener()`.
+<g-template>
+  <svg viewBox="0 0 200 200">
+    <rect x="10" y="10" width="180" height="180" fill="red" style="cursor:pointer;"
+          g-on:click="change"/>
+  </svg>
+  <g-script type="methods">
+    function change() {
+      this.fill(this.fill() === 'red' ? 'blue' : 'red');
+    }
+  </g-script>
+</g-template>
+
 
 ## SVG  events
 

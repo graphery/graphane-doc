@@ -128,7 +128,7 @@ export default defineConfig({
               {link : '/guide/svg/12-Animation.md', text : 'Animation'},
               {link : '/guide/svg/13-Text-path-and-clip-path.md', text : 'Text Path and Clip Path'},
               {link : '/guide/svg/14-Manage-elements.md', text : 'Manage Elements'},
-              {link : '/guide/svg/15-Events.md', text : 'Manage Events'},
+              {link : '/guide/svg/15-Events.md', text : 'Handle Events'},
             ]
           },
           // {
