@@ -1,6 +1,6 @@
 # Manage elements
 
-When we include an SVG into the HTML, we include its XML into the browser's Document Object
+When we include an SVG in the HTML, we include its XML into the browser's Document Object
 Model (DOM). The DOM not only supports HTML but also endorses the SVG standard namespace. As a
 result, we can manipulate the SVG inserted in the DOM with the same methods used to manage any
 other element into the DOM. However, the SVG format has some specific features that require some
@@ -13,7 +13,7 @@ be handled and some specific methods and restrictions of the $.svg.
 
 In the SVG structure, we can find different elements classified in these types:
 
-- **SVG document fragment**: it is a document sub-tree that starts with an `svg` element whose 
+- **SVG document fragment**: it is a document subtree that starts with an `svg` element whose 
 parent element is not in the SVG namespace. An `svg` element may contain other `svg` 
 within it, but these deep elements are not the root.
 
@@ -49,45 +49,9 @@ structural elements.
 In this example, we can see how to define two `g`, put `lines` into it, and add a nested `title`
 by each line:
 
-:::: tabs :options="{ useUrlFragment: false }" 
-::: tab javascript
-```js
-gySVG ().viewBox (0, 0, 510, 510).width (510).height (510);
-const horizontal = $.svg.add ('g').stroke_width (5).stroke ('red');
-const vertical   = $.svg.add ('g').stroke_width (5).stroke ('blue');
-
-for (let n = 2.5, l = 0; n <= 510; n += 50, l++) {
-  const line = horizontal.add ('line').x1 (n).y1 (0).x2 (n).y2 (500);
-  line.add ('title').content ('horizontal line nº ' + l);
-}
-
-for (let n = 2.5, l = 0; n <= 510; n += 50, l++) {
-  const line = vertical.add ('line').x1 (0).y1 (n).x2 (505).y2 (n);
-  line.add ('title').content ('vertical line nº ' + l);
-}
-```
-:::
-::: tab result
-<div id="example1"></div>
-<script type="module">
-  import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
-  gySVG ().viewBox (0, 0, 510, 510).width (510).height (510);
-  const horizontal = $.svg.add ('g').stroke_width (5).stroke ('red');
-  const vertical   = $.svg.add ('g').stroke_width (5).stroke ('blue');
-  for (let n = 2.5, l = 0; n <= 510; n += 50, l++) {
-    const line = horizontal.add ('line').x1 (n).y1 (0).x2 (n).y2 (500);
-    line.add ('title').content ('vertical line nº ' + l);
-  }
-  for (let n = 2.5, l = 0; n <= 510; n += 50, l++) {
-    const line = vertical.add ('line').x1 (0).y1 (n).x2 (505).y2 (n);
-    line.add ('title').content ('horizontal line nº ' + l);
-  }
-  $.svg.attachTo ('#example1');
-</script>
-:::
-::: tab "svg source"
+::: code-group
 ```svg
-<svg viewBox="0,0,510,510" width="510" height="510">
+<svg viewBox="0,0,510,510" width="100" height="100">
   <g stroke-width="5" stroke="red">
     <line x1="2.5"   y1="0" x2="2.5"   y2="500">
       <title>vertical line nº 0</title> 
@@ -160,17 +124,103 @@ for (let n = 2.5, l = 0; n <= 510; n += 50, l++) {
   </g>
 </svg>
 ```
+```js
+const horizontal = $.svg.add ('g').stroke_width (5).stroke ('red');
+const vertical   = $.svg.add ('g').stroke_width (5).stroke ('blue');
+
+for (let n = 2.5, l = 0; n <= 510; n += 50, l++) {
+  const line = horizontal.add ('line').x1 (n).y1 (0).x2 (n).y2 (500);
+  line.add ('title').content ('horizontal line nº ' + l);
+}
+
+for (let n = 2.5, l = 0; n <= 510; n += 50, l++) {
+  const line = vertical.add ('line').x1 (0).y1 (n).x2 (505).y2 (n);
+  line.add ('title').content ('vertical line nº ' + l);
+}
+```
 :::
-::::
+
+<svg viewBox="0,0,510,510" width="100" height="100">
+  <g stroke-width="5" stroke="red">
+    <line x1="2.5"   y1="0" x2="2.5"   y2="500">
+      <title>vertical line nº 0</title> 
+    </line>
+    <line x1="52.5"  y1="0" x2="52.5"  y2="500">
+      <title>vertical line nº 1</title> 
+    </line>
+    <line x1="102.5" y1="0" x2="102.5" y2="500">
+      <title>vertical line nº 2</title> 
+    </line>
+    <line x1="152.5" y1="0" x2="152.5" y2="500">
+      <title>vertical line nº 3</title> 
+    </line>
+    <line x1="202.5" y1="0" x2="202.5" y2="500">
+      <title>vertical line nº 4</title> 
+    </line>
+    <line x1="252.5" y1="0" x2="252.5" y2="500">
+      <title>vertical line nº 5</title> 
+    </line>
+    <line x1="302.5" y1="0" x2="302.5" y2="500">
+      <title>vertical line nº 6</title> 
+    </line>
+    <line x1="352.5" y1="0" x2="352.5" y2="500">
+      <title>vertical line nº 7</title> 
+    </line>
+    <line x1="402.5" y1="0" x2="402.5" y2="500">
+      <title>vertical line nº 8</title> 
+    </line>
+    <line x1="452.5" y1="0" x2="452.5" y2="500">
+      <title>vertical line nº 9</title> 
+    </line>
+    <line x1="502.5" y1="0" x2="502.5" y2="500">
+      <title>vertical line nº 10</title>
+    </line>
+  </g>
+  <g stroke-width="5" stroke="blue">
+    <line x1="0" y1="2.5"   x2="505" y2="2.5"  >
+      <title>horizontal line nº 0</title> 
+    </line>
+    <line x1="0" y1="52.5"  x2="505" y2="52.5" >
+      <title>horizontal line nº 1</title> 
+    </line>
+    <line x1="0" y1="102.5" x2="505" y2="102.5">
+      <title>horizontal line nº 2</title> 
+    </line>
+    <line x1="0" y1="152.5" x2="505" y2="152.5">
+      <title>horizontal line nº 3</title> 
+    </line>
+    <line x1="0" y1="202.5" x2="505" y2="202.5">
+      <title>horizontal line nº 4</title> 
+    </line>
+    <line x1="0" y1="252.5" x2="505" y2="252.5">
+      <title>horizontal line nº 5</title> 
+    </line>
+    <line x1="0" y1="302.5" x2="505" y2="302.5">
+      <title>horizontal line nº 6</title> 
+    </line>
+    <line x1="0" y1="352.5" x2="505" y2="352.5">
+      <title>horizontal line nº 7</title> 
+    </line>
+    <line x1="0" y1="402.5" x2="505" y2="402.5">
+      <title>horizontal line nº 8</title> 
+    </line>
+    <line x1="0" y1="452.5" x2="505" y2="452.5">
+      <title>horizontal line nº 9</title> 
+    </line>
+    <line x1="0" y1="502.5" x2="505" y2="502.5">
+      <title>horizontal line nº 10</title>
+    </line>
+  </g>
+</svg>
 
 
 ## Navigate by the DOM
 
-To understand how Graphane library hand the SVG DOM, we will cover an existing SVG and manage the 
+To understand how Graphane hands the SVG DOM, we will cover an existing SVG and manage the 
 elements easily with its specific methods. You can use `document.querySelector()` with an `id` 
 or other CSS selectors for getting the element and pass this to the `$.svg` constructor.
 
-This is the example SVG:
+This is an example:
 
 ```xml
 <svg id="example2" viewBox="0 0 250 250" width="250" height="250">
@@ -191,19 +241,9 @@ This is the example SVG:
 </svg>
  ``` 
 
-We get the element and call to `$.svg`:
-
-```js
-import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
-
-gySVG(document.querySelector('#example'));
-```
-
-Now we can manage the SVG tree very easily.
-
 ### children
 
-You can get all first level nested element with this simple method: `.children()`. This returns an
+You can get all firsts level nested elements with this method: `.children()`. This returns an
 array of objects. Each object is a gySVG wrapped over the SVG element with all methods defined
 in the library. 
 
@@ -217,8 +257,8 @@ for (let elLevel1 of $.svg.children()) {
 
 ### parent
 
-All elements attached to the DOM have a parent, and this can be get with `.parent()` (a short 
-synonym of `.parentElement()`). This return an object created by gySVG over the original SVG 
+All elements attached to the DOM have a parent, and this can be got with `.parent()` (a short 
+synonym of `.parentElement()`). This returns an object created by gySVG over the original SVG 
 element and has all methods defined in the library.
 
 ```js
@@ -229,9 +269,9 @@ const g    = line.parent();
 
 ### sibling
 
-The next and previous element in the same level can be taking with `.next()` (synomym of 
-`.nextElementSibling ()`) and `.previous()` (synonym of `.previousElementSibling ()`). These methods, as all
-other library method, return a wrapped object over the original element.
+The next and previous element in the same level can be taking with `.next()` (synonym
+of `.nextElementSibling ()`) and `.previous()` (synonym of `.previousElementSibling ()`). These
+methods, as all other library methods, return a wrapped object over the original element.
 
 ```js
 const line1 = $.svg.first().first().first().first();
@@ -295,4 +335,4 @@ If you need to un attach an element, you can use `.remove()` method:
 newLine.remove();
 ```
 
-The element exist after this operation, but it's removed from the $.svg.
+The element exists after this operation, but it's removed from the `$.svg`.
