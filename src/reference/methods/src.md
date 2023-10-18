@@ -33,5 +33,5 @@ outline: deep
     <text x="20" y="52" style="cursor: pointer"
           g-on:click="showMessage">click me</text>
   </svg>
-  <g-script type="methods" src="/methods/message.js"></g-script>
+  <g-script type="methods" src="../../methods/message.js"></g-script>
 </g-template>

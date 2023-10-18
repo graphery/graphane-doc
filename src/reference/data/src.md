@@ -29,5 +29,5 @@ outline: deep
       <circle g-bind:cx="value.x" g-bind:cy="value.y"
               g-bind:r="value.radix" g-bind:fill="value.color"/> </defs>
   </svg>
-  <g-script type="data" src="/data/circles.csv"></g-script>
+  <g-script type="data" src="../../data/circles.csv"></g-script>
 </g-template>

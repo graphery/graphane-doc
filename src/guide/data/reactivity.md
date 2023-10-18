@@ -34,4 +34,4 @@ and old values and updates the affected visualization accordingly.
 </g-template>
 ```
 
-<iframe src="/html/reactivity.html" style="border: 0; width: 100%; height: 740px"/>
+<iframe src="../../html/reactivity.html" style="border: 0; width: 100%; height: 740px"/>

@@ -22,6 +22,7 @@ const fullReloadAlways = {
 export default defineConfig({
   title       : 'graphane',
   description : `Data Visualization Microframework - version ${ VERSION }`,
+  base: `/${ VERSION }/`,
   vite        : {
     plugins : [fullReloadAlways],
   },
@@ -33,7 +34,7 @@ export default defineConfig({
     }
   },
   head        : [
-    ['link', {rel : 'icon', href : '/img/logo/g.svg'}],
+    ['link', {rel : 'icon', href : `/${ VERSION }/img/logo/g.svg`}],
     // ['script', {
     //   src  : 'http://localhost:63342/graphery/src/component/template.js',
     //   type : 'module'
@@ -43,8 +44,8 @@ export default defineConfig({
   // https://vitepress.dev/reference/default-theme-config
   themeConfig : {
     logo        : {
-      light : '/img/logo/graphane.svg',
-      dark  : '/img/logo/graphane.light.svg'
+      light : `/${ VERSION }/img/logo/graphane.svg`,
+      dark  : `/${ VERSION }/img/logo/graphane.light.svg`
     },
     siteTitle   : false,
     footer      : {
