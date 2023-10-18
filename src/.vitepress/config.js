@@ -126,38 +126,17 @@ export default defineConfig({
               {link : '/guide/svg/15-Events.md', text : 'Handle Events'},
             ]
           },
-          // {
-          //   text      : 'Custom Web Component',
-          //   collapsed : true,
-          //   items     : [
-          //     {link : '/guide/components/what-is', text : 'What is'},
-          //     {link : '/guide/components/create', text : 'How to create'},
-          //     {link : '/guide/components/composition', text : 'Include features'},
-          //     {link : '/guide/components/api', text : 'Improve the API'},
-          //   ]
-          // },
-          // {
-          //   text      : 'Plugins',
-          //   collapsed : true,
-          //   items     : [
-          //     {link : '/guide/plugins/use', text : 'How to use'},
-          //     {link : '/guide/plugins/create', text : 'How to create'},
-          //     {link : '/guide/plugins/examples', text : 'Examples'},
-          //   ]
-          // },
         ]
       }],
       '/examples/'  : [{
         text  : 'Examples',
         items : [
-          {link : '/examples/', text : 'Graphane Logo'},
+          {link : '/examples/', text : 'Basic bars'},
           {link : '/examples/02.otto.neurath.tribute', text : 'Otto Neumath tribute'},
           {link : '/examples/03.quadrant', text : 'Quadrant'},
           {link : '/examples/04.process', text : 'Process'},
           {link : '/examples/05.bars', text : 'Chart Bars'},
           {link : '/examples/06.evolution', text : 'Human Evolution'},
-          {link : '/examples/07.fractal-tree', text : 'Fractal Tree'},
-          {link : '/examples/08.circlebars', text : 'Circle Bars'},
         ]
       }],
       '/reference/' : [{

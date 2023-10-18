@@ -1,4 +1,4 @@
-# Graphane Logo
+# Basic bars
 
 <g-template>
   <svg viewBox="0 0 200 100" width="200px" height="100px">
