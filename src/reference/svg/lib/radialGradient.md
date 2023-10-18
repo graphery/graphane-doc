@@ -213,7 +213,7 @@ Get the `spreadMethod` current value.
 
 - **returns**: `{string}` 
 
-- **Parent elements**: [a](a.md) | [defs](defs.md) | [g](g.md) | [marker](marker.md) | [mask](mask.md) | [pattern](pattern.md) | [svg](svg.md) | [symbol](symbol.md).
+- **Parent elements**: [a](./a.md) | [defs](./defs.md) | [g](./g.md) | [marker](./marker.md) | [mask](./mask.md) | [pattern](./pattern.md) | [svg](./svg.md) | [symbol](./symbol.md).
 
-- **Child elements**: [animate](animate.md) | [animateTransform](animateTransform.md) | [desc](desc.md) | [metadata](metadata.md) | [set](set.md) | [stop](stop.md) | [title](title.md).
+- **Child elements**: [animate](./animate.md) | [animateTransform](./animateTransform.md) | [desc](./desc.md) | [metadata](./metadata.md) | [set](./set.md) | [stop](./stop.md) | [title](./title.md).
 

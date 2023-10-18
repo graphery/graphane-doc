@@ -37,7 +37,7 @@ Get the `href` current value.
 
 - **returns**: `{string}` Current URL to a path or other basic shape
 
-- **Parent elements**: [a](a.md) | [animateMotion](animateMotion.md) | [circle](circle.md) | [clipPath](clipPath.md) | [defs](defs.md) | [ellipse](ellipse.md) | [g](g.md) | [image](image.md) | [line](line.md) | [marker](marker.md) | [mask](mask.md) | [path](path.md) | [pattern](pattern.md) | [polygon](polygon.md) | [polyline](polyline.md) | [rect](rect.md) | [svg](svg.md) | [switch](switch.md) | [symbol](symbol.md) | [text](text.md) | [use](use.md).
+- **Parent elements**: [a](./a.md) | [animateMotion](./animateMotion.md) | [circle](./circle.md) | [clipPath](./clipPath.md) | [defs](./defs.md) | [ellipse](./ellipse.md) | [g](./g.md) | [image](./image.md) | [line](./line.md) | [marker](./marker.md) | [mask](./mask.md) | [path](./path.md) | [pattern](./pattern.md) | [polygon](./polygon.md) | [polyline](./polyline.md) | [rect](./rect.md) | [svg](./svg.md) | [switch](./switch.md) | [symbol](./symbol.md) | [text](./text.md) | [use](./use.md).
 
-- **Child elements**: [desc](desc.md) | [metadata](metadata.md) | [title](title.md).
+- **Child elements**: [desc](./desc.md) | [metadata](./metadata.md) | [title](./title.md).
 

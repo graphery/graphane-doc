@@ -33,7 +33,7 @@ Get the `clipPathUnits` current value.
 
 - **returns**: `{string}` Current unit
 
-- **Parent elements**: [a](a.md) | [defs](defs.md) | [g](g.md) | [marker](marker.md) | [mask](mask.md) | [pattern](pattern.md) | [svg](svg.md) | [symbol](symbol.md).
+- **Parent elements**: [a](./a.md) | [defs](./defs.md) | [g](./g.md) | [marker](./marker.md) | [mask](./mask.md) | [pattern](./pattern.md) | [svg](./svg.md) | [symbol](./symbol.md).
 
-- **Child elements**: [animate](animate.md) | [animateMotion](animateMotion.md) | [animateTransform](animateTransform.md) | [circle](circle.md) | [desc](desc.md) | [discard](./discard.md) | [ellipse](ellipse.md) | [line](line.md) | [metadata](metadata.md) | [mpath](mpath.md) | [path](path.md) | [polygon](polygon.md) | [polyline](polyline.md) | [rect](rect.md) | [set](set.md) | [text](text.md) | [title](title.md) | [use](use.md).
+- **Child elements**: [animate](./animate.md) | [animateMotion](./animateMotion.md) | [animateTransform](./animateTransform.md) | [circle](./circle.md) | [desc](./desc.md) | [discard](././discard.md) | [ellipse](./ellipse.md) | [line](./line.md) | [metadata](./metadata.md) | [mpath](./mpath.md) | [path](./path.md) | [polygon](./polygon.md) | [polyline](./polyline.md) | [rect](./rect.md) | [set](./set.md) | [text](./text.md) | [title](./title.md) | [use](./use.md).
 

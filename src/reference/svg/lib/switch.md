@@ -79,7 +79,7 @@ Get the `transform` current value.
 
 - **returns**: `{string}` 
 
-- **Parent elements**: [a](a.md) | [defs](defs.md) | [g](g.md) | [marker](marker.md) | [mask](mask.md) | [pattern](pattern.md) | [svg](svg.md) | [switch](switch.md) | [symbol](symbol.md).
+- **Parent elements**: [a](./a.md) | [defs](./defs.md) | [g](./g.md) | [marker](./marker.md) | [mask](./mask.md) | [pattern](./pattern.md) | [svg](./svg.md) | [switch](./switch.md) | [symbol](./symbol.md).
 
-- **Child elements**: [a](a.md) | [animate](animate.md) | [animateMotion](animateMotion.md) | [animateTransform](animateTransform.md) | [circle](circle.md) | [desc](desc.md) | [discard](./discard.md) | [ellipse](ellipse.md) | [foreignObject](foreignObject.md) | [g](g.md) | [image](image.md) | [line](line.md) | [metadata](metadata.md) | [mpath](mpath.md) | [path](path.md) | [polygon](polygon.md) | [polyline](polyline.md) | [rect](rect.md) | [set](set.md) | [svg](svg.md) | [switch](switch.md) | [text](text.md) | [title](title.md) | [use](use.md).
+- **Child elements**: [a](./a.md) | [animate](./animate.md) | [animateMotion](./animateMotion.md) | [animateTransform](./animateTransform.md) | [circle](./circle.md) | [desc](./desc.md) | [discard](././discard.md) | [ellipse](./ellipse.md) | [foreignObject](./foreignObject.md) | [g](./g.md) | [image](./image.md) | [line](./line.md) | [metadata](./metadata.md) | [mpath](./mpath.md) | [path](./path.md) | [polygon](./polygon.md) | [polyline](./polyline.md) | [rect](./rect.md) | [set](./set.md) | [svg](./svg.md) | [switch](./switch.md) | [text](./text.md) | [title](./title.md) | [use](./use.md).
 

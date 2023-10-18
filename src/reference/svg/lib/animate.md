@@ -42,55 +42,55 @@ the values that the property has to have in each moment.
 [w3c](https://svgwg.org/specs/animations/#AnimateElement)
 
 - **Parent elements**:
-  [a](a.md) |
-  [circle](circle.md) |
-  [clipPath](clipPath.md) |
-  [defs](defs.md) |
-  [ellipse](ellipse.md) |
-  [feBlend](FilterPrimitives.md#feblend) |
-  [feColorMatrix](FilterPrimitives.md#fecolormatrix) |
-  [feComposite](FilterPrimitives.md#fecomposite) |
-  [feConvolveMatrix](FilterPrimitives.md#feconvolvematrix) |
-  [feDisplacementMap](FilterPrimitives.md#fedisplacementmap) |
-  [feDistantLight](FilterPrimitives.md#fedistantlight) |
-  [feDropShadow](FilterPrimitives.md#fedropshadow) |
-  [feFlood](FilterPrimitives.md#feflood) |
-  [feFuncA](FilterPrimitives.md#fefunca) |
-  [feFuncB](FilterPrimitives.md#fefuncb) |
-  [feFuncG](FilterPrimitives.md#fefuncg) |
-  [feFuncR](FilterPrimitives.md#fefuncr) |
-  [feGaussianBlur](FilterPrimitives.md#fegaussianblur) |
-  [feImage](FilterPrimitives.md#feimage) |
-  [feMergeNode](FilterPrimitives.md#femergenode) |
-  [feMorphology](FilterPrimitives.md#femorphology) |
-  [feOffset](FilterPrimitives.md#feoffset) |
-  [fePointLight](FilterPrimitives.md#fepointlight) |
-  [feSpotLight](FilterPrimitives.md#fespotlight) |
-  [feTile](FilterPrimitives.md#fetile) |
-  [feTurbulence](FilterPrimitives.md#feturbulence) |
-  [filter](filter.md) |
-  [g](g.md) |
-  [image](image.md) |
-  [line](line.md) |
-  [linearGradient](linearGradient.md) |
-  [marker](marker.md) |
-  [mask](mask.md) |
-  [path](path.md) |
-  [pattern](pattern.md) |
-  [polygon](polygon.md) |
-  [polyline](polyline.md) |
-  [radialGradient](radialGradient.md) |
-  [rect](rect.md) |
-  [stop](stop.md) |
-  [svg](svg.md) |
-  [switch](switch.md) |
-  [symbol](symbol.md) |
-  [text](text.md) |
-  [textPath](textPath.md) |
-  [tspan](tspan.md) |
-  [use](use.md).
+  [a](./a.md) |
+  [circle](./circle.md) |
+  [clipPath](./clipPath.md) |
+  [defs](./defs.md) |
+  [ellipse](./ellipse.md) |
+  [feBlend](./FilterPrimitives.md#feblend) |
+  [feColorMatrix](./FilterPrimitives.md#fecolormatrix) |
+  [feComposite](./FilterPrimitives.md#fecomposite) |
+  [feConvolveMatrix](./FilterPrimitives.md#feconvolvematrix) |
+  [feDisplacementMap](./FilterPrimitives.md#fedisplacementmap) |
+  [feDistantLight](./FilterPrimitives.md#fedistantlight) |
+  [feDropShadow](./FilterPrimitives.md#fedropshadow) |
+  [feFlood](./FilterPrimitives.md#feflood) |
+  [feFuncA](./FilterPrimitives.md#fefunca) |
+  [feFuncB](./FilterPrimitives.md#fefuncb) |
+  [feFuncG](./FilterPrimitives.md#fefuncg) |
+  [feFuncR](./FilterPrimitives.md#fefuncr) |
+  [feGaussianBlur](./FilterPrimitives.md#fegaussianblur) |
+  [feImage](./FilterPrimitives.md#feimage) |
+  [feMergeNode](./FilterPrimitives.md#femergenode) |
+  [feMorphology](./FilterPrimitives.md#femorphology) |
+  [feOffset](./FilterPrimitives.md#feoffset) |
+  [fePointLight](./FilterPrimitives.md#fepointlight) |
+  [feSpotLight](./FilterPrimitives.md#fespotlight) |
+  [feTile](./FilterPrimitives.md#fetile) |
+  [feTurbulence](./FilterPrimitives.md#feturbulence) |
+  [filter](./filter.md) |
+  [g](./g.md) |
+  [image](./image.md) |
+  [line](./line.md) |
+  [linearGradient](./linearGradient.md) |
+  [marker](./marker.md) |
+  [mask](./mask.md) |
+  [path](./path.md) |
+  [pattern](./pattern.md) |
+  [polygon](./polygon.md) |
+  [polyline](./polyline.md) |
+  [radialGradient](./radialGradient.md) |
+  [rect](./rect.md) |
+  [stop](./stop.md) |
+  [svg](./svg.md) |
+  [switch](./switch.md) |
+  [symbol](./symbol.md) |
+  [text](./text.md) |
+  [textPath](./textPath.md) |
+  [tspan](./tspan.md) |
+  [use](./use.md).
 
-- **Child elements**: [desc](desc.md) |
-  [metadata](metadata.md) |
-  [title](title.md).
+- **Child elements**: [desc](./desc.md) |
+  [metadata](./metadata.md) |
+  [title](./title.md).
 

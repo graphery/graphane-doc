@@ -203,7 +203,7 @@ Get the `preserveAspectRatio` current value.
 
 - **returns**: `{string}` 
 
-- **Parent elements**: [a](a.md) | [defs](defs.md) | [g](g.md) | [marker](marker.md) | [mask](mask.md) | [pattern](pattern.md) | [svg](svg.md) | [switch](switch.md) | [symbol](symbol.md).
+- **Parent elements**: [a](./a.md) | [defs](./defs.md) | [g](./g.md) | [marker](./marker.md) | [mask](./mask.md) | [pattern](./pattern.md) | [svg](./svg.md) | [switch](./switch.md) | [symbol](./symbol.md).
 
-- **Child elements**: [animate](animate.md) | [animateMotion](animateMotion.md) | [animateTransform](animateTransform.md) | [desc](desc.md) | [discard](./discard.md) | [metadata](metadata.md) | [mpath](mpath.md) | [set](set.md) | [title](title.md).
+- **Child elements**: [animate](./animate.md) | [animateMotion](./animateMotion.md) | [animateTransform](./animateTransform.md) | [desc](./desc.md) | [discard](././discard.md) | [metadata](./metadata.md) | [mpath](./mpath.md) | [set](./set.md) | [title](./title.md).
 

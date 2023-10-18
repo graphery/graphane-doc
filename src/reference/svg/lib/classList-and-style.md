@@ -48,17 +48,17 @@ so in Graphane you can choose to use
 
 | style property                        | SVG attribute                     | element                                                                                                             |
 |---------------------------------------|-----------------------------------|---------------------------------------------------------------------------------------------------------------------|
-| `.style.cx()`                         | `.cx()`                           | [circle](circle.md) [ellipse](ellipse.md)                                                                           |
-| `.style.cy()`                         | `.cy()`                           | [circle](circle.md) [ellipse](ellipse.md)                                                                           |
-| `.style.height()`                     | `.height()`                       | [foreignObject](foreignObject.md) [image](image.md) [rect](rect.md) [svg](svg.md) [symbol](symbol.md) [use](use.md) |
-| `.style.width()`                      | `.width()`                        | [foreignObject](foreignObject.md) [image](image.md) [rect](rect.md) [svg](svg.md) [symbol](symbol.md) [use](use.md) |
-| `.style.x()`                          | `.x()`                            | [foreignObject](foreignObject.md) [image](image.md) [rect](rect.md) [svg](svg.md) [symbol](symbol.md) [use](use.md) |
-| `.style.y()`                          | `.y()`                            | [foreignObject](foreignObject.md) [image](image.md) [rect](rect.md) [svg](svg.md) [symbol](symbol.md) [use](use.md) |
-| `.style.r()`                          | `.r()`                            | [circle](circle.md)                                                                                                 |
-| `.style.rx()`                         | `.rx()`                           | [ellipse](ellipse.md) [rect](rect.md)                                                                               |
-| `.style.ry()`                         | `.ry()`                           | [ellipse](ellipse.md) [rect](rect.md)                                                                               |
-| `.style.d()`                          | `.d()`                            | [path](path.md) (with different syntax between style and property)                                                  |
-| `.style.fill()`                       | `.fill()`                         | Any element except for [animation](animation.md)<br/> which have a different fill attribute.                        |
+| `.style.cx()`                         | `.cx()`                           | [circle](./circle.md) [ellipse](./ellipse.md)                                                                           |
+| `.style.cy()`                         | `.cy()`                           | [circle](./circle.md) [ellipse](./ellipse.md)                                                                           |
+| `.style.height()`                     | `.height()`                       | [foreignObject](./foreignObject.md) [image](./image.md) [rect](./rect.md) [svg](./svg.md) [symbol](./symbol.md) [use](./use.md) |
+| `.style.width()`                      | `.width()`                        | [foreignObject](./foreignObject.md) [image](./image.md) [rect](./rect.md) [svg](./svg.md) [symbol](./symbol.md) [use](./use.md) |
+| `.style.x()`                          | `.x()`                            | [foreignObject](./foreignObject.md) [image](./image.md) [rect](./rect.md) [svg](./svg.md) [symbol](./symbol.md) [use](./use.md) |
+| `.style.y()`                          | `.y()`                            | [foreignObject](./foreignObject.md) [image](./image.md) [rect](./rect.md) [svg](./svg.md) [symbol](./symbol.md) [use](./use.md) |
+| `.style.r()`                          | `.r()`                            | [circle](./circle.md)                                                                                                 |
+| `.style.rx()`                         | `.rx()`                           | [ellipse](./ellipse.md) [rect](./rect.md)                                                                               |
+| `.style.ry()`                         | `.ry()`                           | [ellipse](./ellipse.md) [rect](./rect.md)                                                                               |
+| `.style.d()`                          | `.d()`                            | [path](./path.md) (with different syntax between style and property)                                                  |
+| `.style.fill()`                       | `.fill()`                         | Any element except for [animation](./animation.md)<br/> which have a different fill attribute.                        |
 | `.style.transform()`                  | `.transform()`                    | The CSS transform and the SVG transform have different format                                                       |
 | `.style.alignmentBaseline()`          | `.alignment_baseline()`           | Any element                                                                                                         |
 | `.style.baselineShift()`              | `.baseline_shift()`               | Any element                                                                                                         |

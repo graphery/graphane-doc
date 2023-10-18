@@ -53,7 +53,7 @@ Get the `stop-opacity` current value.
 
 - **returns**: `{number|string}` 
 
-- **Parent elements**: [a](a.md) | [defs](defs.md) | [g](g.md) | [linearGradient](linearGradient.md) | [marker](marker.md) | [mask](mask.md) | [pattern](pattern.md) | [radialGradient](radialGradient.md) | [svg](svg.md) | [symbol](symbol.md).
+- **Parent elements**: [a](./a.md) | [defs](./defs.md) | [g](./g.md) | [linearGradient](./linearGradient.md) | [marker](./marker.md) | [mask](./mask.md) | [pattern](./pattern.md) | [radialGradient](./radialGradient.md) | [svg](./svg.md) | [symbol](./symbol.md).
 
-- **Child elements**: [animate](animate.md) | [set](set.md).
+- **Child elements**: [animate](./animate.md) | [set](./set.md).
 

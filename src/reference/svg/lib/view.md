@@ -87,7 +87,7 @@ Get the `preserveAspectRatio` current value.
 
 - **returns**: `{string}` Current align configuration
 
-- **Parent elements**: [a](a.md) | [defs](defs.md) | [g](g.md) | [marker](marker.md) | [mask](mask.md) | [pattern](pattern.md) | [svg](svg.md) | [symbol](symbol.md).
+- **Parent elements**: [a](./a.md) | [defs](./defs.md) | [g](./g.md) | [marker](./marker.md) | [mask](./mask.md) | [pattern](./pattern.md) | [svg](./svg.md) | [symbol](./symbol.md).
 
-- **Child elements**: [desc](desc.md) | [metadata](metadata.md) | [title](title.md).
+- **Child elements**: [desc](./desc.md) | [metadata](./metadata.md) | [title](./title.md).
 

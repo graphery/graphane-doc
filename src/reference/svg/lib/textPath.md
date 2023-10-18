@@ -154,7 +154,7 @@ Get the `textLength` current value.
 
 - **returns**: `{number}` 
 
-- **Parent elements**: [text](text.md).
+- **Parent elements**: [text](./text.md).
 
-- **Child elements**: [a](a.md) | [animate](animate.md) | [desc](desc.md) | [metadata](metadata.md) | [set](set.md) | [title](title.md) | [tspan](tspan.md).
+- **Child elements**: [a](./a.md) | [animate](./animate.md) | [desc](./desc.md) | [metadata](./metadata.md) | [set](./set.md) | [title](./title.md) | [tspan](./tspan.md).
 

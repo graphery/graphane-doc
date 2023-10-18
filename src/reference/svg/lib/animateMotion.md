@@ -73,7 +73,7 @@ Get the `rotate` current value.
 
 - **returns**: `{number|string}` Current rotation
 
-- **Parent elements**: [a](a.md) | [circle](circle.md) | [clipPath](clipPath.md) | [defs](defs.md) | [ellipse](ellipse.md) | [g](g.md) | [image](image.md) | [line](line.md) | [marker](marker.md) | [mask](mask.md) | [path](path.md) | [pattern](pattern.md) | [polygon](polygon.md) | [polyline](polyline.md) | [rect](rect.md) | [svg](svg.md) | [switch](switch.md) | [symbol](symbol.md) | [text](text.md) | [use](use.md).
+- **Parent elements**: [a](./a.md) | [circle](./circle.md) | [clipPath](./clipPath.md) | [defs](./defs.md) | [ellipse](./ellipse.md) | [g](./g.md) | [image](./image.md) | [line](./line.md) | [marker](./marker.md) | [mask](./mask.md) | [path](./path.md) | [pattern](./pattern.md) | [polygon](./polygon.md) | [polyline](./polyline.md) | [rect](./rect.md) | [svg](./svg.md) | [switch](./switch.md) | [symbol](./symbol.md) | [text](./text.md) | [use](./use.md).
 
-- **Child elements**: [desc](desc.md) | [metadata](metadata.md) | [mpath](mpath.md) | [title](title.md).
+- **Child elements**: [desc](./desc.md) | [metadata](./metadata.md) | [mpath](./mpath.md) | [title](./title.md).
 
