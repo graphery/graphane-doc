@@ -2,17 +2,15 @@
 outline: deep
 ---
 
-# `g-template.methods`
+# `script type="methods" src="file"` or<br/> `methods-src="file"`
 
+- **Attribute**:
+  - `src` in `script type="methods"`
+  - `methods-src` in `g-template`.
 
-- **Property**: `.methods`
+- **Description**: the path to an external resource with javascript functions.
 
-- **Description**: for add methods to the template you can use the `.methods` property and
-the `<g-methods></g-methods>` component.
-
----
-
-**Example**:
+## Example
 
 ```html
 <g-template data="message: 'hello world'">
@@ -23,14 +21,7 @@ the `<g-methods></g-methods>` component.
     <text x="20" y="52" style="cursor: pointer"
           g-on:click="showMessage">click me</text>
   </svg>
-  <g-methods>{
-    showMessage() {
-      this.methods.show();
-    },
-    show() {
-      alert(this.data.message);
-    }
-  }</g-methods>
+  <script type="methods" src="/methods/message.js"></script>
 </g-template>
 ```
 
@@ -40,14 +31,7 @@ the `<g-methods></g-methods>` component.
           style="cursor: pointer"
           g-on:click="showMessage"/>
     <text x="20" y="52" style="cursor: pointer"
-           g-on:click="showMessage">click me</text>
+          g-on:click="showMessage">click me</text>
   </svg>
-  <g-methods>{
-    showMessage() {
-      this.methods.show();
-    },
-    show() {
-      alert(this.data.message);
-    }
-  }</g-methods>
+  <g-script type="methods" src="/methods/message.js"></g-script>
 </g-template>

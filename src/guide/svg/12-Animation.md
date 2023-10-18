@@ -53,7 +53,7 @@ The syntax is: `g-bind:attribute="$.animate(value [, duration] [, delay])`.
 </g-template>
 <p>
   <button onclick="document.querySelector('#dynamic1').update()">
-   click for run the animation
+   click to run the animation
   </button>
 </p>
 
@@ -108,7 +108,7 @@ You can pass an array of values to describe non-linear progressing.
 </g-template>
 <p>
   <button onclick="document.querySelector('#dynamic2').update()">
-   click for run the animation
+   click to run the animation
   </button>
 </p>
 
@@ -145,7 +145,7 @@ control over the execution of the animation.
 </g-template>
 <p>
   <button onclick="document.querySelector('#dynamic3').update()">
-   click for run the animation
+   click to run the animation
   </button>
 </p>
 

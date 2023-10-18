@@ -1,14 +1,8 @@
-# svg
+# $.svg
 
 The svg element is a container that defines a new coordinate system and viewport. It is used as the outermost element of SVG documents, but it can also be used to embed an SVG fragment inside another SVG.
 
-Usually, this element is created with:
-      
-```js
-const svg = gSVG()
-```
-
-It's possible to create it as child element with `parentElement.add('svg')`.
+It's possible to create it as a child element with `parentElement.add('svg')`.
 
 *More info*:
       [mdn](https://developer.mozilla.org//en-US/docs/Web/SVG/Element/svg) | [w3c](https://svgwg.org/svg2-draft/single-page.html#struct-SVGElement)
@@ -125,7 +119,7 @@ Get the `width` current value.
 ```js
 svg.x( x )
 ```
-Set the displayed `x` coordinate of the svg container. No effect on outermost svg elements.
+Set the displayed `x` coordinate of the $.svg container. No effect on outermost $.svg elements.
 
 - **argument**: `{number} x` The `x` value 
 
@@ -145,7 +139,7 @@ Get the `x` current value.
 ```js
 svg.y( y )
 ```
-Set the displa`y`ed `y` coordinate of the svg container. No effect on outermost svg elements.
+Set the displa`y`ed `y` coordinate of the $.svg container. No effect on outermost $.svg elements.
 
 - **argument**: `{number} y` The `y` value 
 

@@ -2,17 +2,18 @@
 outline: deep
 ---
 
-# `<g-data type="type">content</g-data>`
+# Data content
 
-- **Content**: data embebed
+- **Content**: data
 
 - **Formats**:
 
-    - `csv`: coma separate values format.
+    - `CSV`: coma separate values format.
 
-    - `json`: Javascript Object Notation format.
+    - `JSON`: Javascript Object Notation format.
 
-    - `js`: it is very similar to JSON, but is not necessary quote the regular keys and accept values
+    - `JS`: it is very similar to JSON, but is not necessary quote the regular keys and accept 
+      values
       as Date, Map, Set, etc.
 
 ## Example
@@ -24,13 +25,13 @@ outline: deep
       <circle g-bind:cx="value.x" g-bind:cy="value.y"
               g-bind:r="value.radix" g-bind:fill="value.color"/> </defs>
   </svg>
-  <g-data type="json">
+  <script type="data">
   [
     {"x": 20, "y": 20, "radix": 20, "color": "red"},
     {"x": 45, "y": 45, "radix": 30, "color": "blue"},
     {"x": 80, "y": 80, "radix": 10, "color": "green"}
   ]
-  </g-data>
+  </script>
 </g-template>
 ```
 
@@ -40,11 +41,11 @@ outline: deep
       <circle g-bind:cx="value.x" g-bind:cy="value.y" 
               g-bind:r="value.radix" g-bind:fill="value.color"/> </defs>
   </svg>
-  <g-data type="json">
+  <g-script type="data">
   [
     {"x": 20, "y": 20, "radix": 20, "color": "red"},
     {"x": 45, "y": 45, "radix": 30, "color": "blue"},
     {"x": 80, "y": 80, "radix": 10, "color": "green"}
   ]
-  </g-data>
+  </g-script>
 </g-template>

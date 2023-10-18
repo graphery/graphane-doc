@@ -25,7 +25,7 @@ the set time. This method use internally CSS or SMIL, the best in each case.
 - `{function} after`: a callback function called after the animation has finished.
 
 ```js
-const svg = SVG().viewBox('0 0 100 100');
+const $.svg = SVG().viewBox('0 0 100 100');
 svg.add ('circle').cx (10).cy (10).r (0).animateTo({r: 10});
 svg.add ('circle').cx (30).cy (10).r (10).animateTo([{r: 10},{r: 0}], {duration: 1000});
 ```

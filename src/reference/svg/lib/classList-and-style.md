@@ -22,7 +22,7 @@ methods.
  | *`element`*`.classList.values()`   | Returns an iterator<br/> allowing you to go through all values of the key/value pairs contained in this object.                                                                |
 
 ```js
-const svg = SVG().viewBox('0 0 100 100');
+const $.svg = SVG().viewBox('0 0 100 100');
 svg.classList.add('test')
 ```
 
@@ -36,7 +36,7 @@ The properties of the `.style` object are wrapped and its properties are now met
 you have to use `.style` explicitly in each call, since these methods return the main object and not the `style` object.
 
 ```js
-const svg = SVG().viewBox('0 0 100 100');
+const $.svg = SVG().viewBox('0 0 100 100');
 svg.style.strokeWidth('10px').style.stroke('#000000');
 ```
 

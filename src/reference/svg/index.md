@@ -2,14 +2,13 @@
 outline: deep
 ---
 
-# g-template
+# SVG
 
-The `g-template` custom tag is the main web component of the SVG Graphane declarative micro framework. It
-is used as a data driven SVG template.
+The `g-template` can include a `svg` tag or link it as external resource with `svg-src`. This SVG
+is a standard SVG with some extra features for templating the content from the data.
 
 ```html
-
-<g-template data="value: 50">        <!-- g-template component -->
+<g-template data="value: 50">   <!-- g-template component -->
   <svg viewBox="0 0 400 270">   <!-- SVG Template -->
     <defs g-for="y of 5">       <!-- g-for attribute -->
       <defs g-for="x of 20">    <!-- g-for attribute -->
@@ -38,22 +37,24 @@ is used as a data driven SVG template.
   </svg>
 </g-template>
 
-### SVG Templating
+## Templating directives
 
-SVG template is based on these attributes.
+SVG template is based on these special attributes or directives:
 
-- [g-bind](templating.g-bind.md) - set attributes value based on the data. 
-- [g-content](templating.g-content.md) - insert content into the element.
-- [g-for](templating.g-for.md) - render the element multiple times based on the data.
-- [g-if](templating.g-if.md) - conditionally render an element based on the data.
-- [g-on](templating.g-on.md) - attach an event listener to the element.
+- [`g-bind`](templating/g-bind.md) - set attributes value based on the data. 
+- [`g-content`](templating/g-content.md) - insert content into the element.
+- [`g-for`](templating/g-for.md) - render the element multiple times based on the data.
+- [`g-if`](templating/g-if.md) - conditionally render an element based on the data.
+- [`g-on`](templating/g-on.md) - attach an event listener to the element.
 
-### Attributes
+## Attribute `svg-src`
 
-The `g-template` component accepts these configuration attributes.
+The `g-template` component has this attribute:
 
-- [src](g-template.attribute.src.md) - define the svg template as external resource.
-- [data](g-template.attribute.data.md) - define a simple key-value.
-- [data-src](g-template.attribute.data-src.md) - define the data source.
-- [data-type](g-template.attribute.data-type.md) - define the data source type (csv, json or js).
-- [methods](g-template.attribute.methods.md) - define the method source (js object with methods).
+- [`svg-src`](src.md) link to an external SVG template file.
+
+## Property `.svg`
+
+The `g-template` component has this property:
+
+- [`.svg`](property.md) a [wrapped](./lib/index.md) version of the SVG generated.

@@ -57,17 +57,12 @@ export default defineConfig({
     nav         : [
       {link : '/', text : 'Home'},
       {link : '/guide/', text : 'Guide'},
-      {
-        text : 'API', items : [
-          {link : '/reference/components/', text : 'Components'},
-          {link : '/reference/lib/', text : 'Library'},
-        ]
-      },
+      {link : '/reference/', text : 'API'},
       {link : '/examples/', text : 'Examples'},
       {link : '#', text : '0.1.0-alpha.1'},
     ],
     sidebar     : {
-      '/guide/'                : [{
+      '/guide/'     : [{
         text  : 'Guide',
         items : [
           {link : '/guide/', text : 'Quick Start'},
@@ -152,7 +147,7 @@ export default defineConfig({
           // },
         ]
       }],
-      '/examples/'             : [{
+      '/examples/'  : [{
         text  : 'Examples',
         items : [
           {link : '/examples/', text : 'Graphane Logo'},
@@ -165,126 +160,109 @@ export default defineConfig({
           {link : '/examples/08.circlebars', text : 'Circle Bars'},
         ]
       }],
-      '/reference/components/' : [{
-        text  : 'Components',
+      '/reference/' : [{
+        text  : 'API',
         items : [
-          {link : '/reference/components/', text : 'Introduction'},
           {
-            text  : 'g-template',
-            link  : '/reference/components/g-template',
-            items : [
+            text : 'g-template',
+            link : '/reference/index.md',
+          },
+          {
+            text      : 'svg',
+            link      : '/reference/svg/',
+            collapsed : true,
+            items     : [
               {
-                text      : 'SVG Template',
+                text      : 'directives',
+                link      : '/reference/svg/templating/',
                 collapsed : true,
-                link      : '/reference/components/templating',
                 items     : [
-                  {link : '/reference/components/templating.g-bind', text : 'g-bind'},
-                  {link : '/reference/components/templating.g-for', text : 'g-for'},
-                  {link : '/reference/components/templating.g-if', text : 'g-if'},
-                  {link : '/reference/components/templating.g-content', text : 'g-content'},
-                  {link : '/reference/components/templating.g-on', text : 'g-on'},
+                  {link : '/reference/svg/templating/g-bind', text : 'g-bind'},
+                  {link : '/reference/svg/templating/g-for', text : 'g-for'},
+                  {link : '/reference/svg/templating/g-if', text : 'g-if'},
+                  {link : '/reference/svg/templating/g-content', text : 'g-content'},
+                  {link : '/reference/svg/templating/g-on', text : 'g-on'},
                 ]
               },
+              {link : '/reference/svg/src', text : 'src'},
+              {link : '/reference/svg/property', text : 'property'},
               {
-                text      : 'Attributes',
+                link      : '/reference/svg/lib/',
+                text      : 'wrapper',
                 collapsed : true,
-                link      : '/reference/components/g-template.attributes',
                 items     : [
-                  {link : '/reference/components/g-template.attribute.src', text : 'src'},
-                  {link : '/reference/components/g-template.attribute.data', text : 'data'},
+                  {link : "/reference/svg/lib/management", text : "manage elements"},
                   {
-                    link : '/reference/components/g-template.attribute.data-src',
-                    text : 'data-src & data-type'
+                    link : "/reference/svg/lib/attributes-properties-methods",
+                    text : "attributes, properties, methods"
                   },
-                  {link : '/reference/components/g-template.property.methods', text : 'methods'},
+                  {link : "/reference/svg/lib/classList-and-style", text : "classList and style"},
+                  {link : "/reference/svg/lib/animateTo", text : "animateTo"},
+                  {link : "/reference/svg/lib/a", text : "a"},
+                  {link : "/reference/svg/lib/animate", text : "animate"},
+                  {link : "/reference/svg/lib/animateMotion", text : "animateMotion"},
+                  {link : "/reference/svg/lib/animateTransform", text : "animateTransform"},
+                  {link : "/reference/svg/lib/circle", text : "circle"},
+                  {link : "/reference/svg/lib/clipPath", text : "clipPath"},
+                  {link : "/reference/svg/lib/defs", text : "defs"},
+                  {link : "/reference/svg/lib/desc", text : "desc"},
+                  {link : "/reference/svg/lib/ellipse", text : "ellipse"},
+                  {link : "/reference/svg/lib/filter", text : "filter"},
+                  {link : "/reference/svg/lib/FilterPrimitives", text : "Filter Primitives"},
+                  {link : "/reference/svg/lib/foreignObject", text : "foreignObject"},
+                  {link : "/reference/svg/lib/g", text : "g"},
+                  {link : "/reference/svg/lib/image", text : "image"},
+                  {link : "/reference/svg/lib/line", text : "line"},
+                  {link : "/reference/svg/lib/linearGradient", text : "linearGradient"},
+                  {link : "/reference/svg/lib/marker", text : "marker"},
+                  {link : "/reference/svg/lib/mask", text : "mask"},
+                  {link : "/reference/svg/lib/metadata", text : "metadata"},
+                  {link : "/reference/svg/lib/mpath", text : "mpath"},
+                  {link : "/reference/svg/lib/path", text : "path"},
+                  {link : "/reference/svg/lib/pattern", text : "pattern"},
+                  {link : "/reference/svg/lib/polygon", text : "polygon"},
+                  {link : "/reference/svg/lib/polyline", text : "polyline"},
+                  {link : "/reference/svg/lib/radialGradient", text : "radialGradient"},
+                  {link : "/reference/svg/lib/rect", text : "rect"},
+                  {link : "/reference/svg/lib/set", text : "set"},
+                  {link : "/reference/svg/lib/stop", text : "stop"},
+                  {link : "/reference/svg/lib/style", text : "style"},
+                  {link : "/reference/svg/lib/svg", text : "svg"},
+                  {link : "/reference/svg/lib/switch", text : "switch"},
+                  {link : "/reference/svg/lib/symbol", text : "symbol"},
+                  {link : "/reference/svg/lib/text", text : "text"},
+                  {link : "/reference/svg/lib/textPath", text : "textPath"},
+                  {link : "/reference/svg/lib/title", text : "title"},
+                  {link : "/reference/svg/lib/tspan", text : "tspan"},
+                  {link : "/reference/svg/lib/use", text : "use"},
+                  {link : "/reference/svg/lib/view", text : "view"}
                 ]
               },
             ]
           },
           {
-            text      : 'g-data',
+            text      : 'data',
+            link      : '/reference/data/',
             collapsed : true,
-            link      : '/reference/components/g-data',
             items     : [
-              {
-                text      : 'Attributes',
-                collapsed : true,
-                items     : [
-                  {link : '/reference/components/g-data.type', text : 'type'},
-                  {link : '/reference/components/g-data.src', text : 'src'}
-                ]
-              },
-              {link : '/reference/components/g-data.content', text : 'Content'}
+              {link : '/reference/data/content', text : 'content'},
+              {link : '/reference/data/src', text : 'src'},
+              {link : '/reference/data/attribute', text : 'attribute'},
+              {link : '/reference/data/property', text : 'property'},
             ]
           },
           {
-            text      : 'g-methods',
+            text      : 'methods',
+            link      : '/reference/methods/',
             collapsed : true,
-            link      : '/reference/components/g-methods',
             items     : [
-              {
-                text      : 'Attributes',
-                collapsed : true,
-                items     : [
-                  {link : '/reference/components/g-methods.src', text : 'src'}
-                ]
-              },
-              {link : '/reference/components/g-methods.content', text : 'Content'}
+              {link : '/reference/methods/content', text : 'content'},
+              {link : '/reference/methods/src', text : 'src'},
+              {link : '/reference/methods/property', text : 'property'},
             ]
-          }
+          },
         ]
       }],
-      '/reference/lib/'        : [{
-        text  : 'Library',
-        items : [
-          {link : "/reference/lib/index", text : "import"},
-          {link : "/reference/lib/management", text : "Management elements"},
-          {
-            link : "/reference/lib/attributes-properties-methods",
-            text : "Attributes, properties, methods"
-          },
-          {link : "/reference/lib/classList-and-style", text : "classList and style"},
-          {link : "/reference/lib/animateTo", text : "animateTo"},
-          {link : "/reference/lib/a", text : "a"},
-          {link : "/reference/lib/animate", text : "animate"},
-          {link : "/reference/lib/animateMotion", text : "animateMotion"},
-          {link : "/reference/lib/animateTransform", text : "animateTransform"},
-          {link : "/reference/lib/circle", text : "circle"},
-          {link : "/reference/lib/clipPath", text : "clipPath"},
-          {link : "/reference/lib/defs", text : "defs"},
-          {link : "/reference/lib/desc", text : "desc"},
-          {link : "/reference/lib/ellipse", text : "ellipse"},
-          {link : "/reference/lib/filter", text : "filter"},
-          {link : "/reference/lib/FilterPrimitives", text : "Filter Primitives"},
-          {link : "/reference/lib/foreignObject", text : "foreignObject"},
-          {link : "/reference/lib/g", text : "g"},
-          {link : "/reference/lib/image", text : "image"},
-          {link : "/reference/lib/line", text : "line"},
-          {link : "/reference/lib/linearGradient", text : "linearGradient"},
-          {link : "/reference/lib/marker", text : "marker"},
-          {link : "/reference/lib/mask", text : "mask"},
-          {link : "/reference/lib/metadata", text : "metadata"},
-          {link : "/reference/lib/mpath", text : "mpath"},
-          {link : "/reference/lib/path", text : "path"},
-          {link : "/reference/lib/pattern", text : "pattern"},
-          {link : "/reference/lib/polygon", text : "polygon"},
-          {link : "/reference/lib/polyline", text : "polyline"},
-          {link : "/reference/lib/radialGradient", text : "radialGradient"},
-          {link : "/reference/lib/rect", text : "rect"},
-          {link : "/reference/lib/set", text : "set"},
-          {link : "/reference/lib/stop", text : "stop"},
-          {link : "/reference/lib/style", text : "style"},
-          {link : "/reference/lib/svg", text : "svg"},
-          {link : "/reference/lib/switch", text : "switch"},
-          {link : "/reference/lib/symbol", text : "symbol"},
-          {link : "/reference/lib/text", text : "text"},
-          {link : "/reference/lib/textPath", text : "textPath"},
-          {link : "/reference/lib/title", text : "title"},
-          {link : "/reference/lib/tspan", text : "tspan"},
-          {link : "/reference/lib/use", text : "use"},
-          {link : "/reference/lib/view", text : "view"}
-        ]
-      }]
     },
     socialLinks : [
       {
@@ -294,4 +272,5 @@ export default defineConfig({
       {link : 'https://github.com/graphery/graphane', icon : 'github'},
     ]
   }
-});
+})
+;

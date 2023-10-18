@@ -2,16 +2,16 @@
 outline: deep
 ---
 
-# `<g-methods src="resource"></g-methods>` 
+# Methods content
 
-- **Attribute**: `src`
+- **Content**: a Javascript code with functions.
 
-- **Description**: the path to an external resource with the Javascript objet with the methods.
+Only the function defined with `function` are included as methods. Variables, constant and other 
+elements can be included in the content, but are not used in the template directly.
+
+In the methods you can access to the component with the `$`, for example, `$.data` or `$.svg`.
 
 ## Example
-
-
-::: code-group
 
 ```html
 <g-template data="message: 'hello world'">
@@ -22,19 +22,13 @@ outline: deep
     <text x="20" y="52" style="cursor: pointer"
           g-on:click="showMessage">click me</text>
   </svg>
-  <g-methods src="/methods.js"></g-methods>
+  <script type="methods">
+  function showMessage () {
+    alert($.data.message);
+  }
+  </script>
 </g-template>
 ```
-
-```js
-{
-  showMessage () {
-    alert(this.data.message);
-  }
-}
-```
-
-:::
 
 <g-template data="message: 'hello world'">
   <svg viewBox="0 0 100 100">
@@ -44,5 +38,9 @@ outline: deep
     <text x="20" y="52" style="cursor: pointer"
           g-on:click="showMessage">click me</text>
   </svg>
-  <g-methods src="/methods.js"></g-methods>
+  <g-script type="methods">
+  function showMessage () {
+    alert($.data.message);
+  }
+  </g-script>
 </g-template>

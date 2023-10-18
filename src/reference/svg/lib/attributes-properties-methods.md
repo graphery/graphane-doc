@@ -15,8 +15,7 @@ The call to one of these methods with parameters sets the attribute and returns 
 without parameter returns the value of the attribute.
 
 ```js
-const svg = gSVG().viewBox(0, 0, 10, 10);
-const circle = svg.add('circle').cx(10).cy(10).r(5);
+const circle = $.svg.add('circle').cx(10).cy(10).r(5);
 const radius = circle.r();
 ```
 
@@ -35,8 +34,7 @@ The call to one of these methods with parameters sets the property and returns t
 without parameter returns the value of the property.
 
 ```js
-const svg = gSVG().viewBox(0, 0, 10, 10);
-const circle = svg.add('circle').cx(10).cy(10).r(5);
+const circle = $.svg.add('circle').cx(10).cy(10).r(5);
 console.log(circle.tagName());
 ```
 
@@ -57,10 +55,8 @@ These methods receive the same parameters and return the same values as the orig
 - the return is an SVG element or an array of SVG elements, those elements are converted into a Graphane wrapped object.
 
 ```js
-
-const svg = gSVG().viewBox(0, 0, 10, 10);
-svg.add('circle').cx(3).cy(3).r(1);
+ssvg.add('circle').cx(3).cy(3).r(1);
 svg.add('circle').cx(6).cy(6).r(1);
 svg.add('circle').cx(9).cy(9).r(1);
-const circles = svg.querySelectorAll('circle'); // return an array with Graphane objects
+const circles = $.svg.querySelectorAll('circle'); // return an array with Graphane objects
 ```

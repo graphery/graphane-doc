@@ -47,27 +47,27 @@ the values that the property has to have in each moment.
   [clipPath](clipPath.md) |
   [defs](defs.md) |
   [ellipse](ellipse.md) |
-  [feBlend](./FilterPrimitives#feblend) |
-  [feColorMatrix](./FilterPrimitives#fecolormatrix) |
-  [feComposite](./FilterPrimitives#fecomposite) |
-  [feConvolveMatrix](./FilterPrimitives#feconvolvematrix) |
-  [feDisplacementMap](./FilterPrimitives#fedisplacementmap) |
-  [feDistantLight](./FilterPrimitives#fedistantlight) |
-  [feDropShadow](./FilterPrimitives#fedropshadow) |
-  [feFlood](./FilterPrimitives#feflood) |
-  [feFuncA](./FilterPrimitives#fefunca) |
-  [feFuncB](./FilterPrimitives#fefuncb) |
-  [feFuncG](./FilterPrimitives#fefuncg) |
-  [feFuncR](./FilterPrimitives#fefuncr) |
-  [feGaussianBlur](./FilterPrimitives#fegaussianblur) |
-  [feImage](./FilterPrimitives#feimage) |
-  [feMergeNode](./FilterPrimitives#femergenode) |
-  [feMorphology](./FilterPrimitives#femorphology) |
-  [feOffset](./FilterPrimitives#feoffset) |
-  [fePointLight](./FilterPrimitives#fepointlight) |
-  [feSpotLight](./FilterPrimitives#fespotlight) |
-  [feTile](./FilterPrimitives#fetile) |
-  [feTurbulence](./FilterPrimitives#feturbulence) |
+  [feBlend](FilterPrimitives.md#feblend) |
+  [feColorMatrix](FilterPrimitives.md#fecolormatrix) |
+  [feComposite](FilterPrimitives.md#fecomposite) |
+  [feConvolveMatrix](FilterPrimitives.md#feconvolvematrix) |
+  [feDisplacementMap](FilterPrimitives.md#fedisplacementmap) |
+  [feDistantLight](FilterPrimitives.md#fedistantlight) |
+  [feDropShadow](FilterPrimitives.md#fedropshadow) |
+  [feFlood](FilterPrimitives.md#feflood) |
+  [feFuncA](FilterPrimitives.md#fefunca) |
+  [feFuncB](FilterPrimitives.md#fefuncb) |
+  [feFuncG](FilterPrimitives.md#fefuncg) |
+  [feFuncR](FilterPrimitives.md#fefuncr) |
+  [feGaussianBlur](FilterPrimitives.md#fegaussianblur) |
+  [feImage](FilterPrimitives.md#feimage) |
+  [feMergeNode](FilterPrimitives.md#femergenode) |
+  [feMorphology](FilterPrimitives.md#femorphology) |
+  [feOffset](FilterPrimitives.md#feoffset) |
+  [fePointLight](FilterPrimitives.md#fepointlight) |
+  [feSpotLight](FilterPrimitives.md#fespotlight) |
+  [feTile](FilterPrimitives.md#fetile) |
+  [feTurbulence](FilterPrimitives.md#feturbulence) |
   [filter](filter.md) |
   [g](g.md) |
   [image](image.md) |
