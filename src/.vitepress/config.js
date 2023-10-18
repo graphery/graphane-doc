@@ -2,6 +2,7 @@ import { defineConfig }      from 'vitepress';
 import { BUNDLED_LANGUAGES } from 'shiki';
 import { readFileSync }      from "fs"
 
+const VERSION                 = '0.1.0-alpha.2';
 const graphaneLanguageGrammar = JSON.parse(readFileSync("./src/.vitepress/shiki/graphane.tmLanguage.json"))
 
 const html     = BUNDLED_LANGUAGES.find(lang => lang.id === 'html')
@@ -20,7 +21,7 @@ const fullReloadAlways = {
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title       : 'graphane',
-  description : "version 0.0.1 (alpha)",
+  description : `Data Visualization Microframework - version ${ VERSION }`,
   vite        : {
     plugins : [fullReloadAlways],
   },
@@ -33,11 +34,11 @@ export default defineConfig({
   },
   head        : [
     ['link', {rel : 'icon', href : '/img/logo/g.svg'}],
-    ['script', {
-      src  : 'http://localhost:63342/graphery/src/component/template.js',
-      type : 'module'
-    }],
-    // ['script', {src : 'https://cdn.graphery.online/graphane/0.1.0-alpha.1/component/template.js'}],
+    // ['script', {
+    //   src  : 'http://localhost:63342/graphery/src/component/template.js',
+    //   type : 'module'
+    // }],
+    ['script', {src : `https://cdn.graphery.online/graphane/${ VERSION }/component/template.js`}],
   ],
   // https://vitepress.dev/reference/default-theme-config
   themeConfig : {
@@ -59,7 +60,7 @@ export default defineConfig({
       {link : '/guide/', text : 'Guide'},
       {link : '/reference/', text : 'API'},
       {link : '/examples/', text : 'Examples'},
-      {link : '#', text : '0.1.0-alpha.1'},
+      {link : 'https://github.com/graphery/graphane/blob/main/CHANGELOG.md', text : VERSION},
     ],
     sidebar     : {
       '/guide/'     : [{
@@ -244,10 +245,10 @@ export default defineConfig({
       }],
     },
     socialLinks : [
-      {
-        link : 'https://www.npmjs.com/package/@graphery/graphane',
-        icon : {svg : `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" xml:space="preserve"><g><path d="M10,10v980h980V10H10z M806.3,806.3H683.8v-490H500v490H193.8V193.8h612.5V806.3z"/></g> </svg>`}
-      },
+      // {
+      //   link : 'https://www.npmjs.com/package/@graphery/graphane',
+      //   icon : {svg : `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" xml:space="preserve"><g><path d="M10,10v980h980V10H10z M806.3,806.3H683.8v-490H500v490H193.8V193.8h612.5V806.3z"/></g> </svg>`}
+      // },
       {link : 'https://github.com/graphery/graphane', icon : 'github'},
     ]
   }
