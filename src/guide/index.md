@@ -123,7 +123,7 @@ they will be available for use in the template directly. To load the data, we ne
                fill="none" stroke="black" stroke-width="1"/>
     </defs>
   </svg>
-  <g-script type="data" src="/data/circles.json"></g-script>
+  <g-script type="data" src="../../data/circles.json"></g-script>
 </g-template>
 
 In some case it is easier to include the data directly into the `script` with `type="data"`. We can

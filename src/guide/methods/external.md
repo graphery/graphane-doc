@@ -26,7 +26,7 @@ with the `src` attribute makes it very easy to indicate the source of the functi
     <text x="36" y="53" style="cursor: pointer;"
           g-on:click="change()">click</text>
   </svg>
-  <g-script type="methods" src="/methods/circle.js"></g-script>
+  <g-script type="methods" src="../../methods/circle.js"></g-script>
 </g-template>
 
 It is possible to directly include the `methods-src` properties within the `g-template` component

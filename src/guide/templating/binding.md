@@ -89,7 +89,7 @@ the corresponding values for those properties.
               g-bind:style="{fill: value.color}"/>
     </defs>
   </svg>
-  <g-script type="data" src="/data/style.csv"></g-script>
+  <g-script type="data" src="../../data/style.csv"></g-script>
 </g-template>
 
 

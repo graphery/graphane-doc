@@ -31,7 +31,7 @@ attributes, you can seamlessly incorporate external data into their visualizatio
               g-bind:fill="value.color"/>
     </defs>
   </svg>
-  <g-script type="data" src="/data/circles.csv"></g-script>
+  <g-script type="data" src="../../data/circles.csv"></g-script>
 </g-template>
 
 
