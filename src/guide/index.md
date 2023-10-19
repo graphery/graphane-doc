@@ -123,7 +123,7 @@ they will be available for use in the template directly. To load the data, we ne
                fill="none" stroke="black" stroke-width="1"/>
     </defs>
   </svg>
-  <g-script type="data" src="../../data/circles.json"></g-script>
+  <g-script type="data" src="../data/circles.json"></g-script>
 </g-template>
 
 In some case it is easier to include the data directly into the `script` with `type="data"`. We can
@@ -236,9 +236,9 @@ Here is the previous example with external resources:
 <p>click add circles, ctrl+click reduces circles</p>
 ```
 
-<g-template svg-src="/svg/circles.svg"
-            data-src="/data/circles.json"
-            methods-src="/methods/circles.js"></g-template>
+<g-template svg-src="../svg/circles.svg"
+            data-src="../data/circles.json"
+            methods-src="../methods/circles.js"></g-template>
 <p style="font-size: small">click add circles, ctrl+click reduces circles</p>
 
 That's it! You've completed the quick start guide for using Graphane to render a simple SVG and
