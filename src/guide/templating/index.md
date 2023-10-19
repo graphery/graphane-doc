@@ -48,7 +48,7 @@ such as clicks, hovers, or touches.
 In this example, a figure is shown many times based on the value. If the value is changed, the
 display changes automatically.
 
-```html
+```html {3-11}
 <g-template data="value: 50">        <!-- the g-template component -->
   <svg viewBox="0 0 400 270">        <!-- the SVG Template -->
     <defs g-for="y of 5">            <!-- g-for -->
