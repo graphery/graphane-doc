@@ -200,9 +200,6 @@ Sessionx.vim
 # Persistent undo
 [._]*.un~
 
-### Dist
-dist/
-
 ### storybook
 storybook-static/
 

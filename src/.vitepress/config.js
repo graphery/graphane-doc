@@ -34,7 +34,7 @@ export default defineConfig({
     }
   },
   head        : [
-    ['link', {rel : 'icon', href : `/${ VERSION }/img/logo/g.svg`}],
+    ['link', {rel : 'icon', href : `/img/logo/g.svg`}],
     // ['script', {
     //   src  : 'http://localhost:63342/graphery/src/component/template.js',
     //   type : 'module'
@@ -44,8 +44,8 @@ export default defineConfig({
   // https://vitepress.dev/reference/default-theme-config
   themeConfig : {
     logo        : {
-      light : `/${ VERSION }/img/logo/graphane.svg`,
-      dark  : `/${ VERSION }/img/logo/graphane.light.svg`
+      light : `/img/logo/graphane.svg`,
+      dark  : `/img/logo/graphane.light.svg`
     },
     siteTitle   : false,
     footer      : {
@@ -67,11 +67,12 @@ export default defineConfig({
       '/guide/'     : [{
         text  : 'Guide',
         items : [
-          {link : '/guide/', text : 'Quick Start'},
+          {link : '/guide/', text : 'What is Graphane?'},
+          {link : '/guide/getting-started', text : 'Getting Started'},
           {
             text      : 'Templating',
             link      : '/guide/templating/',
-            collapsed : true,
+            collapsed : false,
             items     : [
               {link : '/guide/templating/binding', text : 'Binding'},
               {link : '/guide/templating/lists', text : 'Lists'},
@@ -84,7 +85,7 @@ export default defineConfig({
           {
             text      : 'Data',
             link      : '/guide/data/',
-            collapsed : true,
+            collapsed : false,
             items     : [
               {link : '/guide/data/attribute', text : 'data attribute'},
               {link : '/guide/data/property', text : '.data property'},
@@ -97,14 +98,14 @@ export default defineConfig({
           {
             text      : 'Methods',
             link      : '/guide/methods/',
-            collapsed : true,
+            collapsed : false,
             items     : [
               {link : '/guide/methods/embebed', text : 'Embedded methods'},
               {link : '/guide/methods/external', text : 'External resource'},
               {link : '/guide/methods/property', text : 'Property'},
               {link : '/guide/methods/data-access', text : '<code>$.data</code>'},
-              {link : '/guide/methods/svg-access', text : '<code>$.svg</code>'},
-              {link : '/guide/methods/load', text : 'Load event'},
+              // {link : '/guide/methods/svg-access', text : '<code>$.svg</code>'},
+              // {link : '/guide/methods/load', text : 'Load event'},
             ]
           },
           {
@@ -151,12 +152,12 @@ export default defineConfig({
           {
             text      : 'svg',
             link      : '/reference/svg/',
-            collapsed : true,
+            collapsed : false,
             items     : [
               {
                 text      : 'directives',
                 link      : '/reference/svg/templating/',
-                collapsed : true,
+                collapsed : false,
                 items     : [
                   {link : '/reference/svg/templating/g-bind', text : 'g-bind'},
                   {link : '/reference/svg/templating/g-for', text : 'g-for'},
@@ -224,7 +225,7 @@ export default defineConfig({
           {
             text      : 'data',
             link      : '/reference/data/',
-            collapsed : true,
+            collapsed : false,
             items     : [
               {link : '/reference/data/content', text : 'content'},
               {link : '/reference/data/src', text : 'src'},
@@ -235,7 +236,7 @@ export default defineConfig({
           {
             text      : 'methods',
             link      : '/reference/methods/',
-            collapsed : true,
+            collapsed : false,
             items     : [
               {link : '/reference/methods/content', text : 'content'},
               {link : '/reference/methods/src', text : 'src'},
