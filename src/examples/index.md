@@ -36,12 +36,12 @@
       </defs>
     </g>
   </svg>
-  <g-data type="json">
+  <script type="data">
   [
     {"color": "#D80000", "value": 100},
     {"color": "#00D800", "value": 150},
     {"color": "#0000D8", "value": 70}
   ]
-  </g-data>
+  </script>
 </g-template>
 ```
