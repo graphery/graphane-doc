@@ -28,7 +28,12 @@ export default defineConfig({
     }
   },
   head        : [
-    ['link', {rel : 'icon', href : '/img/logo/g.svg'}]
+    ['link', {rel : 'icon', href : '/img/logo/g.svg'}],
+    ['script', {
+      src           : 'https://plausible.io/js/script.js',
+      defer         : '',
+      'data-domain' : 'graphane.dev',
+    }]
   ],
   // https://vitepress.dev/reference/default-theme-config
   themeConfig : {

@@ -1,6 +1,6 @@
 import { defineConfig }      from 'vitepress';
 import { BUNDLED_LANGUAGES } from 'shiki';
-import { readFileSync }      from "fs"
+import { readFileSync }      from "fs";
 
 const VERSION                 = '0.1.0-alpha.2';
 const graphaneLanguageGrammar = JSON.parse(readFileSync("./src/.vitepress/shiki/graphane.tmLanguage.json"))
@@ -22,7 +22,7 @@ const fullReloadAlways = {
 export default defineConfig({
   title       : 'graphane',
   description : `Data Visualization Microframework - version ${ VERSION }`,
-  base: `/${ VERSION }/`,
+  base        : `/${ VERSION }/`,
   vite        : {
     plugins : [fullReloadAlways],
   },
@@ -39,7 +39,14 @@ export default defineConfig({
     //   src  : 'http://localhost:63342/graphery/src/component/template.js',
     //   type : 'module'
     // }],
-    ['script', {src : `https://cdn.graphery.online/graphane/${ VERSION }/component/template.js`}],
+    ['script', {
+      src : `https://cdn.graphery.online/graphane/${ VERSION }/component/template.js`
+    }],
+    ['script', {
+      src           : 'https://plausible.io/js/script.js',
+      defer         : '',
+      'data-domain' : 'graphane.dev',
+    }]
   ],
   // https://vitepress.dev/reference/default-theme-config
   themeConfig : {
