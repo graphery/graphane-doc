@@ -1,6 +1,6 @@
 {
   "name": "www.graphane.dev",
-  "version": "0.1.0-alpha.2e",
+  "version": "0.1.0-alpha.2f",
   "description": "public web of Graphane",
   "scripts": {
     "docs:dev": "vitepress dev src",
