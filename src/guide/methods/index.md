@@ -20,4 +20,4 @@ In Graphane template, the methods are sandboxed and have limited access to other
 libraries. This restricted access ensures a secure and predictable environment for evaluating
 functions within the component. You can use global objects and functions, to made dynamic imports
 and use `$` for access to template component elements as [$.svg](./svg-access.md) and 
-[$.data](./data-access.md).
+[$.data](./$.data.md).
