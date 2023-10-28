@@ -2,7 +2,7 @@ import { defineConfig }      from 'vitepress';
 import { BUNDLED_LANGUAGES } from 'shiki';
 import { readFileSync }      from "fs";
 
-const URL                     = '0.1.0-alpha';
+const URL                     = '/0.1.0-alpha/';
 const VERSION                 = '0.1.0-alpha.3';
 const graphaneLanguageGrammar = JSON.parse(readFileSync("./src/.vitepress/shiki/graphane.tmLanguage.json"))
 
@@ -23,7 +23,7 @@ const fullReloadAlways = {
 export default defineConfig({
   title       : 'graphane',
   description : `Data Visualization Microframework - version ${ VERSION }`,
-  base        : `/${ URL }/`,
+  base        : URL,
   vite        : {
     plugins : [fullReloadAlways],
   },
@@ -144,11 +144,11 @@ export default defineConfig({
         text  : 'Examples',
         items : [
           {link : '/examples/', text : 'Basic bars'},
-          {link : '/examples/02.otto.neurath.tribute', text : 'Otto Neumath tribute'},
-          {link : '/examples/03.quadrant', text : 'Quadrant'},
-          {link : '/examples/04.process', text : 'Process'},
-          {link : '/examples/05.bars', text : 'Chart Bars'},
-          {link : '/examples/06.evolution', text : 'Human Evolution'},
+          {link : '/examples/02-otto-neurath-tribute', text : 'Otto Neumath tribute'},
+          {link : '/examples/03-quadrant', text : 'Quadrant'},
+          {link : '/examples/04-process', text : 'Process'},
+          {link : '/examples/05-bars', text : 'Chart Bars'},
+          {link : '/examples/06-evolution', text : 'Human Evolution'},
         ]
       }],
       '/reference/' : [{
