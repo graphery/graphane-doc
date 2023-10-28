@@ -112,8 +112,7 @@ export default defineConfig({
               {link : '/guide/methods/external', text : 'External resource'},
               {link : '/guide/methods/property', text : 'Property'},
               {link : '/guide/methods/function-data', text : '<code>function data()</code>'},
-              {link : '/guide/methods/$.data', text : '<code>$.data</code>'},
-              {link : '/guide/methods/$.update', text : '<code>$.update()</code>'},
+              {link : '/guide/methods/$data', text : '<code>$.data</code>'},
               // {link : '/guide/methods/svg-access', text : '<code>$.svg</code>'},
               // {link : '/guide/methods/load', text : 'Load event'},
             ]
