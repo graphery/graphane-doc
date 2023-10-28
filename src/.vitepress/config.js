@@ -2,6 +2,7 @@ import { defineConfig }      from 'vitepress';
 import { BUNDLED_LANGUAGES } from 'shiki';
 import { readFileSync }      from "fs";
 
+const URL                     = '0.1.0-alpha';
 const VERSION                 = '0.1.0-alpha.3';
 const graphaneLanguageGrammar = JSON.parse(readFileSync("./src/.vitepress/shiki/graphane.tmLanguage.json"))
 
@@ -22,7 +23,7 @@ const fullReloadAlways = {
 export default defineConfig({
   title       : 'graphane',
   description : `Data Visualization Microframework - version ${ VERSION }`,
-  base        : `/${ VERSION }/`,
+  base        : `/${ URL }/`,
   vite        : {
     plugins : [fullReloadAlways],
   },
@@ -98,7 +99,7 @@ export default defineConfig({
               {link : '/guide/data/property', text : '.data property'},
               {link : '/guide/data/embebed', text : 'Embedded data'},
               {link : '/guide/data/external', text : 'Load data'},
-              // {link : '/guide/data/helpers', text : 'Array helpers'},
+              {link : '/guide/data/helpers', text : 'Data helpers'},
               {link : '/guide/data/reactivity', text : 'Reactivity'},
             ]
           },
@@ -110,7 +111,9 @@ export default defineConfig({
               {link : '/guide/methods/embebed', text : 'Embedded methods'},
               {link : '/guide/methods/external', text : 'External resource'},
               {link : '/guide/methods/property', text : 'Property'},
-              {link : '/guide/methods/data-access', text : '<code>$.data</code>'},
+              {link : '/guide/methods/function-data', text : '<code>function data()</code>'},
+              {link : '/guide/methods/$.data', text : '<code>$.data</code>'},
+              {link : '/guide/methods/$.update', text : '<code>$.update()</code>'},
               // {link : '/guide/methods/svg-access', text : '<code>$.svg</code>'},
               // {link : '/guide/methods/load', text : 'Load event'},
             ]
