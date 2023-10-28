@@ -2,7 +2,7 @@ import { defineConfig }      from 'vitepress';
 import { BUNDLED_LANGUAGES } from 'shiki';
 import { readFileSync }      from "fs";
 
-const VERSION                 = '0.1.0-alpha.2';
+const VERSION                 = '0.1.0-alpha.3';
 const graphaneLanguageGrammar = JSON.parse(readFileSync("./src/.vitepress/shiki/graphane.tmLanguage.json"))
 
 const html     = BUNDLED_LANGUAGES.find(lang => lang.id === 'html')
