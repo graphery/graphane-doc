@@ -4,11 +4,11 @@ outline: deep
 
 # SVG
 
-The `g-template` can include a `svg` tag or link it as external resource with `svg-src`. This SVG
+The `g-composer` can include a `svg` tag or link it as external resource with `svg-src`. This SVG
 is a standard SVG with some extra features for templating the content from the data.
 
 ```html
-<g-template data="value: 50">   <!-- g-template component -->
+<g-composer data="value: 50">   <!-- g-composer component -->
   <svg viewBox="0 0 400 270">   <!-- SVG Template -->
     <defs g-for="y of 5">       <!-- g-for attribute -->
       <defs g-for="x of 20">    <!-- g-for attribute -->
@@ -20,10 +20,10 @@ is a standard SVG with some extra features for templating the content from the d
       </defs>
     </defs>
   </svg>
-</g-template>
+</g-composer>
 ```
 
-<g-template data="value: 50">        <!-- g-template component -->
+<g-composer data="value: 50">        <!-- g-composer component -->
   <svg viewBox="0 0 400 270">   <!-- SVG Template -->
     <defs g-for="y of 5">       <!-- g-for attribute -->
       <defs g-for="x of 20">    <!-- g-for attribute -->
@@ -35,7 +35,7 @@ is a standard SVG with some extra features for templating the content from the d
       </defs>
     </defs>
   </svg>
-</g-template>
+</g-composer>
 
 ## Templating directives
 
@@ -49,12 +49,12 @@ SVG template is based on these special attributes or directives:
 
 ## Attribute `svg-src`
 
-The `g-template` component has this attribute:
+The `g-composer` component has this attribute:
 
 - [`svg-src`](src.md) link to an external SVG template file.
 
 ## Property `.svg`
 
-The `g-template` component has this property:
+The `g-composer` component has this property:
 
 - [`.svg`](property.md) a [wrapped](./lib/index.md) version of the SVG generated.

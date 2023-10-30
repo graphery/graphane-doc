@@ -5,7 +5,7 @@ outline: deep
 # `svg-src="file"`
 
 - **Attribute**:
-  - `svg-src` in `g-template`.
+  - `svg-src` in `g-composer`.
 
 - **Value**: resource path.
 
@@ -15,7 +15,7 @@ outline: deep
 
 
 ```html
-<g-template svg-src="/svg/circles.svg" data-src="/data/circles.csv"></g-template>
+<g-composer svg-src="/svg/circles.svg" data-src="/data/circles.csv"></g-composer>
 ```
 
-<g-template svg-src="/svg/circles.svg" data-src="/data/circles.json"></g-template>
+<g-composer svg-src="/svg/circles.svg" data-src="/data/circles.json"></g-composer>

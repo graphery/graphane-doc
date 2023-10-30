@@ -9,7 +9,7 @@ with the `src` attribute makes it very easy to indicate the source of the data. 
 attributes, you can seamlessly incorporate external data into their visualization.
 
 ```html {10}
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100">
     <defs g-for="value of data">
       <circle g-bind:cx="value.x"
@@ -19,10 +19,10 @@ attributes, you can seamlessly incorporate external data into their visualizatio
     </defs>
   </svg>
   <script type="data" src="/data/circles.csv"></script>
-</g-template>
+</g-composer>
 ```
 
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100">
     <defs g-for="value of data">
       <circle g-bind:cx="value.x"
@@ -32,18 +32,18 @@ attributes, you can seamlessly incorporate external data into their visualizatio
     </defs>
   </svg>
   <g-script type="data" src="../../data/circles.csv"></g-script>
-</g-template>
+</g-composer>
 
 
 To streamline the process further, it is even possible to forego the explicit use of the `script`
 tag. Instead, designer and developers can directly include the `data-src` properties within
-the `g-template` component itself, simplifying the overall structure of the code.
+the `g-composer` component itself, simplifying the overall structure of the code.
 
 ```html {3}
-<g-template 
+<g-composer 
   svg-src="/svg/circles.svg" 
   data-src="/data/circles.csv">
-</g-template>
+</g-composer>
 ```
 
 

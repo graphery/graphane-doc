@@ -14,7 +14,7 @@ In the methods you can access to the component with the `$`, for example, `$.dat
 ## Example
 
 ```html
-<g-template data="message: 'hello world'">
+<g-composer data="message: 'hello world'">
   <svg viewBox="0 0 100 100">
     <rect x="1" y="1" width="98" height="98" stroke="black" stroke-width="2" fill="white"
           style="cursor: pointer"
@@ -27,10 +27,10 @@ In the methods you can access to the component with the `$`, for example, `$.dat
     alert($.data.message);
   }
   </script>
-</g-template>
+</g-composer>
 ```
 
-<g-template data="message: 'hello world'">
+<g-composer data="message: 'hello world'">
   <svg viewBox="0 0 100 100">
     <rect x="1" y="1" width="98" height="98" stroke="black" stroke-width="2" fill="white"
           style="cursor: pointer"
@@ -43,4 +43,4 @@ In the methods you can access to the component with the `$`, for example, `$.dat
     alert($.data.message);
   }
   </g-script>
-</g-template>
+</g-composer>

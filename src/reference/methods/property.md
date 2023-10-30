@@ -4,7 +4,7 @@ outline: deep
 
 # Property `.methods`
 
-- **Component**: `g-template`
+- **Component**: `g-composer`
 
 - **Property**: `.methods`
 

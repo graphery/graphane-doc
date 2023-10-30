@@ -14,24 +14,24 @@ The `g-on` expression must be a function reference, a function call or a direct 
 example displays a message when the rectangle is clicked.
 
 ```html {4,6}
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100" style="cursor: pointer">
     <rect x="10" y="10" width="80" height="80" fill="blue"
           g-on:click="alert(`hello`)"/>
     <text x="18" y="52" fill="white"
           g-on:click="alert(`hello`)">click here</text>
   </svg>
-</g-template>
+</g-composer>
 ```
 
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100" style="cursor: pointer">
     <rect x="10" y="10" width="80" height="80" fill="blue"
           g-on:click="alert(`hello`)"/>
     <text x="18" y="52" fill="white"
           g-on:click="alert(`hello`)">click here</text>
   </svg>
-</g-template>
+</g-composer>
 
 
 Commonly we use `<script type="method"></script>` for add methods to the template component. This
@@ -39,7 +39,7 @@ script includes functions than can be used as expressions in `g-on` directive. P
 the [methods](../methods/index.md) section for more information.
 
 ```html {4,6,8-12}
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100" style="cursor: pointer">
     <rect x="10" y="10" width="80" height="80" fill="blue"
           g-on:click="showAlert()"/>
@@ -51,10 +51,10 @@ the [methods](../methods/index.md) section for more information.
       alert(`hello`);
     }
   </script>
-</g-template>
+</g-composer>
 ```
 
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100" style="cursor: pointer">
     <rect x="10" y="10" width="80" height="80" fill="blue"
           g-on:click="showAlert()"/>
@@ -66,7 +66,7 @@ the [methods](../methods/index.md) section for more information.
       alert(`hello`);
     }
   </g-script>
-</g-template>
+</g-composer>
 
 In the SVG format, the text is not included inside other elements, is displayed over other 
 elements. For this reason, in this example, the event handler is created in the `rect` and `text`

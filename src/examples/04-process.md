@@ -4,7 +4,7 @@ outline: deep
 
 # Process
 
-<g-template>
+<g-composer>
   <svg g-bind:viewBox="`0 0 ${(data.length) * 170 + 30} 500`"
        style="height: 500px;">
     <defs g-for="(value, idx) of data">
@@ -36,10 +36,10 @@ outline: deep
     </defs>
   </svg>
   <g-script type="data" src="../data/process.csv"></g-script>
-</g-template>
+</g-composer>
 
 ```html
-<g-template>
+<g-composer>
   <svg g-bind:viewBox="`0 0 ${(data.length) * 170 + 30} 500`"
        style="height: 500px;">
     <defs g-for="(value, idx) of data">
@@ -78,5 +78,5 @@ outline: deep
     "04";"Implement";"run the project";"#41BB95"
     "05";"Evaluate";"measure the result";"#89C540"
   </script>
-</g-template>
+</g-composer>
 ```

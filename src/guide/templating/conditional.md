@@ -18,29 +18,29 @@ the value of `isVisible` is `true`, the circle will be displayed. If the value i
 element will be hidden and effectively removing it from view.
 
 ```html{3}
-<g-template data="isVisible: true">
+<g-composer data="isVisible: true">
   <svg viewBox="0 0 100 100">
     <circle g-if="isVisible" cx="50" cy="50" r="30"/>
   </svg>
-</g-template>
+</g-composer>
 ```
 ```html
 <p>
   <label>change the visibility:
     <input type="checkbox" name="check" checked
-           onchange="document.querySelector('g-template').data.isVisible=this.checked">
+           onchange="document.querySelector('g-composer').data.isVisible=this.checked">
   </label>
 </p>
 ```
 
-<g-template data="isVisible: true">
+<g-composer data="isVisible: true">
   <svg viewBox="0 0 100 100">
     <circle g-if="isVisible" cx="50" cy="50" r="30"/>
   </svg>
-</g-template>
+</g-composer>
 <p>
   <label>change the visibility:
     <input type="checkbox" checked 
-           onchange="document.querySelector('g-template').data.isVisible=this.checked">
+           onchange="document.querySelector('g-composer').data.isVisible=this.checked">
   </label>
 </p>

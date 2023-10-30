@@ -2,9 +2,9 @@
 outline: deep
 ---
 
-# `g-template`
+# `g-composer`
 
-The following is a description of the API of `g-template` component of Graphane.
+The following is a description of the API of `g-composer` component of Graphane.
 This component is the main element for generating graphics using a declarative SVG template and
 reactive data.
 
@@ -13,7 +13,7 @@ reactive data.
 With embebed elements, this is its anatomy:
 
 ```html
-<g-template>
+<g-composer>
   <svg>                         
     ...
   </svg>
@@ -23,7 +23,7 @@ With embebed elements, this is its anatomy:
   <script type="methods" src="..."> 
     ...
   </script>
-</g-template>
+</g-composer>
 ```
 
 - [`svg`](svg/index.md) - SVG template.
@@ -35,11 +35,11 @@ With embebed elements, this is its anatomy:
 With linked elements, this is its anatomy:
 
 ```html
-<g-template
+<g-composer
   svg-src="..."            
   data-src="..."           
   methods-src="..."      
-></g-template>
+></g-composer>
 ```
 
 - [`svg-src`](svg/src.md) - SVG template.

@@ -1,6 +1,6 @@
 # Basic bars
 
-<g-template>
+<g-composer>
   <svg viewBox="0 0 200 100" width="200px" height="100px">
 	<g stroke-width="12" stroke-linecap="round">
 	  <defs g-for="(record, index) of data">
@@ -20,10 +20,10 @@
     {"color": "#0000D8", "value": 70}
   ]
   </g-script>
-</g-template>
+</g-composer>
 
 ```html
-<g-template>
+<g-composer>
   <svg viewBox="0 0 200 100" width="200px" height="100px">
     <g stroke-width="12" stroke-linecap="round">
       <defs g-for="(record, index) of data">
@@ -43,5 +43,5 @@
     {"color": "#0000D8", "value": 70}
   ]
   </script>
-</g-template>
+</g-composer>
 ```

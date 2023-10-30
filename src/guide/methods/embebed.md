@@ -8,7 +8,7 @@ The `script type="methods"` tag allow loading functions into the Graphane templa
 can include functions in the code, and these functions are available into the template.
 
 ```html {13-25}
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100" id="svg">
     <g @click="change" style="cursor: pointer;">
       <circle id="run"
@@ -33,10 +33,10 @@ can include functions in the code, and these functions are available into the te
       }
     }
   </script>
-</g-template>
+</g-composer>
 ```
 
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100" id="svg">
     <g g-on:click="change" style="cursor: pointer;">
       <circle id="run"
@@ -61,7 +61,7 @@ can include functions in the code, and these functions are available into the te
       }
     }
   </g-script>
-</g-template>
+</g-composer>
 
 In this example, we define a `change()` function and use the function in the template as handler for
 the event `click`. When the user clicks, the label is changed.

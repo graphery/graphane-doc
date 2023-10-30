@@ -4,7 +4,7 @@ outline: deep
 
 # Human Evolution
 
-<g-template>
+<g-composer>
   <svg style="width: 610px; height: 540px;" viewBox="0 0 610 540">
     <text y="25" x="0" style="font-family: sans-serif; font-size: 14px">million of years</text>
     <defs g-for="(value, idx) of scale('from', 'to', 7)">
@@ -55,10 +55,10 @@ outline: deep
       return values;
     }
   </g-script>
-</g-template>
+</g-composer>
 
 ```html
-<g-template>
+<g-composer>
   <svg style="width: 610px; height: 540px;" viewBox="0 0 610 540">
     <text y="25" x="0" style="font-family: sans-serif; font-size: 14px">million of years</text>
     <defs g-for="(value, idx) of scale('from', 'to', 7)">
@@ -109,5 +109,5 @@ outline: deep
       return values;
     }
   </script>
-</g-template>
+</g-composer>
 ```

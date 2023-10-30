@@ -10,7 +10,7 @@ To get started, you need to include the Graphane in your page. This can be done 
 tag with the source pointing to the component file into the CDN:
 
 ```html
-<script src="https://cdn.graphery.online/graphane/0.1.0-alpha.3/component/template.js"></script>
+<script src="https://cdn.graphery.online/graphane/0.1.0-alpha.3/component/composer.js"></script>
 ```
 
 ::: details Understanding the CDN path
@@ -18,7 +18,7 @@ tag with the source pointing to the component file into the CDN:
 This is the detailed description of each URL part:
 
 ```
-https://cdn.graphery.online/graphane/0.1.0-alpha.3/component/template.js
+https://cdn.graphery.online/graphane/0.1.0-alpha.3/component/composer.js
 |-----|--------------------|--------|-------------|---------|-----------|
    |            |               |          |           |          |-----> filename
    |            |               |          |           |----------------> kind
@@ -32,19 +32,19 @@ https://cdn.graphery.online/graphane/0.1.0-alpha.3/component/template.js
 Graphane runs dynamically in the browser, and does not require compiling or transpiling at
 development time.
 
-## g-template
+## g-composer
 
 By leveraging the Graphane template web component, you can enhance your content with visually
 compelling graphics and visualizations without requiring extensive code modifications or specific
 framework dependencies.
 
-Graphane is based on `<g-template></g-template>` tag, the main component than include all other
+Graphane is based on `<g-composer></g-composer>` tag, the main component than include all other
 elements.
 
 ```html
-<g-template>
+<g-composer>
   <!-- other elements -->
-</g-template>
+</g-composer>
 ```
 
 ## SVG
@@ -52,24 +52,24 @@ elements.
 The first child is an SVG used as template.
 
 ```html {2-7}
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100">
     <defs g-for="x of 3">
       <circle cx="50" cy="50" g-bind:r="(x + 1) * (48 / 3)"
               fill="none" stroke="black" stroke-width="1"/>
     </defs>
   </svg>
-</g-template>
+</g-composer>
 ```
 
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100">
     <defs g-for="x of 3">
        <circle cx="50" cy="50" g-bind:r="(x + 1) * (48 / 3)" 
                fill="none" stroke="black" stroke-width="1"/>
     </defs>
   </svg>
-</g-template>
+</g-composer>
 
 
 The standard SVG format is enhanced with **attribute-based directives** that allows to generate
@@ -91,7 +91,7 @@ they will be available for use in the template directly. To load the data, we ne
 `script` tag indicating that it is `type="data"` and a source with `src`.
 
 ```html {8}
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100">
     <defs g-for="x of circles">
       <circle cx="50" cy="50" g-bind:r="(x + 1) * (48 / circles)"
@@ -99,10 +99,10 @@ they will be available for use in the template directly. To load the data, we ne
     </defs>
   </svg>
   <script type="data" src="/data/circles.json"></script>
-</g-template>
+</g-composer>
 ```
 
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100">
     <defs g-for="x of circles">
        <circle cx="50" cy="50" g-bind:r="(x + 1) * (48 / circles)" 
@@ -110,13 +110,13 @@ they will be available for use in the template directly. To load the data, we ne
     </defs>
   </svg>
   <g-script type="data" src="../data/circles.json"></g-script>
-</g-template>
+</g-composer>
 
 In some case it is easier to include the data directly into the `script` with `type="data"`. We can
 insert CSV o JSON formats into the tag:
 
 ```html {8-12}
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100">
     <defs g-for="x of circles">
       <circle cx="50" cy="50" g-bind:r="(x + 1) * (48 / circles)"
@@ -128,10 +128,10 @@ insert CSV o JSON formats into the tag:
       "circles": 5
     }
   </script>
-</g-template>
+</g-composer>
 ```
 
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100">
     <defs g-for="x of circles">
        <circle cx="50" cy="50" g-bind:r="(x + 1) * (48 / circles)" 
@@ -141,7 +141,7 @@ insert CSV o JSON formats into the tag:
   <g-script type="data">{
     circles: 5
   }</g-script>
-</g-template>
+</g-composer>
 
 ## Methods
 
@@ -150,7 +150,7 @@ possible to include the code directly in the tag or linked with the scr attribut
 defined into this tag are available from the template.
 
 ```html {13-22}
-<g-template id="reactive">
+<g-composer id="reactive">
   <svg viewBox="0 0 100 100" g-on:click="update" style="cursor: pointer">
     <defs g-for="x of circles">
       <circle cx="50" cy="50" g-bind:r="(x + 1) * (48 / circles)"
@@ -172,12 +172,12 @@ defined into this tag are available from the template.
       }
     }
   </script>
-</g-template>
+</g-composer>
 s
 <p>click add circles, ctrl+click reduces circles</p>
 ```
 
-<g-template id="reactive">
+<g-composer id="reactive">
   <svg viewBox="0 0 100 100" g-on:click="update" style="cursor: pointer">
     <defs g-for="x of circles">
       <circle cx="50" cy="50" g-bind:r="(x + 1) * (48 / circles)"
@@ -199,13 +199,13 @@ s
       }
     }
   </g-script>
-</g-template>
+</g-composer>
 <p style="font-size: small">click add circles, ctrl+click reduces circles</p>
 
 
 ## External resources
 
-To link the external resources, you can use attributes of `g-template` component.
+To link the external resources, you can use attributes of `g-composer` component.
 
 - The `svg-src` attribute specifies the path to the SVG file.
 - The `data-src` attribute indicates the location of the data source.
@@ -214,17 +214,17 @@ To link the external resources, you can use attributes of `g-template` component
 Here is the previous example with external resources:
 
 ```html {2-4}
-<g-template
+<g-composer
   svg-src="/svg/circles.svg"
   data-src="/data/circles.json"
   methods-src="/methods/circles.js">
-</g-template>
+</g-composer>
 <p>click add circles, ctrl+click reduces circles</p>
 ```
 
-<g-template svg-src="../svg/circles.svg"
+<g-composer svg-src="../svg/circles.svg"
             data-src="../data/circles.json"
-            methods-src="../methods/circles.js"></g-template>
+            methods-src="../methods/circles.js"></g-composer>
 <p style="font-size: small">click add circles, ctrl+click reduces circles</p>
 
 That's it! You've completed the quick start guide for using Graphane to render a simple SVG and

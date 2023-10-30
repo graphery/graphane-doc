@@ -5,16 +5,16 @@ outline: deep
 # `script type="methods`
 
 `script type="methods"` and `methods-src` attribute are specifically designed to insert methods into
-the `g-template` component.
+the `g-composer` component.
 
 ```html
-<g-template>
+<g-composer>
   <script type="methods">
     function message() {
       alert('hello world');
     }
   </script>
-</g-template>
+</g-composer>
 ```
 
 ### Content
@@ -36,7 +36,7 @@ object with the methods.
 
 Component property:
 
-- [`.methods`](property.md) - object of `g-template`with all functions defined as methods.
+- [`.methods`](property.md) - object of `g-composer`with all functions defined as methods.
 
 
 

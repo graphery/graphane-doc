@@ -9,7 +9,7 @@ A simple way to capture the 'click' event is this:
 
 ::: code-group
 ```html [g-on]
-<g-template>
+<g-composer>
   <svg viewBox="0 0 200 200">
     <rect x="10" y="10" width="180" height="180" fill="red" style="cursor:pointer;"
           g-on:click="change"/>
@@ -19,10 +19,10 @@ A simple way to capture the 'click' event is this:
       this.fill(this.fill() === 'red' ? 'blue' : 'red');
     }
   </g-script>
-</g-template>
+</g-composer>
 ```
 ```html [addEventListener()]
-<g-template>
+<g-composer>
   <svg viewBox="0 0 200 200">
     <rect x="10" y="10" width="180" height="180" fill="red" style="cursor:pointer;"/>
   </svg>
@@ -31,10 +31,10 @@ A simple way to capture the 'click' event is this:
       this.setAttribute('fill', this.getAttribute('fill') === 'red' ? 'blue' : 'red');
     });
   </g-script>
-</g-template>
+</g-composer>
 ```
 
-<g-template>
+<g-composer>
   <svg viewBox="0 0 200 200">
     <rect x="10" y="10" width="180" height="180" fill="red" style="cursor:pointer;"
           g-on:click="change"/>
@@ -44,7 +44,7 @@ A simple way to capture the 'click' event is this:
       this.fill(this.fill() === 'red' ? 'blue' : 'red');
     }
   </g-script>
-</g-template>
+</g-composer>
 
 
 ## SVG  events

@@ -19,7 +19,7 @@ outline: deep
 ## Example
 
 ```html
-<g-template>
+<g-composer>
   <svg>
     <defs g-for="value of data">
       <circle g-bind:cx="value.x" g-bind:cy="value.y"
@@ -32,10 +32,10 @@ outline: deep
     {"x": 80, "y": 80, "radix": 10, "color": "green"}
   ]
   </script>
-</g-template>
+</g-composer>
 ```
 
-<g-template>
+<g-composer>
   <svg>
     <defs g-for="value of data">
       <circle g-bind:cx="value.x" g-bind:cy="value.y" 
@@ -48,4 +48,4 @@ outline: deep
     {"x": 80, "y": 80, "radix": 10, "color": "green"}
   ]
   </g-script>
-</g-template>
+</g-composer>

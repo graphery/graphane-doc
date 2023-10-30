@@ -16,17 +16,17 @@ the underlying data changes.
 
 ## SVG template
 
-You must include the SVG template inside the `<g-template></g-template>`. This is an extension of
+You must include the SVG template inside the `<g-composer></g-composer>`. This is an extension of
 SVG standard format with new directives. Data binding makes SVG graphics dynamically. You would be
 able to bind data from the data sources to the SVG. When the data changes, the SVG is automatically
 updated to reflect the changes in the rendered SVG.
 
 ```html {2-4}
-<g-template>
+<g-composer>
   <svg>
     <!-- TEMPLATE -->
   </svg>
-</g-template>
+</g-composer>
 ```
 
 You can use directives to attributes, animations, transitions, event handling, and other
@@ -49,7 +49,7 @@ In this example, a figure is shown many times based on the value. If the value i
 display changes automatically.
 
 ```html {3-11}
-<g-template data="value: 50">        <!-- the g-template component -->
+<g-composer data="value: 50">        <!-- the g-composer component -->
   <svg viewBox="0 0 400 270">        <!-- the SVG Template -->
     <defs g-for="y of 5">            <!-- g-for -->
       <defs g-for="x of 20">         <!-- g-for -->
@@ -61,18 +61,18 @@ display changes automatically.
       </defs>
     </defs>
   </svg>
-</g-template>
+</g-composer>
 ```
 ```html
 <p>
   <label>Change the value:
     <input type="range" id="value" value="50"
-           oninput="document.querySelector('g-template').data.value = this.value">
+           oninput="document.querySelector('g-composer').data.value = this.value">
   </label>
 </p>
 ```
 
-<g-template data="value: 50">
+<g-composer data="value: 50">
   <svg viewBox="0 0 400 270">
     <defs g-for="y of 5">
       <defs g-for="x of 20">
@@ -83,11 +83,11 @@ display changes automatically.
       </defs>
     </defs>
   </svg>
-</g-template>
+</g-composer>
 
 <p>
 <label>Change the value: 
   <input type="range" id="value" value="50" 
-         oninput="document.querySelector('g-template').data.value = this.value">
+         oninput="document.querySelector('g-composer').data.value = this.value">
 </label>
 </p>

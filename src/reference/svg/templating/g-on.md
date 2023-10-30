@@ -17,7 +17,7 @@ outline: deep
 ## Example
 
 ```html
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100">
     <rect x="1" y="1" width="98" height="98" 
           stroke="black" stroke-width="2" fill="white"
@@ -32,10 +32,10 @@ outline: deep
       alert('hello world');
     }
   </script>
-</g-template>
+</g-composer>
 ```
 
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100">
     <rect x="1" y="1" width="98" height="98" stroke="black" stroke-width="2" fill="white"
           style="cursor: pointer"
@@ -48,4 +48,4 @@ outline: deep
       alert('hello world');
     }
   </g-script>
-</g-template>
+</g-composer>

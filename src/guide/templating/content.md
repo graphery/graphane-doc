@@ -16,7 +16,7 @@ that you can populate the target elements with either plain text or dynamically 
 giving you a wide range of possibilities for data-driven visualizations or custom designs.
 
 ```html {7,11}
-<g-template data="title: 'hello', description: 'simple example'">
+<g-composer data="title: 'hello', description: 'simple example'">
   <svg viewBox="0 0 100 100">
     <rect x="0" y="0" width="100" height="100" fill="green"/>
     <text style="font-size:20px; fill:white"
@@ -28,10 +28,10 @@ giving you a wide range of possibilities for data-driven visualizations or custo
           y="65" 
           g-content="data.description"></text>
   </svg>
-</g-template>
+</g-composer>
 ```
 
-<g-template data="title: 'hello', description: 'simple example'">
+<g-composer data="title: 'hello', description: 'simple example'">
   <svg viewBox="0 0 100 100">
     <rect x="0" y="0" width="100" height="100" fill="green"/>
     <text style="font-size:20px; fill:white"
@@ -43,4 +43,4 @@ giving you a wide range of possibilities for data-driven visualizations or custo
           y="65" 
           g-content="data.description"></text>
   </svg>
-</g-template>
+</g-composer>

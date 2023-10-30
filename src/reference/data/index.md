@@ -5,10 +5,10 @@ outline: deep
 # Data
 
 `<script type="data"></script>` and `data-src` attribute are designed to load values into the 
-`.data` property of `g-template` component.
+`.data` property of `g-composer` component.
 
 ```html
-<g-template>
+<g-composer>
   <script type="data">
     "continent";"population";
     "Asia";4694576167;
@@ -19,18 +19,18 @@ outline: deep
     "Oceania";44491724;
     "Antarctica";3000;
   </script>
-</g-template>
+</g-composer>
 ```
 
 ```html
-<g-template>
+<g-composer>
   <script type="data" src="/data.csv"></script>
-</g-template>
+</g-composer>
 ```
 
 ```html
-<g-template data-src="/data.csv">
-</g-template>
+<g-composer data-src="/data.csv">
+</g-composer>
 ```
 
 ## Content
@@ -47,20 +47,20 @@ Component attributes:
 - [`src`](src.md) - path to external data resource.
 
 
-## `g-template data-src="file"`
+## `g-composer data-src="file"`
 
 Component attribute:
 
 - [`data-src`](src.md) - path to external data resource.
 
-## `g-template data="key: value"`
+## `g-composer data="key: value"`
 
 Component attribute:
 
 - [`data`](attribute.md) - simple key-value data.
 
 
-## `g-template .data`
+## `g-composer .data`
 
 Component property:
 

@@ -10,7 +10,7 @@ transformed data.
 
 
 ```html {13-18}
-<g-template data="percentage: 50">
+<g-composer data="percentage: 50">
   <svg viewBox="0 0 100 130">
     <defs g-for="n of spokes">
       <line x1="50" y1="0" x2="50" y2="50"
@@ -29,19 +29,19 @@ transformed data.
       };
     }
   </script>
-</g-template>
+</g-composer>
 <p>
 ```
 ```html
 <p>
   <label>percentage:
     <input type="range" min="0" max="100" step="1" value="50"
-           oninput="document.querySelector('g-template').data.percentage = this.value">
+           oninput="document.querySelector('g-composer').data.percentage = this.value">
   </label>
 </p>
 ```
 
-<g-template data="percentage: 50">
+<g-composer data="percentage: 50">
   <svg viewBox="0 0 100 130">
     <defs g-for="n of spokes">
       <line x1="50" y1="0" x2="50" y2="50"
@@ -60,9 +60,9 @@ transformed data.
       };
     }
   </g-script>
-</g-template>
+</g-composer>
 <p>
 <label>percentage:
   <input type="range" min="0" max="100" step="1" value="50"
-         oninput="document.querySelector('g-template').data.percentage = this.value">
+         oninput="document.querySelector('g-composer').data.percentage = this.value">
 </label></p>

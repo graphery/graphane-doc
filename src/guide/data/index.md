@@ -4,7 +4,7 @@ outline: deep
 
 # Data
 
-The data used into the template is located into the `.data` property of `<g-template></g-template>`
+The data used into the template is located into the `.data` property of `<g-composer></g-composer>`
 component. The component acts as a bridge between the data and the template engine, facilitating the
 seamless integration of data updates with the visual output. When the data changes, the framework
 automatically updates the corresponding elements, ensuring that the view accurately reflects the

@@ -9,22 +9,22 @@ In the `data` attribute you can directly include data with format `key: value` s
 but is not sufficient when you want to make more complex situations.
 
 ```html {1}
-<g-template data="width: 80, height: 80">
+<g-composer data="width: 80, height: 80">
   <svg viewBox="0 0 100 100">
     <rect x="10" y="10" fill="green"
           g-bind:width="data.width"
           g-bind:height="data.height"/>
   </svg>
-</g-template>
+</g-composer>
 ```
 
-<g-template data="width: 80, height: 80">
+<g-composer data="width: 80, height: 80">
   <svg viewBox="0 0 100 100">
     <rect x="0" y="0" fill="green"
           g-bind:width="data.width" 
           g-bind:height="data.height"/>
   </svg>
-</g-template>
+</g-composer>
 
 ::: warning
 The `.data` property has the key and values defined in the attribute, but if this

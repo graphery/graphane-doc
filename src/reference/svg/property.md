@@ -4,7 +4,7 @@ outline: deep
 
 # Property `.svg`
 
-- **Component**: `g-template`
+- **Component**: `g-composer`
 
 - **Property**: `.svg`
 

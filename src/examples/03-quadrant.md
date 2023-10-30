@@ -4,7 +4,7 @@ outline: deep
 
 # Quadrant
 
-<g-template style="width: 250px; height: 250px;">
+<g-composer style="width: 250px; height: 250px;">
   <svg viewBox="0 0 120 120">
     <line x1="60" y1="10" x2="60" y2="110" stroke-width="1" stroke="lightgrey"></line> 
     <line x1="10" y1="60" x2="110" y2="60" stroke-width="1" stroke="lightgrey"></line>
@@ -29,10 +29,10 @@ outline: deep
     e: {x: 92, y: 62},
   }
   </g-script>
-</g-template>
+</g-composer>
 
 ```html
-<g-template style="width: 250px; height: 250px;">
+<g-composer style="width: 250px; height: 250px;">
     <svg viewBox="0 0 120 120">
         <line x1="60" y1="10" x2="60" y2="110" stroke-width="1" stroke="lightgrey"></line> 
         <line x1="10" y1="60" x2="110" y2="60" stroke-width="1" stroke="lightgrey"></line>
@@ -57,5 +57,5 @@ outline: deep
       e: {x: 92, y: 62},
     }
     </script>
-</g-template>
+</g-composer>
 ```

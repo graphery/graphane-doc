@@ -10,19 +10,19 @@ object's properties.
 ## Example
 
 ```html
-<g-template data="value: 10">
+<g-composer data="value: 10">
   <svg viewBox="0 0 100 100">
     <defs g-for="n of value">
       <circle g-bind:cx="(n * 10) + 5" g-bind:cy="(n * 10) + 5" r="5"/>
     </defs>
   </svg>
-</g-template>
+</g-composer>
 ```
 
-<g-template data="value: 10">
+<g-composer data="value: 10">
   <svg viewBox="0 0 100 100">
     <defs g-for="n of value">
       <circle g-bind:cx="(n * 10) + 5" g-bind:cy="(n * 10) + 5" r="5"/>
     </defs>
   </svg>
-</g-template>
+</g-composer>

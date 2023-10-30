@@ -3,7 +3,7 @@ import { BUNDLED_LANGUAGES } from 'shiki';
 import { readFileSync }      from "fs";
 
 const URL                     = '/0.1.0-alpha/';
-const VERSION                 = '0.1.0-alpha.3';
+const VERSION                 = '0.1.0-alpha.4';
 const graphaneLanguageGrammar = JSON.parse(readFileSync("./src/.vitepress/shiki/graphane.tmLanguage.json"))
 
 const html     = BUNDLED_LANGUAGES.find(lang => lang.id === 'html')
@@ -36,13 +36,13 @@ export default defineConfig({
   },
   head        : [
     ['link', {rel : 'icon', href : `/img/logo/g.svg`}],
-    // ['script', {
-    //   src  : 'http://localhost:63342/graphery/src/component/template.js',
-    //   type : 'module'
-    // }],
     ['script', {
-      src : `https://cdn.graphery.online/graphane/${ VERSION }/component/template.js`
+      src  : 'http://localhost:63342/graphane/src/component/composer.js',
+      type : 'module'
     }],
+    // ['script', {
+      // src : `https://cdn.graphery.online/graphane/${ VERSION }/component/composer.js`
+    // }],
     ['script', {
       src           : 'https://plausible.io/js/script.js',
       defer         : '',
@@ -155,7 +155,7 @@ export default defineConfig({
         text  : 'API',
         items : [
           {
-            text : 'g-template',
+            text : 'g-composer',
             link : '/reference/index.md',
           },
           {

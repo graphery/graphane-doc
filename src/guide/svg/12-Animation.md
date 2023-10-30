@@ -33,24 +33,24 @@ The syntax is: `g-bind:attribute="$.animate(value [, duration] [, delay])`.
 
 ```html
 
-<g-template data="x: 50, y: 50, radius: 50">
+<g-composer data="x: 50, y: 50, radius: 50">
   <svg viewBox="0 0 100 100">
     <circle g-bind:r="$.dynamic(radius, 2000)"
             g-bind:cx="$.dynamic(x, 2000)"
             g-bind:cy="$.dynamic(y, 2000)"
             fill="red"/>
   </svg>
-</g-template>
+</g-composer>
 ```
 
-<g-template data="x: 50, y: 50, radius: 50" id="dynamic1">
+<g-composer data="x: 50, y: 50, radius: 50" id="dynamic1">
   <svg viewBox="0 0 100 100">
     <circle g-bind:r="$.dynamic([0, radius], 4000)"
             g-bind:cx="$.dynamic([0, x], 4000)"
             g-bind:cy="$.dynamic([0, y], 4000)"
             fill="red"/>
   </svg>
-</g-template>
+</g-composer>
 <p>
   <button onclick="document.querySelector('#dynamic1').update()">
    click to run the animation
@@ -78,7 +78,7 @@ You can pass an array of values to describe non-linear progressing.
 
 ```html
 
-<g-template data="radius: 50" id="dynamic2">
+<g-composer data="radius: 50" id="dynamic2">
   <svg viewBox="0 0 100 100">
     <circle g-bind:r="$.dynamic([radius * 0.1, 
                                  radius * 0.5, 
@@ -90,10 +90,10 @@ You can pass an array of values to describe non-linear progressing.
             cy="50"
             fill="red"/>
   </svg>
-</g-template>
+</g-composer>
 ```
 
-<g-template data="radius: 50" id="dynamic2">
+<g-composer data="radius: 50" id="dynamic2">
   <svg viewBox="0 0 100 100">
     <circle g-bind:r="$.dynamic(
       [radius * 0.1, 
@@ -105,7 +105,7 @@ You can pass an array of values to describe non-linear progressing.
             cy="50"
             fill="red"/>
   </svg>
-</g-template>
+</g-composer>
 <p>
   <button onclick="document.querySelector('#dynamic2').update()">
    click to run the animation
@@ -117,7 +117,7 @@ control over the execution of the animation.
 
 ```html
 
-<g-template data="radius: 50" id="dynamic3">
+<g-composer data="radius: 50" id="dynamic3">
   <svg viewBox="0 0 100 100">
     <circle g-bind:r="$.dynamic([{value: 0,            offset: 0},
                                  {value: radius,       offset: 0.8},
@@ -128,10 +128,10 @@ control over the execution of the animation.
             cy="50"
             fill="red"/>
   </svg>
-</g-template>
+</g-composer>
 ```
 
-<g-template data="radius: 50" id="dynamic3">
+<g-composer data="radius: 50" id="dynamic3">
   <svg viewBox="0 0 100 100">
     <circle g-bind:r="$.dynamic([{value: 0,            offset: 0},
                                  {value: radius,       offset: 0.8},
@@ -142,7 +142,7 @@ control over the execution of the animation.
             cy="50"
             fill="red"/>
   </svg>
-</g-template>
+</g-composer>
 <p>
   <button onclick="document.querySelector('#dynamic3').update()">
    click to run the animation
@@ -160,7 +160,7 @@ immediately, and the animation is not displayed.
 
 ```html
 
-<g-template>
+<g-composer>
   <svg viewBox="0 0 200 100" width="200" height="100">
     <g stroke-width="12" stroke-linecap="round">
       <line id="lineR" stroke="#C0C0C0" x1="10" x2="10" y1="10" y2="10"/>
@@ -193,10 +193,10 @@ immediately, and the animation is not displayed.
       lineB.animateTo({stroke : '#C0C0C0', x2 : 10}, 1000);
     }
   </script>
-</g-template>
+</g-composer>
 ```
 
-<g-template>
+<g-composer>
   <svg viewBox="0 0 200 100" width="200" height="100">
     <g stroke-width="12" stroke-linecap="round">
       <line id="lineR" stroke="#C0C0C0" x1="10" x2="10" y1="10" y2="10"/>
@@ -227,7 +227,7 @@ immediately, and the animation is not displayed.
        lineB.animateTo({stroke : '#C0C0C0', x2 : 10}, 1000);
     }
   </g-script>
-</g-template>
+</g-composer>
 
 ### Keyframes
 
@@ -238,7 +238,7 @@ Additionally, we can include an `offset` key with values between `0` and `1` to 
 want each step to be set.
 
 ```html
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100" width="100" height="100" g-on:click="run" style="cursor:pointer">
     <rect x="0" y="0" width="40" height="40" fill="violet"/>
     <text x="20" y="55" font-size="14">click to run</text>
@@ -257,10 +257,10 @@ want each step to be set.
       );
     }
   </script>
-</g-template>
+</g-composer>
 ```
 
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100" width="100" height="100" g-on:click="run" style="cursor:pointer">
     <rect x="0" y="0" width="40" height="40" fill="violet"/>
     <text x="20" y="55" font-size="14">click to run</text>
@@ -279,7 +279,7 @@ want each step to be set.
       );
     }
   </g-script>
-</g-template>
+</g-composer>
 
 ### Callback
 
@@ -393,7 +393,7 @@ For control about when the animation is running, we can configure the animate el
 `begin="indefinite"` and call to `.beginElement()` for execute the animation.
 
 ```html
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100" width="100" height="100" g-on:click="run" style="cursor: pointer">
     <circle cx="50" cy="50" r="10" fill="red">
       <animate attributeName="r" from="10" to="40" dur="1.5s" fill="freeze" begin="indefinite"/>
@@ -406,10 +406,10 @@ For control about when the animation is running, we can configure the animate el
       $.svg.querySelector('text').remove();
     }
   </g-script>
-</g-template>
+</g-composer>
 ```
 
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100" width="100" height="100" g-on:click="run" style="cursor: pointer">
     <circle cx="50" cy="50" r="10" fill="red">
       <animate attributeName="r" from="10" to="40" dur="1.5s" fill="freeze" begin="indefinite"/>
@@ -422,7 +422,7 @@ For control about when the animation is running, we can configure the animate el
       $.svg.querySelector('text').remove();
     }
   </g-script>
-</g-template>
+</g-composer>
 
 
 With `values` and `keyTimes` you can define with more precision the animation, establishing the
@@ -434,7 +434,7 @@ With `animate` element we can animate points of `polylinee` or `poligon` element
 animation is not possible with CSS or Web Animation API:
 
 ```html
-<g-template>
+<g-composer>
   <svg viewBox="0,0,50,100" width="100px" height="200px" g-on:click="run" style="cursor: pointer">
     <polyline fill="none" stroke="black" stroke-width="10" 
               points="45,45  5,45  5, 5 45, 5 45,45 45,45 45,95 45,95">
@@ -457,10 +457,10 @@ animation is not possible with CSS or Web Animation API:
       $.svg.querySelector('animate').beginElement();
     }
   </script>
-</g-template>
+</g-composer>
 ```
 
-<g-template>
+<g-composer>
   <svg viewBox="0,0,50,100" width="100px" height="200px" g-on:click="run" style="cursor: pointer">
     <polyline fill="none" stroke="black" stroke-width="10"
       points="45,45  5,45  5, 5 45, 5 45,45 45,45 45,95 45,95">
@@ -483,7 +483,7 @@ animation is not possible with CSS or Web Animation API:
       $.svg.querySelector('animate').beginElement();
     }
   </g-script>
-</g-template>
+</g-composer>
 
 ::: warning Limitations
 
@@ -511,7 +511,7 @@ the animation duration, and `.repeatCount()` establishes the number of animation
 
 
 ```js
-<g-template>
+<g-composer>
   <svg viewBox="0,0,100,100" width="200" height="200">
     <rect width="60" height="60" fill="red">
       <animateTransform attributeName="transform" type="rotate" dur="2s"
@@ -525,10 +525,10 @@ the animation duration, and `.repeatCount()` establishes the number of animation
                         repeatCount="indefinite" additive="sum"/>
     </rect>
   </svg>
-</g-template>
+</g-composer>
 ```
 
-<g-template>
+<g-composer>
   <svg viewBox="0,0,100,100" width="200" height="200">
     <rect width="60" height="60" fill="red">
       <animateTransform attributeName="transform" type="rotate" dur="2s" 
@@ -542,7 +542,7 @@ the animation duration, and `.repeatCount()` establishes the number of animation
                         repeatCount="indefinite" additive="sum"/>
     </rect>
   </svg>
-</g-template>
+</g-composer>
 
 #### animateMotion element
 
@@ -556,7 +556,7 @@ a `number`, `'auto'`, or `'auto-reverse'`. As in other animations, you can use `
 
 
 ```js
-<g-template>
+<g-composer>
   <svg viewBox="0,0,100,100" width="200" height="200">
     <defs>
       <path d="M15,50a15,15,0,1,1,75,0a15,15,0,1,1,-75,0" id="path1"></path>
@@ -567,10 +567,10 @@ a `number`, `'auto'`, or `'auto-reverse'`. As in other animations, you can use `
       </animateMotion>
     </polygon>
   </svg>
-</g-template>
+</g-composer>
 ```
 
-<g-template>
+<g-composer>
   <svg viewBox="0,0,100,100" width="200" height="200">
     <defs>
       <path d="M15,50a15,15,0,1,1,75,0a15,15,0,1,1,-75,0" id="path1"></path>
@@ -581,14 +581,14 @@ a `number`, `'auto'`, or `'auto-reverse'`. As in other animations, you can use `
       </animateMotion>
     </polygon>
   </svg>
-</g-template>
+</g-composer>
 
 ### requestAnimationFrame()
 
 We can use Javascript and the method `requestAnimationFrame()` for complete custom animation.
 
 ```html
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100" style="cursor: pointer"
     g-on:click="window.requestAnimationFrame(step)">
     <circle cx="50" cy="50" r="10" fill="red"/>
@@ -610,11 +610,11 @@ We can use Javascript and the method `requestAnimationFrame()` for complete cust
       }
     }
   </script>
-</g-template>
+</g-composer>
 
 ```
 
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100" style="cursor: pointer"
     g-on:click="window.requestAnimationFrame(step)">
     <circle cx="50" cy="50" r="10" fill="red"/>
@@ -636,5 +636,5 @@ We can use Javascript and the method `requestAnimationFrame()` for complete cust
       }
     }
   </g-script>
-</g-template>
+</g-composer>
 

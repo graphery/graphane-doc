@@ -26,11 +26,11 @@ component, the radius attribute will be automatically updated.
 
 
 ```html {3}
-<g-template data="size: 25;" id="circle">
+<g-composer data="size: 25;" id="circle">
   <svg viewBox="0 0 100 100">
     <circle g-bind:r="size" cx="50" cy="50" fill="red"/>
   </svg>
-</g-template>
+</g-composer>
 ```
 ```html
 <p>
@@ -41,11 +41,11 @@ component, the radius attribute will be automatically updated.
 </p>
 ```
 
-<g-template data="size: 25;" id="circle">
+<g-composer data="size: 25;" id="circle">
   <svg viewBox="0 0 100 100">
     <circle g-bind:r="size" cx="50" cy="50" fill="red"></circle>
   </svg>
-</g-template>
+</g-composer>
 <p>
 
 <label>Change the size:
@@ -62,7 +62,7 @@ styles to an element. The keys of the object represent the CSS properties, and t
 the corresponding values for those properties.
 
 ```html {7}
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100">
     <defs g-for="value of data">
       <circle :cx="value.x"
@@ -77,10 +77,10 @@ the corresponding values for those properties.
     45;45;30;"blue"
     80;80;10;"green"
   </script>
-</g-template>
+</g-composer>
 ```
 
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100">
     <defs g-for="value of data">
       <circle g-bind:cx="value.x"
@@ -90,17 +90,17 @@ the corresponding values for those properties.
     </defs>
   </svg>
   <g-script type="data" src="../../data/style.csv"></g-script>
-</g-template>
+</g-composer>
 
 
 ## Class
 
 Similarly, `g-bind`, or the shorthand `:`, can be used with the class attribute to dynamically bind
-CSS classes to an element based on the values in the `<g-template>` component data. You can bind a single
+CSS classes to an element based on the values in the `<g-composer>` component data. You can bind a single
 class or an array of classes.
 
 ```html {18}
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100">
     <style>
       .regular {
@@ -126,7 +126,7 @@ class or an array of classes.
     45;45;30;"warning"
     80;80;10;"error"
   </script>
-</g-template>
+</g-composer>
 ```
 
-<g-template svg-src="/circles.class.svg" data-src="/data/class.csv"></g-template>`
+<g-composer svg-src="/circles.class.svg" data-src="/data/class.csv"></g-composer>`

@@ -11,15 +11,15 @@ outline: deep
 ## Example
 
 ```html
-<g-template data="value: 'hello world'">
+<g-composer data="value: 'hello world'">
   <svg viewBox="0 0 100 100">
     <text x="0" y="50" g-content="value"></text>
   </svg>
-</g-template>
+</g-composer>
 ```
 
-<g-template data="value: 'hello world'">
+<g-composer data="value: 'hello world'">
   <svg viewBox="0 0 100 100">
     <text x="0" y="50" g-content="value"></text>
   </svg>
-</g-template>
+</g-composer>

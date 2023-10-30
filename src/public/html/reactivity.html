@@ -27,7 +27,7 @@
   <div class="row">
     <div class="col-6">
       <h2>graph</h2>
-      <g-template>
+      <g-composer>
         <svg viewBox="0 0 100 100" style="border: 1px solid grey; width: 250px; height: 250px">
           <defs g-for="{x,y, color} of data">
             <circle :cx="x" :cy="y" r="5" :fill="color" style="stroke:grey; stroke-width: 0.5"/>
@@ -40,7 +40,7 @@
             {x: 30, y: 90, color: "#0000D8"}
           ]
         </script>
-      </g-template>
+      </g-composer>
     </div>
     <h2>data</h2>
     <div class="code">
@@ -55,7 +55,7 @@
     </div>
 </main>
 <script>
-  const gTemplate = document.querySelector('g-template');
+  const gTemplate = document.querySelector('g-composer');
   const pre       = document.querySelector('#data');
   pre.addEventListener('input', (evt) => {
     const value               = evt.target.value;

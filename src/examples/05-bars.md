@@ -4,7 +4,7 @@ outline: deep
 
 # Bars
 
-<g-template>
+<g-composer>
   <svg style="height: 340px"
        g-bind:viewBox="`0 0 ${(data.length) * 100 + 60} 340`">
     <defs g-for="value of 6">
@@ -45,27 +45,27 @@ outline: deep
     {"year": 2021, "value": 0.42},
     {"year": 2022, "value": 0.92}
   ]</g-script>
-</g-template>
+</g-composer>
 
 <p><label>2019:
   <input type="range" min="0" max="1" step="0.01" value="0.74" 
-         oninput="document.querySelector('g-template').data[0]. value = this.value">
+         oninput="document.querySelector('g-composer').data[0]. value = this.value">
 </label></p>
 <p><label>2020:
   <input type="range" min="0" max="1" step="0.01" value="0.65"
-         oninput="document.querySelector('g-template').data[1]. value = this.value">
+         oninput="document.querySelector('g-composer').data[1]. value = this.value">
 </label></p>
 <p><label>2021:
   <input type="range" min="0" max="1" step="0.01" value="0.42"
-         oninput="document.querySelector('g-template').data[2]. value = this.value">
+         oninput="document.querySelector('g-composer').data[2]. value = this.value">
 </label></p>
 <p><label>2022:
   <input type="range" min="0" max="1" step="0.01" value="0.92"
-         oninput="document.querySelector('g-template').data[3]. value = this.value">
+         oninput="document.querySelector('g-composer').data[3]. value = this.value">
 </label></p>
 
 ```html
-<g-template>
+<g-composer>
   <svg style="height: 340px"
        g-bind:viewBox="`0 0 ${(data.length) * 100 + 60} 340`">
     <defs g-for="value of 6">
@@ -106,24 +106,24 @@ outline: deep
     {"year": 2021, "value": 0.42},
     {"year": 2022, "value": 0.92}
     ]</g-script>
-</g-template>
+</g-composer>
 ```
 
 ```html
 <p><label>2019:
   <input type="range" min="0" max="1" step="0.01" value="0.74"
-         oninput="document.querySelector('g-template').data[0]. value = this.value">
+         oninput="document.querySelector('g-composer').data[0]. value = this.value">
 </label></p>
 <p><label>2020:
   <input type="range" min="0" max="1" step="0.01" value="0.65"
-         oninput="document.querySelector('g-template').data[1]. value = this.value">
+         oninput="document.querySelector('g-composer').data[1]. value = this.value">
 </label></p>
 <p><label>2021:
   <input type="range" min="0" max="1" step="0.01" value="0.42"
-         oninput="document.querySelector('g-template').data[2]. value = this.value">
+         oninput="document.querySelector('g-composer').data[2]. value = this.value">
 </label></p>
 <p><label>2022:
   <input type="range" min="0" max="1" step="0.01" value="0.92"
-         oninput="document.querySelector('g-template').data[3]. value = this.value">
+         oninput="document.querySelector('g-composer').data[3]. value = this.value">
 </label></p>
 ```

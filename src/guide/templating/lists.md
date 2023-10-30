@@ -48,7 +48,7 @@ Additionally, `g-for` supports the iteration over a range of numbers:
 This example will render 10 circle elements:
 
 ```html {3,7}
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100">
     <defs g-for="n of 10">
       <circle :cx="(n + 1) * 9" 
@@ -56,14 +56,14 @@ This example will render 10 circle elements:
               r="5"/>
     </defs>
   </svg>
-</g-template>
+</g-composer>
 ```
 
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100">
     <defs g-for="n of 10">
       <circle g-bind:cx="(n + 1) * 9" g-bind:cy="(n + 1) * 9" r="5"/>
     </defs>
   </svg>
-</g-template>
+</g-composer>
 

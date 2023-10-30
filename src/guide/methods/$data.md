@@ -4,13 +4,13 @@ outline: deep
 
 # `$.data`
 
-You can use `$.data` in the methods to access the data object of the `g-template` component. In this
+You can use `$.data` in the methods to access the data object of the `g-composer` component. In this
 way, it is possible to add, modify or query data. Through reactivity, when a value is added or
 modified, the template is re-evaluated, and the visualization is updated, without you having to do
 anything else.
 
 ```html{27,36}
-<g-template>
+<g-composer>
 
   <!-- SVG -->
   <svg viewBox="0 0 200 140" width="400" g-on:init="init">
@@ -60,10 +60,10 @@ anything else.
       colors();
     }
   </script>
-</g-template>
+</g-composer>
 ```
 
-<g-template>
+<g-composer>
   <svg viewBox="0 0 200 140" width="400" g-on:init="init">
     <text x="0" y="118" style="font-size: 8px">colors:</text>
     <rect g-on:click="change" x="35" y="110" width="10" height="10"
@@ -103,4 +103,4 @@ anything else.
       colors();
     }
   </g-script>
-</g-template>
+</g-composer>

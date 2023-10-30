@@ -8,7 +8,7 @@ The reactivity is a key feature of the Graphane microframework that enables auto
 data binding between the application's data and the visualization. It ensures that when the data
 changes, the corresponding parts of the UI are automatically updated to reflect those changes.
 
-When a `g-template` component is created, Graphane automatically identifies all the data properties
+When a `g-composer` component is created, Graphane automatically identifies all the data properties
 accessed. It then establishes a dependency relationship between the component and those data
 properties.
 
@@ -18,7 +18,7 @@ where it re-evaluates the components that depend on the changed data property. I
 and old values and updates the affected visualization accordingly.
 
 ```html
-<g-template>
+<g-composer>
   <svg viewBox="0 0 100 100" style="border: 1px solid grey; width: 250px; height: 250px">
     <defs g-for="{x, y, color} of data">
       <circle r="5" :cx="x" :cy="y" :fill="color" style="stroke:grey; stroke-width: 0.5"/>
@@ -31,7 +31,7 @@ and old values and updates the affected visualization accordingly.
       {x: 30, y: 90, color: "#0000D8"}
     ]
   </script>
-</g-template>
+</g-composer>
 ```
 
 <iframe src="../../html/reactivity.html" style="border: 0; width: 100%; height: 740px"/>
