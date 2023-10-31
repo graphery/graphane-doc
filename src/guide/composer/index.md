@@ -2,12 +2,21 @@
 outline: deep
 ---
 
-# Getting Started
+# Composer
+
+Graphane Composer is designed to facilitate the creation of dynamic and interactive visualizations
+by combining the power of the **SVG markup template**, dynamic and reactive **data** and 
+**methods** for handling interactivity and data transformation.
+
+The goal is to enable designers and developers **to build complex graphics efficiently**, while
+benefiting from data binding and interactivity. To ensure smooth rendering and optimal performance,
+the system includes mechanisms specifically designed to efficiently update the visualization when
+the underlying data changes.
 
 ## Load
 
-To get started, you need to include the Graphane in your page. This can be done by adding a script
-tag with the source pointing to the component file into the CDN:
+To get started, you need to include the Graphane Composer in your page. This can be done by adding a
+script tag with the source pointing to the component file into the CDN:
 
 ```html
 <script src="https://cdn.graphery.online/graphane/0.1.0-alpha.3/component/composer.js"></script>
@@ -32,9 +41,10 @@ https://cdn.graphery.online/graphane/0.1.0-alpha.3/component/composer.js
 Graphane runs dynamically in the browser, and does not require compiling or transpiling at
 development time.
 
-## g-composer
 
-By leveraging the Graphane template web component, you can enhance your content with visually
+## `g-composer`
+
+By leveraging the web component Graphane Composer, you can enhance your content with visually
 compelling graphics and visualizations without requiring extensive code modifications or specific
 framework dependencies.
 
@@ -49,7 +59,7 @@ elements.
 
 ## SVG
 
-The first child is an SVG used as template.
+The first child is an SVG used as [template](../templating/).
 
 ```html {2-7}
 <g-composer>
@@ -86,9 +96,9 @@ designs.
 
 ## Data
 
-We can create visualizations using SVG-based templates uploading data in CSV or JSON formats, and
-they will be available for use in the template directly. To load the data, we need to use the
-`script` tag indicating that it is `type="data"` and a source with `src`.
+We can create visualizations using SVG-based templates uploading [data](../data/) in CSV or JSON
+formats, and they will be available for use in the template directly. To load the data, we need to
+use the `script` tag indicating that it is `type="data"` and a source with `src`.
 
 ```html {8}
 <g-composer>
@@ -109,7 +119,7 @@ they will be available for use in the template directly. To load the data, we ne
                fill="none" stroke="black" stroke-width="1"/>
     </defs>
   </svg>
-  <g-script type="data" src="../data/circles.json"></g-script>
+  <g-script type="data" src="../../data/circles.json"></g-script>
 </g-composer>
 
 In some case it is easier to include the data directly into the `script` with `type="data"`. We can
@@ -145,9 +155,9 @@ insert CSV o JSON formats into the tag:
 
 ## Methods
 
-You can add methods for event handling with a simple `<script type="methods"></script>`. It is
-possible to include the code directly in the tag or linked with the scr attribute. All functions
-defined into this tag are available from the template.
+You can add [methods](../methods/) for event handling with a simple 
+`<script type="methods"></script>`. It is possible to include the code directly in the tag or
+linked with the scr attribute. All functions defined into this tag are available from the template.
 
 ```html {13-22}
 <g-composer id="reactive">
@@ -223,8 +233,8 @@ Here is the previous example with external resources:
 ```
 
 <g-composer svg-src="../svg/circles.svg"
-            data-src="../data/circles.json"
-            methods-src="../methods/circles.js"></g-composer>
+data-src="../data/circles.json"
+methods-src="../methods/circles.js"></g-composer>
 <p style="font-size: small">click add circles, ctrl+click reduces circles</p>
 
 That's it! You've completed the quick start guide for using Graphane to render a simple SVG and

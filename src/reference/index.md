@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# `g-composer`
+# Composer
 
 The following is a description of the API of `g-composer` component of Graphane.
 This component is the main element for generating graphics using a declarative SVG template and

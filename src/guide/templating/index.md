@@ -4,15 +4,9 @@ outline: deep
 
 # Templating
 
-Graphane templating system is designed to facilitate the creation of dynamic and interactive
-visualization by **combining the power of SVG markup with powerful directives from a templating
-system**, similar to Angular or Vue. The rendering is performed efficiently at runtime and does not
-require a compiler or transpiler.
-
-The goal is to enable designers and developers **to build complex graphics efficiently**, while
-benefiting from data binding and interactivity. To ensure smooth rendering and optimal performance,
-the system includes mechanisms specifically designed to efficiently update the visualization when
-the underlying data changes.
+Graphane templating is combine SVG markup template with data with powerful directives, similar to
+Angular or Vue. The rendering is performed efficiently at runtime and does not require a compiler or
+transpiler.
 
 ## SVG template
 
@@ -22,6 +16,7 @@ able to bind data from the data sources to the SVG. When the data changes, the S
 updated to reflect the changes in the rendered SVG.
 
 ```html {2-4}
+
 <g-composer>
   <svg>
     <!-- TEMPLATE -->
@@ -49,6 +44,7 @@ In this example, a figure is shown many times based on the value. If the value i
 display changes automatically.
 
 ```html {3-11}
+
 <g-composer data="value: 50">        <!-- the g-composer component -->
   <svg viewBox="0 0 400 270">        <!-- the SVG Template -->
     <defs g-for="y of 5">            <!-- g-for -->
@@ -63,6 +59,7 @@ display changes automatically.
   </svg>
 </g-composer>
 ```
+
 ```html
 <p>
   <label>Change the value:

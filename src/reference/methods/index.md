@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# `script type="methods`
+# Methods
 
 `script type="methods"` and `methods-src` attribute are specifically designed to insert methods into
 the `g-composer` component.

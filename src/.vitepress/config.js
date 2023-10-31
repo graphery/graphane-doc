@@ -76,7 +76,7 @@ export default defineConfig({
         text  : 'Guide',
         items : [
           {link : '/guide/', text : 'What is Graphane?'},
-          {link : '/guide/getting-started', text : 'Getting Started'},
+          {link : '/guide/composer/', text : 'Composer'},
           {
             text      : 'Templating',
             link      : '/guide/templating/',
@@ -155,7 +155,7 @@ export default defineConfig({
         text  : 'API',
         items : [
           {
-            text : 'g-composer',
+            text : 'composer',
             link : '/reference/index.md',
           },
           {
