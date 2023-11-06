@@ -21,27 +21,27 @@ const fullReloadAlways = {
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title       : 'graphane',
-  description : `Data Visualization Microframework - version ${ VERSION }`,
-  base        : URL,
-  vite        : {
+  title         : 'graphane',
+  description   : `Data Visualization Microframework - version ${ VERSION }`,
+  base          : URL,
+  vite          : {
     plugins : [fullReloadAlways],
   },
-  vue         : {
+  vue           : {
     template : {
       compilerOptions : {
         isCustomElement : (tag) => tag.startsWith('g-')
       }
     }
   },
-  head        : [
+  head          : [
     ['link', {rel : 'icon', href : `/img/logo/g.svg`}],
     ['script', {
       src  : 'http://localhost:63342/graphane/src/component/composer.js',
       type : 'module'
     }],
     // ['script', {
-      // src : `https://cdn.graphery.online/graphane/${ VERSION }/component/composer.js`
+    // src : `https://cdn.graphery.online/graphane/${ VERSION }/component/composer.js`
     // }],
     ['script', {
       src           : 'https://plausible.io/js/script.js',
@@ -67,6 +67,7 @@ export default defineConfig({
     nav         : [
       {link : '/', text : 'Home'},
       {link : '/guide/', text : 'Guide'},
+      {link : '/plugins/', text : 'Plugins'},
       {link : '/reference/', text : 'API'},
       {link : '/examples/', text : 'Examples'},
       {link : 'https://github.com/graphery/graphane/blob/main/CHANGELOG.md', text : VERSION},
@@ -118,7 +119,7 @@ export default defineConfig({
             ]
           },
           {
-            text      : 'Appendix: SVG',
+            text      : 'SVG',
             collapsed : true,
             items     : [
               {link : '/guide/svg/', text : 'Introduction'},
@@ -140,15 +141,18 @@ export default defineConfig({
           },
         ]
       }],
-      '/examples/'  : [{
-        text  : 'Examples',
+      '/plugins/'   : [{
+        text  : 'Plugins',
         items : [
-          {link : '/examples/', text : 'Basic bars'},
-          {link : '/examples/02-otto-neurath-tribute', text : 'Otto Neumath tribute'},
-          {link : '/examples/03-quadrant', text : 'Quadrant'},
-          {link : '/examples/04-process', text : 'Process'},
-          {link : '/examples/05-bars', text : 'Chart Bars'},
-          {link : '/examples/06-evolution', text : 'Human Evolution'},
+          {link : '/plugins/', text : 'Graphane Extensibility'},
+          {
+            text      : 'Catalog',
+            collapsed : false,
+            items     : [
+              {link : '/plugins/catalog/shapes', text : 'Shapes'},
+            ]
+          },
+          {link : '/plugins/create', text : 'Create custom plugin'},
         ]
       }],
       '/reference/' : [{
@@ -254,6 +258,18 @@ export default defineConfig({
           },
         ]
       }],
+      '/examples/'  : [{
+        text  : 'Examples',
+        items : [
+          {link : '/examples/', text : 'Basic bars'},
+          {link : '/examples/02-otto-neurath-tribute', text : 'Otto Neumath tribute'},
+          {link : '/examples/03-quadrant', text : 'Quadrant'},
+          {link : '/examples/04-process', text : 'Process'},
+          {link : '/examples/05-bars', text : 'Chart Bars'},
+          {link : '/examples/06-evolution', text : 'Human Evolution'},
+        ]
+      }],
+
     },
     socialLinks : [
       // {
