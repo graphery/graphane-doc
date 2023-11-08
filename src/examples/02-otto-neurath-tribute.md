@@ -40,7 +40,7 @@ each shape we use `g-bind:` directive on the `transform` attribute and move it t
   <svg viewBox="0 0 400 270">
     <defs g-for="y of 5">
       <defs g-for="x of 20">
-      <path g-bind:transform="translate(x * 20, y * 55)"
+      <path g-bind:transform="$$.translate(x * 20, y * 55)"
             d="M14,30L14,49L4,49L4,30C2,29,1,28,1,27L1,11C1,10,1,9,3,9L7,9L6.3,3
                C6,-1,11,-1,11.7,3L11,9L15,9C17,8.9,17,10,17,11L17,27C17,28,16,29,14,30Z"/>
       </defs>
@@ -53,7 +53,7 @@ each shape we use `g-bind:` directive on the `transform` attribute and move it t
   <svg viewBox="0 0 400 270">
     <defs g-for="y of 5">
       <defs g-for="x of 20">
-        <path g-bind:transform="translate(x * 20, y * 55)"
+        <path g-bind:transform="$$.translate(x * 20, y * 55)"
               d="M14,30L14,49L4,49L4,30C2,29,1,28,1,27L1,11C1,10,1,9,3,9L7,9L6.3,3
                C6,-1,11,-1,11.7,3L11,9L15,9C17,8.9,17,10,17,11L17,27C17,28,16,29,14,30Z"/>
       </defs>
@@ -72,7 +72,7 @@ of `g-composer` componente we create a simple object with a `value` property.
     <defs g-for="y of 5">
       <defs g-for="x of 20">
       <path g-if="((y * 20) + x < value)"
-            g-bind:transform="translate(x * 20, y * 55)"
+            g-bind:transform="$$.translate(x * 20, y * 55)"
             d="M14,30L14,49L4,49L4,30C2,29,1,28,1,27L1,11C1,10,1,9,3,9L7,9L6.3,3
                C6,-1,11,-1,11.7,3L11,9L15,9C17,8.9,17,10,17,11L17,27C17,28,16,29,14,30Z"/>
       </defs>
@@ -91,19 +91,13 @@ of `g-composer` componente we create a simple object with a `value` property.
     <defs g-for="y of 5">
       <defs g-for="x of 20">
         <path g-if="((y * 20) + x < value)"
-              g-bind:transform="translate(x * 20, y * 55)"
+              g-bind:transform="$$.translate(x * 20, y * 55)"
               d="M14,30L14,49L4,49L4,30C2,29,1,28,1,27L1,11C1,10,1,9,3,9L7,9L6.3,3
                C6,-1,11,-1,11.7,3L11,9L15,9C17,8.9,17,10,17,11L17,27C17,28,16,29,14,30Z"/>
       </defs>
     </defs>
   </svg>
 </g-composer>
-```
-```html
-<label>Update the value: 
-  <input type="range" min="0" max="100" value="50"
-         oninput="document.querySelector('g-composer#show').data.value = this.value"/>
-</label>
 ```
 
 ### Conditional color
@@ -116,7 +110,7 @@ Alternatively we can change the color for each figure by the value. In this case
     <defs g-for="y of 5">
       <defs g-for="x of 20">
         <path g-bind:style="{fill: ((y * 20) + x < value) ? '' : 'grey'}"
-              g-bind:transform="translate(x * 20, y * 55)"
+              g-bind:transform="$$.translate(x * 20, y * 55)"
               d="M14,30L14,49L4,49L4,30C2,29,1,28,1,27L1,11C1,10,1,9,3,9L7,9L6.3,3
                  C6,-1,11,-1,11.7,3L11,9L15,9C17,8.9,17,10,17,11L17,27C17,28,16,29,14,30Z"/>
       </defs>
@@ -135,17 +129,11 @@ Alternatively we can change the color for each figure by the value. In this case
     <defs g-for="y of 5">
       <defs g-for="x of 20">
         <path :style="{fill: ((y * 20) + x < value) ? '' : 'grey'}"
-              :transform="translate(x * 20, y * 55)"
+              :transform="$$.translate(x * 20, y * 55)"
               d="M14,30L14,49L4,49L4,30C2,29,1,28,1,27L1,11C1,10,1,9,3,9L7,9L6.3,3
                    C6,-1,11,-1,11.7,3L11,9L15,9C17,8.9,17,10,17,11L17,27C17,28,16,29,14,30Z"/>
       </defs>
     </defs>
   </svg>
 </g-composer>
-```
-```html
-<label>Update the value:
-  <input type="range" min="0" max="100" value="50"
-         oninput="document.querySelector('g-composer#color').data.value = this.value"/>
-</label>
 ```

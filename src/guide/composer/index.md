@@ -19,7 +19,7 @@ To get started, you need to include the Graphane Composer in your page. This can
 script tag with the source pointing to the component file into the CDN:
 
 ```html
-<script src="https://cdn.graphery.online/graphane/0.1.0-alpha.3/component/composer.js"></script>
+<script src="https://cdn.graphery.online/graphane/0.1.0-alpha.4/component/composer.js"></script>
 ```
 
 ::: details Understanding the CDN path
@@ -27,7 +27,7 @@ script tag with the source pointing to the component file into the CDN:
 This is the detailed description of each URL part:
 
 ```
-https://cdn.graphery.online/graphane/0.1.0-alpha.3/component/composer.js
+https://cdn.graphery.online/graphane/0.1.0-alpha.4/component/composer.js
 |-----|--------------------|--------|-------------|---------|-----------|
    |            |               |          |           |          |-----> filename
    |            |               |          |           |----------------> kind
@@ -87,12 +87,12 @@ visualizations in an intuitive way, focusing efforts on design and data, avoidin
 complex development. Any designer with a little programming knowledge can make great data-driven
 designs.
 
-- [`g-bind`](./templating/binding) (or the shorthand `:`): dynamically bind values to attributes and
-  styles.
-- [`g-for`](./templating/lists): render the element block multiple times based on the data.
-- [`g-if`](./templating/conditional): show an element conditionally.
-- [`g-content`](./templating/content): update the element content.
-- [`g-on`](./templating/events) (or the shorthand `@`): attach an event listener to the element.
+- [`g-bind`](../templating/binding) (or the shorthand `:`): dynamically bind values to 
+  attributes and styles.
+- [`g-for`](../templating/lists): render the element block multiple times based on the data.
+- [`g-if`](../templating/conditional): show an element conditionally.
+- [`g-content`](../templating/content): update the element content.
+- [`g-on`](../templating/events) (or the shorthand `@`): attach an event listener to the element.
 
 ## Data
 

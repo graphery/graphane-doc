@@ -21,28 +21,28 @@ const fullReloadAlways = {
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title         : 'graphane',
-  description   : `Data Visualization Microframework - version ${ VERSION }`,
-  base          : URL,
-  vite          : {
+  title       : 'graphane',
+  description : `Data Visualization Microframework - version ${ VERSION }`,
+  base        : URL,
+  vite        : {
     plugins : [fullReloadAlways],
   },
-  vue           : {
+  vue         : {
     template : {
       compilerOptions : {
         isCustomElement : (tag) => tag.startsWith('g-')
       }
     }
   },
-  head          : [
+  head        : [
     ['link', {rel : 'icon', href : `/img/logo/g.svg`}],
-    ['script', {
-      src  : 'http://localhost:63342/graphane/src/component/composer.js',
-      type : 'module'
-    }],
     // ['script', {
-    // src : `https://cdn.graphery.online/graphane/${ VERSION }/component/composer.js`
+    //   src  : 'http://localhost:63342/graphane/src/component/composer.js',
+    //   type : 'module'
     // }],
+    ['script', {
+      src : `https://cdn.graphery.online/graphane/${ VERSION }/component/composer.js`
+    }],
     ['script', {
       src           : 'https://plausible.io/js/script.js',
       defer         : '',
@@ -58,8 +58,8 @@ export default defineConfig({
     siteTitle   : false,
     footer      : {
       message   : 'Released under the MIT License.',
-      copyright : 'Copyright © 2023 <a href="https://www.graphane.dev/"> ' +
-                  '<img src="/img/logo/graphane.svg" alt="graphane" width="120"></a>'
+      copyright : 'Copyright © 2023 <a href="https://www.graphery.com/"> ' +
+                  '<img src="/img/logo/graphery.svg" alt="graphery" width="120"></a>'
     },
     search      : {
       provider : 'local'
@@ -152,7 +152,7 @@ export default defineConfig({
               {link : '/plugins/catalog/shapes', text : 'Shapes'},
             ]
           },
-          {link : '/plugins/create', text : 'Create custom plugin'},
+          // {link : '/plugins/create', text : 'Create custom plugin'},
         ]
       }],
       '/reference/' : [{
@@ -265,8 +265,9 @@ export default defineConfig({
           {link : '/examples/02-otto-neurath-tribute', text : 'Otto Neumath tribute'},
           {link : '/examples/03-quadrant', text : 'Quadrant'},
           {link : '/examples/04-process', text : 'Process'},
-          {link : '/examples/05-bars', text : 'Chart Bars'},
-          {link : '/examples/06-evolution', text : 'Human Evolution'},
+          {link : '/examples/05-evolution', text : 'Human Evolution'},
+          {link : '/examples/06-bars', text : 'Chart Bars'},
+          {link : '/examples/07-circle-bars', text : 'Circle Bars'},
         ]
       }],
 

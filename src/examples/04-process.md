@@ -8,7 +8,7 @@ outline: deep
   <svg g-bind:viewBox="`0 0 ${(data.length) * 170 + 30} 500`"
        style="height: 500px;">
     <defs g-for="(value, idx) of data">
-      <g g-bind:transform="translate(idx * 170)">
+      <g g-bind:transform="$$.translate(idx * 170)">
         <circle cx="100" cy="250" r="60" 
                 g-bind:style="{fill: value.color}"/>
         <text x="100" y="250" text-anchor="middle" dominant-baseline="middle" 
@@ -43,7 +43,7 @@ outline: deep
   <svg g-bind:viewBox="`0 0 ${(data.length) * 170 + 30} 500`"
        style="height: 500px;">
     <defs g-for="(value, idx) of data">
-      <g g-bind:transform="translate(idx * 170)">
+      <g g-bind:transform="$$.translate(idx * 170)">
         <circle cx="100" cy="250" r="60" 
                 g-bind:style="{fill: value.color}"/>
         <text x="100" y="250" text-anchor="middle" dominant-baseline="middle" 
