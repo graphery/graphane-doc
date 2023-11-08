@@ -1,0 +1,17 @@
+01-Load.md
+02-SVG-structure.md
+03-Basic-shapes.md
+04-Path-element.md
+05-Text-element.md
+06-Fill-and-stroke.md
+07-Reuse-elements.md
+08-Gradients-and-patterns.md
+09-Aspect-ratio.md
+10-Transform.md
+11-CSS.md
+12-Animation.md
+13-Text-path-and-clip-path.md
+14-Manage-elements.md
+15-Events.md
+index.md
+list.txt
