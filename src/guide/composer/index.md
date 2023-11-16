@@ -19,7 +19,7 @@ To get started, you need to include the Graphane Composer in your page. This can
 script tag with the source pointing to the component file into the CDN:
 
 ```html
-<script src="https://cdn.graphery.online/graphane/0.1.0-alpha.4/component/composer.js"></script>
+<script src="https://cdn.graphery.online/graphane/0.1.0-alpha.5/component/composer.js"></script>
 ```
 
 ::: details Understanding the CDN path
@@ -27,7 +27,7 @@ script tag with the source pointing to the component file into the CDN:
 This is the detailed description of each URL part:
 
 ```
-https://cdn.graphery.online/graphane/0.1.0-alpha.4/component/composer.js
+https://cdn.graphery.online/graphane/0.1.0-alpha.5/component/composer.js
 |-----|--------------------|--------|-------------|---------|-----------|
    |            |               |          |           |          |-----> filename
    |            |               |          |           |----------------> kind

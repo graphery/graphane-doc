@@ -19,3 +19,13 @@ The `src` attribute must include the URL to the plugin Javascript file.
 
 Create new shapes in a `<path>` element.
 :::
+
+::: info [Observe Resize](./catalog/observe-resize.md)
+
+Add `resize` event to the SVG
+:::
+
+::: info [Keep Aspect](./catalog/keep-aspect.md)
+
+Keep the size and/or the stroke width to elements when the SVG is resized.
+:::

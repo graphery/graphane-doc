@@ -3,7 +3,7 @@ import { BUNDLED_LANGUAGES } from 'shiki';
 import { readFileSync }      from "fs";
 
 const URL                     = '/0.1.0-alpha/';
-const VERSION                 = '0.1.0-alpha.4';
+const VERSION                 = '0.1.0-alpha.5';
 const graphaneLanguageGrammar = JSON.parse(readFileSync("./src/.vitepress/shiki/graphane.tmLanguage.json"))
 
 const html     = BUNDLED_LANGUAGES.find(lang => lang.id === 'html')
@@ -22,7 +22,8 @@ const fullReloadAlways = {
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title       : 'graphane',
-  description : `Data Visualization Microframework - version ${ VERSION }`,
+  // description : `Data Visualization Microframework - version ${ VERSION }`,
+  description : VERSION,
   base        : URL,
   vite        : {
     plugins : [fullReloadAlways],
@@ -36,18 +37,18 @@ export default defineConfig({
   },
   head        : [
     ['link', {rel : 'icon', href : `/img/logo/g.svg`}],
-    // ['script', {
-    //   src  : 'http://localhost:63342/graphane/src/component/composer.js',
-    //   type : 'module'
-    // }],
     ['script', {
-      src : `https://cdn.graphery.online/graphane/${ VERSION }/component/composer.js`
+      src  : 'http://localhost:63342/graphane/src/component/composer.js',
+      type : 'module'
     }],
-    ['script', {
-      src           : 'https://plausible.io/js/script.js',
-      defer         : '',
-      'data-domain' : 'graphane.dev',
-    }]
+    // ['script', {
+    //   src : `https://cdn.graphery.online/graphane/${ VERSION }/component/composer.js`
+    // }],
+    // ['script', {
+    //   src           : 'https://plausible.io/js/script.js',
+    //   defer         : '',
+    //   'data-domain' : 'graphane.dev',
+    // }]
   ],
   // https://vitepress.dev/reference/default-theme-config
   themeConfig : {
@@ -150,6 +151,8 @@ export default defineConfig({
             collapsed : false,
             items     : [
               {link : '/plugins/catalog/shapes', text : 'Shapes'},
+              {link : '/plugins/catalog/observe-resize', text : 'Observe Resize'},
+              {link : '/plugins/catalog/keep-aspect', text : 'Keep Aspect'},
             ]
           },
           // {link : '/plugins/create', text : 'Create custom plugin'},
