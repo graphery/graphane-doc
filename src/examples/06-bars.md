@@ -32,7 +32,7 @@ outline: deep
             stroke-linecap="round"
             g-bind:x1="(idx * 100) + 115"
             g-bind:x2="(idx * 100) + 115"
-            g-bind:y1="$.dynamic(((1 - value) * 260) + 20)"/>
+            g-bind:y1="$$.dynamic(((1 - value) * 260) + 20)"/>
       <text y="284"
             style="fill: white; font-size:0.75em; text-anchor:middle"
             g-bind:x="(idx * 100) + 115" 
@@ -93,7 +93,7 @@ outline: deep
             stroke-linecap="round"
             g-bind:x1="(idx * 100) + 115"
             g-bind:x2="(idx * 100) + 115"
-            g-bind:y1="$.dynamic(((1 - value) * 260) + 20)"/>
+            g-bind:y1="$$.dynamic(((1 - value) * 260) + 20)"/>
       <text y="284"
             style="fill: white; font-size:0.75em; text-anchor:middle"
             g-bind:x="(idx * 100) + 115"

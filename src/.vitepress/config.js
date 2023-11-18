@@ -271,6 +271,9 @@ export default defineConfig({
           {link : '/examples/05-evolution', text : 'Human Evolution'},
           {link : '/examples/06-bars', text : 'Chart Bars'},
           {link : '/examples/07-circle-bars', text : 'Circle Bars'},
+          {link : '/examples/08-ranking', text : 'Population Ranking'},
+          {link : '/examples/09-votes', text : 'Votes'},
+          {link : '/examples/10-bottle', text : 'Half-full Bottle'},
         ]
       }],
 

@@ -23,21 +23,21 @@ transitions or animations.
 
 :::
 
-## `$.dynamic()` with `g-bind`
+## `$$.dynamic()` with `g-bind`
 
 Graphane Template Engine provides a very simple for of animation in collaboration with the
-`g-bind` directive. When you use `$.dynamic()` into the `g-bind` expression and the value is applied
+`g-bind` directive. When you use `$$.dynamic()` into the `g-bind` expression and the value is applied
 progressively and show an animation.
 
-The syntax is: `g-bind:attribute="$.animate(value [, duration] [, delay])`.
+The syntax is: `g-bind:attribute="$$.dynamic(value [, duration] [, delay])`.
 
 ```html
 
 <g-composer data="x: 50, y: 50, radius: 50">
   <svg viewBox="0 0 100 100">
-    <circle g-bind:r="$.dynamic(radius, 2000)"
-            g-bind:cx="$.dynamic(x, 2000)"
-            g-bind:cy="$.dynamic(y, 2000)"
+    <circle g-bind:r="$$.dynamic(radius, 2000)"
+            g-bind:cx="$$.dynamic(x, 2000)"
+            g-bind:cy="$$.dynamic(y, 2000)"
             fill="red"/>
   </svg>
 </g-composer>
@@ -45,9 +45,9 @@ The syntax is: `g-bind:attribute="$.animate(value [, duration] [, delay])`.
 
 <g-composer data="x: 50, y: 50, radius: 50" id="dynamic1">
   <svg viewBox="0 0 100 100">
-    <circle g-bind:r="$.dynamic([0, radius], 4000)"
-            g-bind:cx="$.dynamic([0, x], 4000)"
-            g-bind:cy="$.dynamic([0, y], 4000)"
+    <circle g-bind:r="$$.dynamic([0, radius], 4000)"
+            g-bind:cx="$$.dynamic([0, x], 4000)"
+            g-bind:cy="$$.dynamic([0, y], 4000)"
             fill="red"/>
   </svg>
 </g-composer>
@@ -65,12 +65,12 @@ valid expression for calculated values.
 ### Duration
 
 By default, the animation duration is 200ms. You can change this behavior passing a second parameter
-to `$.dynamic()` function.
+to `$$.dynamic()` function.
 
 ### Delay
 
 By default, the animation duration starts immediately. You can change this behavior passing a third
-parameter to `$.dynamic()` function in millisconds.
+parameter to `$$.dynamic()` function in millisconds.
 
 ### Keyframes as values
 
@@ -80,7 +80,7 @@ You can pass an array of values to describe non-linear progressing.
 
 <g-composer data="radius: 50" id="dynamic2">
   <svg viewBox="0 0 100 100">
-    <circle g-bind:r="$.dynamic([radius * 0.1, 
+    <circle g-bind:r="$$.dynamic([radius * 0.1, 
                                  radius * 0.5, 
                                  radius * 0.9, 
                                  radius * 0.7, 
@@ -95,7 +95,7 @@ You can pass an array of values to describe non-linear progressing.
 
 <g-composer data="radius: 50" id="dynamic2">
   <svg viewBox="0 0 100 100">
-    <circle g-bind:r="$.dynamic(
+    <circle g-bind:r="$$.dynamic(
       [radius * 0.1, 
        radius * 0.5, 
        radius * 0.9, 
@@ -119,7 +119,7 @@ control over the execution of the animation.
 
 <g-composer data="radius: 50" id="dynamic3">
   <svg viewBox="0 0 100 100">
-    <circle g-bind:r="$.dynamic([{value: 0,            offset: 0},
+    <circle g-bind:r="$$.dynamic([{value: 0,            offset: 0},
                                  {value: radius,       offset: 0.8},
                                  {value: radius * 0.9, offset: 0.9},
                                  {value: radius,       offset: 1}],
@@ -133,7 +133,7 @@ control over the execution of the animation.
 
 <g-composer data="radius: 50" id="dynamic3">
   <svg viewBox="0 0 100 100">
-    <circle g-bind:r="$.dynamic([{value: 0,            offset: 0},
+    <circle g-bind:r="$$.dynamic([{value: 0,            offset: 0},
                                  {value: radius,       offset: 0.8},
                                  {value: radius * 0.9, offset: 0.9},
                                  {value: radius,       offset: 1}],

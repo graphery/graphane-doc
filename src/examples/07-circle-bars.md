@@ -26,6 +26,10 @@ outline: deep
   }</g-script>
 </g-composer>
 
+<p><label>2018:
+  <input type="range" min="0" max="1" step="0.01" value="0.5" 
+         oninput="document.querySelector('g-composer').data[4]. value = this.value">
+</label></p>
 <p><label>2019:
   <input type="range" min="0" max="1" step="0.01" value="0.74" 
          oninput="document.querySelector('g-composer').data[3]. value = this.value">
