@@ -21,7 +21,7 @@ const fullReloadAlways = {
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title       : 'graphane',
+  title : 'graphane',
   // description : `Data Visualization Microframework - version ${ VERSION }`,
   description : VERSION,
   base        : URL,
@@ -274,6 +274,7 @@ export default defineConfig({
           {link : '/examples/08-ranking', text : 'Population Ranking'},
           {link : '/examples/09-votes', text : 'Votes'},
           {link : '/examples/10-bottle', text : 'Half-full Bottle'},
+          {link : '/examples/11-dog-or-cat', text : 'Dog or Cat'},
         ]
       }],
 
@@ -286,5 +287,5 @@ export default defineConfig({
       {link : 'https://github.com/graphery/graphane', icon : 'github'},
     ]
   }
-})
-;
+});
+
