@@ -29,3 +29,9 @@ Add `resize` event to the SVG
 
 Keep the size and/or the stroke width to elements when the SVG is resized.
 :::
+
+
+::: info [Load](./catalog/load.md)
+
+Load external resources and include in the SVG.
+:::
