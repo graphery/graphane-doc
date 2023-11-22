@@ -276,6 +276,7 @@ export default defineConfig({
           {link : '/examples/bottle', text : 'Half-full Bottle'},
           {link : '/examples/dog-or-cat', text : 'Dog or Cat'},
           {link : '/examples/survey', text : 'Survey'},
+          {link : '/examples/timeline-horizontal', text : 'Timeline (horizontal)'},
         ]
       }],
 
