@@ -278,6 +278,7 @@ export default defineConfig({
           {link : '/examples/survey', text : 'Survey'},
           {link : '/examples/timeline-horizontal', text : 'Timeline (horizontal)'},
           {link : '/examples/radial-temp', text : 'Radial: temperature range'},
+          {link : '/examples/world-population', text : 'Horizontal bars: population'},
         ]
       }],
 
