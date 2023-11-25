@@ -13,7 +13,6 @@ html.aliases   = html.aliases || [];
 if (html.aliases.indexOf('svg') === -1) {
   html.aliases.push('svg');
 }
-console.log(html);
 
 const fullReloadAlways = {
   handleHotUpdate ({server}) {
@@ -282,6 +281,8 @@ export default defineConfig({
           {link : '/examples/timeline-horizontal', text : 'Timeline (horizontal)'},
           {link : '/examples/radial-temp', text : 'Radial: temperature range'},
           {link : '/examples/world-population', text : 'Horizontal bars: population'},
+          {link : '/examples/heatmap-day-hour', text : 'Heatmap: day & hour'},
+          {link : '/examples/bump-chart', text : 'Bump chart'},
         ]
       }],
 
