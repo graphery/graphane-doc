@@ -10,7 +10,10 @@ const html     = BUNDLED_LANGUAGES.find(lang => lang.id === 'html')
 html.scopeName = 'source.graphane';
 html.grammar   = graphaneLanguageGrammar;
 html.aliases   = html.aliases || [];
-html.aliases.push('svg');
+if (html.aliases.indexOf('svg') === -1) {
+  html.aliases.push('svg');
+}
+console.log(html);
 
 const fullReloadAlways = {
   handleHotUpdate ({server}) {
