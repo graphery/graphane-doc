@@ -1,17 +1,14 @@
-import { defineConfig }      from 'vitepress';
-import { BUNDLED_LANGUAGES } from 'shiki';
-import { readFileSync }      from "fs";
+import { defineConfig } from 'vitepress';
 
-const URL                     = '/0.1.0-alpha/';
-const VERSION                 = '0.1.0-alpha.5';
-const graphaneLanguageGrammar = JSON.parse(readFileSync("./src/.vitepress/shiki/graphane.tmLanguage.json"))
+const URL     = '/0.1.0-alpha/';
+const VERSION = '0.1.0-alpha.5';
 
-const html     = BUNDLED_LANGUAGES.find(lang => lang.id === 'html')
-html.scopeName = 'source.graphane';
-html.grammar   = graphaneLanguageGrammar;
-html.aliases   = html.aliases || [];
-if (html.aliases.indexOf('svg') === -1) {
-  html.aliases.push('svg');
+const MarkdownOptions = {
+  languageAlias : {
+    'svg'                              : 'html',
+    'html:preview'                     : 'html',
+    'html:preview:expanded:no-codepen' : 'html',
+  }
 }
 
 const fullReloadAlways = {
@@ -37,6 +34,7 @@ export default defineConfig({
       }
     }
   },
+  markdown    : MarkdownOptions,
   head        : [
     ['link', {rel : 'icon', href : `/img/logo/g.svg`}],
     ['script', {
