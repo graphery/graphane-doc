@@ -13,7 +13,7 @@
   "keywords": [],
   "author": "",
   "devDependencies": {
-    "vitepress": "1.0.0-rc.29",
+    "vitepress": "1.0.0-rc.31",
     "shiki": "^0.14.5"
   },
   "type": "module"
