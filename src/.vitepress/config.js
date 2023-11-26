@@ -281,6 +281,7 @@ export default defineConfig({
           {link : '/examples/world-population', text : 'Horizontal bars: population'},
           {link : '/examples/heatmap-day-hour', text : 'Heatmap: day & hour'},
           {link : '/examples/bump-chart', text : 'Bump chart'},
+          {link : '/examples/clock', text : 'Clock'},
         ]
       }],
 
