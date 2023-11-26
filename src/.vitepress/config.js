@@ -282,6 +282,7 @@ export default defineConfig({
           {link : '/examples/heatmap-day-hour', text : 'Heatmap: day & hour'},
           {link : '/examples/bump-chart', text : 'Bump chart'},
           {link : '/examples/clock', text : 'Clock'},
+          {link : '/examples/gauge', text : 'Gauge'},
         ]
       }],
 
