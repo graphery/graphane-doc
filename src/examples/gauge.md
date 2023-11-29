@@ -17,7 +17,9 @@ outline: deep
       />
     </defs> 
     <g fill="#000" stroke="#555" stroke-width="1">
-      <polygon g-bind:transform="$$.rotate(-135 + (value * 2.7), 125, 125)"
+      <polygon transform="rotate(-135,125,125)"
+               g-bind:transform="$$.dynamic([$$(),
+                {rotate: [-135 + (value * 2.7), 125, 125]}])"
                points="125,30,130,125,125,150,120,125"/>
     </g>
   </svg>
