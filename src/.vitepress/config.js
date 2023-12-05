@@ -21,8 +21,8 @@ const fullReloadAlways = {
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title : 'graphane',
-  // description : `Data Visualization Microframework - version ${ VERSION }`,
-  description : VERSION,
+  description : `Data Visualization Microframework - version ${ VERSION }`,
+  // description : VERSION,
   base        : URL,
   vite        : {
     plugins : [fullReloadAlways],
@@ -39,6 +39,10 @@ export default defineConfig({
     ['link', {rel : 'icon', href : `/img/logo/g.svg`}],
     ['script', {
       src  : 'http://localhost:63342/graphane/src/component/composer.js',
+      type : 'module'
+    }],
+    ['script', {
+      src  : 'http://localhost:63342/graphane/src/controler.js',
       type : 'module'
     }],
     // ['script', {
