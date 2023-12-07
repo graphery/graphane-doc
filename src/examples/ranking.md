@@ -16,7 +16,7 @@ outline: deep
       </g>
 -->
 
-<g-composer>
+<g-composer style="width: 500px">
   <svg viewBox="0 0 500 500">
     <defs g-for="({country, population}, n) of data">
       <g g-bind:transform="$$.translate(

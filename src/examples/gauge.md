@@ -32,5 +32,3 @@ outline: deep
          oninput="document.querySelector('g-composer').data.value = Number(this.value)">
 </label></p>
 
-<g-editor href="#gauge-example"></g-editor>
-
