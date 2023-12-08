@@ -73,7 +73,7 @@ export default defineConfig({
       {link : '/', text : 'Home'},
       {
         text : 'Guides', items : [
-          {link : '/guides/essentials/', text : 'Essentials'},
+          {link : '/guides/starter/', text : 'Starter Tutorial'},
           {link : '/guides/in-depth/', text : 'In-Depth'},
           {link : '/guides/svg/', text : 'Exploring SVG'},
         ]
@@ -84,50 +84,61 @@ export default defineConfig({
       {link : 'https://github.com/graphery/graphane/blob/main/CHANGELOG.md', text : VERSION},
     ],
     sidebar     : {
-      '/guides/essentials/' : [{
-        text  : 'Essentials',
+      '/guides/starter/' : [{
+        text  : 'Starter Tutorial',
         items : [
-          {link : '/guides/essentials/', text : 'What is Graphane?'},
-          {link : '/guides/essentials/composer/', text : 'Composer'},
+          {link : '/guides/starter/', text : 'What is Graphane?'},
+          {link : '/guides/starter/load', text : '1.- Load'},
+          {link : '/guides/starter/composer', text : '2.- Composer'},
+          {link : '/guides/starter/template', text : '3.- Template'},
+          {link : '/guides/starter/data', text : '4.- Data'},
+          {link : '/guides/starter/methods', text : '5.- Methods'},
+        ]
+      }],
+      '/guides/in-depth/' : [{
+        text  : 'In-Depth',
+        items : [
+          {link : '/guides/in-depth/', text : 'Why Graphane?'},
+          {link : '/guides/in-depth/composer/', text : 'Composer'},
           {
             text      : 'Templating',
-            link      : '/guide/templating/',
+            link      : '/guide/in-depth/templating/',
             collapsed : false,
             items     : [
-              {link : '/guides/essentials/templating/binding', text : 'Binding'},
-              {link : '/guides/essentials/templating/lists', text : 'Lists'},
-              {link : '/guides/essentials/templating/conditional', text : 'Conditional'},
-              {link : '/guides/essentials/templating/content', text : 'Content'},
-              {link : '/guides/essentials/templating/events', text : 'Events'},
-              {link : '/guides/essentials/templating/expressions', text : 'Expressions'},
+              {link : '/guides/in-depth/templating/binding', text : 'Binding'},
+              {link : '/guides/in-depth/templating/lists', text : 'Lists'},
+              {link : '/guides/in-depth/templating/conditional', text : 'Conditional'},
+              {link : '/guides/in-depth/templating/content', text : 'Content'},
+              {link : '/guides/in-depth/templating/events', text : 'Events'},
+              {link : '/guides/in-depth/templating/expressions', text : 'Expressions'},
             ]
           },
           {
             text      : 'Data',
-            link      : '/guides/essentials/data/',
+            link      : '/guides/in-depth/data/',
             collapsed : false,
             items     : [
-              {link : '/guides/essentials/data/attribute', text : 'data attribute'},
-              {link : '/guides/essentials/data/property', text : '.data property'},
-              {link : '/guides/essentials/data/embebed', text : 'Embedded data'},
-              {link : '/guides/essentials/data/external', text : 'Load data'},
-              {link : '/guides/essentials/data/helpers', text : 'Data helpers'},
-              {link : '/guides/essentials/data/reactivity', text : 'Reactivity'},
+              {link : '/guides/in-depth/data/attribute', text : 'data attribute'},
+              {link : '/guides/in-depth/data/property', text : '.data property'},
+              {link : '/guides/in-depth/data/embebed', text : 'Embedded data'},
+              {link : '/guides/in-depth/data/external', text : 'Load data'},
+              {link : '/guides/in-depth/data/helpers', text : 'Data helpers'},
+              {link : '/guides/in-depth/data/reactivity', text : 'Reactivity'},
             ]
           },
           {
             text      : 'Methods',
-            link      : '/guides/essentials/methods/',
+            link      : '/guides/in-depth/methods/',
             collapsed : false,
             items     : [
-              {link : '/guides/essentials/methods/embebed', text : 'Embedded methods'},
-              {link : '/guides/essentials/methods/external', text : 'External resource'},
-              {link : '/guides/essentials/methods/property', text : 'Property'},
+              {link : '/guides/in-depth/methods/embebed', text : 'Embedded methods'},
+              {link : '/guides/in-depth/methods/external', text : 'External resource'},
+              {link : '/guides/in-depth/methods/property', text : 'Property'},
               {
-                link : '/guides/essentials/methods/function-data',
+                link : '/guides/in-depth/methods/function-data',
                 text : '<code>function data()</code>'
               },
-              {link : '/guides/essentials/methods/$data', text : '<code>$.data</code>'},
+              {link : '/guides/in-depth/methods/$data', text : '<code>$.data</code>'},
               // {link : '/guide/methods/svg-access', text : '<code>$.svg</code>'},
               // {link : '/guide/methods/load', text : 'Load event'},
             ]

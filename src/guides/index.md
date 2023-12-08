@@ -5,7 +5,7 @@ Whether you're a beginner looking for the essentials, a seasoned pro digging mor
 complete unknown ready to explore the capabilities of scalable vector graphics (SVG), we've got you
 covered.
 
-## [Essentials](./essentials/)
+## [Essentials](starter/)
 
 Embark on your Graphane journey with our Essentials section, designed for those taking their first
 steps into the capabilities of this micro-framework. You'll find fundamental concepts and practical

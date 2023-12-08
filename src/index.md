@@ -9,8 +9,8 @@ hero:
   tagline: data visualization microframework
   actions:
     - theme: brand
-      text: Get Started
-      link: /guide/composer/
+      text: Starter Tutorial
+      link: /guides/starter/
     - theme: alt
       text: Examples
       link: /examples/
