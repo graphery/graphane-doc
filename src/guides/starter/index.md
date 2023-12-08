@@ -24,3 +24,5 @@ overhead**. It is not just a tool but a complete system that includes specially 
 to update the visualization efficiently when data are changed. This feature allows Graphane to
 maintain high runtime performance without pre-compilation processes.
 
+
+>  For more details, see [Why Graphane?](../in-depth/index.md).
