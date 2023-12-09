@@ -75,7 +75,7 @@ export default defineConfig({
         text : 'Guides', items : [
           {link : '/guides/starter/', text : 'Starter Tutorial'},
           {link : '/guides/in-depth/', text : 'In-Depth'},
-          {link : '/guides/svg/', text : 'Exploring SVG'},
+          {link : '/guides/svg/', text : 'Explore SVG'},
         ]
       },
       {link : '/reference/', text : 'Reference'},

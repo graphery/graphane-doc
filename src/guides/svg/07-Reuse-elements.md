@@ -249,6 +249,6 @@ $.svg.add('polyline')
             marker-end="url(#marker3)"/>
 </svg>
 
-Graphane Javascript library provides an internal not duplicated `id` for each element, and you 
+The SVG Graphane API provides an internal not duplicated `id` for each element, and you 
 can get this with `.url()`. It returns an `url(#id)`. This method simplifies using the unique id 
 when it is necessary to include the `url()` pseudo-function.

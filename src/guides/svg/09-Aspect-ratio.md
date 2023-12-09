@@ -38,7 +38,6 @@ This is the base image:
 ::: code-group
 
 ```svg
-
 <svg viewBox="0 0 100 100" style="border: 1px dashed grey;" width="100" height="100">
     <line x1="0" y1="0" x2="100" y2="100"
           stroke-width="1" stroke-dasharray="18.5,2" stroke="grey"/>

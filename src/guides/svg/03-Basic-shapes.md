@@ -31,7 +31,8 @@ to the appropriate position. All these values are related to the dimensions defi
 `viewBox`.
 
 `fill` sets the interior color for the shape. It defaults to black when left unspecified.
-`.stroke` sets the border color and `stroke_width` the width of this border.
+
+`stroke` sets the border color and `stroke-width` the width of this border.
 
  
 ::: code-group

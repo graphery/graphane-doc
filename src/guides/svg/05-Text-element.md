@@ -6,9 +6,9 @@ outline: deep
 
 ## Create a new text element
 
-The element `text` defines a scalable text element into the graphic internal dimensions.
-This method is required when you want to create text element inside the SVG component, as it
-won't be rendered otherwise even if the display property is set.
+The element `text` defines a scalable text element into the graphic internal dimensions. This method
+is required when you want to create text element inside the SVG component, as it won't be rendered
+otherwise even if the display property is set.
 
 The text element admits several attributes:
 
@@ -21,20 +21,24 @@ In SVG source the text is include into the tag body:
 <text x="10" y="10">hello</text>
 ```
 
-In Javascript library, we can use the method `.content("hello")` to includes the content text into the element.
+In the SVG Graphane API we can use the method `.content("hello")` to includes the content text in
+the element.
 
 ::: code-group
+
 ```svg
 <svg viewBox="0 0 100 100" width="75" height="75">
-  <text x="0" y="40" style="font-family: sans-serif; font-size: 18px;">Hello, word</text>
+    <text x="0" y="40" style="font-family: sans-serif; font-size: 18px;">Hello, word</text>
 </svg>
 ```
+
 ```js
 $.svg.viewBox('0 0 100 100').width(75).height(75);
 const text = $.svg.add('text')
-                  .x(0).y(40).content('Hello, word')
-                  .style.fontFamily('sans-serif').style.fontSize(18);
+              .x(0).y(40).content('Hello, word')
+              .style.fontFamily('sans-serif').style.fontSize(18);
 ```
+
 :::
 
 <svg viewBox="0 0 100 100" width="75" height="75">
@@ -48,19 +52,23 @@ to change its appearance. These include elements such as `style`, `class` with a
 well as some others like `fill`, `stroke` or `stroke-width`.
 
 ::: code-group
+
 ```svg
 <svg viewBox="0 0 100 100" width="75" height="75">
- <text x="0" y="40" fill="none" stroke="#0000D8" stroke-width="1" 
-       style="font-family: sans-serif; font-size: 50px;">A</text>
+    <text x="0" y="40" fill="none" stroke="#0000D8" stroke-width="1"
+          style="font-family: sans-serif; font-size: 50px;">A
+    </text>
 </svg>
 ```
+
 ```js
 $.svg.viewBox('0 0 100 100').width(75).height(75);
 const text = $.svg.add('text')
-                  .x(0).y(40).content('A')
-                  .style.fontFamily('sans-serif').style.fontSize(50)
-                  .fill('none').stroke('#0000D8').stroke_width(1);
+              .x(0).y(40).content('A')
+              .style.fontFamily('sans-serif').style.fontSize(50)
+              .fill('none').stroke('#0000D8').stroke_width(1);
 ```
+
 :::
 
 <svg viewBox="0 0 100 100" width="75" height="75">
@@ -70,11 +78,12 @@ const text = $.svg.add('text')
 
 ## Position
 
-The position of the text is defined by the width `x` and `y`. By default, this is the start
-and baseline text position, but you can adjust the exact position with these attributes:
+The position of the text is defined by the width `x` and `y`. By default, this is the start and
+baseline text position, but you can adjust the exact position with these attributes:
 `dominant-baseline`, and `text-anchor`.
 
 ::: code-group
+
 ```svg
 <svg viewBox="0,0,500,100" width="500" height="100">
     <line x1="0" x2="250" y1="50" y2="50" stroke="grey" stroke-dasharray="5"/>
@@ -89,8 +98,9 @@ and baseline text position, but you can adjust the exact position with these att
     </g>
 </svg>
 ```
+
 ```js
-$.svg.viewBox(0,0,500,100).width(500).height(100);
+$.svg.viewBox(0, 0, 500, 100).width(500).height(100);
 
 $.svg.add('line').x1(0).x2(250).y1(50).y2(50).stroke('grey').stroke_dasharray(5);
 $.svg.add('line').x1(400).x2(400).y1(0).y2(100).stroke('grey').stroke_dasharray(5);
@@ -105,6 +115,7 @@ g.add('text').x(400).y(15).content('anchor');
 g.add('text').x(400).y(50).content('middle').text_anchor('middle');
 g.add('text').x(400).y(85).content('end').text_anchor('end');
 ```
+
 :::
 
 <svg viewBox="0,0,500,100" width="500" height="100">
@@ -120,13 +131,13 @@ g.add('text').x(400).y(85).content('end').text_anchor('end');
     </g>
 </svg>
 
-
 ## tspan
 
 `tspan` defines a subtext within a text element or another tspan element. It allows for adjustment
 of the style only in a part of the text content.
 
 ::: code-group
+
 ```svg
 <svg viewBox="0 0 100 100" width="100" height="100">
     <text x="10" y="50">
@@ -136,6 +147,7 @@ of the style only in a part of the text content.
     </text>
 </svg>
 ```
+
 ```js
 $.svg.viewBox('0 0 100 100').width(100).height(100);
 const text = $.svg.add('text').x(10).y(50);
@@ -143,6 +155,7 @@ text.add('tspan').style.fill('red').style.fontSize(20).content('&lt;');
 text.content(text.content() + 'tag');
 text.add('tspan').style.fill('red').style.fontSize(20).content('&gt;');
 ```
+
 :::
 
 <svg viewBox="0 0 100 100" width="100" height="100">

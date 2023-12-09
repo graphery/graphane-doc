@@ -19,7 +19,6 @@ and `2` doubles the original size.
 ::: code-group
 
 ```svg
-
 <svg viewBox="0,0,150,75" width="150" height="75">
     <defs>
         <circle cx="5" cy="10" r="4" fill="red" id="circle1"/>
@@ -63,7 +62,6 @@ as `r`, `stroke-width` are affected too by the `x` scale factor.
 ::: code-group
 
 ```svg
-
 <svg viewBox="0,0,100,100" width="100" height="100">
     <rect x="10" y="10" width="10" height="10" stroke-width="1" stroke="blue" fill="none"/>
     <rect x="10" y="10" width="10" height="10" stroke-width="1" stroke="blue" fill="none"
@@ -95,7 +93,6 @@ If the `y` is omitted, a `0` is assumed as value.
 ::: code-group
 
 ```svg
-
 <svg viewBox="0,0,102,102" width="100" height="100">
     <rect x="1" y="1" width="50" height="50" stroke-width="1" stroke="blue" fill="none"/>
     <rect x="1" y="1" width="50" height="50" stroke-width="1" stroke="blue" fill="none"
@@ -127,7 +124,6 @@ a new rotation's center (default values are `0` and `0`).
 ::: code-group
 
 ```svg
-
 <svg viewBox="0,0,102,102" width="100" height="100">
     <rect x="25" y="25" width="50" height="50" stroke-width="1" stroke="blue" fill="none"/>
     <rect x="25" y="25" width="50" height="50" stroke-width="1" stroke="blue" fill="none"
@@ -178,7 +174,6 @@ degree value than represents a skew transformation.
 ::: code-group
 
 ```svg
-
 <svg viewBox="0,0,300,150" width="300" height="150">
     <g transform="translate(2,2)">
         <rect x="0" y="0" width="90" height="90" stroke-width="1" fill="grey"/>
