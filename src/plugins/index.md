@@ -25,7 +25,7 @@ Create new shapes in a `<path>` element.
 Add `resize` event to the SVG
 :::
 
-::: info [Keep Aspect](./catalog/keep-aspect.md)
+::: info [Keep Aspect](./catalog/non-scaling-size)
 
 Keep the size and/or the stroke width to elements when the SVG is resized.
 :::
