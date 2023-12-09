@@ -79,8 +79,8 @@ html, body {
 }
 
 aside {
-  border-right : 1px solid var(--vp-c-divider);
-  padding-bottom: 2em !important;
+  border-right   : 1px solid var(--vp-c-divider);
+  padding-bottom : 2em !important;
 }
 
 
@@ -102,4 +102,12 @@ footer img {
   display        : inline-block;
   vertical-align : top;
   width          : 120px;
+}
+
+/**
+ Input type text
+ */
+input[type=text] {
+  border-bottom : 1px solid gray;
+  padding-bottom: 0;
 }
