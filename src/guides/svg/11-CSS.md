@@ -8,12 +8,11 @@ outline: deep
 
 Commonly, the SVG visual attributes have an equivalent CSS property, for example, `x`, `y`,
 `with`, `height`, `stroke` or `fill` can be defined as style. For example, you can choose to
-use  `. stroke-width` SVG attribute or `stroke-width` style property.
+use  `stroke-width` SVG attribute or `stroke-width` style property.
 
 ## Inline style
 
-You can define the style for each SVG element with the `style` attribute, and with the SVG Graphane
-API with the `.style()` method and the `.style` object.
+You can define the style for each SVG element with the `style` attribute.
 
 ::: code-group
 
@@ -35,11 +34,6 @@ $.svg.add('rect').style('x: 10px; y: 10px; width: 180px; height: 180px; fill: #0
 </svg>
 
 
-With the SVG Graphane API you can use the `.style` object to access its child properties
-as methods. Its properties are now methods with the same name as the original property name: If you
-need to get any style property value, you can use the method without a parameter, and it returns the
-current style value:
-
 ```js
 import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
 
@@ -57,15 +51,6 @@ const stroke = element.style.stroke();
 ## style tag
 
 It's possible to create it a `style` tag into the SVG and put CSS rules into this.
-
-::: warning Note
-
-Styles defined in the SVG affect the entire page.
-
-Styles defined in the page affect the $.svg.
-
-Consequently, collisions and side effects may occur if the selectors used match other elements.
-:::
 
 ::: code-group
 
@@ -99,9 +84,42 @@ $.svg.add('rect').id('rectangle');
 
 :::
 
+::: warning Note
+
+Styles defined in the SVG affect the entire page.
+
+Styles defined in the page affect the $.svg.
+
+Consequently, collisions and side effects may occur if the selectors used to match other elements.
+
+:::
+
+
 ## class
 
-You can use the `class` attribute and the `.classList` object and its methods:
+You can use `class` attribute for reference to styles.
+
+
+## In Graphane
+
+### scoped style by template
+
+General styles are not usable within the `g-composer` component.
+
+CSS variables can be used.
+
+You can define a STYLE in the template, and it will be used inside the component.
+
+### style
+
+With the SVG Graphane API you can use the `.style` object to access its child properties
+as methods. Its properties are now methods with the same name as the original property name: If you
+need to get any style property value, you can use the method without a parameter, and it returns the
+current style value:
+
+### class
+
+You can use the `.classList` object and its methods:
 
 - `.classList.contains( class )` - returns true if the list contains the given class, otherwise
   false.
@@ -166,3 +184,4 @@ $.svg.add('text').x(10).y(100).content('Alarm').classList.add('message');
 ```
 
 :::
+

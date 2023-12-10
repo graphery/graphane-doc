@@ -4,10 +4,17 @@ outline: deep
 
 # Transform
 
-The `transform` attribute defines a group of transformation on an element or group of elements. With
-these transformations, we can scale, rotate, move or deform the SVG elements. `transform`
-receive a list pseudo-functions with parameters separated by space. With this pseudo-function, we
+The `transform` attribute defines a group of transformations on an element or group of elements.
+With these transformations, we can scale, rotate, move or deform the SVG elements. `transform`
+receive a list of pseudo-functions with parameters separated by space. With this pseudo-function, we
 define how we want to transform the graph.
+
+### In Graphane
+
+In SVG Graphane API we can use `.transform` with methods such as `.scale()` or `.translate()`
+and build the transformation step by step with these helpers. All these methods return
+the `.transform` object. And, as a result, you can chain the calls of them.
+
 
 ## scale()
 

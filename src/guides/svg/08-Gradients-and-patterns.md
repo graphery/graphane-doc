@@ -4,12 +4,10 @@ outline: deep
 
 # Gradients and Patterns
 
-In addition to plain colors, the SVGs can use gradients and patterns to fill shapes. This allows 
-for great freedom when building graphic designs. Usually, these elements are created within the 
-`defs`, although it is unnecessary to place them there.
-
-We can use them for `fill` and `stroke` values with gradients and patterns unique id reference 
-with the pseudo-function `url()`. 
+In addition to plain colors, the SVGs can use gradients and patterns to fill shapes. This allows for
+great freedom when building graphic designs. Usually, these elements are created within the
+`defs`, although it is unnecessary to place them there. We can use them for `fill` and `stroke`
+values with gradients and patterns unique id reference.
 
 ## Gradients
 

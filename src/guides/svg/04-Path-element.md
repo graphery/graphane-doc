@@ -10,16 +10,8 @@ is normally just used for more complex shapes.
 As in other cases, the attributes `fill` sets the interior color, `stroke` sets its border color
 and `stroke-width` its border width.
 
-The path information is described width `d` and a group of special commands describes with a letter
+The path information is described in `d` attribute with special commands describes with a letter
 and groups of points:
-
-In SVG source we need to use a string such as:
-
-`<path d="M10,30A20,20,0,0,1,50,30A20,20,0,0,1,90,30Q90,60,50,90Q10,60,10,30z">`.
-
-In the SVG Graphane API we can use `.d` with methods like `.d.M()` or `.d.L()` and build the path
-data step by step with these helpers. All these methods return `.d` and as a result, you can chain
-calls to them.
 
 ::: code-group
 
@@ -74,6 +66,14 @@ Here is a short list of available commands in `d`:
 | `Q` `q` | quadratic Bézier curveto        | `x1, y1, x, y [,...])`                            |
 | `T` `t` | smooth quadratic Bézier curveto | `x, y [,...]`                                     |
 | `A` `a` | arc                             | `rx, ry, rot, arc-flag, sweep-flag, x, y, [,...]` |
+
+
+### In Graphane
+
+In the SVG Graphane API we can use `.d` with methods like `.d.M()` or `.d.L()` and build the path
+data step by step with these helpers. All these methods return `.d` and as a result, you can chain
+calls to them.
+
 
 ## moveto
 

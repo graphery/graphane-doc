@@ -1,11 +1,4 @@
-# Manage elements
-
-When we include an SVG in the HTML, we include its XML into the browser's Document Object
-Model (DOM). The DOM not only supports HTML but also endorses the SVG standard namespace. As a
-result, we can manipulate the SVG inserted in the DOM with the same methods used to manage any
-other element into the DOM. However, the SVG format has some specific features that require some
-particular methods and properties. Next, we will review how the details that make up the SVG can
-be handled and some specific methods and restrictions of the $.svg.
+# Manage SVG elements in Graphane
 
 ## The SVG tree
 
@@ -217,7 +210,7 @@ for (let n = 2.5, l = 0; n <= 510; n += 50, l++) {
 ## Navigate by the DOM
 
 To understand how Graphane hands the SVG DOM, we will cover an existing SVG and manage the 
-elements easily with its specific methods. You can use `document.querySelector()` with an `id` 
+elements easily with its specific methods. You can use `$.svg.querySelector()` with an `id` 
 or other CSS selectors for getting the element and pass this to the `$.svg` constructor.
 
 This is an example:

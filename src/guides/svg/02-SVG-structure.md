@@ -4,15 +4,17 @@ outline: deep
 
 # SVG structure
 
-The `svg` is the root and nest other elements, define its coordinate system, or establish other
+## svg
+
+The `svg` tag is the root and nest other elements, define its coordinate system, or establish other
 configuration parameters. The principal characteristics are:
 
 ## viewBox
 
-The `viewBox` defines the internal position and dimensions of an `svg`. The view box need four
-parameters: `min-x`, `min-y`, `width`, `height`. These numbers specify a rectangle mapped within the
-internal boundaries associated with the SVG element. All measures of nested elements take these
-dimensions as a reference. Calling this method without parameters returns the current view box
+The `viewBox` attribute defines the internal position and dimensions of an `svg`. The view box need
+four parameters: `min-x`, `min-y`, `width`, `height`. These numbers specify a rectangle mapped
+within the internal boundaries associated with the SVG element. All measures of nested elements take
+these dimensions as a reference. Calling this method without parameters returns the current view box
 value.
 
 ::: code-group
@@ -28,7 +30,8 @@ $.svg.viewBox(0, 0, 100, 100);
 :::
 
 ::: warning note 
-This attribute is case-sensitive and the `B` is uppercase, always must be written as `viewBox`
+The attributes in SVG are case-sensitive. In this case, the `B` is uppercase, always must be 
+written as `viewBox`.
 :::
 
 ## width and height

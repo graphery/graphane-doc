@@ -2,8 +2,7 @@
 
 ## Capture events
 
-The preferred way to capture events in Graphane is through the `g-on:` directive. It is also
-possible to use the `.addEventListener()` method on any SVG element. 
+The preferred way to capture events in Graphane is through the `g-on:` directive.
 
 A simple way to capture the 'click' event is this:
 

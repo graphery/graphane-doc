@@ -18,6 +18,7 @@ The text element admits several attributes:
 In SVG source the text is include into the tag body:
 
 ```svg
+
 <text x="10" y="10">hello</text>
 ```
 
@@ -27,6 +28,7 @@ the element.
 ::: code-group
 
 ```svg
+
 <svg viewBox="0 0 100 100" width="75" height="75">
     <text x="0" y="40" style="font-family: sans-serif; font-size: 18px;">Hello, word</text>
 </svg>
@@ -54,6 +56,7 @@ well as some others like `fill`, `stroke` or `stroke-width`.
 ::: code-group
 
 ```svg
+
 <svg viewBox="0 0 100 100" width="75" height="75">
     <text x="0" y="40" fill="none" stroke="#0000D8" stroke-width="1"
           style="font-family: sans-serif; font-size: 50px;">A
@@ -85,6 +88,7 @@ baseline text position, but you can adjust the exact position with these attribu
 ::: code-group
 
 ```svg
+
 <svg viewBox="0,0,500,100" width="500" height="100">
     <line x1="0" x2="250" y1="50" y2="50" stroke="grey" stroke-dasharray="5"/>
     <line x1="400" x2="400" y1="0" y2="100" stroke="grey" stroke-dasharray="5"/>
@@ -139,6 +143,7 @@ of the style only in a part of the text content.
 ::: code-group
 
 ```svg
+
 <svg viewBox="0 0 100 100" width="100" height="100">
     <text x="10" y="50">
         <tspan style="fill: red; font-size: 20px;">&lt;</tspan>
@@ -165,3 +170,8 @@ text.add('tspan').style.fill('red').style.fontSize(20).content('&gt;');
         <tspan style="fill: red; font-size: 20px;">&gt;</tspan>
     </text>
 </svg>
+
+### In Graphane
+
+In Graphane is widespread to use the `g-content` directive for add text to `span` and `text`
+elements. Also, we can use the SVG Graphane API and use the method `.content()`.

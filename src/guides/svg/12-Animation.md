@@ -5,7 +5,7 @@ outline: deep
 # Animation
 
 Animating the elements of an SVG graphic is one of the most attractive features available to make
-stunning visualizations. To animate an SVG we can use their native capabilities and the high-level
+stunning visualizations. To animate an SVG, we can use their native capabilities and the high-level
 functionalities offered by Graphane.
 
 Graphane provides a cross-browser compatible, efficient and simple animation solution. It works
@@ -32,7 +32,6 @@ progressively and show an animation.
 The syntax is: `g-bind:attribute="$$.dynamic(value [, duration] [, delay])`.
 
 ```html
-
 <g-composer data="x: 50, y: 50, radius: 50">
   <svg viewBox="0 0 100 100">
     <circle g-bind:r="$$.dynamic(radius, 2000)"
@@ -77,7 +76,6 @@ parameter to `$$.dynamic()` function in millisconds.
 You can pass an array of values to describe non-linear progressing.
 
 ```html
-
 <g-composer data="radius: 50" id="dynamic2">
   <svg viewBox="0 0 100 100">
     <circle g-bind:r="$$.dynamic([radius * 0.1, 
@@ -116,7 +114,6 @@ Optionally, you can pass an object with `value` and `offset` (with values from 0
 control over the execution of the animation.
 
 ```html
-
 <g-composer data="radius: 50" id="dynamic3">
   <svg viewBox="0 0 100 100">
     <circle g-bind:r="$$.dynamic([{value: 0,            offset: 0},
@@ -159,7 +156,6 @@ the animation duration is 200 milliseconds. If you pass a time value `0`, the ch
 immediately, and the animation is not displayed.
 
 ```html
-
 <g-composer>
   <svg viewBox="0 0 200 100" width="200" height="100">
     <g stroke-width="12" stroke-linecap="round">

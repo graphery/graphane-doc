@@ -38,7 +38,7 @@ to the appropriate position. All these values are related to the dimensions defi
 ::: code-group
 ```svg
 <svg viewBox="0 0 100 100" width="75" height="75">
-  <rect width="800" height="80" x="10" y="10" 
+  <rect x="10" y="10" width="80" height="80" 
         fill="#00D800" stroke="#0000D8" stroke-width="5"/>
 </svg>
 ```
@@ -51,7 +51,7 @@ const rect = $.svg.add('rect')
 :::
 
 <svg viewBox="0 0 100 100" width="75" height="75">
-  <rect width="80" height="80" x="10" y="10" 
+  <rect x="10" y="10" width="80" height="80" 
         fill="#00D800" stroke="#0000D8" stroke-width="5"/>
 </svg>
 
@@ -61,27 +61,27 @@ It is also possible to create rounded corners by specifying values within `rx` a
 ::: code-group
 ```svg
 <svg viewBox="0 0 100 100" width="75" height="75">
-  <rect x="10" y="10" width="80" height="80" rx="20" ry="5"
+  <rect x="10" y="10" width="80" height="80" rx="20" ry="20"
         fill="#00D800" stroke="#0000D8" stroke-width="5"/>
 </svg>
 ```
 ```js
 $.svg.viewBox(0, 0, 100, 100).width(75).height(75);
 const rect = $.svg.add('rect')
-                  .x(10).y(10).width(80).height(80).rx(20).ry(5)
+                  .x(10).y(10).width(80).height(80).rx(20).ry(20)
                   .fill('#00D800').stroke('#0000D8').stroke_width(5);
 ```
 :::
 
 <svg viewBox="0 0 100 100" width="75" height="75">
-  <rect x="10" y="10" width="80" height="80" rx="20" ry="5"
+  <rect x="10" y="10" width="80" height="80" rx="20" ry="20"
         fill="#00D800" stroke="#0000D8" stroke-width="5"/>
 </svg>
 
 
 ## Circle
 
-`.circle` creates a circle defined with a center point (`cx` and `cy`) and an
+`circle` creates a circle defined with a center point (`cx` and `cy`) and an
 outer radius (`r`).  All these values are according to the dimensions defined in the
 `viewBox`
 

@@ -149,6 +149,7 @@ export default defineConfig({
         text  : 'Explore SVG',
         items : [
           {link : '/guides/svg/', text : 'Introduction'},
+          {link : '/guides/svg/01-Graphane-SVG.md', text : 'How use the SVG in Graphane'},
           {link : '/guides/svg/02-SVG-structure.md', text : 'SVG structure'},
           {link : '/guides/svg/03-Basic-shapes.md', text : 'Basic Shapes'},
           {link : '/guides/svg/04-Path-element.md', text : 'Path'},
