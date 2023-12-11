@@ -307,6 +307,7 @@ export default defineConfig({
           {link : '/examples/bump-chart', text : 'Bump chart'},
           {link : '/examples/clock', text : 'Clock'},
           {link : '/examples/gauge', text : 'Gauge'},
+          {link : '/examples/ranking-evolution', text : 'Ranking Evolution'},
         ]
       }],
 

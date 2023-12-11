@@ -28,7 +28,10 @@
   </defs>
     <defs g-for="(player, n) of data[0]">
       <path
-        g-bind:d="$$.M(42, 26 + (n * 50)).L(468, 26 + (data[1].indexOf(data[0][n]) * 50))"
+        g-bind:d="$$.M(42, 26 + (n * 50))
+                    .C(300, 26 + (n * 50), 
+                       200, 26 + (data[1].indexOf(data[0][n]) * 50), 
+                       468, 26 + (data[1].indexOf(data[0][n]) * 50))" 
         g-bind:stroke="$.config.pallete[data[0].indexOf(player)]"
         stroke-width="1"
         fill="none"
@@ -36,8 +39,8 @@
   </defs>
 </svg>
 <g-script type="data">[
-  ['D', 'J', 'C', 'G', 'B', 'I', 'F', 'A', 'H', 'E'],
-  ['C', 'E', 'G', 'D', 'I', 'B', 'F', 'J', 'H', 'A']
+  ["D", "J", "C", "G", "B", "I", "A", "F", "H", "E"],
+  ["C", "E", "G", "D", "I", "F", "B", "H", "J", "A"]
 ]</g-script>
 <g-script type="config">{
   pallete: [
@@ -55,4 +58,4 @@
 }</g-script>
 </g-composer>
 
-<g-editor href="g-composer#ranking-evolution"></g-editor>
+<g-editor href="g-composer#ranking-evolution" style="width:100%"></g-editor>
