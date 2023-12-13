@@ -12,8 +12,8 @@ outline: deep
             g-bind:y1="$.polar2cartesian(125, 125, n % 5 ? 115 : 110, n * 6).y"
             g-bind:x2="$.polar2cartesian(125, 125, 120, n * 6).x"
             g-bind:y2="$.polar2cartesian(125, 125, 120, n * 6).y"
+            g-bind:stroke-width="n % 5 ? 1 : 2"
             stroke="#000"
-            stroke-width="n % 5 ? 2 : 1"
       />
     </defs> 
     <defs g-for="n of 12">

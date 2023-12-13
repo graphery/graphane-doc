@@ -308,6 +308,8 @@ export default defineConfig({
           {link : '/examples/clock', text : 'Clock'},
           {link : '/examples/gauge', text : 'Gauge'},
           {link : '/examples/ranking-evolution', text : 'Ranking Evolution'},
+          {link : '/examples/du-bois-tribute', text : 'W.E.B. Du Bois Tribute'},
+          {link : '/examples/treemap', text : 'Treemap'},
         ]
       }],
 
