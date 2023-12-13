@@ -30,16 +30,27 @@ showed in 1900 Paris Exposition the upcoming exhibit, which was called
 ## first group
 
 <g-composer id="color">
-  <svg viewBox="0 0 500 500" width="500">
+  <svg viewBox="0 0 500 500" width="500"
+       style="font-family: monospace">
+    <filter id="filter">
+			<feTurbulence result="noise-lg"
+				type="fractalNoise" baseFrequency=".04" numOctaves="1" seed="1458" />
+			<feComposite result="BaseGraphic"
+				in="SourceGraphic" in2="noise-lg"
+				operator="arithmetic" k1="0.5" k2="0.6" k4="-.07" />
+			<feComposite
+				operator="arithmetic" k1="-0.8" k2="0.8" k3="1.4" />
+		</filter>
     <defs g-for="(group, x) of data.$distinct('group')">
       <text 
         x="250"
-        g-bind:y="x ? 480 : 20"
+        g-bind:y="x ? 480 : 30"
         text-anchor="middle"
-        g-content="group"></text>
+        g-content="group.toUpperCase()"></text>
       <defs g-for="(record, n, all) of data.filter(r => r.group === group)">
         <path
-          stroke="none"
+          stroke="#c0c0c0"
+          stroke-width="1"
           filter="url(#filter)"
           g-bind:transform="x ? $$.rotate(180,250,250) : ''"
           g-bind:fill="$.config.colors[n]"
@@ -51,9 +62,20 @@ showed in 1900 Paris Exposition the upcoming exhibit, which was called
                                     (120 * data.$sum(all.filter((r,x) => x < n), 'value')) -60,
                                   )"></path>
         <!--
-        <text g-content="data.$sum(all.filter((r,x) => x < n), 'value')"></text>
+        <text
+          g-bind:x="$.polar2cartesian( 250, 
+                                    250, 
+                                    200,
+                                    120 * record.value - (120 * data.$sum(all.filter((r,x) => x < n), 'value')) -60,
+                                  ).x"
+          g-bind:y="$.polar2cartesian( 250, 
+                                    250, 
+                                    200,
+                                    120 * record.value - (120 * data.$sum(all.filter((r,x) => x < n), 'value')) -60,
+                                  ).y"
+          g-content="Math.round(record.value * 1000) / 10"></text>
         <text g-content="record.sector"></text>
-        <text g-content="record.value * 100"></text>-->
+        -->
       </defs>
     </defs>
   </svg>
