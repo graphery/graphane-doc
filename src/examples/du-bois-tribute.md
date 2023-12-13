@@ -14,17 +14,17 @@ showed in 1900 Paris Exposition the upcoming exhibit, which was called
 ## Data
 
 ```csv
-"group";"sector";"value";
-"negroes";"agriculture";0.62;
-"negroes";"domestic";0.28;
-"negroes";"manufacturing";0.05;
-"negroes";"transportation";0.045;
-"negroes";"professions";0.005;
-"whites";"agriculture";0.64;
-"whites";"domestic";0.055;
-"whites";"manufacturing";0.135;
-"whites";"transportation";0.13;
-"whites";"professions";0.04;
+group,occupation,percentage
+Negroes,"Agriculture, Fisheries and Mining",62
+Negroes,"Manufacturing and Mechanical Industries",5
+Negroes,"Domestic and Personal Service",28
+Negroes,"Professions",0.5
+Negroes,"Trade and Transportation",4.5
+Whites,"Agriculture, Fisheries and Mining",64
+Whites,"Manufacturing and Mechanical Industries",13.5
+Whites,"Domestic and Personal Service",5.5
+Whites,"Professions",4
+Whites,"Trade and Transportation",13
 ```
 
 ## first group
