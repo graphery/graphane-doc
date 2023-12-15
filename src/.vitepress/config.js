@@ -99,6 +99,13 @@ export default defineConfig({
         text  : 'In-Depth',
         items : [
           {link : '/guides/in-depth/', text : 'Why Graphane?'},
+          {text : 'Architecture',
+            items     : [
+              {link : '/guides/in-depth/architecture/microframework', text : 'Microframework'},
+              {link : '/guides/in-depth/architecture/webcomponent', text : 'Web Component'},
+              {link : '/guides/in-depth/architecture/imperative', text : 'Imperative'},
+            ]
+          },
           {link : '/guides/in-depth/composer/', text : 'Composer'},
           {
             text      : 'Templating',
