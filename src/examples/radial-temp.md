@@ -36,7 +36,7 @@ outline: deep
           fill-rule="evenodd"
           g-bind:d="$.svg.querySelector('#max').d() + $.svg.querySelector('#min').d()"/>
   </svg>
-  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha.5/plugins/shapes.js"></g-script>
+  <g-script type="plugin" src="http://localhost:63342/graphane/src/plugins/shapes.js"></g-script>
   <g-script type="data" src="../data/temp.csv"></g-script>
   <g-script type="methods">
     const day = 360 / 365;

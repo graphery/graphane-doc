@@ -23,7 +23,7 @@ outline: deep
                points="125,30,130,125,125,150,120,125"/>
     </g>
   </svg>
-  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha.5/plugins/shapes.js"></g-script>
+  <g-script type="plugin" src="http://localhost:63342/graphane/src/plugins/shapes.js"></g-script>
 </g-composer>
 
 <p>

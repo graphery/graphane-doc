@@ -11,12 +11,12 @@ functions to create new shapes.
 
 To load the plugin from the `g-composer` component we must use the URL:
 
-- ```https://cdn.graphery.online/graphane/0.1.0-alpha.5/plugins/shapes.js```
+- ```https://cdn.graphery.online/graphane/0.1.0-alpha.7/plugins/shapes.js```
 
 ```html
 <g-composer>
   <script type="plugin"
-          src="https://cdn.graphery.online/graphane/0.1.0-alpha.5/plugins/shapes.js">
+          src="https://cdn.graphery.online/graphane/0.1.0-alpha.7/plugins/shapes.js">
   </script>
 </g-composer>
 ```
@@ -29,7 +29,7 @@ Creates an n-sided polygon based on a center (`cx` and `cy`) and a radius (`r`).
 possible to include a start position (in degrees).
 
 <g-composer data="sided: 5, rotation: 0" id="regularPolygon">
-  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha.5/plugins/shapes.js"></g-script>
+  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha.7/plugins/shapes.js"></g-script>
   <svg viewBox="0 0 100 100">
     <path stroke="black" stroke-width="1" fill="none" 
           g-bind:d="$$.regularPolygon(50, 50, 50, sided, rotation)"/>
@@ -54,7 +54,7 @@ possible to include a start position (in degrees).
 
 ```html
 <g-composer data="sided: 5, rotation: 0" id="regularPolygon">
-  <script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha.5/plugins/shapes.js"></script>
+  <script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha.7/plugins/shapes.js"></script>
   <svg viewBox="0 0 100 100">
     <path stroke="black" stroke-width="1" fill="none"
           :d="$$.regularPolygon(50, 50, 50, sided, rotation)"/>
@@ -68,7 +68,7 @@ Creates an arc (section of the circumference) based on a center (`cx` and `cy`),
 positive or negative number of grades (`grades`), and optionally a start angle (in degrees).
 
 <g-composer data="grades: 90, start: 0" id="arc">
-  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha.5/plugins/shapes.js"></g-script>
+  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha.7/plugins/shapes.js"></g-script>
   <svg viewBox="0 0 100 100">
     <path stroke="black" stroke-width="1" fill="none" 
           g-bind:d="$$.arc(50, 50, 50, grades, start)"/>
@@ -93,7 +93,7 @@ positive or negative number of grades (`grades`), and optionally a start angle (
 
 ```html
 <g-composer data="start: 0, grades: 90" id="arc">
-  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha.5/plugins/shapes.js"></g-script>
+  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha.7/plugins/shapes.js"></g-script>
   <svg viewBox="0 0 100 100">
     <path stroke="black" stroke-width="1" fill="none"
           g-bind:d="$$.arc(50, 50, 50, start, grades)"/>
@@ -108,7 +108,7 @@ radius (`r`), and width (`width`), positive or negative number of grades (`grade
 a start angle (in degrees).
 
 <g-composer data="grades: 90, start: 0" id="barArc">
-  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha.5/plugins/shapes.js"></g-script>
+  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha.7/plugins/shapes.js"></g-script>
   <svg viewBox="0 0 100 100">
     <path stroke="black" stroke-width="1" fill="none" 
           g-bind:d="$$.barArc(50, 50, 40, 10, grades, start)"/>
@@ -133,7 +133,7 @@ a start angle (in degrees).
 
 ```html
 <g-composer data="grades: 90, start: 0" id="barArc">
-  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha.5/plugins/shapes.js"></g-script>
+  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha.7/plugins/shapes.js"></g-script>
   <svg viewBox="0 0 100 100">
     <path stroke="black" stroke-width="1" fill="none"
           g-bind:d="$$.barArc(50, 50, 40, 10, grades, start)"/>
@@ -147,7 +147,7 @@ Creates a circle slice (section of the circle) based on a center (`cx` and `cy`)
 (`r`), positive or negative number of grades (`grades`), and optionally a start angle (in degrees).
 
 <g-composer data="grades: 90, start: 0" id="circleSlice">
-  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha.5/plugins/shapes.js"></g-script>
+  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha.7/plugins/shapes.js"></g-script>
   <svg viewBox="0 0 100 100">
     <path stroke="black" stroke-width="1" fill="none" 
           g-bind:d="$$.circleSlice(50, 50, 40, grades, start)"/>
@@ -177,7 +177,7 @@ circle inside a `path` element, you can use this function with a center (`cx` an
 radius (`r`).
 
 <g-composer data="r: 25, start: 0" id="circle">
-  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha.5/plugins/shapes.js"></g-script>
+  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha.7/plugins/shapes.js"></g-script>
   <svg viewBox="0 0 100 100">
     <path stroke="black" stroke-width="1" fill="none" 
           g-bind:d="$$.circle(50, 50, r)"/>
@@ -194,7 +194,7 @@ radius (`r`).
 
 ```html
 <g-composer data="r: 25, start: 0" id="circle">
-  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha.5/plugins/shapes.js"></g-script>
+  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha.7/plugins/shapes.js"></g-script>
   <svg viewBox="0 0 100 100">
     <path stroke="black" stroke-width="1" fill="none" 
           g-bind:d="$$.circle(50, 50, r)"/>
@@ -209,7 +209,7 @@ center (`cx`, `cy`), an outer radius (`r1`), an inner radius (`r2`), the points 
 star (`points`), and optionally, the angle at which to start (in degrees).
 
 <g-composer data="r1: 25, r2:15, sides: 5, start: 0" id="start">
-  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha.5/plugins/shapes.js"></g-script>
+  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha.7/plugins/shapes.js"></g-script>
   <svg viewBox="0 0 100 100">
     <path stroke="black" stroke-width="1" fill="none" 
           g-bind:d="$$.star(50, 50, r1, r2, sides, start)"/>
