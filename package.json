@@ -13,7 +13,7 @@
   "keywords": [],
   "author": "",
   "devDependencies": {
-    "vitepress": "1.0.0-rc.35"
+    "vitepress": "1.0.0-rc.36"
   },
   "type": "module"
 }
