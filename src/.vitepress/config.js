@@ -88,11 +88,11 @@ export default defineConfig({
         text  : 'Starter Tutorial',
         items : [
           {link : '/guides/starter/', text : 'What is Graphane?'},
-          {link : '/guides/starter/load', text : '1.- Load'},
-          {link : '/guides/starter/composer', text : '2.- Composer'},
-          {link : '/guides/starter/template', text : '3.- Template'},
-          {link : '/guides/starter/data', text : '4.- Data'},
-          {link : '/guides/starter/methods', text : '5.- Methods'},
+          {link : '/guides/starter/load', text : 'Load'},
+          {link : '/guides/starter/composer', text : 'Include g-composer'},
+          {link : '/guides/starter/template', text : 'Add an SVG Template'},
+          {link : '/guides/starter/data', text : 'Define Data'},
+          {link : '/guides/starter/methods', text : 'Use Methods'},
         ]
       }],
       '/guides/in-depth/' : [{
@@ -317,6 +317,7 @@ export default defineConfig({
           {link : '/examples/ranking-evolution', text : 'Ranking Evolution'},
           {link : '/examples/du-bois-tribute', text : 'W.E.B. Du Bois Tribute'},
           {link : '/examples/treemap', text : 'Treemap'},
+          {link : '/examples/line-chart', text : 'Line Chart'},
         ]
       }],
 
