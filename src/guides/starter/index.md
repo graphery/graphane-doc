@@ -14,7 +14,7 @@ creation of dynamic and interactive visualizations by :
 
 The strength of Graphane is that it offers **flexibility in designs**, allowing creators to make
 unique aesthetic visualizations that are far from becoming monotonous charts seen everywhere.
-Graphane is based on SVG and directives, defining a **declarative way** to build data-driven
+Graphane is based on SVG and directives, defining a **declarative way** to build **data-driven**
 graphics. This approach allows centering the effort on the design in a very natural form. Designers
 and developers achieve technical efficiency and gain the means to communicate their data story to
 their audience effectively.
