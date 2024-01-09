@@ -10,7 +10,7 @@ hero:
   actions:
     - theme: brand
       text: Starter Tutorial
-      link: /guides/starter/
+      link: /guide/starter/
     - theme: alt
       text: Examples
       link: /examples/

@@ -73,9 +73,9 @@ export default defineConfig({
       {link : '/', text : 'Home'},
       {
         text : 'Guides', items : [
-          {link : '/guides/starter/', text : 'Starter Tutorial'},
-          {link : '/guides/in-depth/', text : 'In-Depth'},
-          {link : '/guides/svg/', text : 'Explore SVG'},
+          {link : '/guide/starter/', text : 'Starter Tutorial'},
+          {link : '/guide/in-depth/', text : 'In-Depth'},
+          {link : '/guide/svg/', text : 'Explore SVG'},
         ]
       },
       {link : '/reference/', text : 'Reference'},
@@ -84,96 +84,162 @@ export default defineConfig({
       {link : 'https://github.com/graphery/graphane/blob/main/CHANGELOG.md', text : VERSION},
     ],
     sidebar     : {
-      '/guides/starter/' : [{
-        text  : 'Starter Tutorial',
-        items : [
-          {link : '/guides/starter/', text : 'What is Graphane?'},
-          {link : '/guides/starter/load', text : 'Load'},
-          {link : '/guides/starter/composer', text : 'Include g-composer'},
-          {link : '/guides/starter/template', text : 'Add an SVG Template'},
-          {link : '/guides/starter/data', text : 'Define Data'},
-          {link : '/guides/starter/methods', text : 'Use Methods'},
-        ]
-      }],
-      '/guides/in-depth/' : [{
-        text  : 'In-Depth',
-        items : [
-          {link : '/guides/in-depth/', text : 'Why Graphane?'},
-          {text : 'Architecture',
-            items     : [
-              {link : '/guides/in-depth/architecture/microframework', text : 'Microframework'},
-              {link : '/guides/in-depth/architecture/webcomponent', text : 'Web Component'},
-              {link : '/guides/in-depth/architecture/imperative', text : 'Imperative'},
-            ]
-          },
-          {link : '/guides/in-depth/composer/', text : 'Composer'},
-          {
-            text      : 'Templating',
-            link      : '/guide/in-depth/templating/',
-            collapsed : false,
-            items     : [
-              {link : '/guides/in-depth/templating/binding', text : 'Binding'},
-              {link : '/guides/in-depth/templating/lists', text : 'Lists'},
-              {link : '/guides/in-depth/templating/conditional', text : 'Conditional'},
-              {link : '/guides/in-depth/templating/content', text : 'Content'},
-              {link : '/guides/in-depth/templating/events', text : 'Events'},
-              {link : '/guides/in-depth/templating/expressions', text : 'Expressions'},
-            ]
-          },
-          {
-            text      : 'Data',
-            link      : '/guides/in-depth/data/',
-            collapsed : false,
-            items     : [
-              {link : '/guides/in-depth/data/attribute', text : 'data attribute'},
-              {link : '/guides/in-depth/data/property', text : '.data property'},
-              {link : '/guides/in-depth/data/embebed', text : 'Embedded data'},
-              {link : '/guides/in-depth/data/external', text : 'Load data'},
-              {link : '/guides/in-depth/data/helpers', text : 'Data helpers'},
-              {link : '/guides/in-depth/data/reactivity', text : 'Reactivity'},
-            ]
-          },
-          {
-            text      : 'Methods',
-            link      : '/guides/in-depth/methods/',
-            collapsed : false,
-            items     : [
-              {link : '/guides/in-depth/methods/embebed', text : 'Embedded methods'},
-              {link : '/guides/in-depth/methods/external', text : 'External resource'},
-              {link : '/guides/in-depth/methods/property', text : 'Property'},
-              {
-                link : '/guides/in-depth/methods/function-data',
-                text : '<code>function data()</code>'
-              },
-              {link : '/guides/in-depth/methods/$data', text : '<code>$.data</code>'},
-              // {link : '/guide/methods/svg-access', text : '<code>$.svg</code>'},
-              // {link : '/guide/methods/load', text : 'Load event'},
-            ]
-          },
-        ],
-      }],
-      '/guides/svg/'        : [{
-        text  : 'Explore SVG',
-        items : [
-          {link : '/guides/svg/', text : 'Introduction'},
-          {link : '/guides/svg/01-Graphane-SVG.md', text : 'How use the SVG in Graphane'},
-          {link : '/guides/svg/02-SVG-structure.md', text : 'SVG structure'},
-          {link : '/guides/svg/03-Basic-shapes.md', text : 'Basic Shapes'},
-          {link : '/guides/svg/04-Path-element.md', text : 'Path'},
-          {link : '/guides/svg/05-Text-element.md', text : 'Text'},
-          {link : '/guides/svg/06-Fill-and-stroke.md', text : 'Fill and Stroke'},
-          {link : '/guides/svg/07-Reuse-elements.md', text : 'Reuse elements'},
-          {link : '/guides/svg/08-Gradients-and-patterns.md', text : 'Gradients and Patters'},
-          {link : '/guides/svg/09-Aspect-ratio.md', text : 'Size and Aspect Ratio'},
-          {link : '/guides/svg/10-Transform.md', text : 'Transform'},
-          {link : '/guides/svg/11-CSS.md', text : 'CSS'},
-          {link : '/guides/svg/12-Animation.md', text : 'Animation'},
-          {link : '/guides/svg/13-Text-path-and-clip-path.md', text : 'Text Path and Clip Path'},
-          {link : '/guides/svg/14-Manage-elements.md', text : 'Manage Elements'},
-          {link : '/guides/svg/15-Events.md', text : 'Handle Events'},
-        ]
-      }],
-      '/plugins/'           : [{
+      '/guide/'    :
+        {
+          text  : 'Guides',
+          items : [
+            {
+              text  : 'Starter Tutorial',
+              items : [
+                {link : '/guide/starter/', text : 'What is Graphane?'},
+                {link : '/guide/starter/load', text : 'Load'},
+                {link : '/guide/starter/composer', text : 'Include g-composer'},
+                {link : '/guide/starter/template', text : 'Add an SVG Template'},
+                {link : '/guide/starter/data', text : 'Define Data'},
+                {link : '/guide/starter/methods', text : 'Use Methods'},
+              ]
+            },
+            {
+              text      : 'In-Depth',
+              link      : '/guide/in-depth/',
+              collapsed : true,
+              items     : [
+                {
+                  text      : 'Templating',
+                  link      : '/guide/in-depth/templating/',
+                  collapsed : true,
+                  items     : [
+                    {link : '/guide/in-depth/templating/binding', text : 'Binding'},
+                    {link : '/guide/in-depth/templating/lists', text : 'Lists'},
+                    {
+                      link : '/guide/in-depth/templating/conditional',
+                      text : 'Conditional'
+                    },
+                    {link : '/guide/in-depth/templating/content', text : 'Content'},
+                    {link : '/guide/in-depth/templating/events', text : 'Events'},
+                    {
+                      link : '/guide/in-depth/templating/expressions',
+                      text : 'Expressions'
+                    },
+                  ]
+                },
+                {
+                  text      : 'Data',
+                  link      : '/guide/in-depth/data/',
+                  collapsed : true,
+                  items     : [
+                    {link : '/guide/in-depth/data/attribute', text : 'data attribute'},
+                    {link : '/guide/in-depth/data/property', text : '.data property'},
+                    {link : '/guide/in-depth/data/embebed', text : 'Embedded data'},
+                    {link : '/guide/in-depth/data/external', text : 'Load data'},
+                    {link : '/guide/in-depth/data/helpers', text : 'Data helpers'},
+                    {link : '/guide/in-depth/data/reactivity', text : 'Reactivity'},
+                  ]
+                },
+                {
+                  text      : 'Methods',
+                  link      : '/guide/in-depth/methods/',
+                  collapsed : true,
+                  items     : [
+                    {
+                      link : '/guide/in-depth/methods/embebed',
+                      text : 'Embedded methods'
+                    },
+                    {
+                      link : '/guide/in-depth/methods/external',
+                      text : 'External resource'
+                    },
+                    {link : '/guide/in-depth/methods/property', text : 'Property'},
+                    {
+                      link : '/guide/in-depth/methods/function-data',
+                      text : '<code>function data()</code>'
+                    },
+                    {
+                      link : '/guide/in-depth/methods/$data',
+                      text : '<code>$.data</code>'
+                    },
+                    {link : '/guide/methods/svg-access', text : '<code>$.svg</code>'},
+                    {link : '/guide/methods/load', text : 'Load event'},
+                  ]
+                },
+                {
+                  text      : 'Config',
+                  link      : '/guide/in-depth/config/',
+                  collapsed : true,
+                  items     : [
+                    {
+                      link : '/guide/in-depth/config/why',
+                      text : 'Separate data & config'
+                    },
+                    {
+                      link : '/guide/in-depth/config/external',
+                      text : 'External resource'
+                    }
+                  ]
+                },
+                {
+                  link : '/guide/in-depth/composer/',
+                  text : 'Composer',
+                  items     : [
+                    {
+                      link : '/guide/in-depth/composer/attributes',
+                      text : 'Attributes'
+                    },
+                    {
+                      link : '/guide/in-depth/composer/events',
+                      text : 'Events'
+                    }
+                  ]
+                },
+                {
+                  text      : 'Architecture',
+                  collapsed : true,
+                  items     : [
+                    {link : '/guide/in-depth/', text : 'Why Graphane?'},
+                    {
+                      link : '/guide/in-depth/architecture/microframework',
+                      text : 'Microframework'
+                    },
+                    {
+                      link : '/guide/in-depth/architecture/webcomponent',
+                      text : 'Web Component'
+                    },
+                    {
+                      link : '/guide/in-depth/architecture/imperative',
+                      text : 'Imperative'
+                    },
+                  ]
+                },
+              ],
+            },
+            {
+              text      : 'Explore SVG',
+              link      : '/guide/svg/',
+              collapsed : true,
+              items     : [
+                {link : '/guide/svg/', text : 'Introduction'},
+                {link : '/guide/svg/01-Graphane-SVG.md', text : 'How use the SVG in Graphane'},
+                {link : '/guide/svg/02-SVG-structure.md', text : 'SVG structure'},
+                {link : '/guide/svg/03-Basic-shapes.md', text : 'Basic Shapes'},
+                {link : '/guide/svg/04-Path-element.md', text : 'Path'},
+                {link : '/guide/svg/05-Text-element.md', text : 'Text'},
+                {link : '/guide/svg/06-Fill-and-stroke.md', text : 'Fill and Stroke'},
+                {link : '/guide/svg/07-Reuse-elements.md', text : 'Reuse elements'},
+                {link : '/guide/svg/08-Gradients-and-patterns.md', text : 'Gradients and Patters'},
+                {link : '/guide/svg/09-Aspect-ratio.md', text : 'Size and Aspect Ratio'},
+                {link : '/guide/svg/10-Transform.md', text : 'Transform'},
+                {link : '/guide/svg/11-CSS.md', text : 'CSS'},
+                {link : '/guide/svg/12-Animation.md', text : 'Animation'},
+                {
+                  link : '/guide/svg/13-Text-path-and-clip-path.md',
+                  text : 'Text Path and Clip Path'
+                },
+                {link : '/guide/svg/14-Manage-elements.md', text : 'Manage Elements'},
+                {link : '/guide/svg/15-Events.md', text : 'Handle Events'},
+              ]
+            }]
+        },
+      '/plugins/'   : [{
         text  : 'Plugins',
         items : [
           {link : '/plugins/', text : 'Graphane Extensibility'},
@@ -189,7 +255,7 @@ export default defineConfig({
           // {link : '/plugins/create', text : 'Create custom plugin'},
         ]
       }],
-      '/reference/'         : [{
+      '/reference/' : [{
         text  : 'API',
         items : [
           {
@@ -292,7 +358,7 @@ export default defineConfig({
           },
         ]
       }],
-      '/examples/'          : [{
+      '/examples/'  : [{
         text  : 'Examples',
         items : [
           {link : '/examples/', text : 'Basic bars'},
@@ -320,7 +386,6 @@ export default defineConfig({
           {link : '/examples/line-chart', text : 'Line Chart'},
         ]
       }],
-
     },
     socialLinks : [
       // {
