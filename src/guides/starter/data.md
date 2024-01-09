@@ -8,7 +8,7 @@ We can create visualizations using SVG-based templates uploading data in CSV, JS
 formats, and they will be available for use in the template directly. To load the data, we need to
 use the `script` tag indicating that it is `type="data"`.
 
-```html {13-17}
+```html {15-19}
 <g-composer id="example">
   <template>
     <svg viewBox="0 0 100 100" width="200" height="200">
