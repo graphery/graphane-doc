@@ -4,20 +4,20 @@ outline: deep
 
 # Template
 
-The template is an SVG with special directives. It combines the power of Scalable Vector Graphic 
-declarative language with directives to define how the graphic is built with the data.
+The template combines the power of Scalable Vector Graphic (SVG) declarative language with
+directives to define how the graphic is built from the data.
 
 ```html {2-14}
 <g-composer>
   <template>
-    <svg viewBox="0 0 100 100" width="100"  height="100">
+    <svg viewBox="0 0 100 100" width="100" height="100">
       <defs g-for="x of 3">
-        <circle 
-          cx="50" 
-          cy="50" 
+        <circle
+          cx="50"
+          cy="50"
           g-bind:r="(x + 1) * (48 / 3)"
-          fill="none" 
-          stroke="black" 
+          fill="none"
+          stroke="black"
           stroke-width="1"/>
       </defs>
     </svg>
@@ -41,32 +41,41 @@ declarative language with directives to define how the graphic is built with the
 
 The standard SVG format is enhanced with attribute-based **directives** that allows to generate
 visualizations in an intuitive way, focusing efforts on design and data, avoiding the need for
-complex development. Any designer with a little programming knowledge can make great data-driven
-designs.
+complex development.
+
+- [`g-bind`](#g-bind) (or the shorthand `:`): dynamically bind values to attributes.
+- [`g-for`](#g-for): render the element block multiple times based on the data.
+- [`g-if`](#g-if): show an element conditionally.
+- [`g-content`](#g-content): update the element content.
+
+In the following we will describe how it works:
 
 ## `g-bind`
 
-This directive, or the shorthand `:`, dynamically bind values to attributes.
+This directive, or the shorthand `:`, dynamically bind values from data to attributes and styles.
+
+In this example, the circle radius (`r` attribute) is defined with `size` data value.
 
 ```html {5}
 <g-composer id="circle"">
-  <template>
-    <svg viewBox="0 0 100 100" width="100">
-      <circle
-        g-bind:r="size"
-        cx="50" 
-        cy="50" 
-        fill="red"/>
-    </svg>
-  </template>
-  <script type="data">
-    {size: 25}
-  </script>
+<template>
+  <svg viewBox="0 0 100 100" width="100">
+    <circle
+      g-bind:r="size"
+      cx="50"
+      cy="50"
+      fill="red"/>
+  </svg>
+</template>
+<script type="data">
+  {size: 25}
+</script>
 </g-composer>
 ```
+
 ```html
 <p>
-  <label>Change the size:
+  <label>Change the size: 
     <input type="range" max="50" value="25"
            oninput="document.querySelector('#circle').data.size = this.value">
   </label>
@@ -89,15 +98,21 @@ This directive, or the shorthand `:`, dynamically bind values to attributes.
 <p>
 <label>Change the size:
   <input type="range" max="50" value="25"
-  oninput="document.querySelector('#circle').data.size = this.value">
+         oninput="document.querySelector('#circle').data.size = this.value">
   </label>
 </p>
+
+If you change the value of `size`, the `r` attribute changes.
 
 > See more about [`g-bind`](../in-depth/templating/binding.md)
 
 ## `g-for`
 
-Render a block, defined with the tag `defs`, multiple times based on the data.
+Renders a block defined with the `defs` tag multiple times depending on the data. The directive
+dynamically evaluates a `case of value` or `(case, index) of value` expression. Value can be a 
+number or an array.
+
+In this example, a number of `circles` is displayed.
 
 ```html {4}
 <g-composer id="circles">
@@ -106,8 +121,8 @@ Render a block, defined with the tag `defs`, multiple times based on the data.
       <defs g-for="n of circles">
         <circle
           r="4"
-          g-bind:cx="((n % 10) * 10) + 5" 
-          g-bind:cy="(Math.floor(n / 10) * 10) + 5" 
+          g-bind:cx="((n % 10) * 10) + 5"
+          g-bind:cy="(Math.floor(n / 10) * 10) + 5"
           fill="red"/>
       </defs>
     </svg>
@@ -117,9 +132,10 @@ Render a block, defined with the tag `defs`, multiple times based on the data.
   </script>
 </g-composer>
 ```
+
 ```html
 <p>
-  <label>Change the number of circles:
+  <label>Change the number of circles: 
     <input type="range" max="100" value="40"
            oninput="document.querySelector('#circles').data.circles = Number(this.value)">
   </label>
@@ -148,11 +164,16 @@ Render a block, defined with the tag `defs`, multiple times based on the data.
   </label>
 </p>
 
+Changing the value of `circles` changes the number of circles displayed.
+
 > See more about [`g-for`](../in-depth/templating/lists.md)
 
 ## `g-if`
 
-Show or hide an element conditionally.
+Show or hide an element conditionally by an expression based on the data.
+
+In this example, the odd and even circles are displayed if the values `odd` and `event` are true or
+false.
 
 ```html {6}
 <g-composer id="odd_even">
@@ -162,8 +183,8 @@ Show or hide an element conditionally.
         <circle
           g-if="((n + 1) % 2 === 0 && even) || ((n + 1) % 2 !== 0 && odd)"
           r="4"
-          g-bind:cx="((n % 10) * 10) + 5" 
-          g-bind:cy="(Math.floor(n / 10) * 10) + 5" 
+          g-bind:cx="((n % 10) * 10) + 5"
+          g-bind:cy="(Math.floor(n / 10) * 10) + 5"
           fill="red"/>
       </defs>
     </svg>
@@ -176,17 +197,18 @@ Show or hide an element conditionally.
   </script>
 </g-composer>
 ```
+
 ```html
 <p>
-  <label>
+  <label> 
     <input type="checkbox" checked
-           oninput="document.querySelector('#odd_even').data.odd = this.checked">
+           oninput="document.querySelector('#odd_even').data.odd = this.checked"> 
     show odd
-  </label>
-  <label>
+  </label> 
+  <label> 
     <input type="checkbox" checked
            oninput="document.querySelector('#odd_even').data.even = this.checked">
-    show even
+    show even 
   </label>
 </p>
 ```
@@ -227,7 +249,9 @@ Show or hide an element conditionally.
 
 ## `g-content`
 
-Defines the element content.
+Include data values as the element content.
+
+In this example, the text content is defined with `title` and `subtitle` data values.
 
 ```html {6,10}
 <g-composer id="content">
@@ -236,11 +260,11 @@ Defines the element content.
       <rect x="0" y="0" width="100" height="100" fill="green"/>
       <text style="font-size:20px; fill:white"
             g-content="title"
-            x="5" 
+            x="5"
             y="40"></text>
       <text style="font-size:12px; fill:white"
             g-content="subtitle"
-            x="5" 
+            x="5"
             y="65"></text>
     </svg>
   </template>
@@ -252,6 +276,7 @@ Defines the element content.
   </script>
 </g-composer>
 ```
+
 ```html
 <p>
   <label>title: 
