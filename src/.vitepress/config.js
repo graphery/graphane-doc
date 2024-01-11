@@ -384,6 +384,7 @@ export default defineConfig({
           {link : '/examples/du-bois-tribute', text : 'W.E.B. Du Bois Tribute'},
           {link : '/examples/treemap', text : 'Treemap'},
           {link : '/examples/line-chart', text : 'Line Chart'},
+          {link : '/examples/map', text : 'EU Map'},
         ]
       }],
     },
