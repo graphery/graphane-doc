@@ -28,10 +28,11 @@ attributes, you can seamlessly incorporate external data into their visualizatio
       <circle g-bind:cx="value.x"
               g-bind:cy="value.y"
               g-bind:r="value.radix"
-              g-bind:fill="value.color"/>
+              g-bind:fill="value.color"
+              g-content="JSON.stringify(data)"/>
     </defs>
   </svg>
-  <g-script type="data" src="../../data/circles.csv"></g-script>
+  <g-script type="data" src="../../../data/circles.csv"></g-script>
 </g-composer>
 
 
