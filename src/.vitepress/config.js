@@ -94,8 +94,8 @@ export default defineConfig({
                 {link : '/guide/starter/', text : 'What is Graphane?'},
                 {link : '/guide/starter/load', text : 'Load'},
                 {link : '/guide/starter/composer', text : 'Include g-composer'},
-                {link : '/guide/starter/data', text : 'Define Data'},
                 {link : '/guide/starter/template', text : 'Add an SVG Template'},
+                {link : '/guide/starter/data', text : 'Define Data'},
                 {link : '/guide/starter/methods', text : 'Use Methods'},
               ]
             },
