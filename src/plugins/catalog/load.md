@@ -10,12 +10,12 @@ This plugin allows to dynamically load resources in the SVG, commonly other SVGs
 
 To load the plugin from the `g-composer` component we must use the URL:
 
-- ```https://cdn.graphery.online/graphane/0.1.0-alpha.7/plugins/load.js```
+- ```https://cdn.graphery.online/graphane/0.1.0-alpha/plugins/load.js```
 
 ```html
 <g-composer>
   <script type="plugin"
-          src="https://cdn.graphery.online/graphane/0.1.0-alpha.7/plugins/load.js">
+          src="https://cdn.graphery.online/graphane/0.1.0-alpha/plugins/load.js">
   </script>
 </g-composer>
 ```

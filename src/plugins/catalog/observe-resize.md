@@ -8,12 +8,12 @@ outline: deep
 
 To load the plugin from the `g-composer` component we must use the URL:
 
-- ```https://cdn.graphery.online/graphane/0.1.0-alpha.7/plugins/resize.observer.js```
+- ```https://cdn.graphery.online/graphane/0.1.0-alpha/plugins/resize.observer.js```
 
 ```html
 <g-composer>
   <script type="plugin"
-          src="https://cdn.graphery.online/graphane/0.1.0-alpha.7/plugins/resize.observer.js">
+          src="https://cdn.graphery.online/graphane/0.1.0-alpha/plugins/resize.observer.js">
   </script>
 </g-composer>
 ```

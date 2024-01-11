@@ -37,22 +37,22 @@ export default defineConfig({
   markdown : MarkdownOptions,
   head     : [
     ['link', {rel : 'icon', href : `/img/logo/g.svg`}],
-    ['script', {
-      src  : 'http://localhost:63342/graphane/src/component/composer.js',
-      type : 'module'
-    }],
+    // ['script', {
+    //   src  : 'http://localhost:63342/graphane/src/component/composer.js',
+    //   type : 'module'
+    // }],
     ['script', {
       src  : 'http://localhost:63342/graphane/src/component/editor.js',
       type : 'module'
     }],
-    // ['script', {
-    //   src : `https://cdn.graphery.online/graphane/${ VERSION }/component/composer.js`
-    // }],
-    // ['script', {
-    //   src           : 'https://plausible.io/js/script.js',
-    //   defer         : '',
-    //   'data-domain' : 'graphane.dev',
-    // }]
+    ['script', {
+      src : `https://cdn.graphery.online/graphane/0.1.0-alpha/component/composer.js`
+    }],
+    ['script', {
+      src           : 'https://plausible.io/js/script.js',
+      defer         : '',
+      'data-domain' : 'graphane.dev',
+    }]
   ],
   // https://vitepress.dev/reference/default-theme-config
   themeConfig : {
