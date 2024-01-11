@@ -52,9 +52,11 @@ In the following we will describe how it works:
 
 ## `g-bind`
 
-This directive, or the shorthand `:`, dynamically bind values from data to attributes and styles.
+The `g-bind:` directive, or the abbreviation `:`, followed by an attribute name, dynamically binds 
+data values to attributes.
 
-In this example, the circle radius (`r` attribute) is defined with `size` data value.
+In this example, the circle radius (`r` attribute) is defined with `size` data value with 
+`g-bind:r="size"`.
 
 ```html {5}
 <g-composer id="circle"">
