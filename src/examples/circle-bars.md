@@ -13,7 +13,7 @@ outline: deep
         g-bind:d="$$.barArc(250, 250, (250 - (n * (250 / data.length)) - 20), (275/data.length)/2, (270 * value))"/>
     </defs>
   </svg>
-  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha/plugins/shapes.js"></g-script>
+  <g-script type="plugin" src="http://localhost:63342/graphane/src/plugins/shapes.js"></g-script>
   <g-script type="data">[
     {"year": 2022, "value": 1},
     {"year": 2021, "value": 0.42},
