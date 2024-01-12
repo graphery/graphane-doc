@@ -42,7 +42,7 @@ outline: deep
          fill="red" stroke="white" stroke-width="1"/>
     </defs>
   </svg>
-  <g-script type="plugin" src="http://localhost:63342/graphane/src/plugins/shapes.js"></g-script>
+  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha/plugins/shapes.js"></g-script>
   <g-script type="data">[
     {country: "India", population:	1428627663},
     {country: "China", population:	1425671352},

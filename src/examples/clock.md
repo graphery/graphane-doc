@@ -34,7 +34,7 @@ outline: deep
                points="125,60,130,125,125,160,120,125"/>
     </g>
   </svg>
-  <g-script type="plugin" src="http://localhost:63342/graphane/src/plugins/shapes.js"></g-script>
+  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha/plugins/shapes.js"></g-script>
   <g-script type="methods">
     function init() {
       setInterval(() => $.data.date = new Date(), 1000);

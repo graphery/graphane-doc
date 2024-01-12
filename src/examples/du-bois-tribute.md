@@ -79,7 +79,7 @@ Whites,"Trade and Transportation",13
       </defs>
     </defs>
   </svg>
-  <g-script type="plugin" src="http://localhost:63342/graphane/src/plugins/shapes.js"></g-script>
+  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha/plugins/shapes.js"></g-script>
   <g-script type="data" src="../data/du-bois-tribute.data.csv"></g-script>
   <g-script type="config">
     {
@@ -113,7 +113,7 @@ Whites,"Trade and Transportation",13
       </defs>
     </defs>
   </svg>
-  <g-script type="plugin" src="http://localhost:63342/graphane/src/plugins/shapes.js"></g-script>
+  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha/plugins/shapes.js"></g-script>
   <g-script type="data" src="../data/du-bois-tribute.data.csv"></g-script>
   <g-script type="config">
     {
