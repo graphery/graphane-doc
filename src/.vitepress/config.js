@@ -37,17 +37,17 @@ export default defineConfig({
   markdown : MarkdownOptions,
   head     : [
     ['link', {rel : 'icon', href : `/img/logo/g.svg`}],
-    ['script', {
-      src  : 'http://localhost:63342/graphane/src/component/composer.js',
-      type : 'module'
-    }],
+    // ['script', {
+    //   src  : 'http://localhost:63342/graphane/src/component/composer.js',
+    //   type : 'module'
+    // }],
     ['script', {
       src  : 'http://localhost:63342/graphane/src/component/editor.js',
       type : 'module'
     }],
-    // ['script', {
-    //   src : `https://cdn.graphery.online/graphane/0.1.0-alpha/component/composer.js`
-    // }],
+    ['script', {
+      src : `https://cdn.graphery.online/graphane/0.1.0-alpha/component/composer.js`
+    }],
     // ['script', {
     //   src           : 'https://plausible.io/js/script.js',
     //   defer         : '',
@@ -89,7 +89,7 @@ export default defineConfig({
           text  : 'Guides',
           items : [
             {
-              text  : 'Starter Tutorial',
+              text  : 'Starter Guide',
               items : [
                 {link : '/guide/starter/', text : 'What is Graphane?'},
                 {link : '/guide/starter/load', text : 'Load'},
@@ -104,6 +104,19 @@ export default defineConfig({
               link      : '/guide/in-depth/',
               collapsed : true,
               items     : [
+                {
+                  text      : 'Data',
+                  link      : '/guide/in-depth/data/',
+                  collapsed : true,
+                  items     : [
+                    {link : '/guide/in-depth/data/attribute', text : 'data attribute'},
+                    {link : '/guide/in-depth/data/property', text : '.data property'},
+                    {link : '/guide/in-depth/data/embebed', text : 'Embedded data'},
+                    {link : '/guide/in-depth/data/external', text : 'Load data'},
+                    {link : '/guide/in-depth/data/helpers', text : 'Data helpers'},
+                    {link : '/guide/in-depth/data/reactivity', text : 'Reactivity'},
+                  ]
+                },
                 {
                   text      : 'Templating',
                   link      : '/guide/in-depth/templating/',
@@ -121,19 +134,6 @@ export default defineConfig({
                       link : '/guide/in-depth/templating/expressions',
                       text : 'Expressions'
                     },
-                  ]
-                },
-                {
-                  text      : 'Data',
-                  link      : '/guide/in-depth/data/',
-                  collapsed : true,
-                  items     : [
-                    {link : '/guide/in-depth/data/attribute', text : 'data attribute'},
-                    {link : '/guide/in-depth/data/property', text : '.data property'},
-                    {link : '/guide/in-depth/data/embebed', text : 'Embedded data'},
-                    {link : '/guide/in-depth/data/external', text : 'Load data'},
-                    {link : '/guide/in-depth/data/helpers', text : 'Data helpers'},
-                    {link : '/guide/in-depth/data/reactivity', text : 'Reactivity'},
                   ]
                 },
                 {
@@ -163,6 +163,44 @@ export default defineConfig({
                   ]
                 },
                 {
+                  text      : 'Style',
+                  link      : '/guide/in-depth/style/',
+                  collapsed : true,
+                  items     : [
+                    {
+                      link : '/guide/in-depth/style/shadow-dom',
+                      text : 'Shadow DOM'
+                    },
+                    {
+                      link : '/guide/in-depth/style/variables',
+                      text : 'CSS variables'
+                    },
+                    {
+                      link : '/guide/in-depth/style/css-file',
+                      text : 'Link CSS files'
+                    }
+                  ]
+                },
+                {
+                  text      : 'Animation',
+                  link      : '/guide/in-depth/animation/',
+                  collapsed : true,
+                  items     : [
+                    {
+                      link : '/guide/in-depth/animation/g-bind',
+                      text : 'b-bind and animate'
+                    },
+                    {
+                      link : '/guide/in-depth/animation/viewport',
+                      text : 'viewport entry and exit'
+                    },
+                    {
+                      link : '/guide/in-depth/animation/methods',
+                      text : 'Animation code'
+                    }
+                  ]
+                },
+                {
                   text      : 'Config',
                   link      : '/guide/in-depth/config/',
                   collapsed : true,
@@ -178,8 +216,9 @@ export default defineConfig({
                   ]
                 },
                 {
-                  link : '/guide/in-depth/composer/',
                   text : 'Composer',
+                  link : '/guide/in-depth/composer/',
+                  collapsed : true,
                   items     : [
                     {
                       link : '/guide/in-depth/composer/attributes',
@@ -193,9 +232,13 @@ export default defineConfig({
                 },
                 {
                   text      : 'Architecture',
+                  link : '/guide/in-depth/architecture/',
                   collapsed : true,
                   items     : [
-                    {link : '/guide/in-depth/', text : 'Why Graphane?'},
+                    {
+                      link : '/guide/in-depth/architecture/why',
+                      text : 'Why Graphane?'
+                    },
                     {
                       link : '/guide/in-depth/architecture/microframework',
                       text : 'Microframework'
@@ -205,8 +248,8 @@ export default defineConfig({
                       text : 'Web Component'
                     },
                     {
-                      link : '/guide/in-depth/architecture/imperative',
-                      text : 'Imperative'
+                      link : '/guide/in-depth/architecture/declarative',
+                      text : 'Declarative vs. Imperative'
                     },
                   ]
                 },

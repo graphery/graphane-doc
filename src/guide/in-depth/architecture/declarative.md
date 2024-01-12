@@ -1,18 +1,18 @@
-# Declarative vs. imperative
+# Declarative vs. Imperative approach
 
-Both declarative (by code) and imperative (by tags) approaches play a vital role in data
-equalization processes. These approaches are adopted depending on the particular requirements. The
-following will explore the differences between JavaScript libraries (imperative) and Graphane
-components (declarative).
+Both declarative (by tag) and imperative (by code) approaches play a vital role in data
+visualization processes. These approaches are adopted depending on the particular requirements. The
+following will explore the differences between JavaScript (imperative) and SVG (declarative) and
+how Graphane combine these models.
 
-## Imperative approach (JavaScript Library)
+## Imperative approach (JavaScript)
 
 In the imperative paradigm, we are in charge of defining the actions that achieve our goal. There
 are many widely used JavaScript libraries for generating data visualizations. They offer an
 imperative methodology where we precisely guide the DOM state changes to reach the end, requiring
 quite a lot of programming knowledge and a significant amount of code to build the visualizations.
 
-## Declarative approach (Graphane component)
+## Declarative approach (SVG)
 
 In contrast, in the declarative paradigm, we only express our goal, the *what*, and the system takes
 care of the *how*. Graphane with the SVG template represents the declarative data visualization,

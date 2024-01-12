@@ -25,4 +25,4 @@ to update the visualization efficiently when data are changed. This feature allo
 maintain high runtime performance without the need for pre-compilation processes.
 
 
-> For more details, see [Why Graphane?](../in-depth/index.md).
+> For more details, see [Why Graphane?](../in-depth/architecture/why).
