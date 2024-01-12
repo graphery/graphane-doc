@@ -231,6 +231,21 @@ export default defineConfig({
                   ]
                 },
                 {
+                  text      : 'Plugin',
+                  link      : '/guide/in-depth/plugins/',
+                  collapsed : true,
+                  items     : [
+                    {
+                      link : '/guide/in-depth/plugins/load',
+                      text : 'Load a plugin'
+                    },
+                    {
+                      link : '/guide/in-depth/plugins/create',
+                      text : 'Custom plugin'
+                    }
+                  ]
+                },
+                {
                   text      : 'Architecture',
                   link : '/guide/in-depth/architecture/',
                   collapsed : true,

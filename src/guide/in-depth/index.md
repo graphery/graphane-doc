@@ -14,6 +14,8 @@ This in-depth guide include:
 - [Data](./data/)
 - [Templating](./templating/)
 - [Methods](./methods/)
+- [Style](./style/)
+- [Animation](./animation/)
 - [Config](./config/)
 - [Composer component](./composer/)
 - [Plugins](./plugins/)
