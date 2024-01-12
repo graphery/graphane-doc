@@ -24,7 +24,7 @@ outline: deep
            g-bind:y="$.config[n][1] "/>
     </defs>
   </svg>
-  <g-script type="plugin" src="http://localhost:63342/graphane/dist/plugins/load.js"></g-script>
+  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha/plugins/load.js"></g-script>
   <g-script type="config">[
     [0, 180], [20, 180], [0, 160], [40, 180], [20, 160], [0, 140], [60, 180], [40, 160], [20, 140],
     [0, 120], [80, 180], [60, 160], [40, 140], [20, 120], [0, 100], [100, 180], [80, 160], 
