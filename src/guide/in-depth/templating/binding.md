@@ -5,8 +5,9 @@ outline: deep
 # Binding
 
 The `g-bind` directive, also known as the shorthand `:` syntax, is a fundamental directive in
-Graphane that enables you to bind values or expressions to SVG attributes, styles and classes in 
-your templates.
+Graphane that enables you to bind values or expressions to SVG attributes, styles and classes in
+your templates. This directive must include the name of the attribute to which you want to assign a
+value, for example, `g-bind:r="expression"` or simply `:r="expression"`.
 
 ## Attributes
 
@@ -25,11 +26,16 @@ binds the `r` attribute of the circle element to that value. When `size` changes
 component, the radius attribute will be automatically updated.
 
 
-```html {3}
+```html {7}
 <g-composer data="size: 25;" id="circle">
-  <svg viewBox="0 0 100 100">
-    <circle g-bind:r="size" cx="50" cy="50" fill="red"/>
-  </svg>
+  <template>
+    <svg viewBox="0 0 100 100">
+      <circle cx="50" 
+              cy="50" 
+              fill="red"
+              g-bind:r="size"/>
+    </svg>
+  </template>
 </g-composer>
 ```
 ```html
@@ -63,14 +69,16 @@ the corresponding values for those properties.
 
 ```html {7}
 <g-composer>
-  <svg viewBox="0 0 100 100">
-    <defs g-for="value of data">
-      <circle :cx="value.x"
-              :cy="value.y"
-              :r="value.radix"
-              :style="{fill: value.color}"/>
-    </defs>
-  </svg>
+  <template>
+    <svg viewBox="0 0 100 100">
+      <defs g-for="value of data">
+        <circle :cx="value.x"
+                :cy="value.y"
+                :r="value.radix"
+                :style="{fill: value.color}"/>
+      </defs>
+    </svg>
+  </template>
   <script type="data">
     "x";"y";"radix";"color"
     20;20;20;"red"
@@ -89,7 +97,7 @@ the corresponding values for those properties.
               g-bind:style="{fill: value.color}"/>
     </defs>
   </svg>
-  <g-script type="data" src="../../data/style.csv"></g-script>
+  <g-script type="data" src="../../../data/style.csv"></g-script>
 </g-composer>
 
 
@@ -99,34 +107,36 @@ Similarly, `g-bind`, or the shorthand `:`, can be used with the class attribute 
 CSS classes to an element based on the values in the `<g-composer>` component data. You can bind a single
 class or an array of classes.
 
-```html {18}
+```html {19}
 <g-composer>
-  <svg viewBox="0 0 100 100">
-    <style>
-      .regular {
-        fill : green;
-      }
-      .warning {
-        fill : blue;
-      }
-      .error {
-        fill : red;
-      }
-    </style>
-    <defs g-for="value of data">
-      <circle :cx="value.x"
-              :cy="value.y"
-              :r="value.radix"
-              :class="value.class"/>
-    </defs>
-  </svg>
-  <script type="data">
-    "x";"y";"radix";"class"
-    20;20;20;"regular"
-    45;45;30;"warning"
-    80;80;10;"error"
-  </script>
+  <template>
+    <svg viewBox="0 0 100 100">
+      <style>
+        .regular {
+          fill : green;
+        }
+        .warning {
+          fill : blue;
+        }
+        .error {
+          fill : red;
+        }
+      </style>
+      <defs g-for="value of data">
+        <circle :cx="value.x"
+                :cy="value.y"
+                :r="value.radix"
+                :class="value.class"/>
+      </defs>
+    </svg>
+    <script type="data">
+      "x";"y";"radix";"class"
+      20;20;20;"regular"
+      45;45;30;"warning"
+      80;80;10;"error"
+    </script>
+  </template>
 </g-composer>
 ```
 
-<g-composer svg-src="/circles.class.svg" data-src="/data/class.csv"></g-composer>`
+<g-composer svg-src="../../../svg/circles.class.svg" data-src="../../../data/class.csv"></g-composer>`

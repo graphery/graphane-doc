@@ -4,13 +4,12 @@ outline: deep
 
 # Lists Rendering
 
-The `g-for` directive is a powerful feature in Graphane that allows you to render a 
-`<defs></defs>` block of SVG elements multiple times based on an array or an object's properties. It
-provides a convenient way to iterate over data and dynamically generate content in your templates.
+The `g-for` directive is a powerful feature in Graphane that allows you to render a block of SVG
+elements multiple times based on an array or an object's properties. It provides a convenient way to
+iterate over data and dynamically generate content in your templates.
 
 This directive is applied on a `<defs></defs>` element because objects created inside an element are
-not rendered directly. The `g-for` directive creates each element by cloning the content of this
-element.
+not rendered directly. The `g-for` directive creates each element by cloning the content.
 
 The basic syntax for `g-for` is as follows:
 

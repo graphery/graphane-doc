@@ -57,7 +57,7 @@ You can use functions into the expressions. The function return must be used as 
 directives.
 
 ```html {1}
-<defs g-for="point of data.points()">
+<defs g-for="point of points()">
   <circle :cx="point.x" 
           :cy="point.y" 
           r="5"/>
