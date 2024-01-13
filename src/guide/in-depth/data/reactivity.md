@@ -17,6 +17,8 @@ changes, the reactive system is notified. It then triggers a process called "upd
 where it re-evaluates the components that depend on the changed data property. It compares the new
 and old values and updates the affected visualization accordingly.
 
+Reactivity is managed at both surface and deep level, detecting changes in the array and dates.
+
 ```html
 <g-composer>
   <svg viewBox="0 0 100 100" style="border: 1px solid grey; width: 250px; height: 250px">
@@ -34,4 +36,4 @@ and old values and updates the affected visualization accordingly.
 </g-composer>
 ```
 
-<iframe src="../../html/reactivity.html" style="border: 0; width: 100%; height: 740px"/>
+<iframe src="../../../html/reactivity.html" style="border: 0; width: 100%; height: 740px"/>

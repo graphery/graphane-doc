@@ -109,11 +109,14 @@ export default defineConfig({
                   link      : '/guide/in-depth/data/',
                   collapsed : true,
                   items     : [
-                    {link : '/guide/in-depth/data/attribute', text : 'data attribute'},
-                    {link : '/guide/in-depth/data/property', text : '.data property'},
                     {link : '/guide/in-depth/data/embebed', text : 'Embedded data'},
-                    {link : '/guide/in-depth/data/external', text : 'Load data'},
-                    {link : '/guide/in-depth/data/helpers', text : 'Data helpers'},
+                    {link : '/guide/in-depth/data/external', text : 'Load external data'},
+                    {link : '/guide/in-depth/data/csv', text : 'CSV format'},
+                    {link : '/guide/in-depth/data/json', text : 'JSON format'},
+                    {link : '/guide/in-depth/data/attribute', text : '<code>data</code> attribute'},
+                    {link : '/guide/in-depth/data/property', text : '<code>.data</code> property'},
+                    {link : '/guide/in-depth/data/helpers', text : 'Helpers'},
+                    {link : '/guide/in-depth/data/transform', text : '<code>function data()</code>'},
                     {link : '/guide/in-depth/data/reactivity', text : 'Reactivity'},
                   ]
                 },

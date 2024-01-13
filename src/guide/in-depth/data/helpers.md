@@ -5,94 +5,107 @@ outline: deep
 # Data helpers
 
 When the data is an array, we may need helper functions to get the maximum, minimum, average, unique
-values, etc. We can use Javascript functions to perform these operations, but Graphane offers a
+values, etc. You can use Javascript functions to perform these operations, but Graphane offers a
 series of helpers that allow us to obtain this information in a very efficient way.
 
-To access these helper functions we will use `$` inside the template. This special reference allows
-access to template functionalities such as helper functions for data handling.
+To access these helper functions we will use `data.$min()`, `data.$max()`, etc., inside the
+template. 
 
-## `$.min([key])`
+::: warning
+These helper functions are only available from the template.
+::: 
+
+## `data.$min([key])`
 
 Retrieve the minimum value of the array. If no parameter is provided, it defaults to treating the
-array data as numeric. When a key is passed as a parameter, it evaluates the objects within the
-array using the specified key.
+array data as numeric. 
 
 ```svg
-<tspan g-content="$.min()"></tspan>
+<tspan g-content="data.$min()"></tspan>
 ```
+
+When a key is passed as a parameter, it evaluates the objects within the array using the specified
+key.
 
 ```svg
-<tspan g-content="$.min('val')"></tspan>
+<tspan g-content="data.$min('val')"></tspan>
 ```
 
-## `$.max([key])`
+## `data.$max([key])`
 
 Obtain the maximum value of the array. If no parameter is given, it treats the array data as a
-numeric value. When a key is provided, it evaluates the objects within the array using the specified
+numeric value.
+
+```svg
+<tspan g-content="data.$max()"></tspan>
+```
+
+When a key is provided, it evaluates the objects within the array using the specified
 key.
 
 ```svg
-<tspan g-content="$.max()"></tspan>
+<tspan g-content="data.$max('val')"></tspan>
 ```
 
-```svg
-<tspan g-content="$.max('val')"></tspan>
-```
-
-## `$.count([key])`
+## `data.$count([key])`
 
 Get the count of values in the array. If no parameter is specified, it treats the array data as a
-numeric value. When a key is passed, it evaluates the objects within the array using the specified
-key.
+numeric value.
 
 ```svg
-<tspan g-content="$.count()"></tspan>
+<tspan g-content="data.$count()"></tspan>
 ```
+
+When a key is passed, it evaluates the objects within the array using the specified key.
 
 ```svg
-<tspan g-content="$.count('val')"></tspan>
+<tspan g-content="data.$count('val')"></tspan>
 ```
 
-## `$.sum([key])`
+## `data.$sum([key])`
 
 Calculate the sum value of the array. If no parameter is given, it treats the array data as a
-numeric value. When a key is provided, it evaluates the objects within the array using the specified
-key.
+numeric value.
 
 ```svg
-<tspan g-content="$.sum()"></tspan>
+<tspan g-content="data.$sum()"></tspan>
 ```
+
+When a key is provided, it evaluates the objects within the array using the specified key.
 
 ```svg
-<tspan g-content="$.sum('val')"></tspan>
+<tspan g-content="data.$sum('val')"></tspan>
 ```
 
-## `$.avg([key])`
+## `data.$avg([key])`
 
 Compute the average value of the array. If no parameter is supplied, it treats the array data as a
-numeric value. When a key is passed, it evaluates the objects within the array using the specified
-key.
+numeric value.
 
 ```svg
-<tspan g-content="$.avg()"></tspan>
+<tspan g-content="data.$avg()"></tspan>
 ```
+
+When a key is passed, it evaluates the objects within the array using the specified key.
 
 ```svg
-<tspan g-content="$.avg('val')"></tspan>
+<tspan g-content="data.$avg('val')"></tspan>
 ```
 
-## `$.distinct([key])`
+## `data.$distinct([key])`
 
 Retrieve the unique values of the array. If no parameter is provided, it treats the array data as a
-numeric value. When a key is passed, it evaluates the objects within the array using the specified
-key. In this case, the result is an array of values, not objects.
+numeric value. 
 
 ```svg
-<tspan g-content="$.distinct()"></tspan>
+<tspan g-content="data.$distinct()"></tspan>
 ```
 
+When a key is passed, it evaluates the objects within the array using the specified key. In this
+case, the result is an array of values, not objects.
+
 ```svg
-<tspan g-content="$.distinct('val')"></tspan>
+<tspan g-content="data.$distinct('val')"></tspan>
 ```
 
 ## Deep objects
@@ -108,7 +121,7 @@ arrays.
 <tspan g-content="data.filter(x => x < 4).map(x => x * 2)"></tspan>
 ```
 
-::: warning If you need to do a transformation, filter or other complex adaptation on the data
-before template evaluation, we recommend that you see the `function data()` in the `methods`
-section.
+::: warning 
+If you need to do a transformation, filter or other complex adaptation on the data
+before template evaluation, we recommend that you use the [`function data()`](transform.md).
 :::
