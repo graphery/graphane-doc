@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# Load data
+# Load Data
 
 In production environments or when accessing remote servers, the `<script type="data">`
 with the `src` attribute makes it very easy to indicate the source of the data. By utilizing these
