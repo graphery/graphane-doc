@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# Events
+# Handle Events
 
 The Graphane templating would enable the creation of interactive SVG graphics by supporting event
 handling. Developers could attach event listeners to SVG elements and respond to user interactions,

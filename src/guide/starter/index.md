@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# What is Graphane?
+# Starter Guide
 
 Graphane is a free and open-source **data visualization microframework** designed to facilitate the
 creation of dynamic and interactive visualizations by :

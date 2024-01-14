@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# Binding
+# Binding Attribute Values
 
 The `g-bind` directive, also known as the shorthand `:` syntax, is a fundamental directive in
 Graphane that enables you to bind values or expressions to SVG attributes, styles and classes in

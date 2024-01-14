@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# Evaluation of expressions in directives
+# Expressions in Directives
 
 In Graphane, you can use different types of JavaScript expressions within directives to achieve
 various functionalities. Here are the commonly used JavaScript expressions in directives:

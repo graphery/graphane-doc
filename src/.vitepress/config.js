@@ -90,8 +90,9 @@ export default defineConfig({
           items : [
             {
               text  : 'Starter Guide',
+              link : '/guide/starter/',
+              collapsed : true,
               items : [
-                {link : '/guide/starter/', text : 'What is Graphane?'},
                 {link : '/guide/starter/load', text : 'Load'},
                 {link : '/guide/starter/composer', text : 'Include g-composer'},
                 {link : '/guide/starter/template', text : 'Add an SVG Template'},
@@ -127,16 +128,11 @@ export default defineConfig({
                   items     : [
                     {link : '/guide/in-depth/templating/binding', text : 'Binding'},
                     {link : '/guide/in-depth/templating/lists', text : 'Lists'},
-                    {
-                      link : '/guide/in-depth/templating/conditional',
-                      text : 'Conditional'
-                    },
+                    {link : '/guide/in-depth/templating/conditional', text : 'Conditional'},
                     {link : '/guide/in-depth/templating/content', text : 'Content'},
                     {link : '/guide/in-depth/templating/events', text : 'Events'},
-                    {
-                      link : '/guide/in-depth/templating/expressions',
-                      text : 'Expressions'
-                    },
+                    {link : '/guide/in-depth/templating/expressions', text : 'Expressions'},
+                    {link : '/guide/in-depth/templating/helpers', text : 'Helpers'},
                   ]
                 },
                 {
