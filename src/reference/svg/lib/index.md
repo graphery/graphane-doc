@@ -1,4 +1,4 @@
-# SVG Wrapper
+# SVG Graphane Object
 
 **Graphane** includes a powerful API to simplify the construction and manipulation of SVG graphics
 from Javascript. The API is very close to the SVG structure.
