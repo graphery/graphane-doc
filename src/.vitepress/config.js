@@ -140,25 +140,15 @@ export default defineConfig({
                   link      : '/guide/in-depth/methods/',
                   collapsed : true,
                   items     : [
-                    {
-                      link : '/guide/in-depth/methods/embebed',
-                      text : 'Embedded methods'
-                    },
-                    {
-                      link : '/guide/in-depth/methods/external',
-                      text : 'External resource'
-                    },
+                    {link : '/guide/in-depth/methods/embebed', text : 'Embedded methods'},
+                    {link : '/guide/in-depth/methods/external', text : 'External resource'},
+                    {link : '/guide/in-depth/methods/define', text : 'Define functions'},
+                    {link : '/guide/in-depth/methods/$-data', text : '<code>$.data</code>'},
+                    {link : '/guide/in-depth/methods/$-svg', text : '<code>$.svg</code>'},
+                    {link : '/guide/in-depth/methods/$-config', text : '<code>$.config</code>'},
+                    {link : '/guide/in-depth/methods/load', text : 'Load event'},
+                    {link : '/guide/in-depth/methods/data', text : '<code>data()</code>'},
                     {link : '/guide/in-depth/methods/property', text : 'Property'},
-                    {
-                      link : '/guide/in-depth/methods/function-data',
-                      text : '<code>function data()</code>'
-                    },
-                    {
-                      link : '/guide/in-depth/methods/$data',
-                      text : '<code>$.data</code>'
-                    },
-                    {link : '/guide/methods/svg-access', text : '<code>$.svg</code>'},
-                    {link : '/guide/methods/load', text : 'Load event'},
                   ]
                 },
                 {
