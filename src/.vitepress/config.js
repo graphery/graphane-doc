@@ -163,14 +163,8 @@ export default defineConfig({
                   link      : '/guide/in-depth/style/',
                   collapsed : true,
                   items     : [
-                    {
-                      link : '/guide/in-depth/style/attribute-style',
-                      text : 'Attribute <code>style</code>'
-                    },
-                    {
-                      link : '/guide/in-depth/style/attribute-class',
-                      text : 'Attribute <code>class</code>'
-                    },
+                    {link : '/guide/in-depth/style/attribute-style', text : 'Attribute <code>style</code>'},
+                    {link : '/guide/in-depth/style/attribute-class', text : 'Attribute <code>class</code>'},
                     {link : '/guide/in-depth/style/scoped-css', text : 'Scoped CSS'},
                     {link : '/guide/in-depth/style/load-css', text : 'Load External CSS'},
                     {link : '/guide/in-depth/style/css-var', text : 'CSS Custom Properties'}
@@ -191,8 +185,9 @@ export default defineConfig({
                   link      : '/guide/in-depth/config/',
                   collapsed : true,
                   items     : [
-                    {link : '/guide/in-depth/config/why', text : 'Separate data & config'},
-                    {link : '/guide/in-depth/config/external', text : 'External resource'}
+                    {link : '/guide/in-depth/config/embebed', text : 'Embedded configuration'},
+                    {link : '/guide/in-depth/config/external', text : 'External resource'},
+                    {link : '/guide/in-depth/config/property', text : 'Property'},
                   ]
                 },
                 {

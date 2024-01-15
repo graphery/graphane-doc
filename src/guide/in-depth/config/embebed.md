@@ -2,14 +2,13 @@
 outline: deep
 ---
 
-# Load Configuration as External Resource
+# Embebed configuration
 
-In production environments or when you want to share the configuration in serval components,
-the `<script type="config">`with the `src` attribute makes it straightforward to indicate the source
-of the functions.
+Graphane allow defining the data visualization configuration into `<script type="config">` with
+formats CSV, JSON and JSON5. 
 
-```html{13}
-<g-composer style="width:50%">
+```html{13-19}
+<g-composer style="width: 50%">
   <template>
     <svg g-bind:viewBox="[0, 0, $.config.width, $.config.height]">
       <defs g-for="(record, n) of data">
@@ -21,14 +20,20 @@ of the functions.
       </defs>
     </svg>
   </template>
-  <script type="config" src="/config/general.json"></script>
-  <script type="data">[
+  <g-script type="config">
+  {
+    height: 100,
+    width : 100,
+    colors: ['#638475', '#7fb069', '#d36135',  '#ece4b7', '#e6aa68']
+  }
+  </g-script>
+  <g-script type="data">[
     {name: "A", value: 10},
     {name: "B", value: 32},
     {name: "C", value: 24},
     {name: "E", value: 5},
     {name: "F", value: 17},
-  ]</script>
+  ]</g-script>
 </g-composer>
 ```
 
@@ -42,7 +47,13 @@ of the functions.
           g-bind:fill="$.config.colors[n]"/>
   </defs>
 </svg>
-<g-script type="config" src="../../../config/general.json"></g-script>
+<g-script type="config">
+{
+  height: 100,
+  width : 200,
+  colors: ['#638475', '#7fb069', '#d36135',  '#ece4b7', '#e6aa68']
+}
+</g-script>
 <g-script type="data">[
   {name: "A", value: 10},
   {name: "B", value: 32},
@@ -51,16 +62,3 @@ of the functions.
   {name: "F", value: 17},
 ]</g-script>
 </g-composer>
-
-
-It is possible to directly include the `config-src` properties within the `g-composer` component
-itself, simplifying the overall code structure by eliminating the `script` tag.
-
-```html {4}
-<g-composer 
-  svg-src="/svg/circle.svg" 
-  methods-src="/methods/circle.js"
-  config-src="/config/config.json">
-</g-composer>
-```
-
