@@ -71,7 +71,7 @@ gradient are different, now is circular, from the center to the edge.
 </svg>
 ```
 ```js
-gySVG().viewBox(0, 0, 100, 100).width(100).height(100);
+$.svg.viewBox(0, 0, 100, 100).width(100).height(100);
 const defs     = $.svg.add('defs');
 const gradient = defs.add('radialGradient');
 gradient.add('stop').offset('5%').stop_color('gold');

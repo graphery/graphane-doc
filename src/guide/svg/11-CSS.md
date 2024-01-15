@@ -23,7 +23,7 @@ You can define the style for each SVG element with the `style` attribute.
 ```
 
 ```js
-gySVG().viewBox(0, 0, 200, 200).style('width: 75px; height: 75px');
+$.svg.viewBox(0, 0, 200, 200).style('width: 75px; height: 75px');
 $.svg.add('rect').style('x: 10px; y: 10px; width: 180px; height: 180px; fill: #00D800');
 ```
 
@@ -35,9 +35,7 @@ $.svg.add('rect').style('x: 10px; y: 10px; width: 180px; height: 180px; fill: #0
 
 
 ```js
-import gySVG from 'https://cdn.Graphane.online/svg/1.0.0/module/index.js';
-
-gySVG().viewBox(0, 0, 200, 200).width(200).height(200);
+$.svg.viewBox(0, 0, 200, 200).width(200).height(200);
 $.svg.add('rect').style.x('10px').style.y('10px')
  .style.width('180px').style.height('180px')
  .style.fill('red');
@@ -70,7 +68,7 @@ It's possible to create it a `style` tag into the SVG and put CSS rules into thi
 ```
 
 ```js
-gySVG().viewBox(0, 0, 200, 200).width(200).height(200);
+$.svg.viewBox(0, 0, 200, 200).width(200).height(200);
 $.svg.add('style').content(`
    #rectangle {
       fill   : red;
@@ -86,11 +84,9 @@ $.svg.add('rect').id('rectangle');
 
 ::: warning Note
 
-Styles defined in the SVG affect the entire page.
-
-Styles defined in the page affect the $.svg.
-
-Consequently, collisions and side effects may occur if the selectors used to match other elements.
+By default, the styles defined in the SVG affect the entire page and styles defined in the page 
+affect the SVG. Consequently, collisions and side effects may occur if the selectors used to match 
+other elements.
 
 :::
 
@@ -158,7 +154,7 @@ You can use the `.classList` object and its methods:
 ```
 
 ```js
-gySVG().viewBox(0, 0, 200, 200).width(200).height(200);
+$.svg.viewBox(0, 0, 200, 200).width(200).height(200);
 $.svg.add('style').content(`
    .rectangle {
       cursor : pointer;
