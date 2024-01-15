@@ -36,29 +36,33 @@ export default defineConfig({
   },
   markdown : MarkdownOptions,
   head     : [
-    ['link', {rel : 'icon', href : `/img/logo/g.svg`}],
+    ['link', {rel : 'icon', href : `${ URL }img/logo/g.svg`}],
     // ['script', {
     //   src  : 'http://localhost:63342/graphane/src/component/composer.js',
     //   type : 'module'
     // }],
+    // ['script', {
+    //   src  : 'http://localhost:63342/graphane/src/component/editor.js',
+    //   type : 'module'
+    // }],
     ['script', {
-      src  : 'http://localhost:63342/graphane/src/component/editor.js',
+      src  : 'https://cdn.graphery.online/graphane/0.1.0-alpha/component/editor.js',
       type : 'module'
     }],
     ['script', {
       src : `https://cdn.graphery.online/graphane/0.1.0-alpha/component/composer.js`
     }],
-    // ['script', {
-    //   src           : 'https://plausible.io/js/script.js',
-    //   defer         : '',
-    //   'data-domain' : 'graphane.dev',
-    // }]
+    ['script', {
+      src           : 'https://plausible.io/js/script.js',
+      defer         : '',
+      'data-domain' : 'graphane.dev',
+    }]
   ],
   // https://vitepress.dev/reference/default-theme-config
   themeConfig : {
     logo        : {
-      light : `/img/logo/graphane.svg`,
-      dark  : `/img/logo/graphane.light.svg`
+      light : `${ URL }img/logo/graphane.svg`,
+      dark  : `${ URL }img/logo/graphane.light.svg`
     },
     siteTitle   : false,
     footer      : {
@@ -84,15 +88,15 @@ export default defineConfig({
       {link : 'https://github.com/graphery/graphane/blob/main/CHANGELOG.md', text : VERSION},
     ],
     sidebar     : {
-      '/guide/'    :
+      '/guide/'     :
         {
           text  : 'Guides',
           items : [
             {
-              text  : 'Starter Guide',
-              link : '/guide/starter/',
+              text      : 'Starter Guide',
+              link      : '/guide/starter/',
               collapsed : true,
-              items : [
+              items     : [
                 {link : '/guide/starter/load', text : 'Load'},
                 {link : '/guide/starter/composer', text : 'Include g-composer'},
                 {link : '/guide/starter/template', text : 'Add an SVG Template'},
@@ -117,7 +121,10 @@ export default defineConfig({
                     {link : '/guide/in-depth/data/attribute', text : '<code>data</code> attribute'},
                     {link : '/guide/in-depth/data/property', text : '<code>.data</code> property'},
                     {link : '/guide/in-depth/data/helpers', text : 'Helpers'},
-                    {link : '/guide/in-depth/data/transform', text : '<code>function data()</code>'},
+                    {
+                      link : '/guide/in-depth/data/transform',
+                      text : '<code>function data()</code>'
+                    },
                     {link : '/guide/in-depth/data/reactivity', text : 'Reactivity'},
                   ]
                 },
@@ -156,8 +163,14 @@ export default defineConfig({
                   link      : '/guide/in-depth/style/',
                   collapsed : true,
                   items     : [
-                    {link : '/guide/in-depth/style/attribute-style', text : 'Attribute <code>style</code>'},
-                    {link : '/guide/in-depth/style/attribute-class', text : 'Attribute <code>class</code>'},
+                    {
+                      link : '/guide/in-depth/style/attribute-style',
+                      text : 'Attribute <code>style</code>'
+                    },
+                    {
+                      link : '/guide/in-depth/style/attribute-class',
+                      text : 'Attribute <code>class</code>'
+                    },
                     {link : '/guide/in-depth/style/scoped-css', text : 'Scoped CSS'},
                     {link : '/guide/in-depth/style/load-css', text : 'Load External CSS'},
                     {link : '/guide/in-depth/style/css-var', text : 'CSS Custom Properties'}
@@ -183,8 +196,8 @@ export default defineConfig({
                   ]
                 },
                 {
-                  text : 'Composer',
-                  link : '/guide/in-depth/composer/',
+                  text      : 'Composer',
+                  link      : '/guide/in-depth/composer/',
                   collapsed : true,
                   items     : [
                     {link : '/guide/in-depth/composer/attributes', text : 'Attributes'},
@@ -208,7 +221,7 @@ export default defineConfig({
                 },
                 {
                   text      : 'Architecture',
-                  link : '/guide/in-depth/architecture/',
+                  link      : '/guide/in-depth/architecture/',
                   collapsed : true,
                   items     : [
                     {
