@@ -2,6 +2,6 @@
 outline: deep
 ---
 
-# Composer Attributes
+# How to integrate Graphane in VUE
 
 *pending...*

@@ -195,8 +195,11 @@ export default defineConfig({
                   link      : '/guide/in-depth/composer/',
                   collapsed : true,
                   items     : [
-                    {link : '/guide/in-depth/composer/attributes', text : 'Attributes'},
-                    {link : '/guide/in-depth/composer/events', text : 'Events'}
+                    {link : '/guide/in-depth/composer/react', text : 'Used in React'},
+                    {link : '/guide/in-depth/composer/angular', text : 'Used in Angular'},
+                    {link : '/guide/in-depth/composer/vue', text : 'Used in Vue'},
+                    {link : '/guide/in-depth/composer/svelte', text : 'Used in svelte'},
+                    {link : '/guide/in-depth/composer/custom-component', text : 'Your custom component'},
                   ]
                 },
                 {
