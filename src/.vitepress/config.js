@@ -168,18 +168,9 @@ export default defineConfig({
                   link      : '/guide/in-depth/animation/',
                   collapsed : true,
                   items     : [
-                    {
-                      link : '/guide/in-depth/animation/g-bind',
-                      text : 'b-bind and animate'
-                    },
-                    {
-                      link : '/guide/in-depth/animation/viewport',
-                      text : 'viewport entry and exit'
-                    },
-                    {
-                      link : '/guide/in-depth/animation/methods',
-                      text : 'Animation code'
-                    }
+                    {link : '/guide/in-depth/animation/g-bind', text : 'b-bind and animate'},
+                    {link : '/guide/in-depth/animation/viewport', text : 'viewport entry and exit'},
+                    {link : '/guide/in-depth/animation/methods', text : 'Animation code'}
                   ]
                 },
                 {
@@ -187,14 +178,8 @@ export default defineConfig({
                   link      : '/guide/in-depth/config/',
                   collapsed : true,
                   items     : [
-                    {
-                      link : '/guide/in-depth/config/why',
-                      text : 'Separate data & config'
-                    },
-                    {
-                      link : '/guide/in-depth/config/external',
-                      text : 'External resource'
-                    }
+                    {link : '/guide/in-depth/config/why', text : 'Separate data & config'},
+                    {link : '/guide/in-depth/config/external', text : 'External resource'}
                   ]
                 },
                 {
@@ -202,14 +187,8 @@ export default defineConfig({
                   link : '/guide/in-depth/composer/',
                   collapsed : true,
                   items     : [
-                    {
-                      link : '/guide/in-depth/composer/attributes',
-                      text : 'Attributes'
-                    },
-                    {
-                      link : '/guide/in-depth/composer/events',
-                      text : 'Events'
-                    }
+                    {link : '/guide/in-depth/composer/attributes', text : 'Attributes'},
+                    {link : '/guide/in-depth/composer/events', text : 'Events'}
                   ]
                 },
                 {
