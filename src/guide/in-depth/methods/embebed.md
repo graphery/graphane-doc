@@ -73,9 +73,10 @@ Only the named functions are translated to the template environment. Constants, 
 function or anonymous functions are not linked to the template.
 
 Into the methods code `$` is a reference to the Graphane template component. As a result, you can
-access to the [$.svg]($-svg) element or the [$.data](./$.data.md) object.
+access to the [$.svg]($-svg) element or the [$.data](./$-data.md) object.
 
-::: warning In some environments the `<script type="methods"></script>` has conflicts. In these
+::: warning 
+In some environments the `<script type="methods"></script>` has conflicts. In these
 cases, you can use alternatively `<g-script type="methods"></g-script>`.
 
 ```html
