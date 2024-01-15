@@ -156,18 +156,11 @@ export default defineConfig({
                   link      : '/guide/in-depth/style/',
                   collapsed : true,
                   items     : [
-                    {
-                      link : '/guide/in-depth/style/shadow-dom',
-                      text : 'Shadow DOM'
-                    },
-                    {
-                      link : '/guide/in-depth/style/variables',
-                      text : 'CSS variables'
-                    },
-                    {
-                      link : '/guide/in-depth/style/css-file',
-                      text : 'Link CSS files'
-                    }
+                    {link : '/guide/in-depth/style/attribute-style', text : 'Attribute <code>style</code>'},
+                    {link : '/guide/in-depth/style/attribute-class', text : 'Attribute <code>class</code>'},
+                    {link : '/guide/in-depth/style/scoped-css', text : 'Scoped CSS'},
+                    {link : '/guide/in-depth/style/load-css', text : 'Load External CSS'},
+                    {link : '/guide/in-depth/style/css-var', text : 'CSS Custom Properties'}
                   ]
                 },
                 {

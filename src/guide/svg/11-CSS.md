@@ -33,11 +33,15 @@ $.svg.add('rect').style('x: 10px; y: 10px; width: 180px; height: 180px; fill: #0
   <rect style="x: 10; y: 10; width: 180; height: 180; fill: #00D800"/>
 </svg>
 
+You can define and obtain the style with the Graphane SVG API:
 
 ```js
 $.svg.viewBox(0, 0, 200, 200).width(200).height(200);
-$.svg.add('rect').style.x('10px').style.y('10px')
- .style.width('180px').style.height('180px')
+$.svg.add('rect')
+ .style.x('10px')
+ .style.y('10px')
+ .style.width('180px')
+ .style.height('180px')
  .style.fill('red');
 $.svg.attachTo('#example2');
 ```
@@ -95,27 +99,7 @@ other elements.
 
 You can use `class` attribute for reference to styles.
 
-
-## In Graphane
-
-### scoped style by template
-
-General styles are not usable within the `g-composer` component.
-
-CSS variables can be used.
-
-You can define a STYLE in the template, and it will be used inside the component.
-
-### style
-
-With the SVG Graphane API you can use the `.style` object to access its child properties
-as methods. Its properties are now methods with the same name as the original property name: If you
-need to get any style property value, you can use the method without a parameter, and it returns the
-current style value:
-
-### class
-
-You can use the `.classList` object and its methods:
+By the API, you can use the `.classList` object and its methods:
 
 - `.classList.contains( class )` - returns true if the list contains the given class, otherwise
   false.
@@ -130,22 +114,22 @@ You can use the `.classList` object and its methods:
 <svg viewBox="0,0,200,200" width="200" height="200">
     <style>
         .rectangle {
-        cursor : pointer;
-        x : 5px;
-        y : 5px;
-        width : 180px;
-        height : 180px;
+          cursor : pointer;
+          x : 5px;
+          y : 5px;
+          width : 180px;
+          height : 180px;
         }
         .alarm {
-        fill : red;
+            fill : red;
         }
         .regular {
-        fill : blue;
+            fill : blue;
         }
         .message {
-        font-family : monospace;
-        font-size : 10px;
-        fill : white;
+          font-family : monospace;
+          font-size : 10px;
+          fill : white;
         }
     </style>
     <rect class="rectangle alarm"></rect>
@@ -175,8 +159,14 @@ $.svg.add('style').content(`
      fill        : white;
    }
    `);
-const rect = $.svg.add('rect').classList.add('rectangle').classList.add('regular');
-$.svg.add('text').x(10).y(100).content('Alarm').classList.add('message');
+const rect = $.svg.add('rect')
+              .classList.add('rectangle')
+              .classList.add('regular');
+$.svg.add('text')
+      .x(10)
+      .y(100)
+      .content('Alarm')
+      .classList.add('message');
 ```
 
 :::
