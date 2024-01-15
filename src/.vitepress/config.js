@@ -41,14 +41,14 @@ export default defineConfig({
     //   src  : 'http://localhost:63342/graphane/src/component/composer.js',
     //   type : 'module'
     // }],
-    // ['script', {
-    //   src  : 'http://localhost:63342/graphane/src/component/editor.js',
-    //   type : 'module'
-    // }],
     ['script', {
-      src  : 'https://cdn.graphery.online/graphane/0.1.0-alpha/component/editor.js',
+      src  : 'http://localhost:63342/graphane/src/component/editor.js',
       type : 'module'
     }],
+    // ['script', {
+    //   src  : 'https://cdn.graphery.online/graphane/0.1.0-alpha/component/editor.js',
+    //   type : 'module'
+    // }],
     ['script', {
       src : `https://cdn.graphery.online/graphane/0.1.0-alpha/component/composer.js`
     }],
@@ -181,9 +181,9 @@ export default defineConfig({
                   link      : '/guide/in-depth/animation/',
                   collapsed : true,
                   items     : [
-                    {link : '/guide/in-depth/animation/g-bind', text : 'b-bind and animate'},
-                    {link : '/guide/in-depth/animation/viewport', text : 'viewport entry and exit'},
-                    {link : '/guide/in-depth/animation/methods', text : 'Animation code'}
+                    {link : '/guide/in-depth/animation/g-bind', text : '<code>b-bind</code> and <code>$$.dynamic()</code>'},
+                    {link : '/guide/in-depth/animation/methods', text : 'Animation by API'},
+                    {link : '/guide/in-depth/animation/viewport', text : 'Viewport entry and exit'},
                   ]
                 },
                 {
