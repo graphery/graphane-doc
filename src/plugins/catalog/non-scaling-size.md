@@ -4,6 +4,8 @@ outline: deep
 
 # Non Scaling Size - plugin
 
+*pending...*
+
 ## Load
 
 To load the plugin from the `g-composer` component we must use the URL:

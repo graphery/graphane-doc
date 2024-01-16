@@ -195,10 +195,10 @@ export default defineConfig({
                   link      : '/guide/in-depth/composer/',
                   collapsed : true,
                   items     : [
-                    {link : '/guide/in-depth/composer/react', text : 'Used in React'},
-                    {link : '/guide/in-depth/composer/angular', text : 'Used in Angular'},
-                    {link : '/guide/in-depth/composer/vue', text : 'Used in Vue'},
-                    {link : '/guide/in-depth/composer/svelte', text : 'Used in svelte'},
+                    // {link : '/guide/in-depth/composer/react', text : 'Used in React'},
+                    // {link : '/guide/in-depth/composer/angular', text : 'Used in Angular'},
+                    // {link : '/guide/in-depth/composer/vue', text : 'Used in Vue'},
+                    // {link : '/guide/in-depth/composer/svelte', text : 'Used in svelte'},
                     {link : '/guide/in-depth/composer/custom-component', text : 'Your custom component'},
                   ]
                 },
@@ -207,14 +207,8 @@ export default defineConfig({
                   link      : '/guide/in-depth/plugins/',
                   collapsed : true,
                   items     : [
-                    {
-                      link : '/guide/in-depth/plugins/load',
-                      text : 'Load a plugin'
-                    },
-                    {
-                      link : '/guide/in-depth/plugins/create',
-                      text : 'Custom plugin'
-                    }
+                    {link : '/guide/in-depth/plugins/load', text : 'Load a plugin'},
+                    {link : '/guide/in-depth/plugins/create', text : 'Custom plugin'}
                   ]
                 },
                 {
@@ -278,8 +272,9 @@ export default defineConfig({
             collapsed : false,
             items     : [
               {link : '/plugins/catalog/shapes', text : 'Shapes'},
+              {link : '/plugins/catalog/load', text : 'Load'},
               {link : '/plugins/catalog/observe-resize', text : 'Observe Resize'},
-              {link : '/plugins/catalog/keep-aspect', text : 'Keep Aspect'},
+              {link : '/plugins/catalog/non-scaling-size', text : 'Non Scaling Size'},
             ]
           },
           // {link : '/plugins/create', text : 'Create custom plugin'},
