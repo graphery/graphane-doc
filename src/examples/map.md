@@ -51,3 +51,30 @@ outline: deep
     <option value="../svg/europe2.svg">extended</option>
   </select>
 </label></p>
+
+```html
+<g-composer svg-src="/svg/compact.svg" style="width: 100%">
+  <script type="data">
+    {
+      AT: 1, BE: 1, BG: 1, HR: 1, CY: 1, CZ: 1, DE: 1, EE: 1, FI: 1, FR: 1, DE: 1, GR: 1, HU: 1, 
+      IE: 1, IT: 1, LV: 1, LT: 1, LU: 1, NL: 1, PL: 1, PT: 1, RO: 1, SK: 1, SI: 1, ES: 1, SE: 1,
+    }
+  </script>
+  <script type="methods">
+    function data(countries) {
+      for (code in countries) {
+        $.svg.getElementById(code)?.fill('#00F').opacity(countries[code]);
+      }
+    }
+  </script>
+</g-composer>
+```
+
+```html
+<p><label>map:
+  <select oninput="document.querySelector('g-composer').svgSrc = this.value">
+    <option value="/svg/compact.svg" selected>compact</option>
+    <option value="/svg/extended.svg">extended</option>
+  </select>
+</label></p>
+```

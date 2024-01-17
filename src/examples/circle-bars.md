@@ -49,15 +49,17 @@ outline: deep
 
 ```html
 <g-composer>
-  <svg viewBox="0 0 500 500">
-    <defs g-for="({year, value}, n) of data">
-      <text :y="(n * (250 / data.length)) + 25" g-content="year" x="200"></text>
-      <path
-        :style="{fill: $.config.colors[n]}"
-        :d="$$.barArc(250, 250, 250-(n*(250/data.length))-20, (275/data.length)-25, 270*value)"
-      />
-    </defs>
-  </svg>
+  <template>
+    <svg viewBox="0 0 500 500">
+      <defs g-for="({year, value}, n) of data">
+        <text :y="(n * (250 / data.length)) + 25" g-content="year" x="200"></text>
+        <path
+          :style="{fill: $.config.colors[n]}"
+          :d="$$.barArc(250, 250, 250-(n*(250/data.length))-20, (275/data.length)-25, 270*value)"
+        />
+      </defs>
+    </svg>
+  </template>
   <script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha/plugins/shapes.js">
   </script>
   <script type="data">[

@@ -3,7 +3,7 @@
   "version": "0.1.0-alpha.7",
   "description": "public web of Graphane",
   "scripts": {
-    "docs:dev": "vitepress dev src",
+    "docs:dev": "vitepress dev src --host",
     "docs:build": "vitepress build src",
     "docs:preview": "vitepress preview src",
     "docs:min-dev": "vitepress dev minimal",

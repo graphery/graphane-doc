@@ -90,35 +90,37 @@ Whites,"Trade and Transportation",13
 
 ```html
 <g-composer id="color">
-  <svg viewBox="0 0 500 500" width="500">
-    <defs g-for="(group, x) of data.$distinct('group')">
-      <text
-        x="250"
-        g-bind:y="x ? 480 : 20"
-        text-anchor="middle"
-        g-content="group"></text>
-      <defs g-for="(record, n, all) of data.filter(r => r.group === group)">
-        <path
-          stroke="none"
-          filter="url(#filter)"
-          g-bind:transform="x ? $$.rotate(180,250,250) : ''"
-          g-bind:fill="$.config.colors[n]"
-          g-bind:check="group + ' ' + record.sector"
-          g-bind:d="$$.circleSlice( 250, 
-                                    250, 
-                                    200,
-                                    120 * record.value,
-                                    (120 * data.$sum(all.filter((r,x) => x < n), 'value')) -60,
-                                  )"></path>
+  <template>
+    <svg viewBox="0 0 500 500" width="500">
+      <defs g-for="(group, x) of data.$distinct('group')">
+        <text
+          x="250"
+          g-bind:y="x ? 480 : 20"
+          text-anchor="middle"
+          g-content="group"></text>
+        <defs g-for="(record, n, all) of data.filter(r => r.group === group)">
+          <path
+            stroke="none"
+            filter="url(#filter)"
+            g-bind:transform="x ? $$.rotate(180,250,250) : ''"
+            g-bind:fill="$.config.colors[n]"
+            g-bind:check="group + ' ' + record.sector"
+            g-bind:d="$$.circleSlice( 250, 
+                                      250, 
+                                      200,
+                                      120 * record.value,
+                                      (120 * data.$sum(all.filter((r,x) => x < n), 'value')) -60,
+                                    )"></path>
+        </defs>
       </defs>
-    </defs>
-  </svg>
-  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha/plugins/shapes.js"></g-script>
-  <g-script type="data" src="../data/du-bois-tribute.data.csv"></g-script>
-  <g-script type="config">
+    </svg>
+  </template>
+  <script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha/plugins/shapes.js"></script>
+  <script type="data" src="/data/du-bois-tribute.data.csv"></script>
+  <script type="config">
     {
     colors: ['#cd143c','#ffd700','#4682b4','#d2b38c','#654321']
     }
-  </g-script>
+  </script>
 </g-composer>
 ```
