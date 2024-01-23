@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress';
 
 const URL     = '/0.1.0-alpha/';
-const VERSION = '0.1.0-alpha.8';
+const VERSION = '0.1.0-alpha.9';
 
 const MarkdownOptions = {
   languageAlias : {
