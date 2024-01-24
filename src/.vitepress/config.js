@@ -111,25 +111,20 @@ export default defineConfig({
               link      : '/guide/svg/',
               collapsed : true,
               items     : [
-                {link : '/guide/svg/', text : 'Introduction'},
-                {link : '/guide/svg/01-Graphane-SVG.md', text : 'How use the SVG in Graphane'},
-                {link : '/guide/svg/02-SVG-structure.md', text : 'SVG structure'},
-                {link : '/guide/svg/03-Basic-shapes.md', text : 'Basic Shapes'},
-                {link : '/guide/svg/04-Path-element.md', text : 'Path'},
-                {link : '/guide/svg/05-Text-element.md', text : 'Text'},
-                {link : '/guide/svg/06-Fill-and-stroke.md', text : 'Fill and Stroke'},
-                {link : '/guide/svg/07-Reuse-elements.md', text : 'Reuse elements'},
-                {link : '/guide/svg/08-Gradients-and-patterns.md', text : 'Gradients and Patters'},
-                {link : '/guide/svg/09-Aspect-ratio.md', text : 'Size and Aspect Ratio'},
-                {link : '/guide/svg/10-Transform.md', text : 'Transform'},
-                {link : '/guide/svg/11-CSS.md', text : 'CSS'},
-                {link : '/guide/svg/12-Animation.md', text : 'Animation'},
-                {
-                  link : '/guide/svg/13-Text-path-and-clip-path.md',
-                  text : 'Text Path and Clip Path'
-                },
-                {link : '/guide/svg/14-Manage-elements.md', text : 'Manage Elements'},
-                {link : '/guide/svg/15-Events.md', text : 'Handle Events'},
+                {link : '/guide/svg/graphane-svg.md', text : 'How use the SVG in Graphane'},
+                {link : '/guide/svg/svg-structure.md', text : 'SVG structure'},
+                {link : '/guide/svg/basic-shapes.md', text : 'Basic Shapes'},
+                {link : '/guide/svg/path-element.md', text : 'Path'},
+                {link : '/guide/svg/text-element.md', text : 'Text'},
+                {link : '/guide/svg/fill-and-stroke.md', text : 'Fill and Stroke'},
+                {link : '/guide/svg/reuse-elements.md', text : 'Reuse elements'},
+                {link : '/guide/svg/gradients-and-patterns.md', text : 'Gradients and Patters'},
+                {link : '/guide/svg/transform.md', text : 'Transform'},
+                {link : '/guide/svg/css.md', text : 'CSS'},
+                {link : '/guide/svg/animation.md', text : 'Animation'},
+                {link : '/guide/svg/text-path-and-clip-path.md', text : 'Text Path and Clip Path'},
+                {link : '/guide/svg/aspect-ratio.md', text : 'Size and Aspect Ratio'},
+                {link : '/guide/svg/Events.md', text : 'Events'}
               ]
             },
             {
@@ -184,6 +179,14 @@ export default defineConfig({
                     {link : '/guide/in-depth/methods/load', text : 'Load event'},
                     {link : '/guide/in-depth/methods/data', text : '<code>data()</code>'},
                     {link : '/guide/in-depth/methods/property', text : 'Property'},
+                  ]
+                },
+                {
+                  text      : 'SVG API',
+                  link      : '/guide/in-depth/svg-api/',
+                  collapsed : true,
+                  items     : [
+                    {link : '/guide/in-depth/svg-api/attributes-properties-methods', text : 'Attributes, Properties, and Methods'},
                   ]
                 },
                 {

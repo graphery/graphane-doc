@@ -8,9 +8,9 @@ graphics from Javascript. The API is very close to the SVG structure.
 
 ## Template
 
-The standard SVG format is enhanced with **attribute-based directives** that allows to generate
-visualizations in an intuitive way, focusing efforts on design and data, avoiding the need for
-complex development.
+In the `template` you can use the standard SVG format enhanced with **attribute-based directives**
+that allow you to generate visualizations in an intuitive way, focusing your efforts on design and
+data.
 
 The directives than extend the SVG format are:
 
@@ -28,18 +28,19 @@ that is natively displayed by the browser.
 
 ## API
 
-You can access the **SVG Graphane API** from the methods included in the component with `$.svg`.
+You can access the **SVG Graphane API from the methods** included in the component with `$.svg`.
 The `$` object is accesible from the `<script type="methods"></script>` content as a global
-variable. You can also access it from outside the component with the `.svg` property that
-the `g-component`
-exposes for use from external Javascript.
+variable. 
 
-In **SVG Graphane API** all are methods; thus, when you want to work with SVG attributes or
+You can also access the **SVG Graphane API from outside the component** with the `.svg` property 
+that the `g-component` exposes for use from external Javascript.
+
+In **SVG Graphane API all are methods**; thus, when you want to work with SVG attributes or
 properties, you must use methods. For example, set an `id` to an SVG element is
 `element.id('unique_id')` and for getting this identification it is necessary to use `element.id()`.
 
-Graphane dynamically constructs the methods, which can chain together to make successive calls. Each
-call returns the original object and can include one call after another.
+Graphane dynamically constructs the methods, which can **chain together to make successive calls**.
+Each call returns the original object and can include one call after another.
 
 ```js
 $.svg
@@ -54,4 +55,4 @@ $.svg.add('rect')
 ```
 
 **Note**: chained call is possible when calling setter methods. When a getter method (then returns a
-value) is called, the value property is returned, amd it is impossible to do more chained calls.
+value) is called, the value property is returned.

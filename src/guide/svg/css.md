@@ -89,8 +89,9 @@ $.svg.add('rect').id('rectangle');
 ::: warning Note
 
 By default, the styles defined in the SVG affect the entire page and styles defined in the page 
-affect the SVG. Consequently, collisions and side effects may occur if the selectors used to match 
-other elements.
+affect the SVG, consequently, collisions and side effects may occur if the selectors used to match 
+other elements. The `g-composer` keep the style isolated into the `template` and avoid problems with
+other styles or SVG elements.
 
 :::
 

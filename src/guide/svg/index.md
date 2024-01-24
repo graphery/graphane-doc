@@ -1,4 +1,4 @@
-# Introduction
+# Explorer SVG
 
 This guide will show us the capabilities of Scalable Vector Graphics, commonly known as SVG. This
 format is based on XML and is natively supported by browsers, not only as image format of the `img`

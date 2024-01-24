@@ -5,23 +5,21 @@ Whether you're a beginner looking for the essentials, a seasoned pro digging mor
 complete unknown ready to explore the capabilities of scalable vector graphics (SVG), we've got you
 covered.
 
-## [Essentials](starter/)
+## [Starter Guide](starter/)
 
-Embark on your Graphane journey with our Essentials section, designed for those taking their first
-steps into the capabilities of this micro-framework. You'll find fundamental concepts and practical
-tips to build a solid foundation here. Learn how to transform data and process compelling images
-quickly and efficiently.
-
-## [In-Depth](./in-depth/)
-
-For curious minds hungry for deeper insights, our In Depth section delves deeper into Graphane's
-capabilities, exploring advanced data visualization capabilities. Discover its secrets, best
-practices and unlock its full potential, and how to integrate it in your projects.
+Embark on your Graphane journey with our essentials section, designed for those taking their first
+steps into the capabilities of this micro-framework. Here, you'll find fundamental concepts and practical
+tips to build a solid foundation.
 
 ## [Explore SVG](./svg/)
 
-Unlock the full potential of scalable vector graphics (SVG) with our dedicated Explore SVG section.
-It's a powerful XML-based language for describing two-dimensional vector graphics, and here, you'll
-unravel its intricacies. From understanding the syntax to creating interactive and responsive
-graphics, this section will guide you through the world of SVG with hands-on tutorials, real-world
-examples, and optimization tips.
+Unlock the full potential of scalable vector graphics (SVG) with our dedicated section. If you do
+not know much about SVG, we will tell you that it is a powerful XML-based language for
+describing two-dimensional vector graphics. From understanding the syntax to creating graphics,
+this section will guide you through the world of SVG.
+
+## [In-Depth](./in-depth/)
+
+For curious minds hungry for deeper insights, our In-Depth section delves deeper into Graphane's
+capabilities, exploring advanced data visualization capabilities. Discover its secrets and best
+practices, unlock its full potential, and how to integrate it into your projects.

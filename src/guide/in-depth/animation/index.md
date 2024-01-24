@@ -11,7 +11,7 @@ functionalities offered by Graphane.
 Graphane provides a cross-browser compatible, efficient and simple animation solution. It works
 internally with CSS and SMIL, selecting the best option in each case and offering a basic API.
 
-The [native SVG animations](../../svg/12-Animation.md) offer several approaches, each with its own
+The [native SVG animations](../../svg/animation) offer several approaches, each with its own
 approach and potential problems. We recommend using Graphane Animation functionality rather than
 using native animations directly, although they will always be available for use.
 
