@@ -123,8 +123,8 @@ export default defineConfig({
                 {link : '/guide/svg/css.md', text : 'CSS'},
                 {link : '/guide/svg/animation.md', text : 'Animation'},
                 {link : '/guide/svg/text-path-and-clip-path.md', text : 'Text Path and Clip Path'},
+                {link : '/guide/svg/events.md', text : 'Events'},
                 {link : '/guide/svg/aspect-ratio.md', text : 'Size and Aspect Ratio'},
-                {link : '/guide/svg/Events.md', text : 'Events'}
               ]
             },
             {
