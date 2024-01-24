@@ -61,8 +61,8 @@ export default defineConfig({
   // https://vitepress.dev/reference/default-theme-config
   themeConfig : {
     logo        : {
-      light : `${ URL }img/logo/graphane.svg`,
-      dark  : `${ URL }img/logo/graphane.light.svg`
+      light : `/img/logo/graphane.svg`,
+      dark  : `/img/logo/graphane.light.svg`
     },
     siteTitle   : false,
     footer      : {
