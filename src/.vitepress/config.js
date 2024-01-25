@@ -406,6 +406,7 @@ export default defineConfig({
           {link : '/examples/heatmap-day-hour', text : 'Heatmap: day & hour'},
           {link : '/examples/line-chart', text : 'Line Chart'},
           {link : '/examples/otto-neurath-tribute', text : 'Otto Neumath tribute'},
+          {link : '/examples/percentage', text : 'Percentage'},
           {link : '/examples/process', text : 'Process'},
           {link : '/examples/quadrant', text : 'Quadrant'},
           {link : '/examples/radial-temp', text : 'Radial: temperature range'},
