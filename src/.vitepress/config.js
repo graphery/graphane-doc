@@ -397,6 +397,7 @@ export default defineConfig({
           {link : '/examples/bump-chart', text : 'Bump chart'},
           {link : '/examples/circle-bars', text : 'Circle Bars'},
           {link : '/examples/clock', text : 'Clock'},
+          {link : '/examples/comparison', text : 'Comparison'},
           {link : '/examples/dog-or-cat', text : 'Dog or Cat'},
           {link : '/examples/map', text : 'EU Map'},
           {link : '/examples/gauge', text : 'Gauge'},
