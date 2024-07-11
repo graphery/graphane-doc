@@ -67,7 +67,7 @@ export default defineConfig({
     siteTitle   : false,
     footer      : {
       message   : 'Released under the MIT License.',
-      copyright : 'Copyright © 2023 <a href="https://www.graphery.com/"> ' +
+      copyright : 'Copyright © 2024 <a href="https://www.graphery.com/"> ' +
                   '<img src="img/logo/graphery.svg" alt="graphery" width="120"></a>'
     },
     search      : {
