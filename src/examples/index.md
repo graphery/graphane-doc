@@ -1,6 +1,6 @@
 # Basic bars
 
-<g-composer>
+<g-composer id="example">
   <svg viewBox="0 0 200 100" width="200px" height="100px">
 	<g stroke-width="12" stroke-linecap="round">
 	  <defs g-for="(record, index) of data">
@@ -21,6 +21,8 @@
   ]
   </g-script>
 </g-composer>
+
+<g-editor href="#example"></g-editor>
 
 ```html
 <g-composer>
