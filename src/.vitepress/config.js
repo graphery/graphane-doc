@@ -42,7 +42,7 @@ export default defineConfig({
     //   type : 'module'
     // }],
     ['script', {
-      src  : 'http://localhost:63342/graphane/dist/graphane.editor.js',
+      src  : 'http://localhost:63342/graphane/src/component/editor.js',
       type : 'module'
     }],
     // ['script', {
