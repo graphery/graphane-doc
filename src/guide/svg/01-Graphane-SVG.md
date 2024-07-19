@@ -1,10 +1,7 @@
-# How use the SVG in Graphane
+# How to extend the SVG with Graphane
 
 **Graphane** uses the SVG format and powers them by means of directives that allow you to define the
 graphical elements and their characteristics by means of the data. 
-
-Also, **Graphane** includes a powerful API to simplify the construction and manipulation of SVG
-graphics from Javascript. The API is very close to the SVG structure.
 
 ## Template
 
@@ -28,11 +25,12 @@ that is natively displayed by the browser.
 
 ## API
 
+Also, **Graphane** includes a powerful API to simplify the construction and manipulation of SVG
+graphics from Javascript. The API is very close to the SVG structure.
 You can access the **SVG Graphane API** from the methods included in the component with `$.svg`.
 The `$` object is accesible from the `<script type="methods"></script>` content as a global
 variable. You can also access it from outside the component with the `.svg` property that
-the `g-component`
-exposes for use from external Javascript.
+the `g-component` exposes for use from external Javascript.
 
 In **SVG Graphane API** all are methods; thus, when you want to work with SVG attributes or
 properties, you must use methods. For example, set an `id` to an SVG element is

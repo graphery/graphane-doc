@@ -4,42 +4,38 @@ outline: deep
 
 # Composer
 
-Graphane is based on the custom tag `<g-composer></g-composer>`, the main web component than include
-all other elements.
+Graphane is based on the custom tag `<g-composer></g-composer>`. 
+This web component is the main element of Graphane and everything happens inside it. 
+We will include the other elements in a nested way.
 
-```html
-<g-composer>
+<g-editor href="#scafolding" mode="readonly"></g-editor>
+
+<g-composer id="scafolding">
   <template></template>
-  <script type="data"></script>
-  <script type="methods"></script>
+  <g-script type="data"></g-script>
+  <g-script type="methods"></g-script>
 </g-composer>
-```
 
 The component `g-composer` can include:
 
-- The [template](template.md) that defines the SVG powered by directives.
+| name                        | description                                                                           | tag                     |
+|-----------------------------|---------------------------------------------------------------------------------------|-------------------------|
+| [template](template.md) | defines the SVG powered by directives                                                 | `<template></template>` |
+| [data](data.md) | data in format CSV, JSON or JSON5                                                     | `<script type="data"></script>` |
+| [methods](methods.md) | Optionally, can include Javascript functions to manage events and data transformation | `<script type="methods"></script>` |
 
-- The [data](data.md) in format CSV, JSON or JSON5.
+::: details Using external resources instead including the code in the component
 
-- Optionally, can include [methods](methods.md) with Javascript function to manage events and
-  data transformation.
-
-You can link them as external resources. To link external resources, you can use the following
-attributes of the `g-composer` component:
+In all our examples we will include the code directly inside `g-composer`. 
+In practice, we can create separate files for each of the elements and link them by the attributes:
 
 - The `svg-src` attribute specifies the path to the SVG template.
 - The `data-src` attribute indicates the location of the data source.
 - The `methods-src` attribute indicates the location of methods.
 
-```html {2-4}
-<g-composer
-  svg-src="/svg/circles.svg"
-  data-src="/data/circles.json"
-  methods-src="/methods/circles.js">
-</g-composer>
-```
+<g-editor href="#external-resources" mode="readonly"></g-editor>
 
-<g-composer style="width: 100px"
+<g-composer style="width: 100px" id="external-resources"
   svg-src="../../svg/circles.svg"
   data-src="../../data/circles.json"
   methods-src="../../methods/circles.js"></g-composer>

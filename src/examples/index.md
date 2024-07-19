@@ -22,6 +22,8 @@
   </g-script>
 </g-composer>
 
+<g-editor href="g-composer" theme="dark"></g-editor>
+
 ```html
 <g-composer>
   <svg viewBox="0 0 200 100" width="200px" height="100px">

@@ -37,20 +37,12 @@ export default defineConfig({
   markdown : MarkdownOptions,
   head     : [
     ['link', {rel : 'icon', href : `${ URL }img/logo/g.svg`}],
-    // ['script', {
-    //   src  : 'http://localhost:63342/graphane/src/component/composer.js',
-    //   type : 'module'
-    // }],
-    // ['script', {
-    //   src  : 'http://localhost:63342/graphane/src/component/editor.js',
-    //   type : 'module'
-    // }],
-    ['script', {
-      src  : 'https://cdn.graphery.online/graphane/0.1.0-alpha/component/editor.js',
-      type : 'module'
-    }],
     ['script', {
       src : `https://cdn.graphery.online/graphane/0.1.0-alpha/component/composer.js`
+    }],
+    ['script', {
+      src  : 'https://cdn.graphery.online/graphane/editor/0.1.0-alpha.1/graphane.editor.js',
+      type : 'module'
     }],
     ['script', {
       src           : 'https://plausible.io/js/script.js',
@@ -78,8 +70,11 @@ export default defineConfig({
       {
         text : 'Guides', items : [
           {link : '/guide/starter/', text : 'Starter Tutorial'},
+          {link : '/guide/step-by-step/', text : 'Step by Step'},
           {link : '/guide/in-depth/', text : 'In-Depth'},
-          {link : '/guide/svg/', text : 'Explore SVG'},
+          {items: [
+              {link : '/guide/svg/', text : 'Introduction to SVG', type: 'separator'},
+          ]}
         ]
       },
       {link : '/reference/', text : 'Reference'},
@@ -98,11 +93,17 @@ export default defineConfig({
               collapsed : true,
               items     : [
                 {link : '/guide/starter/load', text : 'Load'},
-                {link : '/guide/starter/composer', text : 'Include g-composer'},
-                {link : '/guide/starter/template', text : 'Add an SVG Template'},
-                {link : '/guide/starter/data', text : 'Define Data'},
-                {link : '/guide/starter/methods', text : 'Use Methods'},
+                {link : '/guide/starter/composer', text : 'Composer'},
+                {link : '/guide/starter/template', text : 'Template'},
+                {link : '/guide/starter/data', text : 'Data'},
+                {link : '/guide/starter/methods', text : 'Methods'},
               ]
+            },
+            {
+              text      : 'Step by Step',
+              link      : '/guide/step-by-step/',
+              collapsed : true,
+              items     : [],
             },
             {
               text      : 'In-Depth',
@@ -245,12 +246,10 @@ export default defineConfig({
               ],
             },
             {
-              text      : 'Explore SVG',
+              text      : 'Introduction to SVG',
               link      : '/guide/svg/',
               collapsed : true,
               items     : [
-                {link : '/guide/svg/', text : 'Introduction'},
-                {link : '/guide/svg/01-Graphane-SVG.md', text : 'How use the SVG in Graphane'},
                 {link : '/guide/svg/02-SVG-structure.md', text : 'SVG structure'},
                 {link : '/guide/svg/03-Basic-shapes.md', text : 'Basic Shapes'},
                 {link : '/guide/svg/04-Path-element.md', text : 'Path'},
@@ -268,6 +267,7 @@ export default defineConfig({
                 },
                 {link : '/guide/svg/14-Manage-elements.md', text : 'Manage Elements'},
                 {link : '/guide/svg/15-Events.md', text : 'Handle Events'},
+                {link : '/guide/svg/01-Graphane-SVG.md', text : 'How to extents SVG with Graphane'},
               ]
             }]
         },
