@@ -41,7 +41,8 @@ export default defineConfig({
       src : `https://cdn.graphery.online/graphane/0.1.0-alpha/component/composer.js`
     }],
     ['script', {
-      src  : 'https://cdn.graphery.online/graphane/editor/0.1.0-alpha.1/graphane.editor.js',
+      src : 'http://localhost:7000/src/component/editor.js',
+      // src  : 'https://cdn.graphery.online/graphane/editor/0.1.0-alpha.1/graphane.editor.js',
       type : 'module'
     }],
     ['script', {
@@ -72,9 +73,11 @@ export default defineConfig({
           {link : '/guide/starter/', text : 'Starter Tutorial'},
           {link : '/guide/step-by-step/', text : 'Step by Step'},
           {link : '/guide/in-depth/', text : 'In-Depth'},
-          {items: [
-              {link : '/guide/svg/', text : 'Introduction to SVG', type: 'separator'},
-          ]}
+          {
+            items : [
+              {link : '/guide/svg/', text : 'Introduction to SVG', type : 'separator'},
+            ]
+          }
         ]
       },
       {link : '/reference/', text : 'Reference'},
