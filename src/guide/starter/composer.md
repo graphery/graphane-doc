@@ -10,11 +10,13 @@ We will include the other elements in a nested way.
 
 <g-editor href="#scafolding" mode="readonly"></g-editor>
 
-<g-composer id="scafolding">
-  <template></template>
-  <g-script type="data"></g-script>
-  <g-script type="methods"></g-script>
-</g-composer>
+<div style="display: none">
+  <g-composer id="scafolding">
+    <template></template>
+    <g-script type="data"></g-script>
+    <g-script type="methods"></g-script>
+  </g-composer>
+</div>
 
 The component `g-composer` can include:
 
