@@ -2,27 +2,28 @@
 outline: deep
 ---
 
-# Template
+# Dynamic SVG Templating
 
-The template combines the power of Scalable Vector Graphic (SVG) declarative language with
-directives to define how the graphic is built from the data.
+The approach of using a dynamic SVG template brings together the power of Scalable Vector Graphic 
+(SVG), which is a declarative language, with the use of directives to instruct how the graphic 
+should be constructed from the data. The SVG format is enhanced by way of attribute-based 
+directives which create a more intuitive way of generating visual graphics. By using these 
+directives, one can focus more on the design and data without the need to get into complex development.
 
-The standard SVG format is enhanced with attribute-based **directives** that allows to generate
-visualizations in an intuitive way, focusing efforts on design and data, avoiding the need for
-complex development.
+Here are some of the main directives used:
+- [`g-bind:`](#g-bind) (or its shorthand version `:`): This directive is used to bind
+  values to attribute dynamically.
+- [`g-for`](#g-for): This directive allows the block element to be rendered
+  multiple times based on the given data.
+- [`g-if`](#g-if): With this, an element can be shown conditionally.
+- [`g-content`](#g-content): This directive is used to update the content of an element.
 
-- [`g-bind`](#g-bind) (or the shorthand `:`): dynamically bind values to attributes.
-- [`g-for`](#g-for): render the element block multiple times based on the data.
-- [`g-if`](#g-if): show an element conditionally.
-- [`g-content`](#g-content): update the element content.
+Here is an example to better understand their use. In this example, instead of creating three
+separate `circle` tags, the `g-for` directive is used in a defs element to generate the three 
+circles dynamically. This is a simple example demonstrating the basic operational understanding of 
+the SVG template model and directives.
 
-
-This example creates three circles dynamically, that is, instead of creating three `circle` tags, 
-it uses the `g-for` directive on a `defs` element to generate the three circles. 
-It is a basic example, 
-but it shows the basic operation of SVG template model and directives.
-
-<g-composer id="example1">
+<g-composer id="example">
   <svg viewBox="0 0 100 100" width="100"  height="100">
     <defs g-for="x of data.circles">
       <circle 
@@ -38,11 +39,12 @@ but it shows the basic operation of SVG template model and directives.
     {circles: 3}
   </g-script>
 </g-composer>
-<g-editor href="#example1"></g-editor>
+
+<g-editor href="#example"></g-editor>
 
 In the following, we will describe how it works each directive:
 
-## `g-bind`
+## `g-bind:`
 
 The `g-bind:` directive, or the abbreviation `:`, followed by an attribute name, dynamically binds 
 data values to attributes. 
