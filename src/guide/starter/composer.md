@@ -35,10 +35,13 @@ In practice, we can create separate files for each of the elements and link them
 - The `data-src` attribute indicates the location of the data source.
 - The `methods-src` attribute indicates the location of methods.
 
+<div style="display:none">
+  <g-composer style="width: 100px" id="external-resources"
+    svg-src="../../svg/circles.svg"
+    data-src="../../data/circles.json"
+    methods-src="../../methods/circles.js"></g-composer>
+</div>
+
 <g-editor href="#external-resources" mode="readonly"></g-editor>
 
-<g-composer style="width: 100px" id="external-resources"
-  svg-src="../../svg/circles.svg"
-  data-src="../../data/circles.json"
-  methods-src="../../methods/circles.js"></g-composer>
-<p style="font-size: small">click add circles, ctrl+click reduces circles</p>
+:::
