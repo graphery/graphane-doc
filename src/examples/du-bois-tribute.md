@@ -59,23 +59,10 @@ Whites,"Trade and Transportation",13
                                     250, 
                                     200,
                                     120 * record.value,
-                                    (120 * data.$sum(all.filter((r,x) => x < n), 'value')) -60,
-                                  )"></path>
-        <!--
-        <text
-          g-bind:x="$.polar2cartesian( 250, 
-                                    250, 
-                                    200,
-                                    120 * record.value - (120 * data.$sum(all.filter((r,x) => x < n), 'value')) -60,
-                                  ).x"
-          g-bind:y="$.polar2cartesian( 250, 
-                                    250, 
-                                    200,
-                                    120 * record.value - (120 * data.$sum(all.filter((r,x) => x < n), 'value')) -60,
-                                  ).y"
-          g-content="Math.round(record.value * 1000) / 10"></text>
-        <text g-content="record.sector"></text>
-        -->
+                                    (120 * data.$sum(all.filter((r,x) => x < n), 'value')) -60,)">
+          <title g-content="record.sector + ' (' + (Math.round(record.value * 1000) / 10) + '%)'">
+          </title>
+        </path>
       </defs>
     </defs>
   </svg>
@@ -88,37 +75,4 @@ Whites,"Trade and Transportation",13
   </g-script>
 </g-composer>
 
-```html
-<g-composer id="color">
-  <svg viewBox="0 0 500 500" width="500">
-    <defs g-for="(group, x) of data.$distinct('group')">
-      <text
-        x="250"
-        g-bind:y="x ? 480 : 20"
-        text-anchor="middle"
-        g-content="group"></text>
-      <defs g-for="(record, n, all) of data.filter(r => r.group === group)">
-        <path
-          stroke="none"
-          filter="url(#filter)"
-          g-bind:transform="x ? $$.rotate(180,250,250) : ''"
-          g-bind:fill="$.config.colors[n]"
-          g-bind:check="group + ' ' + record.sector"
-          g-bind:d="$$.circleSlice( 250, 
-                                    250, 
-                                    200,
-                                    120 * record.value,
-                                    (120 * data.$sum(all.filter((r,x) => x < n), 'value')) -60,
-                                  )"></path>
-      </defs>
-    </defs>
-  </svg>
-  <g-script type="plugin" src="https://cdn.graphery.online/graphane/0.1.0-alpha/plugins/shapes.js"></g-script>
-  <g-script type="data" src="../data/du-bois-tribute.data.csv"></g-script>
-  <g-script type="config">
-    {
-    colors: ['#cd143c','#ffd700','#4682b4','#d2b38c','#654321']
-    }
-  </g-script>
-</g-composer>
-```
+<g-editor href="#color"></g-editor>

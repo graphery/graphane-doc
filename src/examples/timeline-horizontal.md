@@ -4,7 +4,7 @@ outline: deep
 
 # Timeline (horizontal)
 
-<g-composer>
+<g-composer id="example">
   <svg g-bind:viewBox="[0, 0, (data.length * 100) + 30, 300]" 
        g-bind:width="(data.length * 100) + 30"
        height="300"
@@ -65,3 +65,4 @@ outline: deep
   ]</g-script>
 </g-composer>
 
+<g-editor href="#example"></g-editor>

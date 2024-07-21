@@ -1,6 +1,6 @@
 # World Population
 
-<g-composer>
+<g-composer id="example">
 <svg viewBox="0 0 600 400" style="font-size: 14" width="600" height="400">
   <defs g-for="([key, value], n) of Object.entries(data)">
     <text x="0"
@@ -53,3 +53,5 @@
 "2020":7840952880
 }</g-script>
 </g-composer>
+
+<g-editor href="#example"></g-editor>

@@ -16,29 +16,18 @@ outline: deep
       </g>
 -->
 
-<g-composer style="width: 500px">
+<g-composer style="width: 500px" id="example">
   <svg viewBox="0 0 500 500">
     <defs g-for="({country, population}, n) of data">
       <g g-bind:transform="$$.translate(
                              Object.values(
-                               $.polar2cartesian(250, 
-                                                 250, 
-                                                 170 * population / data.$max('population')+ 10,
-                                                 360/data.length * n + 360/data.length/2
-                              )
-                             )
-                            )">
+                               $.polar2cartesian(250, 250, 170 * population / data.$max('population')+ 10, 360/data.length * n + 360/data.length/2 ) ) )">
         <g g-bind:transform="$$.rotate(360/data.length * n + (360/data.length * n < 180 ? -70:110))"
            g-bind:text-anchor="360/data.length * n >= 180 ? 'end' : ''">
           <text alignment-baseline="middle" font-size="12" g-content="country"></text>
         </g>
       </g>
-      <path g-bind:d="$$.circleSlice( 250, 
-                                      250, 
-                                      170 * (population / data.$max('population')),
-                                      360/data.length, 
-                                      360/data.length * n
-                                    )" 
+      <path g-bind:d="$$.circleSlice( 250, 250, 170 * (population / data.$max('population')), 360/data.length, 360/data.length * n )" 
          fill="red" stroke="white" stroke-width="1"/>
     </defs>
   </svg>
@@ -58,3 +47,5 @@ outline: deep
     {country: "Japan", population:	123294513}
   ]</g-script>
 </g-composer>
+
+<g-editor href="#example"></g-editor>

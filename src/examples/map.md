@@ -4,7 +4,8 @@ outline: deep
 
 # EU Map
 
-<g-composer svg-src="../svg/europe.svg" style="width: 100%">
+<div id="example">
+<g-composer  svg-src="../svg/europe.svg" style="width: 100%">
 <g-script type="data">
   {
     AT: 1,
@@ -51,3 +52,7 @@ outline: deep
     <option value="../svg/europe2.svg">extended</option>
   </select>
 </label></p>
+
+</div>
+
+<g-editor href="#example"></g-editor>

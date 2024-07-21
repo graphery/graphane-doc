@@ -4,7 +4,7 @@ outline: deep
 
 # Clock
 
-<g-composer>
+<g-composer id="example">
   <svg viewBox="0 0 250 250" g-on:init="init">
     <circle cx="125" cy="125" r="124" stroke="#000" stroke-width="2" fill="none"/>
     <defs g-for="n of 60">
@@ -44,3 +44,5 @@ outline: deep
     date: new Date()
   }</g-script>
 </g-composer>
+
+<g-editor href="#example"></g-editor>

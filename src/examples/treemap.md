@@ -4,7 +4,7 @@ outline: deep
 
 # treemap
 
-<g-composer style="width: 500px">
+<g-composer style="width: 500px" id="example">
   <svg viewBox="0 0 600 600" width="600">
     <defs g-for="({x, y, width, height}, n) of createTreeMap(data.map(x => x.population))">
       <rect 
@@ -83,3 +83,5 @@ outline: deep
     {country: "rest of the world", population: 4107326789, values:[]},
   ]</g-script>
 </g-composer>
+
+<g-editor href="#example"></g-editor>

@@ -1,6 +1,6 @@
 # Heatmap: day & hour
 
-<g-composer>
+<g-composer id="example">
 <svg viewBox="0 0 600 200" style="font-size: 12" width="600" height="200">
   <defs g-for="(day, d) of data">
     <text x="0"
@@ -59,3 +59,5 @@
   ]
 }</g-script>
 </g-composer>
+
+<g-editor href="#example"></g-editor>

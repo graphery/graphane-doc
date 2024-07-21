@@ -4,7 +4,7 @@ outline: deep
 
 # Survey
 
-<g-composer>
+<g-composer id="example">
   <svg g-bind:viewBox="[0, 0, 600, (data.length + 2) * 30]" 
        g-bind:height="(data.length + 2) * 30"
        width="600"
@@ -135,3 +135,4 @@ outline: deep
   </g-script>
 </g-composer>
 
+<g-editor href="#example"></g-editor>

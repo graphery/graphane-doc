@@ -58,4 +58,4 @@
 }</g-script>
 </g-composer>
 
-<g-editor href="g-composer#ranking-evolution" style="width:100%"></g-editor>
+<g-editor href="g-composer#ranking-evolution"></g-editor>

@@ -4,6 +4,7 @@ outline: deep
 
 # Gauge
 
+<div id="example">
 <g-composer data="value: 30" id="gauge-example">
   <svg viewBox="0 0 250 250">
     <circle cx="125" cy="125" r="124" stroke="#000" stroke-width="2" fill="none"/>
@@ -32,3 +33,5 @@ outline: deep
          oninput="document.querySelector('g-composer').data.value = Number(this.value)">
 </label></p>
 
+</div>
+<g-editor href="#example"></g-editor>

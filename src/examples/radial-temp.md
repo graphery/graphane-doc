@@ -4,7 +4,7 @@ outline: deep
 
 # Radial: temperature range
 
-<g-composer>
+<g-composer id="example">
   <svg viewBox="0 0 1000 1000" width="300" height="300">
     <defs g-for="(t, n) of [-15,-10,-5,0,5,10,15,20,25,30,35,40,45,50]">
       <circle cx="500"
@@ -55,3 +55,4 @@ outline: deep
   </g-script>
 </g-composer>
 
+<g-editor href="#example"></g-editor>

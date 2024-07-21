@@ -4,7 +4,7 @@ outline: deep
 
 # Votes
 
-<g-composer>
+<g-composer id="example">
   <svg viewBox="0 0 500 500">
     <defs g-for="(color, i) of data.reduce((a, r) => [...a, ...Array(r.votes).fill(r.color)], [])">
       <circle g-bind:id="`rect_` + i" 
@@ -20,3 +20,5 @@ outline: deep
     {label: 'b', votes: 15, color: 'green'}
   ]</g-script>
 </g-composer>
+
+<g-editor href="#example"></g-editor>
