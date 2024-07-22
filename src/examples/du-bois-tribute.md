@@ -59,10 +59,23 @@ Whites,"Trade and Transportation",13
                                     250, 
                                     200,
                                     120 * record.value,
-                                    (120 * data.$sum(all.filter((r,x) => x < n), 'value')) -60,)">
-          <title g-content="record.sector + ' (' + (Math.round(record.value * 1000) / 10) + '%)'">
-          </title>
-        </path>
+                                    (120 * data.$sum(all.filter((r,x) => x < n), 'value')) -60,
+                                  )"></path>
+        <!--
+        <text
+          g-bind:x="$.polar2cartesian( 250, 
+                                    250, 
+                                    200,
+                                    120 * record.value - (120 * data.$sum(all.filter((r,x) => x < n), 'value')) -60,
+                                  ).x"
+          g-bind:y="$.polar2cartesian( 250, 
+                                    250, 
+                                    200,
+                                    120 * record.value - (120 * data.$sum(all.filter((r,x) => x < n), 'value')) -60,
+                                  ).y"
+          g-content="Math.round(record.value * 1000) / 10"></text>
+        <text g-content="record.sector"></text>
+        -->
       </defs>
     </defs>
   </svg>

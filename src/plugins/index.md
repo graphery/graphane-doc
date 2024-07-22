@@ -8,11 +8,6 @@ Graphane is extensible by plugins. These can extend the standard Graphane functi
 the needs. There are some plugins available with Graphane, but it is also possible to create your
 own custom plugin.
 
-## How to use a plugin
-
-To load a plugin from Graphane Composer we will use `<script type="plugin" src="..."></script>`.
-The `src` attribute must include the URL to the plugin Javascript file.
-
 ## Plugins available
 
 ::: info [Shapes](./catalog/shapes.md)
@@ -20,18 +15,22 @@ The `src` attribute must include the URL to the plugin Javascript file.
 Create new shapes in a `<path>` element.
 :::
 
-::: info [Observe Resize](./catalog/observe-resize.md)
-
-Add `resize` event to the SVG
-:::
-
-::: info [Keep Aspect](./catalog/non-scaling-size)
-
-Keep the size and/or the stroke width to elements when the SVG is resized.
-:::
-
 
 ::: info [Load](./catalog/load.md)
 
 Load external resources and include in the SVG.
 :::
+
+::: info [Observe Resize](./catalog/observe-resize.md)
+
+Add `resize` event to the SVG
+:::
+
+::: info [Non Scaling Size](./catalog/non-scaling-size.md)
+
+Keep the size and/or the stroke width to elements when the SVG is resized.
+:::
+
+## Build your custom plugin
+
+Can you get more info about the plugin in the [In Depth Guide](../guide/in-depth/plugins/)

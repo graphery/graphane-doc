@@ -16,7 +16,18 @@ separate data and configuration in data visualization systems.
   data when changing visual aspects like colors or size. This is crucial for maintaining data
   integrity.
 
-In this section, you can learn how to use `script type="config"` to separate data and chart
-configuration, without mixing concerns.
+- **Flexibility**: With a separate configuration, you can easily adjust the size, color, and other
+  parameters without affecting the data. This makes it easy to adapt your visualizations for
+  different use cases or output formats (like screen, print, etc.)
 
-*pending...*
+- **Maintainability**: If configurations are hard-coded with the data, any change in visual aspects
+  would potentially require changing the data which is not a good practice. Separating them makes
+  maintaining the code easier.
+
+You can load the config with several methods:
+
+- with `<script type="config"></script>` with the [configuration embebed](embebed.md).
+- with the `methods-src`  for [load as resource](external.md) with the CSV, JSON or JSON5 file.
+
+In Graphane, the configuration defined is accesibles from the template directives, and also be called
+from the property [`.config`](property.md).

@@ -2,6 +2,6 @@
 outline: deep
 ---
 
-# Composer Events
+# `g-composer` events
 
 *pending...*

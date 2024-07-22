@@ -2,6 +2,6 @@
 outline: deep
 ---
 
-# `g-composer` attributes
+# How to integrate Graphane in HTML
 
 *pending...*

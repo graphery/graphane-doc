@@ -40,7 +40,7 @@ outline: deep
               g-content="(0 | value * 100) + '%'"></text>
       </defs>
     </svg>
-    <g-script type="data">[
+  <g-script type="data">[
       {"year": 2019, "value": 0.74},
       {"year": 2020, "value": 0.65},
       {"year": 2021, "value": 0.42},

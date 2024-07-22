@@ -137,4 +137,8 @@ want each step to be set.
   </g-script>
 </g-composer>
 
-*pending...*
+### Callback
+
+If we need to capture the moment when the animation starts and/or ends, we can pass two additional
+parameters with callbacks. The first one is called when the animation is ready and starts. The
+second one is called when the animation finishes.

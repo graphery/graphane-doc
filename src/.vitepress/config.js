@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress';
 
 const URL     = '/0.1.0-alpha/';
-const VERSION = '0.1.0-alpha.8';
+const VERSION = '0.1.0-alpha.9';
 
 const MarkdownOptions = {
   languageAlias : {
@@ -205,7 +205,13 @@ export default defineConfig({
                   collapsed : true,
                   items     : [
                     {link : '/guide/in-depth/composer/attributes', text : 'Attributes'},
-                    {link : '/guide/in-depth/composer/events', text : 'Events'}
+                    {link : '/guide/in-depth/composer/events', text : 'Events'},
+                    {link : '/guide/in-depth/composer/html', text : 'Use in HTML'},
+                    {link : '/guide/in-depth/composer/vue', text : 'Use in VUE'},
+                    {link : '/guide/in-depth/composer/react', text : 'Use in React'},
+                    {link : '/guide/in-depth/composer/svelte', text : 'Use in Svelte'},
+                    {link : '/guide/in-depth/composer/angular', text : 'Use in Angular'},
+                    {link : '/guide/in-depth/composer/custom-component', text : 'Encapsulate in a component'},
                   ]
                 },
                 {
@@ -287,7 +293,7 @@ export default defineConfig({
               {link : '/plugins/catalog/keep-aspect', text : 'Keep Aspect'},
             ]
           },
-          // {link : '/plugins/create', text : 'Create custom plugin'},
+          {link : '/plugins/create', text : 'Create custom plugin'},
         ]
       }],
       '/reference/' : [{
@@ -397,29 +403,31 @@ export default defineConfig({
         text  : 'Examples',
         items : [
           {link : '/examples/', text : 'Basic bars'},
-          {link : '/examples/otto-neurath-tribute', text : 'Otto Neumath tribute'},
-          {link : '/examples/quadrant', text : 'Quadrant'},
-          {link : '/examples/process', text : 'Process'},
-          {link : '/examples/evolution', text : 'Human Evolution'},
           {link : '/examples/bars', text : 'Chart Bars'},
+          {link : '/examples/bump-chart', text : 'Bump chart'},
           {link : '/examples/circle-bars', text : 'Circle Bars'},
-          {link : '/examples/ranking', text : 'Population Ranking'},
-          {link : '/examples/votes', text : 'Votes'},
-          {link : '/examples/bottle', text : 'Half-full Bottle'},
+          {link : '/examples/clock', text : 'Clock'},
+          {link : '/examples/comparison', text : 'Comparison'},
           {link : '/examples/dog-or-cat', text : 'Dog or Cat'},
+          {link : '/examples/map', text : 'EU Map'},
+          {link : '/examples/gauge', text : 'Gauge'},
+          {link : '/examples/bottle', text : 'Half-full Bottle'},
+          {link : '/examples/world-population', text : 'Horizontal bars: population'},
+          {link : '/examples/evolution', text : 'Human Evolution'},
+          {link : '/examples/heatmap-day-hour', text : 'Heatmap: day & hour'},
+          {link : '/examples/line-chart', text : 'Line Chart'},
+          {link : '/examples/otto-neurath-tribute', text : 'Otto Neumath tribute'},
+          {link : '/examples/percentage', text : 'Percentage'},
+          {link : '/examples/process', text : 'Process'},
+          {link : '/examples/quadrant', text : 'Quadrant'},
+          {link : '/examples/radial-temp', text : 'Radial: temperature range'},
+          {link : '/examples/ranking', text : 'Population Ranking'},
+          {link : '/examples/ranking-evolution', text : 'Ranking Evolution'},
           {link : '/examples/survey', text : 'Survey'},
           {link : '/examples/timeline-horizontal', text : 'Timeline (horizontal)'},
-          {link : '/examples/radial-temp', text : 'Radial: temperature range'},
-          {link : '/examples/world-population', text : 'Horizontal bars: population'},
-          {link : '/examples/heatmap-day-hour', text : 'Heatmap: day & hour'},
-          {link : '/examples/bump-chart', text : 'Bump chart'},
-          {link : '/examples/clock', text : 'Clock'},
-          {link : '/examples/gauge', text : 'Gauge'},
-          {link : '/examples/ranking-evolution', text : 'Ranking Evolution'},
-          {link : '/examples/du-bois-tribute', text : 'W.E.B. Du Bois Tribute'},
           {link : '/examples/treemap', text : 'Treemap'},
-          {link : '/examples/line-chart', text : 'Line Chart'},
-          {link : '/examples/map', text : 'EU Map'},
+          {link : '/examples/votes', text : 'Votes'},
+          {link : '/examples/du-bois-tribute', text : 'W.E.B. Du Bois Tribute'},
         ]
       }],
     },

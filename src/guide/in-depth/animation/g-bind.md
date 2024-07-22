@@ -96,6 +96,21 @@ You can pass an array of values to describe non-linear progressing.
 Optionally, you can pass an object with `value` and `offset` (with values from 0 to 1) to have more
 control over the execution of the animation.
 
-In this section, you discover how to animate the SVG graph Graphane with `g-bind`.
+```html{7-11}
+<g-composer data="radius: 50" style="width: 200px">
+  <template>
+    <svg viewBox="0 0 100 100">
+      <circle cx="50"
+              cy="50"
+              fill="red"
+              g-bind:r="$$.dynamic([{value: 0,            offset: 0},
+                                   {value: radius,       offset: 0.8},
+                                   {value: radius * 0.9, offset: 0.9},
+                                   {value: radius,       offset: 1}],
+                                  2000)"/>
+    </svg>
+  </template>
+</g-composer>
+```
 
 *pending...*

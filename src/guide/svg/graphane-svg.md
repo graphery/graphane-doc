@@ -1,4 +1,4 @@
-# How to extend the SVG with Graphane
+# How use the SVG in Graphane
 
 **Graphane** uses the SVG format and powers them by means of directives that allow you to define the
 graphical elements and their characteristics by means of the data. 
