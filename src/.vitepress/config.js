@@ -290,7 +290,7 @@ export default defineConfig({
             items     : [
               {link : '/plugins/catalog/shapes', text : 'Shapes'},
               {link : '/plugins/catalog/observe-resize', text : 'Observe Resize'},
-              {link : '/plugins/catalog/keep-aspect', text : 'Keep Aspect'},
+              {link : '/plugins/catalog/non-scaling-size', text : 'Non Scaling Size'},
             ]
           },
           {link : '/plugins/create', text : 'Create custom plugin'},
