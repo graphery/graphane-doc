@@ -41,8 +41,8 @@ export default defineConfig({
       src : `https://cdn.graphery.online/graphane/0.1.0-alpha/component/composer.js`
     }],
     ['script', {
-      src : 'http://localhost:7000/src/component/editor.js',
-      // src  : 'https://cdn.graphery.online/graphane/editor/0.1.0-alpha.1/graphane.editor.js',
+      // src : 'http://localhost:7000/src/component/editor.js',
+      src  : 'https://cdn.graphery.online/graphane/editor/0.1.0-alpha.2/graphane.editor.js',
       type : 'module'
     }],
     ['script', {
@@ -60,7 +60,7 @@ export default defineConfig({
     siteTitle   : false,
     footer      : {
       message   : 'Released under the MIT License.',
-      copyright : 'Copyright © 2023 <a href="https://www.graphery.com/"> ' +
+      copyright : 'Copyright © 2024 <a href="https://www.graphery.com/"> ' +
                   '<img src="img/logo/graphery.svg" alt="graphery" width="120"></a>'
     },
     search      : {
@@ -71,7 +71,7 @@ export default defineConfig({
       {
         text : 'Guides', items : [
           {link : '/guide/starter/', text : 'Starter Tutorial'},
-          {link : '/guide/step-by-step/', text : 'Step by Step'},
+          // {link : '/guide/step-by-step/', text : 'Step by Step'},
           {link : '/guide/in-depth/', text : 'In-Depth'},
           {
             items : [
@@ -102,12 +102,12 @@ export default defineConfig({
                 {link : '/guide/starter/methods', text : 'Methods'},
               ]
             },
-            {
-              text      : 'Step by Step',
-              link      : '/guide/step-by-step/',
-              collapsed : true,
-              items     : [],
-            },
+            // {
+            //   text      : 'Step by Step',
+            //   link      : '/guide/step-by-step/',
+            //   collapsed : true,
+            //   items     : [],
+            // },
             {
               text      : 'In-Depth',
               link      : '/guide/in-depth/',

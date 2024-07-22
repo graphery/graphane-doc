@@ -4,6 +4,8 @@ outline: deep
 
 # Load - plugin
 
+*pending...*
+
 This plugin allows to dynamically load resources in the SVG, commonly other SVGs.
 
 ## Load
