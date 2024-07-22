@@ -1,16 +1,15 @@
-import { defineConfig }      from 'vitepress';
-import { BUNDLED_LANGUAGES } from 'shiki';
-import { readFileSync }      from "fs";
+import { defineConfig } from 'vitepress';
 
-const URL                     = '/0.1.0-alpha/';
-const VERSION                 = '0.1.0-alpha.4';
-const graphaneLanguageGrammar = JSON.parse(readFileSync("./src/.vitepress/shiki/graphane.tmLanguage.json"))
+const URL     = '/0.1.0-alpha/';
+const VERSION = '0.1.0-alpha.9';
 
-const html     = BUNDLED_LANGUAGES.find(lang => lang.id === 'html')
-html.scopeName = 'source.graphane';
-html.grammar   = graphaneLanguageGrammar;
-html.aliases   = html.aliases || [];
-html.aliases.push('svg');
+const MarkdownOptions = {
+  languageAlias : {
+    'svg'                              : 'html',
+    'html:preview'                     : 'html',
+    'html:preview:expanded:no-codepen' : 'html',
+  }
+}
 
 const fullReloadAlways = {
   handleHotUpdate ({server}) {
@@ -23,25 +22,28 @@ const fullReloadAlways = {
 export default defineConfig({
   title       : 'graphane',
   description : `Data Visualization Microframework - version ${ VERSION }`,
-  base        : URL,
-  vite        : {
+  // description : VERSION,
+  base     : URL,
+  vite     : {
     plugins : [fullReloadAlways],
   },
-  vue         : {
+  vue      : {
     template : {
       compilerOptions : {
         isCustomElement : (tag) => tag.startsWith('g-')
       }
     }
   },
-  head        : [
-    ['link', {rel : 'icon', href : `/img/logo/g.svg`}],
-    // ['script', {
-    //   src  : 'http://localhost:63342/graphane/src/component/composer.js',
-    //   type : 'module'
-    // }],
+  markdown : MarkdownOptions,
+  head     : [
+    ['link', {rel : 'icon', href : `${ URL }img/logo/g.svg`}],
     ['script', {
-      src : `https://cdn.graphery.online/graphane/${ VERSION }/component/composer.js`
+      src : `https://cdn.graphery.online/graphane/0.1.0-alpha/component/composer.js`
+    }],
+    ['script', {
+      // src : 'http://localhost:7000/src/component/editor.js',
+      src  : 'https://cdn.graphery.online/graphane/editor/0.1.0-alpha.2/graphane.editor.js',
+      type : 'module'
     }],
     ['script', {
       src           : 'https://plausible.io/js/script.js',
@@ -58,89 +60,226 @@ export default defineConfig({
     siteTitle   : false,
     footer      : {
       message   : 'Released under the MIT License.',
-      copyright : 'Copyright © 2023 <a href="https://www.graphery.com/"> ' +
-                  '<img src="/img/logo/graphery.svg" alt="graphery" width="120"></a>'
+      copyright : 'Copyright © 2024 <a href="https://www.graphery.com/"> ' +
+                  '<img src="img/logo/graphery.svg" alt="graphery" width="120"></a>'
     },
     search      : {
       provider : 'local'
     },
     nav         : [
       {link : '/', text : 'Home'},
-      {link : '/guide/', text : 'Guide'},
+      {
+        text : 'Guides', items : [
+          {link : '/guide/starter/', text : 'Starter Tutorial'},
+          // {link : '/guide/step-by-step/', text : 'Step by Step'},
+          {link : '/guide/in-depth/', text : 'In-Depth'},
+          {
+            items : [
+              {link : '/guide/svg/', text : 'Introduction to SVG', type : 'separator'},
+            ]
+          }
+        ]
+      },
+      {link : '/reference/', text : 'Reference'},
       {link : '/plugins/', text : 'Plugins'},
-      {link : '/reference/', text : 'API'},
       {link : '/examples/', text : 'Examples'},
       {link : 'https://github.com/graphery/graphane/blob/main/CHANGELOG.md', text : VERSION},
     ],
     sidebar     : {
-      '/guide/'     : [{
-        text  : 'Guide',
-        items : [
-          {link : '/guide/', text : 'What is Graphane?'},
-          {link : '/guide/composer/', text : 'Composer'},
-          {
-            text      : 'Templating',
-            link      : '/guide/templating/',
-            collapsed : false,
-            items     : [
-              {link : '/guide/templating/binding', text : 'Binding'},
-              {link : '/guide/templating/lists', text : 'Lists'},
-              {link : '/guide/templating/conditional', text : 'Conditional'},
-              {link : '/guide/templating/content', text : 'Content'},
-              {link : '/guide/templating/events', text : 'Events'},
-              {link : '/guide/templating/expressions', text : 'Expressions'},
-            ]
-          },
-          {
-            text      : 'Data',
-            link      : '/guide/data/',
-            collapsed : false,
-            items     : [
-              {link : '/guide/data/attribute', text : 'data attribute'},
-              {link : '/guide/data/property', text : '.data property'},
-              {link : '/guide/data/embebed', text : 'Embedded data'},
-              {link : '/guide/data/external', text : 'Load data'},
-              {link : '/guide/data/helpers', text : 'Data helpers'},
-              {link : '/guide/data/reactivity', text : 'Reactivity'},
-            ]
-          },
-          {
-            text      : 'Methods',
-            link      : '/guide/methods/',
-            collapsed : false,
-            items     : [
-              {link : '/guide/methods/embebed', text : 'Embedded methods'},
-              {link : '/guide/methods/external', text : 'External resource'},
-              {link : '/guide/methods/property', text : 'Property'},
-              {link : '/guide/methods/function-data', text : '<code>function data()</code>'},
-              {link : '/guide/methods/$data', text : '<code>$.data</code>'},
-              // {link : '/guide/methods/svg-access', text : '<code>$.svg</code>'},
-              // {link : '/guide/methods/load', text : 'Load event'},
-            ]
-          },
-          {
-            text      : 'SVG',
-            collapsed : true,
-            items     : [
-              {link : '/guide/svg/', text : 'Introduction'},
-              {link : '/guide/svg/02-SVG-structure.md', text : 'SVG structure'},
-              {link : '/guide/svg/03-Basic-shapes.md', text : 'Basic Shapes'},
-              {link : '/guide/svg/04-Path-element.md', text : 'Path'},
-              {link : '/guide/svg/05-Text-element.md', text : 'Text'},
-              {link : '/guide/svg/06-Fill-and-stroke.md', text : 'Fill and Stroke'},
-              {link : '/guide/svg/07-Reuse-elements.md', text : 'Reuse elements'},
-              {link : '/guide/svg/08-Gradients-and-patterns.md', text : 'Gradients and Patters'},
-              {link : '/guide/svg/09-Aspect-ratio.md', text : 'Size and Aspect Ratio'},
-              {link : '/guide/svg/10-Transform.md', text : 'Transform'},
-              {link : '/guide/svg/11-CSS.md', text : 'CSS'},
-              {link : '/guide/svg/12-Animation.md', text : 'Animation'},
-              {link : '/guide/svg/13-Text-path-and-clip-path.md', text : 'Text Path and Clip Path'},
-              {link : '/guide/svg/14-Manage-elements.md', text : 'Manage Elements'},
-              {link : '/guide/svg/15-Events.md', text : 'Handle Events'},
-            ]
-          },
-        ]
-      }],
+      '/guide/'     :
+        {
+          text  : 'Guides',
+          items : [
+            {
+              text      : 'Starter Guide',
+              link      : '/guide/starter/',
+              collapsed : true,
+              items     : [
+                {link : '/guide/starter/load', text : 'Load'},
+                {link : '/guide/starter/composer', text : 'Composer'},
+                {link : '/guide/starter/template', text : 'Template'},
+                {link : '/guide/starter/data', text : 'Data'},
+                {link : '/guide/starter/methods', text : 'Methods'},
+              ]
+            },
+            // {
+            //   text      : 'Step by Step',
+            //   link      : '/guide/step-by-step/',
+            //   collapsed : true,
+            //   items     : [],
+            // },
+            {
+              text      : 'In-Depth',
+              link      : '/guide/in-depth/',
+              collapsed : true,
+              items     : [
+                {
+                  text      : 'Data',
+                  link      : '/guide/in-depth/data/',
+                  collapsed : true,
+                  items     : [
+                    {link : '/guide/in-depth/data/embebed', text : 'Embedded data'},
+                    {link : '/guide/in-depth/data/external', text : 'Load external data'},
+                    {link : '/guide/in-depth/data/csv', text : 'CSV format'},
+                    {link : '/guide/in-depth/data/json', text : 'JSON format'},
+                    {link : '/guide/in-depth/data/attribute', text : '<code>data</code> attribute'},
+                    {link : '/guide/in-depth/data/property', text : '<code>.data</code> property'},
+                    {link : '/guide/in-depth/data/helpers', text : 'Helpers'},
+                    {
+                      link : '/guide/in-depth/data/transform',
+                      text : '<code>function data()</code>'
+                    },
+                    {link : '/guide/in-depth/data/reactivity', text : 'Reactivity'},
+                  ]
+                },
+                {
+                  text      : 'Templating',
+                  link      : '/guide/in-depth/templating/',
+                  collapsed : true,
+                  items     : [
+                    {link : '/guide/in-depth/templating/binding', text : 'Binding'},
+                    {link : '/guide/in-depth/templating/lists', text : 'Lists'},
+                    {link : '/guide/in-depth/templating/conditional', text : 'Conditional'},
+                    {link : '/guide/in-depth/templating/content', text : 'Content'},
+                    {link : '/guide/in-depth/templating/events', text : 'Events'},
+                    {link : '/guide/in-depth/templating/expressions', text : 'Expressions'},
+                    {link : '/guide/in-depth/templating/helpers', text : 'Helpers'},
+                  ]
+                },
+                {
+                  text      : 'Methods',
+                  link      : '/guide/in-depth/methods/',
+                  collapsed : true,
+                  items     : [
+                    {link : '/guide/in-depth/methods/embebed', text : 'Embedded methods'},
+                    {link : '/guide/in-depth/methods/external', text : 'External resource'},
+                    {link : '/guide/in-depth/methods/define', text : 'Define functions'},
+                    {link : '/guide/in-depth/methods/$-data', text : '<code>$.data</code>'},
+                    {link : '/guide/in-depth/methods/$-svg', text : '<code>$.svg</code>'},
+                    {link : '/guide/in-depth/methods/$-config', text : '<code>$.config</code>'},
+                    {link : '/guide/in-depth/methods/load', text : 'Load event'},
+                    {link : '/guide/in-depth/methods/data', text : '<code>data()</code>'},
+                    {link : '/guide/in-depth/methods/property', text : 'Property'},
+                  ]
+                },
+                {
+                  text      : 'Style',
+                  link      : '/guide/in-depth/style/',
+                  collapsed : true,
+                  items     : [
+                    {
+                      link : '/guide/in-depth/style/attribute-style',
+                      text : 'Attribute <code>style</code>'
+                    },
+                    {
+                      link : '/guide/in-depth/style/attribute-class',
+                      text : 'Attribute <code>class</code>'
+                    },
+                    {link : '/guide/in-depth/style/scoped-css', text : 'Scoped CSS'},
+                    {link : '/guide/in-depth/style/load-css', text : 'Load External CSS'},
+                    {link : '/guide/in-depth/style/css-var', text : 'CSS Custom Properties'}
+                  ]
+                },
+                {
+                  text      : 'Animation',
+                  link      : '/guide/in-depth/animation/',
+                  collapsed : true,
+                  items     : [
+                    {link : '/guide/in-depth/animation/g-bind', text : 'b-bind and animate'},
+                    {link : '/guide/in-depth/animation/viewport', text : 'viewport entry and exit'},
+                    {link : '/guide/in-depth/animation/methods', text : 'Animation code'}
+                  ]
+                },
+                {
+                  text      : 'Config',
+                  link      : '/guide/in-depth/config/',
+                  collapsed : true,
+                  items     : [
+                    {link : '/guide/in-depth/config/why', text : 'Separate data & config'},
+                    {link : '/guide/in-depth/config/external', text : 'External resource'}
+                  ]
+                },
+                {
+                  text      : 'Composer',
+                  link      : '/guide/in-depth/composer/',
+                  collapsed : true,
+                  items     : [
+                    {link : '/guide/in-depth/composer/attributes', text : 'Attributes'},
+                    {link : '/guide/in-depth/composer/events', text : 'Events'},
+                    {link : '/guide/in-depth/composer/html', text : 'Use in HTML'},
+                    {link : '/guide/in-depth/composer/vue', text : 'Use in VUE'},
+                    {link : '/guide/in-depth/composer/react', text : 'Use in React'},
+                    {link : '/guide/in-depth/composer/svelte', text : 'Use in Svelte'},
+                    {link : '/guide/in-depth/composer/angular', text : 'Use in Angular'},
+                    {link : '/guide/in-depth/composer/custom-component', text : 'Encapsulate in a component'},
+                  ]
+                },
+                {
+                  text      : 'Plugin',
+                  link      : '/guide/in-depth/plugins/',
+                  collapsed : true,
+                  items     : [
+                    {
+                      link : '/guide/in-depth/plugins/load',
+                      text : 'Load a plugin'
+                    },
+                    {
+                      link : '/guide/in-depth/plugins/create',
+                      text : 'Custom plugin'
+                    }
+                  ]
+                },
+                {
+                  text      : 'Architecture',
+                  link      : '/guide/in-depth/architecture/',
+                  collapsed : true,
+                  items     : [
+                    {
+                      link : '/guide/in-depth/architecture/why',
+                      text : 'Why Graphane?'
+                    },
+                    {
+                      link : '/guide/in-depth/architecture/microframework',
+                      text : 'Microframework'
+                    },
+                    {
+                      link : '/guide/in-depth/architecture/webcomponent',
+                      text : 'Web Component'
+                    },
+                    {
+                      link : '/guide/in-depth/architecture/declarative',
+                      text : 'Declarative vs. Imperative'
+                    },
+                  ]
+                },
+              ],
+            },
+            {
+              text      : 'Introduction to SVG',
+              link      : '/guide/svg/',
+              collapsed : true,
+              items     : [
+                {link : '/guide/svg/02-SVG-structure.md', text : 'SVG structure'},
+                {link : '/guide/svg/03-Basic-shapes.md', text : 'Basic Shapes'},
+                {link : '/guide/svg/04-Path-element.md', text : 'Path'},
+                {link : '/guide/svg/05-Text-element.md', text : 'Text'},
+                {link : '/guide/svg/06-Fill-and-stroke.md', text : 'Fill and Stroke'},
+                {link : '/guide/svg/07-Reuse-elements.md', text : 'Reuse elements'},
+                {link : '/guide/svg/08-Gradients-and-patterns.md', text : 'Gradients and Patters'},
+                {link : '/guide/svg/09-Aspect-ratio.md', text : 'Size and Aspect Ratio'},
+                {link : '/guide/svg/10-Transform.md', text : 'Transform'},
+                {link : '/guide/svg/11-CSS.md', text : 'CSS'},
+                {link : '/guide/svg/12-Animation.md', text : 'Animation'},
+                {
+                  link : '/guide/svg/13-Text-path-and-clip-path.md',
+                  text : 'Text Path and Clip Path'
+                },
+                {link : '/guide/svg/14-Manage-elements.md', text : 'Manage Elements'},
+                {link : '/guide/svg/15-Events.md', text : 'Handle Events'},
+                {link : '/guide/svg/01-Graphane-SVG.md', text : 'How to extents SVG with Graphane'},
+              ]
+            }]
+        },
       '/plugins/'   : [{
         text  : 'Plugins',
         items : [
@@ -150,9 +289,11 @@ export default defineConfig({
             collapsed : false,
             items     : [
               {link : '/plugins/catalog/shapes', text : 'Shapes'},
+              {link : '/plugins/catalog/observe-resize', text : 'Observe Resize'},
+              {link : '/plugins/catalog/non-scaling-size', text : 'Non Scaling Size'},
             ]
           },
-          // {link : '/plugins/create', text : 'Create custom plugin'},
+          {link : '/plugins/create', text : 'Create custom plugin'},
         ]
       }],
       '/reference/' : [{
@@ -262,15 +403,33 @@ export default defineConfig({
         text  : 'Examples',
         items : [
           {link : '/examples/', text : 'Basic bars'},
-          {link : '/examples/02-otto-neurath-tribute', text : 'Otto Neumath tribute'},
-          {link : '/examples/03-quadrant', text : 'Quadrant'},
-          {link : '/examples/04-process', text : 'Process'},
-          {link : '/examples/05-evolution', text : 'Human Evolution'},
-          {link : '/examples/06-bars', text : 'Chart Bars'},
-          {link : '/examples/07-circle-bars', text : 'Circle Bars'},
+          {link : '/examples/bars', text : 'Chart Bars'},
+          {link : '/examples/bump-chart', text : 'Bump chart'},
+          {link : '/examples/circle-bars', text : 'Circle Bars'},
+          {link : '/examples/clock', text : 'Clock'},
+          {link : '/examples/comparison', text : 'Comparison'},
+          {link : '/examples/dog-or-cat', text : 'Dog or Cat'},
+          {link : '/examples/map', text : 'EU Map'},
+          {link : '/examples/gauge', text : 'Gauge'},
+          {link : '/examples/bottle', text : 'Half-full Bottle'},
+          {link : '/examples/world-population', text : 'Horizontal bars: population'},
+          {link : '/examples/evolution', text : 'Human Evolution'},
+          {link : '/examples/heatmap-day-hour', text : 'Heatmap: day & hour'},
+          {link : '/examples/line-chart', text : 'Line Chart'},
+          {link : '/examples/otto-neurath-tribute', text : 'Otto Neumath tribute'},
+          {link : '/examples/percentage', text : 'Percentage'},
+          {link : '/examples/process', text : 'Process'},
+          {link : '/examples/quadrant', text : 'Quadrant'},
+          {link : '/examples/radial-temp', text : 'Radial: temperature range'},
+          {link : '/examples/ranking', text : 'Population Ranking'},
+          {link : '/examples/ranking-evolution', text : 'Ranking Evolution'},
+          {link : '/examples/survey', text : 'Survey'},
+          {link : '/examples/timeline-horizontal', text : 'Timeline (horizontal)'},
+          {link : '/examples/treemap', text : 'Treemap'},
+          {link : '/examples/votes', text : 'Votes'},
+          {link : '/examples/du-bois-tribute', text : 'W.E.B. Du Bois Tribute'},
         ]
       }],
-
     },
     socialLinks : [
       // {
@@ -280,5 +439,5 @@ export default defineConfig({
       {link : 'https://github.com/graphery/graphane', icon : 'github'},
     ]
   }
-})
-;
+});
+

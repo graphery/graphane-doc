@@ -1,0 +1,34 @@
+---
+outline: deep
+---
+
+# Load
+
+To start, you must load Graphane on your HTML page.
+This is done by adding a `script` tag pointing to the Graphane file.
+The easiest and fastest is to use this URL from the CDN:
+
+```html
+<script src="https://cdn.graphery.online/graphane/0.1.0-alpha/component/composer.js"></script>
+```
+
+::: details Understanding the CDN path
+
+This is the detailed description of each URL part:
+
+```
+https://cdn.graphery.online/graphane/0.1.0-alpha/component/composer.js
+|-----|--------------------|--------|-----------|---------|-----------|
+   |            |               |         |          |          |-----> filename
+   |            |               |         |          |----------------> kind
+   |            |               |         |---------------------------> version
+   |            |               |-------------------------------------> package
+   |            |-----------------------------------------------------> domain
+   |------------------------------------------------------------------> protocol
+```
+
+:::
+
+One of the advantages of Graphane is that it runs dynamically in the browser and does not need 
+heavy compilation or transpilation processes at development time. 
+Any change, adaptation or modification, we can do it directly without other transformations.

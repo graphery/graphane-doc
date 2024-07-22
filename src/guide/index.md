@@ -1,50 +1,25 @@
----
-outline: deep
----
+# Graphane Guides
 
-# What is Graphane?
+Welcome to Graphane Guides, your resource for mastering Graphane for graphical data representation.
+Whether you're a beginner looking for the essentials, a seasoned pro digging more intensely, or a
+complete unknown ready to explore the capabilities of scalable vector graphics (SVG), we've got you
+covered.
 
-## Empowering Dynamic Visualizations
+## [Starter Guide](starter/)
 
-**Graphane** stands as a **micro-framework**, empowering designers and developers **to craft
-interactive and customizable data-driven graphics, diagrams, and visualizations**. Graphane merges
-the flexibility of web components, ensuring compatibility with leading frameworks, with a
-comprehensive system of templates grounded in directives, all supported by a resilient and
-high-performance implementation.
+Embark on your Graphane journey with our essentials section, designed for those taking their first
+steps into the capabilities of this micro-framework. Here, you'll find fundamental concepts and practical
+tips to build a solid foundation.
 
-## Template-centric
+## [Explore SVG](./svg/)
 
-At the heart of **Graphane** is a **flexible SVG template system**. Data is combined with graphical
-elements in real-time through a simple set of attributes known as directives. This template-centric
-approach provides a dynamic and intuitive means of shaping visualizations, offering flexibility in
-the representation of data-driven graphics.
+Unlock the full potential of scalable vector graphics (SVG) with our dedicated section. If you do
+not know much about SVG, we will tell you that it is a powerful XML-based language for
+describing two-dimensional vector graphics. From understanding the syntax to creating graphics,
+this section will guide you through the world of SVG.
 
-## Data-Driven
+## [In-Depth](./in-depth/)
 
-**Graphane** significantly streamlines the intricate process of **developing data-driven graphs**.
-The framework facilitates the reactivity connection of data to diverse graphical elements. The
-central emphasis of Graphane revolves around creating dynamic visualizations, enabling designers and
-developers to infuse interactivity and data reactivity into their graphics.
-
-## Interactivity
-
-**Graphane** places a **strong emphasis on interactivity**, elevating the user experience by
-enabling active engagement with visualizations. Whether designing a sophisticated user interface or
-developing a data-driven graph, the dynamic features of Graphane take center stage in fostering a
-seamless and engaging interaction. With Graphane, users go beyond passive observation—they become
-active participants in exploring data visualization.
-
-## Seamless Integration
-
-As a web component, **Graphane** ensures **easy integration and reusability within the realms of
-popular web frameworks**. The Graphane micro-framework boasts a lightweight footprint, allowing you
-to incorporate dynamic SVG functionality without significantly burdening your projects. This design
-promotes accessibility and flexibility, making Graphane an ideal choice for projects where
-efficiency and responsiveness are paramount.
-
----
-
-In summary, **Graphane** is a powerful ally for those looking to elevate their data visualization
-projects' visual appeal and functionality. Whether you are a designer crafting compelling visual
-narratives or a developer in search of efficient tools for data representation, Graphane proves to
-be a versatile asset in your toolkit.
+For curious minds hungry for deeper insights, our In-Depth section delves deeper into Graphane's
+capabilities, exploring advanced data visualization capabilities. Discover its secrets and best
+practices, unlock its full potential, and how to integrate it into your projects.

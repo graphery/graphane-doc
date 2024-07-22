@@ -1,6 +1,6 @@
 {
   "name": "www.graphane.dev",
-  "version": "0.1.0-alpha.4",
+  "version": "0.1.0-alpha.9",
   "description": "public web of Graphane",
   "scripts": {
     "docs:dev": "vitepress dev src",
@@ -13,8 +13,7 @@
   "keywords": [],
   "author": "",
   "devDependencies": {
-    "vitepress": "^1.0.0-rc.25",
-    "shiki": "^0.14.5"
+    "vitepress": "1.3.1"
   },
   "type": "module"
 }
