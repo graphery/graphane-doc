@@ -43,7 +43,7 @@ To load external data, we can use:
 - The `data-src` attribute of `g-composer` indicates the location of the data source.
 
 <div style="display:none" id="external-resources-1">
-  <g-composer data-src="data.json"></g-composer>
+  <g-composer data-src="../../data/example.json"></g-composer>
 </div>
 
 <g-editor href="#external-resources-1" mode="readonly"></g-editor>
@@ -52,7 +52,7 @@ To load external data, we can use:
 
 <div style="display:none" id="external-resources-2">
   <g-composer>
-    <g-script type="data" src="data.json"></g-script>
+    <g-script type="data" src="../../data/example.json"></g-script>
   </g-composer>
 </div>
 

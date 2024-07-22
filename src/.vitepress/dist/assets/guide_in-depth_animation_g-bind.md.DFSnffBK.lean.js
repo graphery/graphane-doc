@@ -1,0 +1,6 @@
+import{_ as a,c as t,o as n,a5 as i,j as s}from"./chunks/framework.i6VzOjY_.js";const B=JSON.parse('{"title":"$$.dynamic() with g-bind","description":"","frontmatter":{"outline":"deep"},"headers":[],"relativePath":"guide/in-depth/animation/g-bind.md","filePath":"guide/in-depth/animation/g-bind.md"}'),h={name:"guide/in-depth/animation/g-bind.md"},l=i("",4),e=s("g-composer",{data:"x: 50, y: 50, radius: 50",id:"dynamic1",style:{width:"200px"}},[s("svg",{viewBox:"0 0 100 100"},[s("circle",{"g-bind:r":"$$.dynamic([0, radius], 4000)","g-bind:cx":"$$.dynamic([0, x], 4000)","g-bind:cy":"$$.dynamic([0, y], 4000)",fill:"red"})])],-1),p=s("p",null,[s("button",{onclick:"document.querySelector('#dynamic1').update()"}," click to run the animation ")],-1),k=i("",9),d=s("g-composer",{data:"radius: 50",id:"dynamic2",style:{width:"200px"}},[s("svg",{viewBox:"0 0 100 100"},[s("circle",{"g-bind:r":`$$.dynamic(
+      [radius * 0.1, 
+       radius * 0.5, 
+       radius * 0.9, 
+       radius * 0.7, 
+       radius],2000)`,cx:"50",cy:"50",fill:"red"})])],-1),E=s("p",null,[s("button",{onclick:"document.querySelector('#dynamic2').update()"}," click to run the animation ")],-1),r=i("",3),g=[l,e,p,k,d,E,r];function o(c,y,u,F,m,C){return n(),t("div",null,g)}const v=a(h,[["render",o]]);export{B as __pageData,v as default};
