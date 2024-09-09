@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# Animation when enter into the viewport
+# Animation in and out the viewport
 
 In this section, you discover how to animate the SVG graph Graphane when the component is visible
 into the viewport.
@@ -15,7 +15,6 @@ between `0` and `1` that indicates the percentage of the component that must be 
 area for the `viewport.enter` event to be triggered.
 
 ```html
-
 <g-composer intersection-ratio="0.5">
 </g-composer>
 ```
@@ -25,28 +24,8 @@ area for the `viewport.enter` event to be triggered.
 When the component enters the viewport at the ratio indicated in `viewport-ratio` a `viewport.enter`
 event is triggered which can be captured to launch an animation, modify SVG attributes, etc.
 
-```html{13-15}
-<div style="width:200px;height:200px;overflow:auto;border:1px solid grey;text-align:center">
-  <g-composer intersection-ratio="1" style="width:100px;margin-top:240px;margin-bottom:240px;">
-    <template>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-          <path fill="none" stroke="green" stroke-width="20" 
-                stroke-linecap="round" stroke-linejoin="round" 
-                stroke-dasharray="1000" stroke-dashoffset="1000" 
-                d="M34 240L192 392L466 100"/>
-      </svg>
-    </template>
-    <script type="methods">
-      const path = $.svg.querySelector('path');
-      $.addEventListener('intersection.enter', () => {
-        path.animateTo({'stroke-dashoffset': 0}, 1500);
-      });
-    </script>
-  </g-composer>
-</div>
-```
-
-<div style="width: 200px; height: 200px; overflow: auto; border: 1px solid grey; text-align: center">
+<ClientOnly>
+<div id="viewport-1" style="width: 200px; height: 200px; overflow: auto; border: 1px solid grey; text-align: center">
   <g-composer intersection-ratio="1" style="width: 100px; margin-top: 240px; margin-bottom: 240px;">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
         <path fill="none" 
@@ -66,38 +45,16 @@ event is triggered which can be captured to launch an animation, modify SVG attr
     </g-script>
   </g-composer>
 </div>
+<g-editor href="#viewport-1" lines-highlight="21-23"></g-editor>
+</ClientOnly>
 
 ## Event `viewport.exit`
 
 Similarly, we can capture the `viewport.exit` event that is fired when the component exits the
 visible area at the rate indicated in `viewport-ratio`.
 
-
-```html{16-18}
-<div style="width:200px;height:200px;overflow:auto;border:1px solid grey;text-align:center">
-  <g-composer intersection-ratio="1" style="width:100px;margin-top:240px;margin-bottom:240px;">
-    <template>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-          <path fill="none" stroke="green" stroke-width="20" 
-                stroke-linecap="round" stroke-linejoin="round" 
-                stroke-dasharray="1000" stroke-dashoffset="1000" 
-                d="M34 240L192 392L466 100"/>
-      </svg>
-    </template>
-    <script type="methods">
-      const path = $.svg.querySelector('path');
-      $.addEventListener('intersection.enter', () => {
-        path.animateTo({'stroke-dashoffset': 0}, 1500);
-      });
-      $.addEventListener('intersection.exit', () => {
-        path.animateTo({'stroke-dashoffset': 1000}, 1000);
-      });
-    </script>
-  </g-composer>
-</div>
-```
-
-<div style="width: 200px; height: 200px; overflow-y: scroll; overflow-x: hidden; border: 1px solid grey; text-align: center">
+<ClientOnly>
+<div id="viewport-2" style="width: 200px; height: 200px; overflow-y: scroll; overflow-x: hidden; border: 1px solid grey; text-align: center">
   <g-composer intersection-ratio="1" style="width: 100px; margin-top: 240px; margin-bottom: 240px;">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
         <path fill="none" 
@@ -120,6 +77,8 @@ visible area at the rate indicated in `viewport-ratio`.
     </g-script>
   </g-composer>
 </div>
+<g-editor href="#viewport-2" lines-highlight="24-26"></g-editor>
+</ClientOnly>
 
 ::: warning Component event
 

@@ -26,40 +26,29 @@ binds the `r` attribute of the circle element to that value. When `size` changes
 component, the radius attribute will be automatically updated.
 
 
-```html {7}
-<g-composer data="size: 25;" id="circle">
-  <template>
+<ClientOnly>
+  <div id="binding-1">
+  <g-composer data="size: 25;" id="circle" style="width: 200px;">
     <svg viewBox="0 0 100 100">
-      <circle cx="50" 
+      <circle g-bind:r="size"
+              cx="50" 
               cy="50" 
-              fill="red"
-              g-bind:r="size"/>
+              fill="red"></circle>
     </svg>
-  </template>
-</g-composer>
-```
-```html
-<p>
-  <label>Change the size:
+  </g-composer>
+  <p>
+    <label>Change the size:
     <input type="range" max="50" value="25"
-           oninput="document.querySelector('#circle').data.size = this.value">
-  </label>
-</p>
-```
+    oninput="document.querySelector('#circle').data.size = this.value">
+    </label>
+  </p>
+</div>
+<g-editor href="#binding-1" lines-highlight="4"></g-editor>
+</ClientOnly>
 
-<g-composer data="size: 25;" id="circle">
-  <svg viewBox="0 0 100 100">
-    <circle g-bind:r="size" cx="50" cy="50" fill="red"></circle>
-  </svg>
-</g-composer>
-<p>
-
-<label>Change the size:
-<input type="range" max="50" value="25"
-oninput="document.querySelector('#circle').data.size = this.value">
-</label>
-</p>
-
+If you need to query the current value of an attribute in the expression that has the `g-bind` 
+directive, you can use the `$$.curentVale()` helper to get the value before executing the 
+expression.
 
 ## Style
 
@@ -67,28 +56,8 @@ When using `g-bind` with the `style` attribute, you can dynamically bind an obje
 styles to an element. The keys of the object represent the CSS properties, and the values represent
 the corresponding values for those properties.
 
-```html {7}
-<g-composer>
-  <template>
-    <svg viewBox="0 0 100 100">
-      <defs g-for="value of data">
-        <circle :cx="value.x"
-                :cy="value.y"
-                :r="value.radix"
-                :style="{fill: value.color}"/>
-      </defs>
-    </svg>
-  </template>
-  <script type="data">
-    "x";"y";"radix";"color"
-    20;20;20;"red"
-    45;45;30;"blue"
-    80;80;10;"green"
-  </script>
-</g-composer>
-```
-
-<g-composer>
+<ClientOnly>
+<g-composer id="binding-2" style="width: 200px;">
   <svg viewBox="0 0 100 100">
     <defs g-for="value of data">
       <circle g-bind:cx="value.x"
@@ -97,9 +66,17 @@ the corresponding values for those properties.
               g-bind:style="{fill: value.color}"/>
     </defs>
   </svg>
-  <g-script type="data" src="../../../data/style.csv"></g-script>
+  <g-script type="data">[
+    {x: 20, y: 20, radix: 20, color: "red"},
+    {x: 45, y: 45, radix: 30, color: "blue"},
+    {x: 80, y: 80, radix: 10, color: "green"}
+  ]</g-script>
 </g-composer>
+<g-editor href="#binding-2" lines-highlight="9"></g-editor>
+</ClientOnly>
 
+The behavior of `g-bind` with the `style` attribute is additive, that is, it adds the new values to
+the existing style.
 
 ## Class
 
@@ -107,8 +84,10 @@ Similarly, `g-bind`, or the shorthand `:`, can be used with the class attribute 
 CSS classes to an element based on the values in the `<g-composer>` component data. You can bind a single
 class or an array of classes.
 
-```html {19}
-<g-composer>
+<ClientOnly>
+<div id="binding-3"></div>
+<g-editor href="#binding-3" lines-highlight="4-14;20">
+<!--<g-composer style="width: 200px">
   <template>
     <svg viewBox="0 0 100 100">
       <style>
@@ -129,14 +108,16 @@ class or an array of classes.
                 :class="value.class"/>
       </defs>
     </svg>
-    <script type="data">
-      "x";"y";"radix";"class"
-      20;20;20;"regular"
-      45;45;30;"warning"
-      80;80;10;"error"
-    </script>
   </template>
-</g-composer>
-```
+  <script type="data">[
+    {x: 20, y: 20, radix: 20, class: "regular"},
+    {x: 45, y: 45, radix: 30, class: "warning"},
+    {x: 80, y: 80, radix: 10, class: "error"}
+  ]</script>
+</g-composer>-->
+</g-editor>
+</ClientOnly>
 
-<g-composer svg-src="../../../svg/circles.class.svg" data-src="../../../data/class.csv"></g-composer>`
+The behavior of `g-bind` with the `class` attribute is additive, that is, it adds the new values to 
+the existing classes and does not replace them. It adds the new values to existing classes and does 
+not replace them.

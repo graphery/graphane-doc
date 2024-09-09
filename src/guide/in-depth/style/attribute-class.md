@@ -9,8 +9,10 @@ outline: deep
 You can be used `g-bind`, or the shorthand `:`, with the `class` attribute to dynamically bind CSS
 classes to an element. You can bind a single class or an array of classes.
 
-```html {19}
-<g-composer>
+<ClientOnly>
+<div id="attribute-class-1"></div>
+<g-editor href="#attribute-class-1" lines-highlight="19">
+<!--<g-composer>
   <template>
     <style>
       .regular {
@@ -31,17 +33,17 @@ classes to an element. You can bind a single class or an array of classes.
                 :class="value.class"/>
       </defs>
     </svg>
-    <script type="data">
-      "x";"y";"radix";"class"
-      20;20;20;"regular"
-      45;45;30;"warning"
-      80;80;10;"error"
-    </script>
   </template>
-</g-composer>
-```
+  <g-script type="data">    "x";"y";"radix";"class"
+    20;20;20;"regular"
+    45;45;30;"warning"
+    80;80;10;"error"
+  </g-script>
+</g-composer>-->
+</g-editor>
+</ClientOnly>
 
-<g-composer svg-src="../../../svg/circles.class.svg" data-src="../../../data/class.csv"></g-composer>`
+
 
 ## API
 

@@ -11,15 +11,16 @@ Embark on your Graphane journey with our essentials section, designed for those 
 steps into the capabilities of this micro-framework. Here, you'll find fundamental concepts and practical
 tips to build a solid foundation.
 
-## [Explore SVG](./svg/)
-
-Unlock the full potential of scalable vector graphics (SVG) with our dedicated section. If you do
-not know much about SVG, we will tell you that it is a powerful XML-based language for
-describing two-dimensional vector graphics. From understanding the syntax to creating graphics,
-this section will guide you through the world of SVG.
-
 ## [In-Depth](./in-depth/)
 
 For curious minds hungry for deeper insights, our In-Depth section delves deeper into Graphane's
 capabilities, exploring advanced data visualization capabilities. Discover its secrets and best
 practices, unlock its full potential, and how to integrate it into your projects.
+
+
+## [Explore SVG](./svg/)
+
+Unlock the full potential of scalable vector graphics (SVG) with our dedicated section. If you know 
+little about SVG, we will tell you that it is a powerful XML-based language for describing 
+two-dimensional vector graphics. From understanding the syntax to creating graphics, this section 
+will guide you through the world of SVG.

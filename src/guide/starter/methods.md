@@ -4,7 +4,6 @@ outline: deep
 
 # Methods
 
-
 In Graphane we can include Javascript code if we need it.
 In many occasions the declarative system of the templates and the data contained in `g-composer` 
 will be enough to build the graph. 
@@ -18,6 +17,7 @@ All functions defined into this tag are available into the template.
 Additionally, you can define several variables or constants or global code into the script, but the 
 template only can access to functions define as `function`.
 
+<ClientOnly>
 <g-composer id="methods-example">
   <svg viewBox="0 0 100 100" width="200" height="200">
     <g g-on:click="update" 
@@ -33,8 +33,8 @@ template only can access to functions define as `function`.
     }
   </g-script>
 </g-composer>
-
-<g-editor href="#methods-example"></g-editor>
+<g-editor href="#methods-example" lines-highlight="11-14"></g-editor>
+</ClientOnly>
 
 In the defined functions we can access the `$` object with which we can access the SVG (`$.svg`) or
 the data (`$.data`), facilitating the manipulation of both the generated graphic and the data used.
@@ -49,6 +49,7 @@ In the previous example, the directive `g-on:click="update"` link the event `cli
 
 In this other example the `click` event on all SVG content, updates the `circles` data value.
 
+<ClientOnly>
 <g-composer id="event-example">
   <svg viewBox="0 0 100 100" g-on:click="click" style="cursor: pointer" width="200" height="200">
     <defs g-for="x of circles">
@@ -70,8 +71,8 @@ In this other example the `click` event on all SVG content, updates the `circles
     }
   </g-script>
 </g-composer>
-
-<g-editor href="#event-example"></g-editor>
+<g-editor href="#event-example" lines-highlight="5;26-33"></g-editor>
+</ClientOnly>
 
 ## Data transformation
 
@@ -80,6 +81,7 @@ modified. The function receives the initial data and returns the new data values
 the `data` function to perform the filtering and transformation before the template evaluation,
 add calculated values, etc.
 
+<ClientOnly>
 <g-composer id="data-example">
   <svg viewBox="0 0 200 100" width="200px" height="100px">
     <g stroke-width="10" stroke-linecap="round">
@@ -108,5 +110,5 @@ add calculated values, etc.
     }
   </g-script>
 </g-composer>
-
-<g-editor href="#data-example"></g-editor>
+<g-editor href="#data-example" lines-highlight="21-23"></g-editor>
+</ClientOnly>

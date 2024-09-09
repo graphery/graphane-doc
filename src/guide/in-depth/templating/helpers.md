@@ -2,13 +2,18 @@
 outline: deep
 ---
 
-# Attribute Helpers
+# Helpers
 
 For some cases, Graphane offers helper functions to simplify the construction of the values accepted
 by the SVG attribute. These helpers are available in the `$$` object, accessible from the `g-bind`
-expressions of the following attributes:
+and `g-content` expressions:
 
-## Attribute `transform`
+## `g-bind`
+
+`$$.currentValue()` returns the current value of the property that has the `g-bind` directive. 
+It is useful when we need to know the value of the property before modifying it.
+
+## `g-bind:transform`
 
 The transform attribute values are converted in helper functions. You can use these helpers to 
 build the transformation. You can combine the helpers, as `$$.translate(10,10).rotate(45)`.
@@ -29,24 +34,8 @@ build the transformation. You can combine the helpers, as `$$.translate(10,10).r
 
 Example:
 
-```html{8,11}
-<g-composer style="width: 100px">
-  <template>
-    <svg viewBox="0 0 100 100">
-      <path fill="none" stroke="#D80000" stroke-width="2" 
-        d="M42.5,4.35L55,26L42.5,47.65L17.5,47.65L5,26L17.5,4.35Z"/>
-      <path fill="none" stroke="#00D800" stroke-width="2" 
-        d="M42.5,4.35L55,26L42.5,47.65L17.5,47.65L5,26L17.5,4.35Z"
-        :transform="$$.translate(41,24)"/>
-      <path fill="none" stroke="#0000D8" stroke-width="2" 
-        d="M42.5,4.35L55,26L42.5,47.65L17.5,47.65L5,26L17.5,4.35Z"
-        :transform="$$.translate(0,48).rotate(60,30,26)"/>
-    </svg>
-  </template>
-</g-composer>
-```
-
-<g-composer style="width: 100px">
+<ClientOnly>
+<g-composer id="helpers-1" style="width: 100px">
   <svg viewBox="0 0 100 100">
     <path fill="none" stroke="#D80000" stroke-width="2" 
       d="M42.5,4.35L55,26L42.5,47.65L17.5,47.65L5,26L17.5,4.35Z"/>
@@ -58,8 +47,10 @@ Example:
       g-bind:transform="$$.translate(0,48).rotate(60,30,26)"/>
   </svg>
 </g-composer>
+<g-editor href="#helpers-1"></g-editor>
+</ClientOnly>
 
-## Attribute `d` in `path`
+## `g-bind:d` in `path`
 
 Constructing the `d` attribute of a `path` in SVG may seem complicated, but it is a series of
 relatively simple instructions. Graphane offers a series of helpers to construct the value of `d`
@@ -82,22 +73,8 @@ step by step, chaining the different functions.
 
 Example:
 
-```html{5,7,9}
-<g-composer style="width: 100px">
-  <template>
-    <svg viewBox="0 0 100 100">
-      <path fill="none" stroke="#D80000" stroke-width="2" 
-        :d="$$.M(42.5,4.35).L(55,26).L(42.5,47.65).L(17.5,47.65).L(5,26).L(17.5,4.35).Z()"/>
-      <path fill="none" stroke="#00D800" stroke-width="2" 
-        :d="$$.M(83.5,28.35).L(96,50).L(83.5,71.65).L(58.5,71.65).L(46,50).L(58.5,28.35).Z()"/>
-      <path fill="none" stroke="#0000D8" stroke-width="2" 
-        :d="$$.M(42.5,52.35).L(55,74).L(42.5,95.65).L(17.5,95.65).L(5,74).L(17.5,52.35).Z()"/>
-    </svg>
-  </template>
-</g-composer>
-```
-
-<g-composer style="width: 100px">
+<ClientOnly>
+<g-composer id="helpers-2" style="width: 100px">
   <svg viewBox="0 0 100 100">
     <path fill="none" stroke="#D80000" stroke-width="2" 
       g-bind:d="$$.M(42.5,4.35).L(55,26).L(42.5,47.65).L(17.5,47.65).L(5,26).L(17.5,4.35).Z()"/>
@@ -107,3 +84,14 @@ Example:
       g-bind:d="$$.M(42.5,52.35).L(55,74).L(42.5,95.65).L(17.5,95.65).L(5,74).L(17.5,52.35).Z()"/>
   </svg>
 </g-composer>
+<g-editor href="#helpers-2"></g-editor>
+</ClientOnly>
+
+## `g-content`
+
+The `g-content` directive has two helpers:
+
+- `$$.currentContent()` returns the content of the element. It can be useful to add elements instead
+  of replacing them or to check the content before modifying it.
+
+- `$$.fromURL()` gets an external resource via a URL and inserts it as element content.

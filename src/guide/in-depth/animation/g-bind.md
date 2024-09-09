@@ -10,32 +10,34 @@ progressively and show an animation.
 
 The syntax is: `g-bind:attribute="$$.dynamic(<value> [, <duration>] [, <delay>])`.
 
-```html{5-7}
-<g-composer data="x: 50, y: 50, radius: 50" style="width: 200px;">
-  <template>
-    <svg viewBox="0 0 100 100">
-      <circle fill="red"
-              g-bind:r="$$.dynamic(radius, 2000)"
-              g-bind:cx="$$.dynamic(x, 2000)"
-              g-bind:cy="$$.dynamic(y, 2000)"/>
-    </svg>
-  </template>
-</g-composer>
-```
-
-<g-composer data="x: 50, y: 50, radius: 50" id="dynamic1" style="width: 200px;">
+<ClientOnly>
+<g-composer id="dynamic-1" style="width: 200px;">
   <svg viewBox="0 0 100 100">
-    <circle g-bind:r="$$.dynamic([0, radius], 4000)"
-            g-bind:cx="$$.dynamic([0, x], 4000)"
-            g-bind:cy="$$.dynamic([0, y], 4000)"
-            fill="red"/>
+    <circle fill="red"
+            cx="50"
+            cy="50"
+            g-bind:r="$$.dynamic(radius, 4000)"/>
+    <text x="50"
+          y="50"
+          font-size="10"
+          dominant-baseline="middle"
+          text-anchor="middle"
+          style="cursor: pointer"
+          g-on:click="change()">
+      click
+    </text>
   </svg>
+  <g-script type="data">
+    {radius: 50}
+  </g-script>
+  <g-script type="methods">
+    function change() {
+      $.data.radius = $.data.radius > 0 ? 0 : 50; 
+    }
+  </g-script>
 </g-composer>
-<p>
-  <button onclick="document.querySelector('#dynamic1').update()">
-   click to run the animation
-  </button>
-</p>
+<g-editor href="#dynamic-1" lines-highlight="8"></g-editor>
+</ClientOnly>
 
 ### `<value>`
 
@@ -56,61 +58,53 @@ parameter to `$$.dynamic()` function in milliseconds.
 
 You can pass an array of values to describe non-linear progressing.
 
-```html{7-12}
-<g-composer data="radius: 50" style="width: 200px;">
-  <template>
-    <svg viewBox="0 0 100 100">
-      <circle cx="50"
-              cy="50"
-              fill="red"
-              g-bind:r="$$.dynamic([radius * 0.1, 
-                                   radius * 0.5, 
-                                   radius * 0.9, 
-                                   radius * 0.7, 
-                                   radius],
-                                  2000)"/>
-    </svg>
-  </template>
-</g-composer>
-```
-
-<g-composer data="radius: 50" id="dynamic2" style="width: 200px;">
+<ClientOnly>
+<g-composer id="dynamic-2" style="width: 200px;">
   <svg viewBox="0 0 100 100">
-    <circle g-bind:r="$$.dynamic(
-      [radius * 0.1, 
-       radius * 0.5, 
-       radius * 0.9, 
-       radius * 0.7, 
-       radius],2000)"
-            cx="50"
+    <circle cx="50"
             cy="50"
-            fill="red"/>
+            fill="red"
+            g-bind:r="$$.dynamic([radius * 0.1, 
+                              radius * 0.5, 
+                              radius * 0.9, 
+                              radius * 0.7, 
+                              radius], 2000)"/>
   </svg>
+  <g-script type="data">
+    {radius: 50}
+  </g-script>
 </g-composer>
 <p>
-  <button onclick="document.querySelector('#dynamic2').update()">
+  <button onclick="document.querySelector('#dynamic-2').update()">
    click to run the animation
   </button>
 </p>
+<g-editor href="#dynamic-2" lines-highlight="8-12"></g-editor>
+</ClientOnly>
 
 Optionally, you can pass an object with `value` and `offset` (with values from 0 to 1) to have more
 control over the execution of the animation.
 
-```html{7-11}
-<g-composer data="radius: 50" style="width: 200px">
-  <template>
-    <svg viewBox="0 0 100 100">
-      <circle cx="50"
-              cy="50"
-              fill="red"
-              g-bind:r="$$.dynamic([{value: 0,            offset: 0},
-                                   {value: radius,       offset: 0.8},
-                                   {value: radius * 0.9, offset: 0.9},
-                                   {value: radius,       offset: 1}],
-                                  2000)"/>
-    </svg>
-  </template>
+<ClientOnly>
+<g-composer id="dynamic-3" style="width: 200px">
+  <svg viewBox="0 0 100 100">
+    <circle cx="50"
+            cy="50"
+            fill="red"
+            g-bind:r="$$.dynamic([{value: 0,            offset: 0},
+                                  {value: radius,       offset: 0.8},
+                                  {value: radius * 0.9, offset: 0.9},
+                                  {value: radius,       offset: 1}], 2000)"/>
+  </svg>
+  <g-script type="data">
+    {radius: 50}
+  </g-script>
 </g-composer>
-```
+<p>
+  <button onclick="document.querySelector('#dynamic-3').update()">
+   click to run the animation
+  </button>
+</p>
+<g-editor href="#dynamic-3" lines-highlight="8-12"></g-editor>
+</ClientOnly>
 
-*pending...*

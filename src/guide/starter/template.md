@@ -23,6 +23,7 @@ separate `circle` tags, the `g-for` directive is used in a defs element to gener
 circles dynamically. This is a simple example demonstrating the basic operational understanding of 
 the SVG template model and directives.
 
+<ClientOnly>
 <g-composer id="example">
   <svg viewBox="0 0 100 100" width="100"  height="100">
     <defs g-for="x of data.circles">
@@ -39,8 +40,8 @@ the SVG template model and directives.
     {circles: 3}
   </g-script>
 </g-composer>
-
-<g-editor href="#example"></g-editor>
+<g-editor href="#example" lines-highlight="4;8"></g-editor>
+</ClientOnly>
 
 In the following, we will describe how it works each directive:
 
@@ -55,6 +56,7 @@ In this example, the circle radius (`r` attribute) is defined with `size` data v
 When we change the value of the slider, the `data.size` value of the component is updated and the 
 change is reflected in the chart.
 
+<ClientOnly>
 <div id="circle-example">
 <g-composer id="circle">
   <svg viewBox="0 0 100 100" width="100">
@@ -68,7 +70,6 @@ change is reflected in the chart.
     {size: 25}
   </g-script>
 </g-composer>
-
 <p>
 <label>Change the size:
   <input type="range" max="50" value="25"
@@ -76,8 +77,8 @@ change is reflected in the chart.
   </label>
 </p>
 </div>
-
-<g-editor href="#circle-example"></g-editor>
+<g-editor href="#circle-example" lines-highlight="4"></g-editor>
+</ClientOnly>
 
 > See more about [`g-bind`](../in-depth/templating/binding.md)
 
@@ -92,6 +93,7 @@ In this example, a number of `circles` is displayed.
 In this example, a set of circles are displayed. 
 As many circles will be shown as the `circles` value has.  
 
+<ClientOnly>
 <div id="circles-example-2">
 <g-composer id="circles">
   <svg viewBox="0 0 100 100" width="100">
@@ -107,7 +109,6 @@ As many circles will be shown as the `circles` value has.
     {circles: 40}
   </g-script>
 </g-composer>
-
 <p>
 <label>Change the number of circles:
   <input type="range" max="100" value="40"
@@ -115,8 +116,8 @@ As many circles will be shown as the `circles` value has.
   </label>
 </p>
 </div>
-
-<g-editor href="#circles-example-2"></g-editor>
+<g-editor href="#circles-example-2" lines-highlight="4"></g-editor>
+</ClientOnly>
 
 > See more about [`g-for`](../in-depth/templating/lists.md)
 
@@ -128,6 +129,7 @@ In this example, the odd and even circles are displayed if the values `odd` and 
 false.
 The values are modified by two checkboxes that update the `data` property of `g-composer`.
 
+<ClientOnly>
 <div id="odd-even-example">
   <g-composer id="odd-even">
     <svg viewBox="0 0 100 100" width="100">
@@ -147,7 +149,6 @@ The values are modified by two checkboxes that update the `data` property of `g-
       }
     </g-script>
   </g-composer>
-  
   <p>
     <label>
       <input type="checkbox" checked
@@ -161,8 +162,8 @@ The values are modified by two checkboxes that update the `data` property of `g-
     </label>
   </p>
 </div>
-
-<g-editor href="#odd-even-example"></g-editor>
+<g-editor href="#odd-even-example" lines-highlight="6"></g-editor>
+</ClientOnly>
 
 > See more about [`g-if`](../in-depth/templating/conditional.md).
 
@@ -174,6 +175,7 @@ This attribute allows you to dynamically include text or code snippets very easi
 In this example, the text content is defined with `title` and `subtitle` data values. 
 They are dynamically updated by two inputs.
 
+<ClientOnly>
 <div id="content-example">
   <g-composer id="content">
     <svg viewBox="0 0 100 100" width="100">
@@ -194,7 +196,6 @@ They are dynamically updated by two inputs.
       }
     </g-script>
   </g-composer>
-  
   <p>
     <label>title: 
       <input type="text" value="hello"
@@ -208,7 +209,7 @@ They are dynamically updated by two inputs.
     </label>
   </p>
 </div>
-
-<g-editor href="#content-example"></g-editor>
+<g-editor href="#content-example" lines-highlight="6;12"></g-editor>
+</ClientOnly>
 
 > See more about [`g-content`](../in-depth/templating/content). 

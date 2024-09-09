@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress';
 
-const URL     = '/0.1.0-alpha/';
-const VERSION = '0.1.0-alpha.9';
+const URL     = '/';
+const VERSION = '1.0.0-beta.2';
 
 const MarkdownOptions = {
   languageAlias : {
@@ -22,27 +22,29 @@ const fullReloadAlways = {
 export default defineConfig({
   title       : 'graphane',
   description : `Data Visualization Microframework - version ${ VERSION }`,
-  // description : VERSION,
-  base     : URL,
-  vite     : {
+  sitemap     : {
+    hostname : 'https://graphane.dev'
+  },
+  base        : URL,
+  vite        : {
     plugins : [fullReloadAlways],
   },
-  vue      : {
+  vue         : {
     template : {
       compilerOptions : {
         isCustomElement : (tag) => tag.startsWith('g-')
       }
     }
   },
-  markdown : MarkdownOptions,
-  head     : [
+  markdown    : MarkdownOptions,
+  head        : [
     ['link', {rel : 'icon', href : `${ URL }img/logo/g.svg`}],
     ['script', {
-      src : `https://cdn.graphery.online/graphane/0.1.0-alpha/component/composer.js`
+      src : `https://cdn.graphery.online/graphane/1.0.0-beta/component/composer.js`
     }],
     ['script', {
-      // src : 'http://localhost:7000/src/component/editor.js',
-      src  : 'https://cdn.graphery.online/graphane/editor/0.1.0-alpha.2/graphane.editor.js',
+      // src : 'http://localhost:8000/editor/src/component/editor.js',
+      src  : 'https://cdn.graphery.online/graphane/editor/1.0.0-beta.2/graphane.editor.js',
       type : 'module'
     }],
     ['script', {
@@ -69,31 +71,28 @@ export default defineConfig({
     nav         : [
       {link : '/', text : 'Home'},
       {
-        text : 'Guides', items : [
-          {link : '/guide/starter/', text : 'Starter Tutorial'},
-          // {link : '/guide/step-by-step/', text : 'Step by Step'},
+        text : 'Guides',
+        link : '/guide/',
+        items : [
+          {link : '/guide/starter/', text : 'Starter'},
           {link : '/guide/in-depth/', text : 'In-Depth'},
-          {
-            items : [
-              {link : '/guide/svg/', text : 'Introduction to SVG', type : 'separator'},
-            ]
-          }
+          {link : '/guide/svg/', text : 'SVG Introduction'},
         ]
       },
       {link : '/reference/', text : 'Reference'},
-      {link : '/plugins/', text : 'Plugins'},
-      {link : '/examples/', text : 'Examples'},
+      // {link : '/plugins/', text : 'Plugins'},
+      {link : 'https://playground.graphane.dev/gallery/', text : 'Examples & Playground'},
       {link : 'https://github.com/graphery/graphane/blob/main/CHANGELOG.md', text : VERSION},
     ],
     sidebar     : {
-      '/guide/'     :
+      '/guide/' :
         {
-          text  : 'Guides',
+          text  : 'Guide',
           items : [
             {
-              text      : 'Starter Guide',
-              link      : '/guide/starter/',
-              collapsed : true,
+              text      : 'Starter',
+              link      : '/guide/starter/index',
+              collapsed : false,
               items     : [
                 {link : '/guide/starter/load', text : 'Load'},
                 {link : '/guide/starter/composer', text : 'Composer'},
@@ -102,16 +101,10 @@ export default defineConfig({
                 {link : '/guide/starter/methods', text : 'Methods'},
               ]
             },
-            // {
-            //   text      : 'Step by Step',
-            //   link      : '/guide/step-by-step/',
-            //   collapsed : true,
-            //   items     : [],
-            // },
             {
               text      : 'In-Depth',
               link      : '/guide/in-depth/',
-              collapsed : true,
+              collapsed : false,
               items     : [
                 {
                   text      : 'Data',
@@ -185,117 +178,116 @@ export default defineConfig({
                   link      : '/guide/in-depth/animation/',
                   collapsed : true,
                   items     : [
-                    {link : '/guide/in-depth/animation/g-bind', text : 'b-bind and animate'},
-                    {link : '/guide/in-depth/animation/viewport', text : 'viewport entry and exit'},
-                    {link : '/guide/in-depth/animation/methods', text : 'Animation code'}
-                  ]
-                },
-                {
-                  text      : 'Config',
-                  link      : '/guide/in-depth/config/',
-                  collapsed : true,
-                  items     : [
-                    {link : '/guide/in-depth/config/why', text : 'Separate data & config'},
-                    {link : '/guide/in-depth/config/external', text : 'External resource'}
-                  ]
-                },
-                {
-                  text      : 'Composer',
-                  link      : '/guide/in-depth/composer/',
-                  collapsed : true,
-                  items     : [
-                    {link : '/guide/in-depth/composer/attributes', text : 'Attributes'},
-                    {link : '/guide/in-depth/composer/events', text : 'Events'},
-                    {link : '/guide/in-depth/composer/html', text : 'Use in HTML'},
-                    {link : '/guide/in-depth/composer/vue', text : 'Use in VUE'},
-                    {link : '/guide/in-depth/composer/react', text : 'Use in React'},
-                    {link : '/guide/in-depth/composer/svelte', text : 'Use in Svelte'},
-                    {link : '/guide/in-depth/composer/angular', text : 'Use in Angular'},
-                    {link : '/guide/in-depth/composer/custom-component', text : 'Encapsulate in a component'},
-                  ]
-                },
-                {
-                  text      : 'Plugin',
-                  link      : '/guide/in-depth/plugins/',
-                  collapsed : true,
-                  items     : [
                     {
-                      link : '/guide/in-depth/plugins/load',
-                      text : 'Load a plugin'
+                      link : '/guide/in-depth/animation/g-bind',
+                      text : '<code>$$.dynamic()</code> with <code>g-bind</code>'
                     },
                     {
-                      link : '/guide/in-depth/plugins/create',
-                      text : 'Custom plugin'
-                    }
+                      link : '/guide/in-depth/animation/viewport',
+                      text : 'Animation in and out the viewport'
+                    },
+                    {link : '/guide/in-depth/animation/api', text : 'Animation API'}
                   ]
                 },
-                {
-                  text      : 'Architecture',
-                  link      : '/guide/in-depth/architecture/',
-                  collapsed : true,
-                  items     : [
-                    {
-                      link : '/guide/in-depth/architecture/why',
-                      text : 'Why Graphane?'
-                    },
-                    {
-                      link : '/guide/in-depth/architecture/microframework',
-                      text : 'Microframework'
-                    },
-                    {
-                      link : '/guide/in-depth/architecture/webcomponent',
-                      text : 'Web Component'
-                    },
-                    {
-                      link : '/guide/in-depth/architecture/declarative',
-                      text : 'Declarative vs. Imperative'
-                    },
-                  ]
-                },
+                // {
+                //   text      : 'Config',
+                //   link      : '/guide/in-depth/config/',
+                //   collapsed : true,
+                //   items     : [
+                //     {link : '/guide/in-depth/config/why', text : 'Separate data & config'},
+                //     {link : '/guide/in-depth/config/external', text : 'External resource'}
+                //   ]
+                // },
+                // {
+                //   text      : 'Composer',
+                //   link      : '/guide/in-depth/composer/',
+                //   collapsed : true,
+                //   items     : [
+                //     {link : '/guide/in-depth/composer/attributes', text : 'Attributes'},
+                //     {link : '/guide/in-depth/composer/events', text : 'Events'},
+                //     {link : '/guide/in-depth/composer/html', text : 'Use in HTML'},
+                //     {link : '/guide/in-depth/composer/vue', text : 'Use in VUE'},
+                //     {link : '/guide/in-depth/composer/react', text : 'Use in React'},
+                //     {link : '/guide/in-depth/composer/svelte', text : 'Use in Svelte'},
+                //     {link : '/guide/in-depth/composer/angular', text : 'Use in Angular'},
+                //     {link : '/guide/in-depth/composer/custom-component', text : 'Encapsulate in a component'},
+                //   ]
+                // },
+                // {
+                //   text      : 'Plugin',
+                //   link      : '/guide/in-depth/plugins/',
+                //   collapsed : true,
+                //   items     : [
+                //     {
+                //       link : '/guide/in-depth/plugins/load',
+                //       text : 'Load a plugin'
+                //     },
+                //     {
+                //       link : '/guide/in-depth/plugins/create',
+                //       text : 'Custom plugin'
+                //     }
+                //   ]
+                // },
+                // {
+                //   text      : 'Architecture',
+                //   link      : '/guide/in-depth/architecture/',
+                //   collapsed : true,
+                //   items     : [
+                //     {
+                //       link : '/guide/in-depth/architecture/why',
+                //       text : 'Why Graphane?'
+                //     },
+                //     {
+                //       link : '/guide/in-depth/architecture/microframework',
+                //       text : 'Microframework'
+                //     },
+                //     {
+                //       link : '/guide/in-depth/architecture/webcomponent',
+                //       text : 'Web Component'
+                //     },
+                //     {
+                //       link : '/guide/in-depth/architecture/declarative',
+                //       text : 'Declarative vs. Imperative'
+                //     },
+                //   ]
+                // },
               ],
             },
             {
-              text      : 'Introduction to SVG',
+              text      : 'SVG Introduction',
               link      : '/guide/svg/',
-              collapsed : true,
+              collapsed : false,
               items     : [
-                {link : '/guide/svg/02-SVG-structure.md', text : 'SVG structure'},
-                {link : '/guide/svg/03-Basic-shapes.md', text : 'Basic Shapes'},
-                {link : '/guide/svg/04-Path-element.md', text : 'Path'},
-                {link : '/guide/svg/05-Text-element.md', text : 'Text'},
-                {link : '/guide/svg/06-Fill-and-stroke.md', text : 'Fill and Stroke'},
-                {link : '/guide/svg/07-Reuse-elements.md', text : 'Reuse elements'},
-                {link : '/guide/svg/08-Gradients-and-patterns.md', text : 'Gradients and Patters'},
-                {link : '/guide/svg/09-Aspect-ratio.md', text : 'Size and Aspect Ratio'},
-                {link : '/guide/svg/10-Transform.md', text : 'Transform'},
-                {link : '/guide/svg/11-CSS.md', text : 'CSS'},
-                {link : '/guide/svg/12-Animation.md', text : 'Animation'},
+                {link : '/guide/svg/svg-structure.md', text : 'Structure'},
+                {link : '/guide/svg/basic-shapes.md', text : 'Basic Shapes'},
+                {link : '/guide/svg/path-element.md', text : 'Path'},
+                {link : '/guide/svg/text-element.md', text : 'Text'},
+                {link : '/guide/svg/fill-and-stroke.md', text : 'Fill and Stroke'},
+                {link : '/guide/svg/reuse-elements.md', text : 'Reuse elements'},
+                {link : '/guide/svg/gradients-and-patterns.md', text : 'Gradients and Patters'},
+                {link : '/guide/svg/aspect-ratio.md', text : 'Size and Aspect Ratio'},
+                {link : '/guide/svg/transform.md', text : 'Transform'},
+                {link : '/guide/svg/css.md', text : 'CSS'},
+                {link : '/guide/svg/animation.md', text : 'Animation'},
                 {
-                  link : '/guide/svg/13-Text-path-and-clip-path.md',
+                  link : '/guide/svg/text-path-and-clip-path.md',
                   text : 'Text Path and Clip Path'
                 },
-                {link : '/guide/svg/14-Manage-elements.md', text : 'Manage Elements'},
-                {link : '/guide/svg/15-Events.md', text : 'Handle Events'},
-                {link : '/guide/svg/01-Graphane-SVG.md', text : 'How to extents SVG with Graphane'},
+                {link : '/guide/svg/manage-elements.md', text : 'Manage Elements'},
+                {link : '/guide/svg/events.md', text : 'Handle Events'},
+                {link : '/guide/svg/graphane-svg.md', text : 'How to extents SVG with Graphane'},
               ]
             }]
         },
-      '/plugins/'   : [{
-        text  : 'Plugins',
-        items : [
-          {link : '/plugins/', text : 'Graphane Extensibility'},
-          {
-            text      : 'Catalog',
-            collapsed : false,
-            items     : [
-              {link : '/plugins/catalog/shapes', text : 'Shapes'},
-              {link : '/plugins/catalog/observe-resize', text : 'Observe Resize'},
-              {link : '/plugins/catalog/non-scaling-size', text : 'Non Scaling Size'},
-            ]
-          },
-          {link : '/plugins/create', text : 'Create custom plugin'},
-        ]
-      }],
+      // '/plugins/'   : [{
+      //   text  : 'Plugins',
+      //   link : '/plugins/',
+      //   items     : [
+      //     {link : '/plugins/catalog/shapes', text : 'Shapes'},
+      //     {link : '/plugins/catalog/observe-resize', text : 'Observe Resize'},
+      //     {link : '/plugins/catalog/non-scaling-size', text : 'Non Scaling Size'},
+      //   ]
+      // }],
       '/reference/' : [{
         text  : 'API',
         items : [
@@ -306,12 +298,12 @@ export default defineConfig({
           {
             text      : 'svg',
             link      : '/reference/svg/',
-            collapsed : false,
+            collapsed : true,
             items     : [
               {
                 text      : 'directives',
                 link      : '/reference/svg/templating/',
-                collapsed : false,
+                collapsed : true,
                 items     : [
                   {link : '/reference/svg/templating/g-bind', text : 'g-bind'},
                   {link : '/reference/svg/templating/g-for', text : 'g-for'},
@@ -379,7 +371,7 @@ export default defineConfig({
           {
             text      : 'data',
             link      : '/reference/data/',
-            collapsed : false,
+            collapsed : true,
             items     : [
               {link : '/reference/data/content', text : 'content'},
               {link : '/reference/data/src', text : 'src'},
@@ -397,6 +389,14 @@ export default defineConfig({
               {link : '/reference/methods/property', text : 'property'},
             ]
           },
+          {
+            text      : 'plugins',
+            link      : '/reference/plugins/',
+            collapsed : false,
+            items     : [
+              {link : '/reference/plugins/shapes', text : 'shapes'},
+            ]
+          }
         ]
       }],
       '/examples/'  : [{

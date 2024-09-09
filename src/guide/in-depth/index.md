@@ -1,8 +1,11 @@
 ---
 outline: deep
+prev:
+  text: 'Starter'
+  link: '/guide/starter/'
 ---
 
-# Graphane In-Depth
+# In-Depth
 
 In this guide, we will delve into the different aspects of Graphane, describing its operation and
 architecture.

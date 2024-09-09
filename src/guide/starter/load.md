@@ -9,7 +9,7 @@ This is done by adding a `script` tag pointing to the Graphane file.
 The easiest and fastest is to use this URL from the CDN:
 
 ```html
-<script src="https://cdn.graphery.online/graphane/0.1.0-alpha/component/composer.js"></script>
+<script src="https://cdn.graphery.online/graphane/1.0.0-beta/component/composer.js"></script>
 ```
 
 ::: details Understanding the CDN path
@@ -17,17 +17,24 @@ The easiest and fastest is to use this URL from the CDN:
 This is the detailed description of each URL part:
 
 ```
-https://cdn.graphery.online/graphane/0.1.0-alpha/component/composer.js
-|-----|--------------------|--------|-----------|---------|-----------|
-   |            |               |         |          |          |-----> filename
-   |            |               |         |          |----------------> kind
-   |            |               |         |---------------------------> version
-   |            |               |-------------------------------------> package
-   |            |-----------------------------------------------------> domain
-   |------------------------------------------------------------------> protocol
+https://cdn.graphery.online/graphane/1.0.0-beta/component/composer.js
+|-----|--------------------|--------|----------|---------|-----------|
+   |            |               |         |         |          |-----> filename
+   |            |               |         |         |----------------> kind
+   |            |               |         |--------------------------> version
+   |            |               |------------------------------------> package
+   |            |----------------------------------------------------> domain
+   |-----------------------------------------------------------------> protocol
 ```
 
 :::
+
+
+You can install locally the Graphane package with:
+
+```bash
+npm i graphane
+```
 
 One of the advantages of Graphane is that it runs dynamically in the browser and does not need 
 heavy compilation or transpilation processes at development time. 

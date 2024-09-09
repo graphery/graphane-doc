@@ -22,11 +22,11 @@ It is important to load the plugin after the component loading.
 
 ```html
 <head>
-  <script src="https://cdn.graphery.online/graphane/0.1.0-alpha/component/composer.js"></script>
+  <script src="https://cdn.graphery.online/graphane/1.0.0-beta/component/composer.js"></script>
   <script src="<plugin-file>"></script>
 </head>
 ```
 
 ## Plugins available 
 
-You can see the [Plugin Catalog](../../../plugins/) 
+You can see the [Plugin Reference](/reference/plugins/) 

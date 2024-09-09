@@ -7,48 +7,12 @@ outline: deep
 The `<script type="methods">` tag allow loading functions into the Graphane component. You can
 include functions in the code, and these functions are available into the template.
 
-```html {16-28}
-<g-composer>
-  <template>
-    <svg viewBox="0 0 100 100" id="svg">
-      <g @click="change" style="cursor: pointer;">
-        <circle id="run"
-                cx="50"
-                cy="50"
-                r="50"
-                fill="red"/>
-        <text x="36"
-              y="53">click
-        </text>
-      </g>
-    </svg>
-  </template>
-  <script type="methods">
-    const circle = $.svg.querySelector('circle');
-    const text   = $.svg.querySelector('text');
-    function change() {
-      if (text.content() === 'click') {
-        circle.fill('green');
-        text.content('ok').x(44);
-      } else {
-        circle.fill('red');
-        text.content('click').x(36);
-      }
-    }
-  </script>
-</g-composer>
-```
-
-<g-composer>
-  <svg viewBox="0 0 100 100" id="svg">
+<ClientOnly>
+<g-composer id="embebed-methods-1" style="width: 200px;">
+  <svg viewBox="0 0 100 100">
     <g g-on:click="change" style="cursor: pointer;">
-      <circle id="run"
-              cx="50"
-              cy="50"
-              r="50"
-              fill="red"/>
-      <text x="36" 
-            y="53">click</text>
+      <circle id="run" cx="50" cy="50" r="50" fill="red"/>
+      <text x="36" y="53">click</text>
     </g>
   </svg>
   <g-script type="methods">
@@ -65,6 +29,8 @@ include functions in the code, and these functions are available into the templa
     }
   </g-script>
 </g-composer>
+<g-editor href="#embebed-methods-1" lines-highlight="13-21"></g-editor>
+</ClientOnly>
 
 In this example, we define a `change()` function and use the function in the template as handler for
 the event `click`. When the user clicks, the label is changed.

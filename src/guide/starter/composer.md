@@ -8,15 +8,16 @@ Graphane is based on the custom tag `<g-composer></g-composer>`.
 This web component is the main element of Graphane and everything happens inside it. 
 We will include the other elements in a nested way.
 
-<g-editor href="#scafolding" mode="readonly"></g-editor>
-
-<div style="display: none">
-  <g-composer id="scafolding">
-    <template></template>
-    <g-script type="data"></g-script>
-    <g-script type="methods"></g-script>
-  </g-composer>
-</div>
+<ClientOnly>
+  <div style="display: none">
+    <g-composer id="scafolding">
+      <template></template>
+      <g-script type="data"></g-script>
+      <g-script type="methods"></g-script>
+    </g-composer>
+  </div>
+  <g-editor href="#scafolding" mode="readonly" highlight-lines="2-4"></g-editor>
+</ClientOnly>
 
 The component `g-composer` can include:
 
@@ -35,13 +36,14 @@ In practice, we can create separate files for each of the elements and link them
 - The `data-src` attribute indicates the location of the data source.
 - The `methods-src` attribute indicates the location of methods.
 
-<div style="display:none">
-  <g-composer style="width: 100px" id="external-resources"
+<ClientOnly>
+<div style="display:none" id="external-resources">
+  <g-composer 
     svg-src="../../svg/circles.svg"
     data-src="../../data/circles.json"
     methods-src="../../methods/circles.js"></g-composer>
 </div>
-
 <g-editor href="#external-resources" mode="readonly"></g-editor>
+</ClientOnly>
 
 :::

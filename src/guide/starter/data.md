@@ -11,28 +11,19 @@ build the graph on top of the data information.
 We can create visualizations using data in CSV, JSON or JSON5 formats. 
 To load the data, we need to use the `script` tag indicating that it is `type="data"`.
 
-<div style="display: none" id="data-example-1">
-  <g-composer>
-    <g-script type="data">
-    [
-      {
-        name: 'A',
-        value: 1
-      },
-      {
-        name: 'B',
-        value: 2
-      },
-      {
-        name: 'C',
-        value: 3
-      }
-    ]
-    </g-script>
-  </g-composer>
-</div>
-
-<g-editor href="#data-example-1" mode="readonly"></g-editor>
+<ClientOnly>
+<g-editor mode="readonly" lines-highlight="3-7">
+<!--<g-composer>
+  <g-script type="data">
+  [
+    { name: 'A', value: 1 },
+    { name: 'B', value: 2 },
+    { name: 'C', value: 3 }
+  ]
+  </g-script>
+</g-composer>-->
+</g-editor>
+</ClientOnly>
 
 ::: details Using external data source
 
@@ -42,21 +33,19 @@ To load external data, we can use:
  
 - The `data-src` attribute of `g-composer` indicates the location of the data source.
 
-<div style="display:none" id="external-resources-1">
-  <g-composer data-src="../../data/example.json"></g-composer>
-</div>
-
-<g-editor href="#external-resources-1" mode="readonly"></g-editor>
+<ClientOnly>
+<g-editor mode="readonly">
+<!--<g-composer data-src="../../data/example.json"></g-composer>-->
+</g-editor>
+</ClientOnly>
 
 - The `src` attribute of `script type="data"` indicates the location of the data source.
 
-<div style="display:none" id="external-resources-2">
-  <g-composer>
-    <g-script type="data" src="../../data/example.json"></g-script>
-  </g-composer>
-</div>
-
-<g-editor href="#external-resources-2" mode="readonly"></g-editor>
+<ClientOnly>
+<g-editor mode="readonly"><!--<g-composer>
+  <g-script type="data" src="../../data/example.json"></g-script>
+</g-composer>--></g-editor>
+</ClientOnly>
 
 :::
 
@@ -75,6 +64,7 @@ commas or semicolon.
 The first line often contains headers that define the names of the columns. 
 Graphane can use the Comma Separated Values (CSV) format in its different variants.
 
+<ClientOnly>
 <g-composer style="width: 200px" id="data-example-2">
   <svg viewBox="0 0 100 100">
     <defs g-for="value of data">
@@ -88,8 +78,8 @@ Graphane can use the Comma Separated Values (CSV) format in its different varian
     {{ "x,y,radix,color\n20,20,20,red\n45,45,30,blue\n80,80,10,green" }}
   </g-script>
 </g-composer>
-
-<g-editor href="#data-example-2"></g-editor>
+<g-editor href="#data-example-2" lines-highlight="15-18"></g-editor>
+</ClientOnly>
 
 ### JSON or JSON5
 
@@ -108,6 +98,7 @@ the development process.
 
 We can use both as a format for the data used in `g-composer`.
 
+<ClientOnly>
 <g-composer style="width: 200px" id="data-example-3">
   <svg viewBox="0 0 100 100">
     <defs g-for="value of data">
@@ -125,8 +116,8 @@ We can use both as a format for the data used in `g-composer`.
     ]
   </g-script>
 </g-composer>
-
-<g-editor href="#data-example-3"></g-editor>
+<g-editor href="#data-example-3" lines-highlight="15-19"></g-editor>
+</ClientOnly>
 
 ## Data Structure
 
@@ -149,6 +140,7 @@ It's a fully reactive system.
 It observes changes in the data both at the surface level, and any changes in the
 data nested in depth.
 
+<ClientOnly>
 <div id="reactivity-example-wrapper">
 <g-composer id="example">
   <svg viewBox="0 0 100 100" width="200" height="200">
@@ -168,7 +160,6 @@ data nested in depth.
     }
   </g-script>
 </g-composer>
-
 <p>
   <label>.data.circles 
     <input type="range" min="0" max="50" step="1" value="5"
@@ -176,6 +167,5 @@ data nested in depth.
   </label>
 </p>
 </div>
-
-<g-editor href="#reactivity-example-wrapper"></g-editor>
-
+<g-editor href="#reactivity-example-wrapper" lines-highlight="28"></g-editor>
+</ClientOnly>

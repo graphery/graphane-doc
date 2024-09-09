@@ -2,14 +2,14 @@
 outline: deep
 ---
 
-# Load Data
+# Load external data
 
 In production environments or when accessing remote servers, the `<script type="data">`
 with the `src` attribute makes it very easy to indicate the source of the data. By utilizing these
 attributes, you can seamlessly incorporate external data into their visualization.
 
-```html {10}
-<g-composer>
+<ClientOnly>
+<g-composer id="circles1" style="width:150px;">
   <svg viewBox="0 0 100 100">
     <defs g-for="value of data">
       <circle g-bind:cx="value.x"
@@ -18,33 +18,21 @@ attributes, you can seamlessly incorporate external data into their visualizatio
               g-bind:fill="value.color"/>
     </defs>
   </svg>
-  <script type="data" src="/data/circles.csv"></script>
+  <g-script type="data" src="/data/circles.csv"></g-script>
 </g-composer>
-```
-
-<g-composer>
-  <svg viewBox="0 0 100 100">
-    <defs g-for="value of data">
-      <circle g-bind:cx="value.x"
-              g-bind:cy="value.y"
-              g-bind:r="value.radix"
-              g-bind:fill="value.color"
-              g-content="JSON.stringify(data)"/>
-    </defs>
-  </svg>
-  <g-script type="data" src="../../../data/circles.csv"></g-script>
-</g-composer>
-
+<g-editor href="#circles1" lines-highlight="14"></g-editor>
+</ClientOnly>
 
 To streamline the process further, it is even possible to forego the explicit use of the `script`
 tag. Instead, designer and developers can directly include the `data-src` properties within
 the `g-composer` component itself, simplifying the overall structure of the code.
 
-```html {3}
-<g-composer 
-  svg-src="/svg/circles.svg" 
+<g-composer id="circles2" style="width: 150px"
+  svg-src="/svg/template.svg" 
   data-src="/data/circles.csv">
 </g-composer>
-```
+
+<g-editor href="#circles2" lines-highlight="4"></g-editor>
+
 
 

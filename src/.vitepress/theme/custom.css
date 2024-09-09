@@ -83,10 +83,14 @@ aside {
   padding-bottom : 2em !important;
 }
 
-
-/*
-* Component: Home
-*/
+.VPSidebarItem .level-1 {
+  margin-left: 1em;
+}
+  
+  
+  /*
+  * Component: Home
+  */
 :root {
   --vp-home-hero-name-color             : var(--vp-c-text-1);
   --vp-home-hero-name-background        : none;

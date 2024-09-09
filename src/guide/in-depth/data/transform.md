@@ -134,8 +134,8 @@ function data(source) {
 
 ## Access to the target data outside the component
 
-If you want to access to the transformed data outside the template, you can call the 
-function `data()` and obtain the result.
+If you need to access to the transformed data outside the template, you can call the 
+function `data()` and get the result.
 
 ```js
 const component = document.querySelector('#example');
