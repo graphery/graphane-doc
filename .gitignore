@@ -219,5 +219,5 @@ __diff_output__
 private.json
 
 ### vitepress
-/minimal/.vitepress/cache/
 /src/.vitepress/cache/
+/src/.vitepress/dist/

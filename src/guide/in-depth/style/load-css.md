@@ -7,10 +7,12 @@ outline: deep
 You can define load an external CSS file in the template with
 a `<link rel="stylesheet" href="file.css">` tag.
 
-```html {3}
-<g-composer>
+<ClientOnly>
+<div id="load-css-1"></div>
+<g-editor href="#load-css-1" lines-highlight="3" keep-format>
+<textarea><g-composer style="width: 200px;">
   <template>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <svg viewBox="0 0 100 100">
       <defs g-for="value of data">
         <circle :cx="value.x"
@@ -19,16 +21,15 @@ a `<link rel="stylesheet" href="file.css">` tag.
                 :class="value.class"/>
       </defs>
     </svg>
-    <script type="data">
-      "x";"y";"radix";"class"
-      20;20;20;"regular"
-      45;45;30;"warning"
-      80;80;10;"error"
-    </script>
   </template>
-</g-composer>
-```
-
-<g-composer svg-src="../../../svg/circles.class.svg" data-src="../../../data/class.csv"></g-composer>
+  <g-script type="data">
+    "x";"y";"radix";"class"
+    20;20;20;"regular"
+    45;45;30;"warning"
+    80;80;10;"error"
+  </g-script>
+</g-composer></textarea>
+</g-editor>
+</ClientOnly>
 
 

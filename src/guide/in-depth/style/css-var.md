@@ -14,7 +14,7 @@ style system with CSS custom properties and Graphane.
 Define a custom property in your CSS by using the following syntax:
 
 ```css{2-4}
-body {
+selector {
   --color-regular: green;
   --color-warning: blue;
   --color-error: red;
@@ -25,36 +25,16 @@ body {
 
 Once you've defined a custom property, you can use it throughout your stylesheet.
 
-```html {5,8,11}
-<g-composer>
-  <template>
-    <style>
-      .regular {
-        fill : var(--color-regular);
-      }
-      .warning {
-        fill : var(--color-warning);
-      }
-      .error {
-        fill : var(--color-error);
-      }
-    </style>
-    <svg viewBox="0 0 100 100">
-      <defs g-for="value of data">
-        <circle :cx="value.x"
-                :cy="value.y"
-                :r="value.radix"
-                :class="value.class"/>
-      </defs>
-    </svg>
-    <script type="data">
-      "x";"y";"radix";"class"
-      20;20;20;"regular"
-      45;45;30;"warning"
-      80;80;10;"error"
-    </script>
-  </template>
-</g-composer>
+```css {2,5,8}
+.regular {
+  fill : var(--color-regular);
+}
+.warning {
+  fill : var(--color-warning);
+}
+.error {
+  fill : var(--color-error);
+}
 ```
 
 ## Fallback Values:
@@ -62,7 +42,7 @@ Once you've defined a custom property, you can use it throughout your stylesheet
 You can provide fallback values in case the custom property is not defined. This helps maintain
 the aspect if the custom properties are missing.
 
-```css
+```css {2,5,8}
 .regular {
   fill : var(--color-regular, black);
 }
@@ -77,3 +57,47 @@ the aspect if the custom properties are missing.
 CSS custom properties provide a powerful mechanism for maintaining and managing styles in a more
 modular and dynamic way. They enhance code readability, promote reusability, and simplify the
 process of updating styles across an entire project.
+
+
+<ClientOnly>
+<div id="css-1"></div>
+<g-editor href="#css-1" keep-format>
+<textarea><style>
+  #example {
+    width           : 200px;
+    --color-regular : green;
+    --color-warning : blue;
+    --color-error   : red;
+  }
+</style>
+<g-composer id="example">
+  <template>
+    <style>
+      .regular {
+        fill : var(--color-regular, black);
+      }
+      .warning {
+        fill : var(--color-warning, grey);
+      }
+      .error {
+        fill : var(--color-error, black);
+      }
+    </style>
+    <svg viewBox="0 0 100 100">
+      <defs g-for="value of data">
+        <circle :cx="value.x"
+                :cy="value.y"
+                :r="value.radix"
+                :class="value.class"/>
+      </defs>
+    </svg>
+  </template>
+  <script type="data">
+    "x";"y";"radix";"class"
+    20;20;20;"regular"
+    45;45;30;"warning"
+    80;80;10;"error"
+  </script>
+</g-composer></textarea>
+</g-editor>
+</ClientOnly>

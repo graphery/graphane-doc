@@ -17,9 +17,8 @@ you to update the values and update the attributes automatically.
 Here is an example of using the `g-bind` directive to bind the `r` attribute of a circle element to
 a dynamic value:
 
-```html
-<circle g-bind:r="size"/>
-```
+<ClientOnly><g-editor mode="readonly">
+<textarea><circle g-bind:r="size"/></textarea></g-editor></ClientOnly>
 
 In this case, `size` refers to a data property that holds the radius value. The `g-bind` directive
 binds the `r` attribute of the circle element to that value. When `size` changes in the Graphane
@@ -87,7 +86,7 @@ class or an array of classes.
 <ClientOnly>
 <div id="binding-3"></div>
 <g-editor href="#binding-3" lines-highlight="4-14;20">
-<!--<g-composer style="width: 200px">
+<textarea><g-composer style="width: 200px">
   <template>
     <svg viewBox="0 0 100 100">
       <style>
@@ -114,7 +113,7 @@ class or an array of classes.
     {x: 45, y: 45, radix: 30, class: "warning"},
     {x: 80, y: 80, radix: 10, class: "error"}
   ]</script>
-</g-composer>-->
+</g-composer></textarea>
 </g-editor>
 </ClientOnly>
 

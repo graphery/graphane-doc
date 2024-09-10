@@ -24,10 +24,10 @@ It is possible to directly include the `methods-src` properties within the `g-co
 itself, simplifying the overall code structure by eliminating the `script` tag.
 
 <g-editor mode="readonly" lines-highlight="3">
-<!--<g-composer 
+<textarea><g-composer 
   svg-src="/svg/circle.svg" 
   methods-src="/methods/circle.js">
-</g-composer>-->
+</g-composer></textarea>
 </g-editor>
 
 

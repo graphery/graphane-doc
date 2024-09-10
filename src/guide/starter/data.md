@@ -13,7 +13,7 @@ To load the data, we need to use the `script` tag indicating that it is `type="d
 
 <ClientOnly>
 <g-editor mode="readonly" lines-highlight="3-7">
-<!--<g-composer>
+<textarea><g-composer>
   <g-script type="data">
   [
     { name: 'A', value: 1 },
@@ -21,7 +21,7 @@ To load the data, we need to use the `script` tag indicating that it is `type="d
     { name: 'C', value: 3 }
   ]
   </g-script>
-</g-composer>-->
+</g-composer></textarea>
 </g-editor>
 </ClientOnly>
 
@@ -35,16 +35,16 @@ To load external data, we can use:
 
 <ClientOnly>
 <g-editor mode="readonly">
-<!--<g-composer data-src="../../data/example.json"></g-composer>-->
+<textarea><g-composer data-src="../../data/example.json"></g-composer></textarea>
 </g-editor>
 </ClientOnly>
 
 - The `src` attribute of `script type="data"` indicates the location of the data source.
 
 <ClientOnly>
-<g-editor mode="readonly"><!--<g-composer>
+<g-editor mode="readonly"><textarea><g-composer>
   <g-script type="data" src="../../data/example.json"></g-script>
-</g-composer>--></g-editor>
+</g-composer></textarea></g-editor>
 </ClientOnly>
 
 :::

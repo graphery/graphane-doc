@@ -45,21 +45,14 @@ access to the [$.svg]($-svg) element or the [$.data](./$-data.md) object.
 In some environments the `<script type="methods"></script>` has conflicts. In these
 cases, you can use alternatively `<g-script type="methods"></g-script>`.
 
-```html
+<ClientOnly>
+<g-composer id="g-script">
 <g-script type="methods">
-  const circle = $.svg.querySelector('circle');
-  const text   = $.svg.querySelector('text');
-  function change() {
-    if (text.content() === 'click') {
-      circle.fill('green');
-      text.content('ok').x(44);
-    } else {
-      circle.fill('red');
-      text.content('click').x(36);
-    }
-  }
+  // Your code
 </g-script>
-```
+</g-composer>
+<g-editor href="#g-script" mode="readonly" options="g-script: true"></g-editor>
+</ClientOnly>
 
 :::
 

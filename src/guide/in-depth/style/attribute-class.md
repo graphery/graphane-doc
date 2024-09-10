@@ -11,8 +11,8 @@ classes to an element. You can bind a single class or an array of classes.
 
 <ClientOnly>
 <div id="attribute-class-1"></div>
-<g-editor href="#attribute-class-1" lines-highlight="19">
-<!--<g-composer>
+<g-editor href="#attribute-class-1" lines-highlight="9">
+<textarea><g-composer style="width: 200px">
   <template>
     <style>
       .regular {
@@ -39,7 +39,7 @@ classes to an element. You can bind a single class or an array of classes.
     45;45;30;"warning"
     80;80;10;"error"
   </g-script>
-</g-composer>-->
+</g-composer></textarea>
 </g-editor>
 </ClientOnly>
 
@@ -56,12 +56,3 @@ By the Graphane SVG API, you can use the `.classList` object and its methods:
 - `.classList.remove( class )` - removes the specified class.
 - `.classList.replace( oldClass, newClass)` - replaces oldClass with newClass.
 - `.classList.toggle( class )` - removes class from if it exists or adds class if it doesn't.
-
-```js{2-3,5}
-$.svg.querySelector('rect')
-     .classList.add('rectangle')
-     .classList.add('regular');
-$.svg.querySelector('text').x(10).y(100).content('Alarm')
-     .classList.add('message');
-```
-

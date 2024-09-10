@@ -9,7 +9,7 @@ the `.methods` property of the `g-composer`.
 
 <ClientOnly>
 <div id="property-1">
-<g-composer>
+<g-composer style="width: 200px;">
   <svg viewBox="0 0 100 100">
     <rect x="5" y="5" width="90" height="90" fill="red"/>
   </svg>

@@ -19,8 +19,9 @@ and old values and updates the affected visualization accordingly.
 
 Reactivity is managed at both surface and deep level, detecting changes in the array and dates.
 
-```html
-<g-composer>
+<ClientOnly>
+<g-editor mode="readonly">
+<textarea><g-composer>
   <svg viewBox="0 0 100 100" style="border: 1px solid grey; width: 250px; height: 250px">
     <defs g-for="{x, y, color} of data">
       <circle r="5" :cx="x" :cy="y" :fill="color" style="stroke:grey; stroke-width: 0.5"/>
@@ -33,7 +34,8 @@ Reactivity is managed at both surface and deep level, detecting changes in the a
       {x: 30, y: 90, color: "#0000D8"}
     ]
   </script>
-</g-composer>
-```
+</g-composer></textarea>
+</g-editor>
+</ClientOnly>
 
 <iframe src="../../../html/reactivity.html" style="border: 0; width: 100%; height: 740px"/>

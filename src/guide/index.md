@@ -1,11 +1,11 @@
-# Graphane Guides
+# Graphane Guide
 
-Welcome to Graphane Guides, your resource for mastering Graphane for graphical data representation.
+Welcome to Graphane Guide, your resource for mastering Graphane for graphical data representation.
 Whether you're a beginner looking for the essentials, a seasoned pro digging more intensely, or a
 complete unknown ready to explore the capabilities of scalable vector graphics (SVG), we've got you
 covered.
 
-## [Starter Guide](starter/)
+## [Starter](starter/)
 
 Embark on your Graphane journey with our essentials section, designed for those taking their first
 steps into the capabilities of this micro-framework. Here, you'll find fundamental concepts and practical

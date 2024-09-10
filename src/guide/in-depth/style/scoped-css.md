@@ -20,8 +20,8 @@ This is a scoped CSS:
 
 <ClientOnly>
 <div id="css-scope-1"></div>
-<g-editor href="#css-scope-1">
-<!--<g-composer>
+<g-editor href="#css-scope-1" lines-highlight="4-14">
+<textarea><g-composer style="width: 200px">
   <template>
     <svg viewBox="0 0 100 100">
       <style>
@@ -48,7 +48,7 @@ This is a scoped CSS:
     45;45;30;"warning"
     80;80;10;"error"
   </script>
-</g-composer>-->
+</g-composer></textarea>
 </g-editor>
 </ClientOnly>
 

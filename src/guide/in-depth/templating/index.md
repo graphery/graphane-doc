@@ -17,12 +17,12 @@ updated to reflect the changes in the rendered SVG.
 
 <ClientOnly>
 <g-editor lines-highlight="2-4">
-<!--<g-composer>
+<textarea><g-composer>
   <template>
     <svg>
     </svg>
   </template>
-</g-composer>-->
+</g-composer></textarea>
 </g-editor>
 </ClientOnly>
 

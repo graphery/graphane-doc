@@ -14,17 +14,26 @@ properties, you must use methods. For example, set an `id` to an SVG element is
 Graphane dynamically constructs the methods, which can chain together to make successive calls. Each
 call returns the original object and can include one call after another.
 
-```js
-$.svg
- .width('100%')
- .height('100%');
-$.svg.add('rect')
- .x(10)
- .y(10)
- .width(90)
- .height(90)
- .fill('#f06');
-```
+<ClientOnly>
+<g-composer style="width: 200px;">
+<svg g-on:init="create"></svg>
+<g-script type="methods">
+  function create() {
+    $.svg
+     .viewBox(0,0,100,100)
+     .width('100%')
+     .height('100%');
+    $.svg.add('rect')
+     .x(10)
+     .y(10)
+     .width(90)
+     .height(90)
+     .fill('#f06');
+  }
+</g-script>
+</g-composer>
+<g-editor href="g-composer"></g-editor>
+</ClientOnly>
 
 **Note**: chained call is possible when calling setter methods. When a getter method (then returns a
 value) is called, the value property is returned, amd it is impossible to do more chained calls.

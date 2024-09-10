@@ -44,7 +44,7 @@ export default defineConfig({
     }],
     ['script', {
       // src : 'http://localhost:8000/editor/src/component/editor.js',
-      src  : 'https://cdn.graphery.online/graphane/editor/1.0.0-beta.2/graphane.editor.js',
+      src  : 'https://cdn.graphery.online/graphane/editor/1.0.0-beta.3/graphane.editor.js',
       type : 'module'
     }],
     ['script', {
@@ -63,7 +63,7 @@ export default defineConfig({
     footer      : {
       message   : 'Released under the MIT License.',
       copyright : 'Copyright © 2024 <a href="https://www.graphery.com/"> ' +
-                  '<img src="img/logo/graphery.svg" alt="graphery" width="120"></a>'
+                  '<img src="/img/logo/graphery.svg" alt="graphery" width="120"></a>'
     },
     search      : {
       provider : 'local'
