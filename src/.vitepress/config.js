@@ -1,7 +1,11 @@
 import { defineConfig } from 'vitepress';
 
 const URL     = '/';
+<<<<<<< HEAD
 const VERSION = '1.0.0-beta.2';
+=======
+const VERSION = '1.0.0-beta.4';
+>>>>>>> main
 
 const MarkdownOptions = {
   languageAlias : {
@@ -40,11 +44,21 @@ export default defineConfig({
   head        : [
     ['link', {rel : 'icon', href : `${ URL }img/logo/g.svg`}],
     ['script', {
+<<<<<<< HEAD
       src : `https://cdn.graphery.online/graphane/1.0.0-beta/component/composer.js`
     }],
     ['script', {
       // src : 'http://localhost:8000/editor/src/component/editor.js',
       src  : 'https://cdn.graphery.online/graphane/editor/1.0.0-beta.3/graphane.editor.js',
+=======
+      // src : 'http://localhost:7000/src/component/composer.js',
+      // type : 'module'
+      src : `https://cdn.graphery.online/graphane/1.0.0-beta.4/component/composer.js`
+    }],
+    ['script', {
+      // src : 'http://localhost:8000/editor/src/component/editor.js',
+      src  : 'https://cdn.graphery.online/graphane/editor/1.0.0-beta.4/graphane.editor.js',
+>>>>>>> main
       type : 'module'
     }],
     ['script', {
@@ -117,6 +131,7 @@ export default defineConfig({
                     {link : '/guide/in-depth/data/json', text : 'JSON format'},
                     {link : '/guide/in-depth/data/attribute', text : '<code>data</code> attribute'},
                     {link : '/guide/in-depth/data/property', text : '<code>.data</code> property'},
+                    {link : '/guide/in-depth/data/value', text : '<code>value</code>'},
                     {link : '/guide/in-depth/data/helpers', text : 'Helpers'},
                     {
                       link : '/guide/in-depth/data/transform',

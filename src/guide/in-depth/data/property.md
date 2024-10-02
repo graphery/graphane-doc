@@ -14,7 +14,13 @@ You can manipulate the `.data` object directly, and when a change occurs in this
 graphic will be automatically updated with the new data, keeping the view up to date at all times.
 
 <ClientOnly>
+<<<<<<< HEAD
 <div id="example-wrapper">
+=======
+<div id="example-wrapper"></div>
+<g-editor href="#example-wrapper" lines-highlight="21;31">
+<textarea>
+>>>>>>> main
   <g-composer data="w: 80, h: 80" style="width: 100px;" id="example">
     <svg viewBox="0 0 100 100">
       <rect x="0" y="0" fill="green"
@@ -32,6 +38,11 @@ graphic will be automatically updated with the new data, keeping the view up to 
                      oninput="document.querySelector('#example').data.h = this.value">
     </label>
   </p>
+<<<<<<< HEAD
 </div>
 <g-editor href="#example-wrapper"  lines-highlight="21;31"></g-editor>
+=======
+</textarea>
+</g-editor>
+>>>>>>> main
 </ClientOnly>

@@ -10,6 +10,11 @@ some of the examples we use in this guide, but is not sufficient when you want t
 situations.
 
 <ClientOnly>
+<<<<<<< HEAD
+=======
+<g-editor lines-highlight="1">
+<textarea>
+>>>>>>> main
   <g-composer data="w: 80; h: 80" style="width: 100px;">
     <svg viewBox="0 0 100 100">
       <rect x="0" y="0" fill="green"
@@ -17,7 +22,12 @@ situations.
             g-bind:height="data.h"/>
     </svg>
   </g-composer>
+<<<<<<< HEAD
   <g-editor href="g-composer" lines-highlight="1"></g-editor>
+=======
+</textarea>
+</g-editor>
+>>>>>>> main
 </ClientOnly>
 
 ::: warning 

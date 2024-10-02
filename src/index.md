@@ -17,17 +17,17 @@ hero:
 
 features:
   - title: Declarative Syntax
-    details: Create and manage powerful graphs easily with our intuitive templating directives, reducing the learning curve and boosting productivity.
+    details: Easily create and manage powerful graphs using intuitive templating directives, reducing the learning curve and increasing productivity.
   - title: Data Binding
-    details: Our rendering engine detect and apply changes to the graphical representation, ensuring seamless updates in sync with your data.
+    details: The rendering engine detects and applies changes to the graphical representation, ensuring seamless updates that stay in sync with your data.
   - title: Powerful and Open
-    details: It allows you to create all types of data-driven graphics, providing low-level access to all visual elements without limitation.
+    details: Create any type of data-driven graphic, with low-level access to all visual elements without limitations.
   - title: Seamless Integration
-    details: Built on web components, it integrates smoothly with plain HTML and popular frameworks like React, Angular, Vue, and Svelte.
+    details: Built with web components, it integrates smoothly with plain HTML and popular Javascript frameworks.
   - title: Performance Optimization
-    details: Optimized for performance, our solution features efficient rendering algorithms and element reuse for high-speed, effective rendering.
+    details: Optimized for performance, the solution includes efficient rendering algorithms and element reuse for fast, effective rendering.
   - title: Tiny size
-    details: Designed as a microframework with a minimal footprint, it ensures a fast and smooth download experience.
+    details: Designed as a microframework with a minimal footprint, it ensures a quick and smooth download experience.
 ---
 
 ## Simple example
